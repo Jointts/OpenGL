@@ -6,8 +6,9 @@
 #include "ShaderProgram.h"
 #include "Utils.h"
 
-char *FRAGMENT_SHADER_PATH = "shaders\\fragment.glsl";
-char *VERTEX_SHADER_PATH = "shaders\\vertex.glsl";
+
+
+ShaderProgram *ShaderProgram::shaderProgram = 0;
 
 GLuint ShaderProgram::CreateShader(GLuint shaderType, GLchar *shaderPath) {
     GLuint shader = glCreateShader(shaderType);
@@ -23,16 +24,17 @@ GLuint ShaderProgram::CreateShader(GLuint shaderType, GLchar *shaderPath) {
 }
 
 ShaderProgram::ShaderProgram() {
-    shaderProgram = glCreateProgram();
-    fragmentShader = this->CreateShader(GL_FRAGMENT_SHADER, FRAGMENT_SHADER_PATH);
-    vertexShader = this->CreateShader(GL_VERTEX_SHADER, VERTEX_SHADER_PATH);
-    glAttachShader(shaderProgram, fragmentShader);
-    glAttachShader(shaderProgram, vertexShader);
-    glLinkProgram(shaderProgram);
+    shaderProgramID = glCreateProgram();
+    fragmentShader = CreateShader(GL_FRAGMENT_SHADER, FRAGMENT_SHADER_PATH);
+    vertexShader = CreateShader(GL_VERTEX_SHADER, VERTEX_SHADER_PATH);
+    glAttachShader(shaderProgramID, fragmentShader);
+    glAttachShader(shaderProgramID, vertexShader);
+    glLinkProgram(shaderProgramID);
 }
 
 void ShaderProgram::Start() {
-    glUseProgram(shaderProgram);
+    glUseProgram(shaderProgramID);
+    glUniform1i(glGetUniformLocation(ShaderProgram::getInstance()->shaderProgramID, "isTerrain"), 0);
 }
 
 void ShaderProgram::Stop() {
@@ -40,10 +42,17 @@ void ShaderProgram::Stop() {
 }
 
 ShaderProgram::~ShaderProgram() {
-    this->Stop();
-    glDetachShader(shaderProgram, fragmentShader);
-    glDetachShader(shaderProgram, vertexShader);
+    Stop();
+    glDetachShader(shaderProgramID, fragmentShader);
+    glDetachShader(shaderProgramID, vertexShader);
     glDeleteShader(fragmentShader);
     glDeleteShader(vertexShader);
-    glDeleteProgram(shaderProgram);
+    glDeleteProgram(shaderProgramID);
+}
+
+ShaderProgram *ShaderProgram::getInstance() {
+    if(!shaderProgram){
+        shaderProgram = new ShaderProgram;
+    }
+    return shaderProgram;
 }

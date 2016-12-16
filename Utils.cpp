@@ -7,6 +7,8 @@
 #include <fstream>
 #include <iostream>
 #include <unistd.h>
+#include <GL/gl.h>
+#include <ext.hpp>
 #include "Utils.h"
 
 std::string Utils::readFile(const char *filePath) {
@@ -34,4 +36,22 @@ std::string Utils::readFile(const char *filePath) {
 
     fileStream.close();
     return content;
+}
+
+glm::vec3 Utils::color_RGB(float r, float g, float b){
+    return glm::vec3(r / 255, g / 255, b / 255);
+}
+
+glm::vec3 Utils::GetNormal(glm::vec3 v1, glm::vec3 v2, glm::vec3 v3)
+{
+    glm::vec3 temp1, temp2;
+    glm::vec3 normal;
+
+    temp1 = v1 - v2;
+    temp2 = v2 - v3;
+
+    normal = glm::cross(temp1, temp2);
+    glm::normalize(normal);
+
+    return normal;
 }
