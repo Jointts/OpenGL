@@ -1,0 +1,140 @@
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/mingw64/bin/mingw32-make.exe" "cmTC_5c360/fast"
+C:/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_5c360.dir\build.make CMakeFiles/cmTC_5c360.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5c360.dir/testCCompiler.c.obj
+C:\MinGW\mingw64\bin\x86_64-w64-mingw32-gcc.exe     -o CMakeFiles\cmTC_5c360.dir\testCCompiler.c.obj   -c C:\Users\Joonas\ClionProjects\OpenGL\glfw\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_5c360.exe
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_5c360.dir\link.txt --verbose=1
+"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_5c360.dir/objects.a
+CMAKE_AR-NOTFOUND cr CMakeFiles\cmTC_5c360.dir/objects.a @CMakeFiles\cmTC_5c360.dir\objects1.rsp
+Error running link command: The system cannot find the file specified
+CMakeFiles\cmTC_5c360.dir\build.make:98: recipe for target 'cmTC_5c360.exe' failed
+mingw32-make.exe[1]: *** [cmTC_5c360.exe] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Makefile:125: recipe for target 'cmTC_5c360/fast' failed
+mingw32-make.exe: *** [cmTC_5c360/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/mingw64/bin/mingw32-make.exe" "cmTC_edcfc/fast"
+C:/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_edcfc.dir\build.make CMakeFiles/cmTC_edcfc.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_edcfc.dir/testCCompiler.c.obj
+C:\MinGW\mingw64\bin\x86_64-w64-mingw32-gcc.exe     -o CMakeFiles\cmTC_edcfc.dir\testCCompiler.c.obj   -c C:\Users\Joonas\ClionProjects\OpenGL\glfw\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_edcfc.exe
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_edcfc.dir\link.txt --verbose=1
+"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_edcfc.dir/objects.a
+CMAKE_AR-NOTFOUND cr CMakeFiles\cmTC_edcfc.dir/objects.a @CMakeFiles\cmTC_edcfc.dir\objects1.rsp
+Error running link command: The system cannot find the file specified
+CMakeFiles\cmTC_edcfc.dir\build.make:98: recipe for target 'cmTC_edcfc.exe' failed
+mingw32-make.exe[1]: *** [cmTC_edcfc.exe] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Makefile:125: recipe for target 'cmTC_edcfc/fast' failed
+mingw32-make.exe: *** [cmTC_edcfc/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/mingw64/bin/mingw32-make.exe" "cmTC_d5700/fast"
+C:/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_d5700.dir\build.make CMakeFiles/cmTC_d5700.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d5700.dir/testCCompiler.c.obj
+C:\MinGW\mingw64\bin\x86_64-w64-mingw32-gcc.exe     -o CMakeFiles\cmTC_d5700.dir\testCCompiler.c.obj   -c C:\Users\Joonas\ClionProjects\OpenGL\glfw\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_d5700.exe
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_d5700.dir\link.txt --verbose=1
+"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_d5700.dir/objects.a
+CMAKE_AR-NOTFOUND cr CMakeFiles\cmTC_d5700.dir/objects.a @CMakeFiles\cmTC_d5700.dir\objects1.rsp
+Error running link command: The system cannot find the file specified
+CMakeFiles\cmTC_d5700.dir\build.make:98: recipe for target 'cmTC_d5700.exe' failed
+mingw32-make.exe[1]: *** [cmTC_d5700.exe] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Makefile:125: recipe for target 'cmTC_d5700/fast' failed
+mingw32-make.exe: *** [cmTC_d5700/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/mingw64/bin/mingw32-make.exe" "cmTC_cd254/fast"
+C:/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_cd254.dir\build.make CMakeFiles/cmTC_cd254.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd254.dir/testCCompiler.c.obj
+C:\MinGW\mingw64\bin\x86_64-w64-mingw32-gcc.exe     -o CMakeFiles\cmTC_cd254.dir\testCCompiler.c.obj   -c C:\Users\Joonas\ClionProjects\OpenGL\glfw\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_cd254.exe
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_cd254.dir\link.txt --verbose=1
+"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_cd254.dir/objects.a
+CMAKE_AR-NOTFOUND cr CMakeFiles\cmTC_cd254.dir/objects.a @CMakeFiles\cmTC_cd254.dir\objects1.rsp
+Error running link command: The system cannot find the file specified
+CMakeFiles\cmTC_cd254.dir\build.make:98: recipe for target 'cmTC_cd254.exe' failed
+mingw32-make.exe[1]: *** [cmTC_cd254.exe] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Makefile:125: recipe for target 'cmTC_cd254/fast' failed
+mingw32-make.exe: *** [cmTC_cd254/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/mingw64/bin/mingw32-make.exe" "cmTC_6aa7d/fast"
+C:/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_6aa7d.dir\build.make CMakeFiles/cmTC_6aa7d.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6aa7d.dir/testCCompiler.c.obj
+C:\MinGW\mingw64\bin\x86_64-w64-mingw32-gcc.exe     -o CMakeFiles\cmTC_6aa7d.dir\testCCompiler.c.obj   -c C:\Users\Joonas\ClionProjects\OpenGL\glfw\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_6aa7d.exe
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_6aa7d.dir\link.txt --verbose=1
+"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_6aa7d.dir/objects.a
+CMAKE_AR-NOTFOUND cr CMakeFiles\cmTC_6aa7d.dir/objects.a @CMakeFiles\cmTC_6aa7d.dir\objects1.rsp
+Error running link command: The system cannot find the file specified
+CMakeFiles\cmTC_6aa7d.dir\build.make:98: recipe for target 'cmTC_6aa7d.exe' failed
+mingw32-make.exe[1]: *** [cmTC_6aa7d.exe] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Makefile:125: recipe for target 'cmTC_6aa7d/fast' failed
+mingw32-make.exe: *** [cmTC_6aa7d/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/mingw64/bin/mingw32-make.exe" "cmTC_5f0ed/fast"
+C:/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_5f0ed.dir\build.make CMakeFiles/cmTC_5f0ed.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5f0ed.dir/testCCompiler.c.obj
+C:\MinGW\mingw64\bin\x86_64-w64-mingw32-gcc.exe     -o CMakeFiles\cmTC_5f0ed.dir\testCCompiler.c.obj   -c C:\Users\Joonas\ClionProjects\OpenGL\glfw\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_5f0ed.exe
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_5f0ed.dir\link.txt --verbose=1
+"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_5f0ed.dir/objects.a
+CMAKE_AR-NOTFOUND cr CMakeFiles\cmTC_5f0ed.dir/objects.a @CMakeFiles\cmTC_5f0ed.dir\objects1.rsp
+Error running link command: The system cannot find the file specified
+CMakeFiles\cmTC_5f0ed.dir\build.make:98: recipe for target 'cmTC_5f0ed.exe' failed
+mingw32-make.exe[1]: *** [cmTC_5f0ed.exe] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Makefile:125: recipe for target 'cmTC_5f0ed/fast' failed
+mingw32-make.exe: *** [cmTC_5f0ed/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/mingw64/bin/mingw32-make.exe" "cmTC_9da39/fast"
+C:/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_9da39.dir\build.make CMakeFiles/cmTC_9da39.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9da39.dir/testCCompiler.c.obj
+C:\MinGW\mingw64\bin\x86_64-w64-mingw32-gcc.exe     -o CMakeFiles\cmTC_9da39.dir\testCCompiler.c.obj   -c C:\Users\Joonas\ClionProjects\OpenGL\glfw\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_9da39.exe
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_9da39.dir\link.txt --verbose=1
+"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_9da39.dir/objects.a
+CMAKE_AR-NOTFOUND cr CMakeFiles\cmTC_9da39.dir/objects.a @CMakeFiles\cmTC_9da39.dir\objects1.rsp
+Error running link command: The system cannot find the file specified
+CMakeFiles\cmTC_9da39.dir\build.make:98: recipe for target 'cmTC_9da39.exe' failed
+mingw32-make.exe[1]: *** [cmTC_9da39.exe] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Joonas/ClionProjects/OpenGL/glfw/CMakeFiles/CMakeTmp'
+Makefile:125: recipe for target 'cmTC_9da39/fast' failed
+mingw32-make.exe: *** [cmTC_9da39/fast] Error 2
+
+

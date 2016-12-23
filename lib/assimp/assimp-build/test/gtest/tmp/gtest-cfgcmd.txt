@@ -1,0 +1,1 @@
+cmd='C:/Program Files/CMake/bin/cmake.exe;-DCMAKE_BUILD_TYPE=Release;-Dgtest_force_shared_crt=ON;-Dgtest_disable_pthreads:BOOL=ON;-DBUILD_GTEST=ON;-GMinGW Makefiles;C:/Users/Joonas/ClionProjects/OpenGL/assimp/assimp-build/test/gtest/src/gtest'
