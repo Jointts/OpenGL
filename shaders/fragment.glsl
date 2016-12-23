@@ -16,11 +16,7 @@ uniform int isTerrain;
 
 void main()
 {
-    vec4 object_color;
-    if(isTerrain == 1)
-        object_color = vec4(1.0f, 0.0f, 0.0f, 1.0f);
-    else
-        object_color = vec4(texture(diffuse1, TexCoords));
+    vec4 object_color = vec4(texture(diffuse1, TexCoords));
     vec3 ambient_color = ambientStrength * ambientColor;
     vec3 norm = normalize(NormalCoords);
     vec3 lightDir = normalize(lightDirection);

@@ -2,20 +2,18 @@
 // Created by Joonas on 29/09/2016.
 //
 
-#ifndef OPENGL_SHADERS_H
-#define OPENGL_SHADERS_H
+#ifndef OPENGL_SHADERPROGRAM_H
+#define OPENGL_SHADERPROGRAM_H
 
 #include <glad/glad.h>
 
 class ShaderProgram {
     char *VERTEX_SHADER_PATH = "shaders\\vertex.glsl";
+    char *FRAGMENT_SHADER_PATH = "shaders\\fragment.glsl";
     GLuint vertexShader;
     GLuint fragmentShader;
     GLint success;
     GLchar infoLog[512];
-
-protected:
-    char *FRAGMENT_SHADER_PATH = "shaders\\fragment.glsl";
 public:
     GLuint shaderProgramID;
 
@@ -34,4 +32,4 @@ public:
     ~ShaderProgram();
 };
 
-#endif //OPENGL_SHADERS_H
+#endif //OPENGL_SHADERPROGRAM_H

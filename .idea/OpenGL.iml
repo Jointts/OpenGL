@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/ControllerManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Model.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Engine.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/opengl.rc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CameraManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Utils.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ControllerManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Engine.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Utils.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RenderManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Display.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/water" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DisplayManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/opengl.ico" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/terrain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Display.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Mesh.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CameraManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RenderManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DisplayManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/gui" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ShaderProgram.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Model.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/geometry" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ShaderProgram.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Mesh.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lights" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/CMakeFiles" />
+      <excludeFolder url="file://$MODULE_DIR$/glad" />
+      <excludeFolder url="file://$MODULE_DIR$/glew" />
+      <excludeFolder url="file://$MODULE_DIR$/glfw" />
+      <excludeFolder url="file://$MODULE_DIR$/glm" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/assimp" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/glad" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/glfw" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/glm" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/stb_image" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file://C:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include-fixed" />
+          <root url="file://C:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include" />
+          <root url="file://C:/MinGW/mingw64/x86_64-w64-mingw32/include" />
+          <root url="file://$MODULE_DIR$/lib" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/MinSizeRel/lib/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/MinSizeRel/lib/assimp" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/Debug/lib/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/Debug/lib/assimp" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/Release/lib/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/Release/lib/assimp" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/RelWithDebInfo/lib/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/RelWithDebInfo/lib/assimp" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://C:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include-fixed" />
+          <root url="file://C:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include" />
+          <root url="file://C:/MinGW/mingw64/x86_64-w64-mingw32/include" />
+          <root url="file://$MODULE_DIR$/lib" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/MinSizeRel/lib/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/MinSizeRel/lib/assimp" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/Debug/lib/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/Debug/lib/assimp" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/Release/lib/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/Release/lib/assimp" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/RelWithDebInfo/lib/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/RelWithDebInfo/lib/assimp" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/lib/glfw" />
+          <root url="file://$MODULE_DIR$/lib/glad" />
+          <root url="file://$MODULE_DIR$/lib/glm" />
+          <root url="file://$MODULE_DIR$/lib/stb_image" />
+          <root url="file://$MODULE_DIR$/lib/assimp" />
+        </excluded>
+      </library>
+    </orderEntry>
+  </component>
+</module>
