@@ -8,6 +8,7 @@
 #include <iostream>
 #include "CameraManager.h"
 #include "ShaderProgram.h"
+#include "ShaderManager.h"
 
 
 CameraManager *CameraManager::cameraManager = 0;
@@ -21,7 +22,7 @@ CameraManager *CameraManager::getInstance() {
 }
 
 CameraManager::CameraManager(){
-    ShaderProgram *shaderProgram = ShaderProgram::getInstance();
+    ShaderProgram *shaderProgram = ShaderManager::getInstance()->shaderProgram;
     cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
     cameraPos = glm::vec3(0.0f, 20.0f, 7.0f);
     eyePos = glm::vec3(0.0f, -5.0f, -3.0f);

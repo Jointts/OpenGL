@@ -25,7 +25,7 @@ public:
 
     Plane(int sizeX, int sizeY, int tileSize);
 
-    void Draw();
+    virtual void Draw();
 
     void GenerateVertices();
 };

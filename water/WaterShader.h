@@ -12,7 +12,6 @@ class WaterShader: ShaderProgram {
     char *FRAGMENT_SHADER_PATH = "shaders\\fragment.glsl";
     char *VERTEX_SHADER_PATH = "shaders\\vertex.glsl";
 
-    WaterShader();
 };
 
 

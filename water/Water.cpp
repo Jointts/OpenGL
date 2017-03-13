@@ -3,3 +3,13 @@
 //
 
 #include "Water.h"
+
+Plane plane;
+
+Water::Water(int x, int y, int tileSize){
+    plane = Water::Plane(x, y, tileSize);
+}
+
+void Water::Draw(){
+    plane.Draw();
+}

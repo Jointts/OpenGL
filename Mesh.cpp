@@ -5,6 +5,7 @@
 #include <gtc/type_ptr.hpp>
 #include "Mesh.h"
 #include "ShaderProgram.h"
+#include "ShaderManager.h"
 
 Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures) {
     this->vertices = vertices;
@@ -56,7 +57,7 @@ void Mesh::Draw() {
         if(name == "diffuse")
             diffuseNr++;
             const char* shader_attribute =  std::string("diffuse" + diffuseNr).c_str();
-        glUniform1f(glGetUniformLocation(ShaderProgram::getInstance()->shaderProgramID, shader_attribute), i);
+        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->shaderProgram->shaderProgramID, shader_attribute), i);
         glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
     }
     glBindVertexArray(this->VAO);

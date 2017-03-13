@@ -6,10 +6,6 @@
 #include "ShaderProgram.h"
 #include "Utils.h"
 
-
-
-ShaderProgram *ShaderProgram::shaderProgram = 0;
-
 GLuint ShaderProgram::CreateShader(GLuint shaderType, GLchar *shaderPath) {
     GLuint shader = glCreateShader(shaderType);
     std::string shaderSource = Utils::readFile(shaderPath).c_str();
@@ -34,7 +30,6 @@ ShaderProgram::ShaderProgram() {
 
 void ShaderProgram::Start() {
     glUseProgram(shaderProgramID);
-    glUniform1i(glGetUniformLocation(ShaderProgram::getInstance()->shaderProgramID, "isTerrain"), 0);
 }
 
 void ShaderProgram::Stop() {
@@ -48,11 +43,4 @@ ShaderProgram::~ShaderProgram() {
     glDeleteShader(fragmentShader);
     glDeleteShader(vertexShader);
     glDeleteProgram(shaderProgramID);
-}
-
-ShaderProgram *ShaderProgram::getInstance() {
-    if(!shaderProgram){
-        shaderProgram = new ShaderProgram;
-    }
-    return shaderProgram;
 }

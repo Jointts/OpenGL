@@ -10,26 +10,28 @@
       <sourceFolder url="file://$MODULE_DIR$/Utils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ControllerManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Engine.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ShaderManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Utils.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/RenderManager.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Display.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/opengl.ico" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/water" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DisplayManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/opengl.ico" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ShaderManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RenderManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/geometry" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/terrain" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Display.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Mesh.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CameraManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/RenderManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ShaderProgram.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/shaders" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DisplayManager.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gui" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ShaderProgram.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Model.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/geometry" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ShaderProgram.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Mesh.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lights" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/CMakeFiles" />

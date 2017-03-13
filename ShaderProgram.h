@@ -8,13 +8,14 @@
 #include <glad/glad.h>
 
 class ShaderProgram {
-    char *VERTEX_SHADER_PATH = "shaders\\vertex.glsl";
-    char *FRAGMENT_SHADER_PATH = "shaders\\fragment.glsl";
     GLuint vertexShader;
     GLuint fragmentShader;
     GLint success;
     GLchar infoLog[512];
 public:
+    char *VERTEX_SHADER_PATH = "shaders\\vertex.glsl";
+    char *FRAGMENT_SHADER_PATH = "shaders\\fragment.glsl";
+
     GLuint shaderProgramID;
 
     ShaderProgram();
@@ -25,9 +26,8 @@ public:
 
     void Stop();
 
-    static ShaderProgram* getInstance();
 
-    static ShaderProgram *shaderProgram;
+    ShaderProgram *shaderProgram;
 
     ~ShaderProgram();
 };

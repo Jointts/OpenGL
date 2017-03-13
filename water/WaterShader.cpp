@@ -4,6 +4,3 @@
 
 #include "WaterShader.h"
 
-WaterShader::WaterShader() {
-
-}

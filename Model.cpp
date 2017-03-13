@@ -11,6 +11,7 @@
 #include "Model.h"
 #include "Mesh.h"
 #include "ShaderProgram.h"
+#include "ShaderManager.h"
 
 Model::Model(){
     createAssimpLog();
@@ -162,7 +163,7 @@ std::vector<Texture> Model::processMaterial(aiTextureType textureType, aiMateria
 }
 
 void Model::Draw(){
-    glUniformMatrix4fv(glGetUniformLocation(ShaderProgram::getInstance()->shaderProgramID, "model"), 1, GL_FALSE, glm::value_ptr(model));
+    glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->shaderProgram->shaderProgramID, "model"), 1, GL_FALSE, glm::value_ptr(model));
     for (int i = 0; i < meshes.size(); ++i) {
         meshes[i].Draw();
     }

@@ -10,6 +10,7 @@
 #include "Terrain.h"
 #include "../Utils.h"
 #include "../ShaderProgram.h"
+#include "../ShaderManager.h"
 
 const int CHUNK_SIZE = 100;
 int MID_POINT;
@@ -80,7 +81,7 @@ void Terrain::generateUV(int vertexIndex, glm::vec2 uv_coord){
 }
 
 void Terrain::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices) {
-    glUniform1i(glGetUniformLocation(ShaderProgram::getInstance()->shaderProgramID, "isTerrain"), 1);
+    glUniform1i(glGetUniformLocation(ShaderManager::getInstance()->shaderProgram->shaderProgramID, "isTerrain"), 1);
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
@@ -121,7 +122,7 @@ void Terrain::Draw() {
 
     glGenTextures(1, &texture);
     glActiveTexture(GL_TEXTURE0);
-    glUniform1f(glGetUniformLocation(ShaderProgram::getInstance()->shaderProgramID, "diffuse1"), 1);
+    glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->shaderProgram->shaderProgramID, "diffuse1"), 1);
     glBindTexture(GL_TEXTURE_2D, texture);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, pixelData);
     glGenerateMipmap(GL_TEXTURE_2D);
