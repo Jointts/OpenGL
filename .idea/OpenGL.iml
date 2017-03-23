@@ -11,28 +11,30 @@
       <sourceFolder url="file://$MODULE_DIR$/ControllerManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Engine.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ShaderManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Utils.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PhysicsManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/RenderManager.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Display.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/opengl.ico" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/water" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DisplayManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ShaderManager.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/RenderManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/geometry" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/terrain" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Display.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Utils.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Mesh.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CameraManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ShaderProgram.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RenderManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Display.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DisplayManager.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gui" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ShaderProgram.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Model.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ShaderProgram.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Mesh.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PhysicsManager.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lights" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/CMakeFiles" />
       <excludeFolder url="file://$MODULE_DIR$/glad" />
@@ -40,6 +42,7 @@
       <excludeFolder url="file://$MODULE_DIR$/glfw" />
       <excludeFolder url="file://$MODULE_DIR$/glm" />
       <excludeFolder url="file://$MODULE_DIR$/lib/assimp" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/bullet" />
       <excludeFolder url="file://$MODULE_DIR$/lib/glad" />
       <excludeFolder url="file://$MODULE_DIR$/lib/glfw" />
       <excludeFolder url="file://$MODULE_DIR$/lib/glm" />
@@ -77,9 +80,10 @@
           <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/OpenGL-2504fe3f/2504fe3f/RelWithDebInfo/lib/assimp" />
         </SOURCES>
         <excluded>
+          <root url="file://$MODULE_DIR$/lib/glm" />
+          <root url="file://$MODULE_DIR$/lib/bullet" />
           <root url="file://$MODULE_DIR$/lib/glfw" />
           <root url="file://$MODULE_DIR$/lib/glad" />
-          <root url="file://$MODULE_DIR$/lib/glm" />
           <root url="file://$MODULE_DIR$/lib/stb_image" />
           <root url="file://$MODULE_DIR$/lib/assimp" />
         </excluded>

@@ -8,13 +8,25 @@
 #include <iostream>
 #include <stb_image.h>
 #include <ext.hpp>
+#include <LinearMath/btVector3.h>
+#include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
+#include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
+#include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>
+#include <BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
 #include "Model.h"
 #include "Mesh.h"
 #include "ShaderProgram.h"
 #include "ShaderManager.h"
+#include "RenderManager.h"
 
 Model::Model(){
     createAssimpLog();
+}
+
+Model::Model(std::string meshPath){
+    model_file = meshPath;
+    importFile();
+    RenderManager::getInstance()->models.push_back(this);
 }
 
 void Model::importFile() {
@@ -163,7 +175,7 @@ std::vector<Texture> Model::processMaterial(aiTextureType textureType, aiMateria
 }
 
 void Model::Draw(){
-    glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->shaderProgram->shaderProgramID, "model"), 1, GL_FALSE, glm::value_ptr(model));
+    glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->celShader->shaderProgramID, "model"), 1, GL_FALSE, glm::value_ptr(model));
     for (int i = 0; i < meshes.size(); ++i) {
         meshes[i].Draw();
     }

@@ -22,7 +22,7 @@ CameraManager *CameraManager::getInstance() {
 }
 
 CameraManager::CameraManager(){
-    ShaderProgram *shaderProgram = ShaderManager::getInstance()->shaderProgram;
+    ShaderProgram *shaderProgram = ShaderManager::getInstance()->celShader;
     cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
     cameraPos = glm::vec3(0.0f, 20.0f, 7.0f);
     eyePos = glm::vec3(0.0f, -5.0f, -3.0f);

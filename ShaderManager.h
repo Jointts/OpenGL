@@ -12,7 +12,9 @@ class ShaderManager {
 public:
     static ShaderManager* shaderManager;
 
-    static ShaderProgram* shaderProgram;
+    static ShaderProgram* baseShader;
+
+    static ShaderProgram* celShader;
 
     static ShaderManager *getInstance();
 };

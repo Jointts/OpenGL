@@ -28,6 +28,8 @@ class Mesh;
 
 class Model {
 public:
+    Model(std::string meshPath);
+
     glm::mat4 model = glm::mat4();
 
     Model();

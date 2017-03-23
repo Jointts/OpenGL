@@ -11,8 +11,6 @@ uniform vec3 ambientColor;
 uniform vec3 lightColor;
 uniform vec3 lightDirection;
 uniform sampler2D diffuse1;
-uniform sampler2D diffuse2;
-uniform int isTerrain;
 
 void main()
 {

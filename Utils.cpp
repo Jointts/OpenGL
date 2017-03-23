@@ -7,7 +7,7 @@
 #include <fstream>
 #include <iostream>
 #include <unistd.h>
-#include <GL/gl.h>
+#include <glad/glad.h>
 #include <ext.hpp>
 #include "Utils.h"
 

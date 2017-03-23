@@ -19,12 +19,14 @@ GLuint ShaderProgram::CreateShader(GLuint shaderType, GLchar *shaderPath) {
     return shader;
 }
 
-ShaderProgram::ShaderProgram() {
+ShaderProgram::ShaderProgram(char *vertexShader, char *fragmentShader)
+: VERTEX_SHADER_PATH(vertexShader), FRAGMENT_SHADER_PATH(fragmentShader)
+{
     shaderProgramID = glCreateProgram();
-    fragmentShader = CreateShader(GL_FRAGMENT_SHADER, FRAGMENT_SHADER_PATH);
-    vertexShader = CreateShader(GL_VERTEX_SHADER, VERTEX_SHADER_PATH);
-    glAttachShader(shaderProgramID, fragmentShader);
-    glAttachShader(shaderProgramID, vertexShader);
+    this->fragmentShader = CreateShader(GL_FRAGMENT_SHADER, FRAGMENT_SHADER_PATH);
+    this->vertexShader = CreateShader(GL_VERTEX_SHADER, VERTEX_SHADER_PATH);
+    glAttachShader(shaderProgramID, this->fragmentShader);
+    glAttachShader(shaderProgramID, this->vertexShader);
     glLinkProgram(shaderProgramID);
 }
 

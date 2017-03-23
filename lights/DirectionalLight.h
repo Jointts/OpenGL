@@ -3,7 +3,7 @@
 
 
 #include <vec3.hpp>
-#include <GL/gl.h>
+#include <glad/glad.h>
 
 class DirectionalLight {
 

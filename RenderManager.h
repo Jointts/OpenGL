@@ -6,11 +6,22 @@
 #define OPENGL_RENDERMANAGER_H
 
 
+#include <array>
+#include <vector>
+#include "Model.h"
 
 class RenderManager{
 public:
-    void startUp();
+
+    void Render();
+
     static int cameraPosition;
+
+    static RenderManager *getInstance();
+
+    static RenderManager *renderManager;
+
+    std::vector<Model*> models;
 };
 
 

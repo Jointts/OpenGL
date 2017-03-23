@@ -48,6 +48,21 @@ void Mesh::setupMesh() {
 }
 
 void Mesh::Draw() {
+    GLuint celShader = ShaderManager::getInstance()->celShader->shaderProgramID;
+    GLuint baseShader = ShaderManager::getInstance()->baseShader->shaderProgramID;
+    ShaderManager::getInstance()->baseShader->Stop();
+    ShaderManager::getInstance()->celShader->Start();
+    GLint outlineColorLoc = glGetUniformLocation(celShader, "outline_color");
+    GLint celOffsetLoc = glGetUniformLocation(celShader, "cel_offset");
+    glUniform3f(outlineColorLoc, 0.0f, 0.0f, 0.0f);
+    glUniform1f(celOffsetLoc, 1.5f);
+    glEnable(GL_CULL_FACE); // enable culling
+    glCullFace (GL_CCW); // enable culling of front faces
+    glDepthMask(GL_TRUE); // enable writes to Z-buffer
+//    glPolygonMode(GL_FRONT, GL_LINE);
+//    glPolygonMode(GL_BACK, GL_LINE);
+
+//    glUseProgram(ShaderManager::getInstance()->baseShader->shaderProgramID);
     int diffuseNr = 0;
     for(GLuint i = 0; i < this->textures.size(); i++)
     {
@@ -57,7 +72,7 @@ void Mesh::Draw() {
         if(name == "diffuse")
             diffuseNr++;
             const char* shader_attribute =  std::string("diffuse" + diffuseNr).c_str();
-        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->shaderProgram->shaderProgramID, shader_attribute), i);
+        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, shader_attribute), i);
         glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
     }
     glBindVertexArray(this->VAO);

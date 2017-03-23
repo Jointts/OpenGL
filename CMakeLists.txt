@@ -7,7 +7,7 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(CMAKE_PREFIX_PATH C:/Users/Joonas/ClionProjects/OpenGL/glew/build/cmake)
 
-set(SOURCE_FILES main.cpp Display.cpp Display.h Utils.cpp Utils.h shaders opengl.rc opengl.ico ShaderProgram.cpp ShaderProgram.h Engine.cpp Engine.h RenderManager.cpp RenderManager.h ControllerManager.cpp ControllerManager.h CameraManager.cpp CameraManager.h DisplayManager.cpp DisplayManager.h Model.cpp Model.h Mesh.cpp Mesh.h Mesh.cpp Mesh.h terrain/Terrain.cpp terrain/Terrain.h lights/DirectionalLight.cpp lights/DirectionalLight.h water/WaterShader.cpp water/WaterShader.h geometry/Plane.cpp geometry/Plane.h water/Water.cpp water/Water.h ShaderManager.cpp ShaderManager.h shaders/terrain/TerrainShader.h shaders/terrain/TerrainShader.h)
+set(SOURCE_FILES main.cpp Display.cpp Display.h Utils.cpp Utils.h shaders opengl.rc opengl.ico ShaderProgram.cpp ShaderProgram.h Engine.cpp Engine.h RenderManager.cpp RenderManager.h ControllerManager.cpp ControllerManager.h CameraManager.cpp CameraManager.h DisplayManager.cpp DisplayManager.h Model.cpp Model.h Mesh.cpp Mesh.h Mesh.cpp Mesh.h lights/DirectionalLight.cpp lights/DirectionalLight.h water/WaterShader.cpp water/WaterShader.h geometry/Plane.cpp geometry/Plane.h water/Water.cpp water/Water.h ShaderManager.cpp ShaderManager.h PhysicsManager.cpp PhysicsManager.h)
 add_executable(OpenGL ${SOURCE_FILES})
 
 # There is a more proper way to link glad, go to the website and link the include and src folder
@@ -17,9 +17,13 @@ include_directories("C:/Users/Joonas/ClionProjects/OpenGL/lib/glad/include")
 include_directories("C:/Users/Joonas/ClionProjects/OpenGL/lib/glfw/include")
 include_directories("C:/Users/Joonas/ClionProjects/OpenGL/lib/assimp/contrib/zlib")
 include_directories("C:/Users/Joonas/ClionProjects/OpenGL/lib/assimp/include/")
+include_directories("C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src")
 add_subdirectory("C:/Users/Joonas/ClionProjects/OpenGL/lib/glfw/")
 
 target_link_libraries(OpenGL ${CMAKE_SOURCE_DIR}/lib/glad/glad-build/libglad.a)
+target_link_libraries(OpenGL C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/lib/libBulletDynamics.a)
+target_link_libraries(OpenGL C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/lib/libBulletCollision.a)
+target_link_libraries(OpenGL C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/lib/libLinearMath.a)
 target_link_libraries(OpenGL glfw)
 
 set(ASSIMP_BUILD_ASSIMP_TOOLS OFF)
