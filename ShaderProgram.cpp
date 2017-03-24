@@ -14,7 +14,7 @@ GLuint ShaderProgram::CreateShader(GLuint shaderType, GLchar *shaderPath) {
     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
     if (!success) {
         glGetShaderInfoLog(shader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::" << strupr(shaderPath) << "::COMPILATION_FAILED\n" << infoLog << std::endl;
+        std::cout << "ERROR::SHADER::" << shaderPath << "::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
     return shader;
 }

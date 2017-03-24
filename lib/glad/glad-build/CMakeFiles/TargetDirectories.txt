@@ -1,3 +1,0 @@
-C:/Users/Joonas/ClionProjects/OpenGL/glfw/glad-build/CMakeFiles/glad.dir
-C:/Users/Joonas/ClionProjects/OpenGL/glfw/glad-build/CMakeFiles/edit_cache.dir
-C:/Users/Joonas/ClionProjects/OpenGL/glfw/glad-build/CMakeFiles/rebuild_cache.dir
