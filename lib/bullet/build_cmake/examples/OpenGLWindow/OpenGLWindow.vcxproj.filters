@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\ThirdPartyLibs\Glew\glew.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\Win32OpenGLWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\Win32Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\EGLOpenGLWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GLInstancingRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GLPrimitiveRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GLRenderToTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\LoadShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\OpenSans.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\SimpleCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\SimpleOpenGL2App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\SimpleOpenGL2Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\SimpleOpenGL3App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\TwFonts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\fontstash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\opengl_fontstashcallbacks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\EGLOpenGLWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GLInstanceGraphicsShape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GLInstanceRendererInternalData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GLInstancingRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GLPrimInternalData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GLPrimitiveRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GLRenderToTexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\GwenOpenGL3CoreRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\LoadShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\MacOpenGLWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\OpenGL2Include.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\OpenGLInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\ShapeData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\SimpleCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\SimpleOpenGL2App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\SimpleOpenGL2Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\SimpleOpenGL3App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\TwFonts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\Win32InternalWindowData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\Win32OpenGLWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\Win32Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\X11OpenGLWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\fontstash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\opengl_fontstashcallbacks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\stb_image_write.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\stb_truetype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\examples\OpenGLWindow\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{855549C3-E1EE-33D5-8A9F-FF8B71A132A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C29A484C-96AE-33D7-8545-796A6034C937}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\bChunk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\bDNA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\bFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\btBulletFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\bChunk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\bCommon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\bDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\bDNA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\bFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\btBulletFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Joonas\ClionProjects\OpenGL\lib\bullet\Extras\Serialize\BulletFileLoader\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{855549C3-E1EE-33D5-8A9F-FF8B71A132A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C29A484C-96AE-33D7-8545-796A6034C937}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
