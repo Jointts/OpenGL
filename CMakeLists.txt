@@ -12,7 +12,6 @@ add_executable(OpenGL ${SOURCE_FILES} lib/glad/src/glad.c)
 
 # There is a more proper way to link glad, go to the website and link the include and src folder
 # GLFW however seems to either require linking !!!all source files!!! or building it through CMakeLists.txt
-find_package(OpenGL REQUIRED)
 include_directories("lib/glad/include")
 include_directories("ib/glfw/include")
 include_directories("lib/assimp/contrib/zlib")
@@ -20,9 +19,12 @@ include_directories("lib/assimp/include/")
 include_directories("lib/bullet/src")
 add_subdirectory("lib/glfw/")
 
-target_link_libraries(OpenGL ${CMAKE_HOME_DIRECTORY}/lib/bullet/bullet-build/lib/libBulletDynamics.a)
-target_link_libraries(OpenGL ${CMAKE_HOME_DIRECTORY}/lib/bullet/bullet-build/lib/libBulletCollision.a)
-target_link_libraries(OpenGL ${CMAKE_HOME_DIRECTORY}/lib/bullet/bullet-build/lib/libLinearMath.a)
+find_package (bullet)
+if (BULLET_FOUND)
+    include_directories(${BULLET_INCLUDE_DIRS})
+    target_link_libraries (OpenGL ${BULLET_LIBRARIES})
+endif (BULLET_FOUND)
+
 target_link_libraries(OpenGL glfw)
 
 set(ASSIMP_BUILD_ASSIMP_TOOLS OFF)
@@ -44,4 +46,7 @@ link_directories(${CMAKE_SOURCE_DIR}/lib/glm/glm)
 configure_file(${CMAKE_HOME_DIRECTORY}/shaders/vertex.glsl ${CMAKE_CURRENT_BINARY_DIR}/shaders COPYONLY)
 configure_file(${CMAKE_HOME_DIRECTORY}/shaders/fragment.glsl ${CMAKE_CURRENT_BINARY_DIR}/shaders COPYONLY)
 file(COPY ${CMAKE_HOME_DIRECTORY}/res DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+# NB shader copying still seems to fuck up at times, its just safer to always copy the shaders folder to the build
+# directory.
 

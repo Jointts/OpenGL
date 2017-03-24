@@ -1,4 +1,4 @@
-#version 440
+#version 410
 
 out vec4 color;
 uniform vec3 outline_color;

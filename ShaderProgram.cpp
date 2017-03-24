@@ -8,7 +8,7 @@
 
 GLuint ShaderProgram::CreateShader(GLuint shaderType, GLchar *shaderPath) {
     GLuint shader = glCreateShader(shaderType);
-    std::string shaderSource = Utils::readFile(shaderPath).c_str();
+    char* shaderSource = (char *) Utils::readFile(shaderPath).c_str();
     glShaderSource(shader, 1, (const GLchar *const *) &shaderSource, NULL);
     glCompileShader(shader);
     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);

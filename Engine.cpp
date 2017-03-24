@@ -18,8 +18,6 @@
 int Engine::Start() {
     DisplayManager::getInstance();
 
-    glfwInit();
-
     if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
@@ -28,8 +26,8 @@ int Engine::Start() {
     ControllerManager::getInstance();
     PhysicsManager::getInstance()->physicsManager->InitPhysics();
 
-    Model* rock = new Model("res\\rock_1.FBX");
-    Model* tree = new Model("res\\tree_1.FBX");
+    Model* rock = new Model("res/rock_1.FBX");
+    Model* tree = new Model("res/tree_1.FBX");
 
     while (!glfwWindowShouldClose(DisplayManager::getInstance()->window)) {
         glfwPollEvents();
