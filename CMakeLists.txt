@@ -20,9 +20,9 @@ include_directories("lib/assimp/include/")
 include_directories("lib/bullet/src")
 add_subdirectory("lib/glfw/")
 
-target_link_libraries(OpenGL lib/bullet/bullet-build/lib/libBulletDynamics.a)
-target_link_libraries(OpenGL lib/bullet/bullet-build/lib/libBulletCollision.a)
-target_link_libraries(OpenGL lib/bullet/bullet-build/lib/libLinearMath.a)
+target_link_libraries(OpenGL ${CMAKE_HOME_DIRECTORY}/lib/bullet/bullet-build/lib/libBulletDynamics.a)
+target_link_libraries(OpenGL ${CMAKE_HOME_DIRECTORY}/lib/bullet/bullet-build/lib/libBulletCollision.a)
+target_link_libraries(OpenGL ${CMAKE_HOME_DIRECTORY}/lib/bullet/bullet-build/lib/libLinearMath.a)
 target_link_libraries(OpenGL glfw)
 
 set(ASSIMP_BUILD_ASSIMP_TOOLS OFF)
@@ -41,7 +41,7 @@ include_directories(${CMAKE_SOURCE_DIR}/lib/glm/glm)
 link_directories(${CMAKE_SOURCE_DIR}/lib/glm/glm)
 
 # For copying shaderProgramID since cmake wont let include anything other than c/c++ headers and source
-configure_file(${CMAKE_HOME_DIRECTORY}/shaders/vertex.glsl ${CMAKE_CURRENT_BINARY_DIR}/shaders/vertex.glsl COPYONLY)
-configure_file(${CMAKE_HOME_DIRECTORY}/shaders/fragment.glsl ${CMAKE_CURRENT_BINARY_DIR}/shaders/fragment.glsl COPYONLY)
+configure_file(${CMAKE_HOME_DIRECTORY}/shaders/vertex.glsl ${CMAKE_CURRENT_BINARY_DIR}/shaders COPYONLY)
+configure_file(${CMAKE_HOME_DIRECTORY}/shaders/fragment.glsl ${CMAKE_CURRENT_BINARY_DIR}/shaders COPYONLY)
 file(COPY ${CMAKE_HOME_DIRECTORY}/res DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
