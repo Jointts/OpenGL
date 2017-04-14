@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Test_BulletInverseDynamics.dir/test_invdyn_kinematics.obj"
+  "CMakeFiles/Test_BulletInverseDynamics.dir/test_invdyn_kinematics.o"
   "Test_BulletInverseDynamics.pdb"
-  "Test_BulletInverseDynamics.exe"
-  "Test_BulletInverseDynamics.exe.manifest"
-  "libTest_BulletInverseDynamics.dll.a"
+  "Test_BulletInverseDynamics"
 )
 
 # Per-language clean rules from dependency scanning.

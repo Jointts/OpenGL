@@ -1,11 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Bullet2FileLoader.dir/b3BulletFile.obj"
-  "CMakeFiles/Bullet2FileLoader.dir/b3Chunk.obj"
-  "CMakeFiles/Bullet2FileLoader.dir/b3DNA.obj"
-  "CMakeFiles/Bullet2FileLoader.dir/b3File.obj"
-  "CMakeFiles/Bullet2FileLoader.dir/b3Serializer.obj"
-  "../../../lib/libBullet2FileLoader.pdb"
-  "../../../lib/libBullet2FileLoader.a"
+  "CMakeFiles/Bullet2FileLoader.dir/b3BulletFile.o"
+  "CMakeFiles/Bullet2FileLoader.dir/b3Chunk.o"
+  "CMakeFiles/Bullet2FileLoader.dir/b3DNA.o"
+  "CMakeFiles/Bullet2FileLoader.dir/b3File.o"
+  "CMakeFiles/Bullet2FileLoader.dir/b3Serializer.o"
+  "libBullet2FileLoader.pdb"
+  "libBullet2FileLoader.a"
 )
 
 # Per-language clean rules from dependency scanning.

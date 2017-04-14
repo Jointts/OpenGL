@@ -4,40 +4,36 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletFileLoader/bChunk.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletFileLoader/bDNA.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletFileLoader/bFile.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/btBulletFile.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletFileLoader/btBulletFile.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletWorldImporter/btBulletWorldImporter.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletWorldImporter/btBulletWorldImporter.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletWorldImporter/btWorldImporter.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletWorldImporter/btWorldImporter.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Importers/ImportColladaDemo/LoadMeshFromCollada.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportColladaDemo/LoadMeshFromCollada.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Importers/ImportMeshUtility/b3ImportMeshUtility.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportMeshUtility/b3ImportMeshUtility.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Importers/ImportObjDemo/LoadMeshFromObj.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportObjDemo/LoadMeshFromObj.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Importers/ImportObjDemo/Wavefront2GLInstanceGraphicsShape.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportObjDemo/Wavefront2GLInstanceGraphicsShape.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/BulletUrdfImporter.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/MyMultiBodyCreator.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/MyMultiBodyCreator.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/URDF2Bullet.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/URDF2Bullet.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/UrdfParser.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/UrdfParser.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/urdfStringSplit.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/urdfStringSplit.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/Wavefront/tiny_obj_loader.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/Wavefront/tiny_obj_loader.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/stb_image/stb_image.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/stb_image/stb_image.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/tinyxml/tinystr.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/tinyxml/tinystr.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/tinyxml/tinyxml.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/tinyxml/tinyxml.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/tinyxml/tinyxmlerror.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/tinyxml/tinyxmlerror.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/tinyxml/tinyxmlparser.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/tinyxml/tinyxmlparser.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Utils/b3Clock.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Utils/b3ResourcePath.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Utils/b3ResourcePath.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/InverseDynamics/test_invdyn_bullet.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/test_invdyn_bullet.obj"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletFileLoader/bChunk.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletFileLoader/bDNA.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletFileLoader/bFile.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/btBulletFile.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletFileLoader/btBulletFile.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletWorldImporter/btBulletWorldImporter.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletWorldImporter/btBulletWorldImporter.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletWorldImporter/btWorldImporter.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/Extras/Serialize/BulletWorldImporter/btWorldImporter.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Importers/ImportColladaDemo/LoadMeshFromCollada.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportColladaDemo/LoadMeshFromCollada.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Importers/ImportMeshUtility/b3ImportMeshUtility.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportMeshUtility/b3ImportMeshUtility.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Importers/ImportObjDemo/LoadMeshFromObj.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportObjDemo/LoadMeshFromObj.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Importers/ImportObjDemo/Wavefront2GLInstanceGraphicsShape.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportObjDemo/Wavefront2GLInstanceGraphicsShape.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/BulletUrdfImporter.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/MyMultiBodyCreator.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/MyMultiBodyCreator.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/URDF2Bullet.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/URDF2Bullet.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/UrdfParser.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/UrdfParser.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Importers/ImportURDFDemo/urdfStringSplit.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Importers/ImportURDFDemo/urdfStringSplit.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/Wavefront/tiny_obj_loader.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/Wavefront/tiny_obj_loader.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/stb_image/stb_image.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/stb_image/stb_image.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/tinyxml/tinystr.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/tinyxml/tinystr.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/tinyxml/tinyxml.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/tinyxml/tinyxml.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/tinyxml/tinyxmlerror.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/tinyxml/tinyxmlerror.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ThirdPartyLibs/tinyxml/tinyxmlparser.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/ThirdPartyLibs/tinyxml/tinyxmlparser.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Utils/b3Clock.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Utils/b3ResourcePath.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/__/__/examples/Utils/b3ResourcePath.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/InverseDynamics/test_invdyn_bullet.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/InverseDynamics/CMakeFiles/Test_BulletInverseForwardDynamics.dir/test_invdyn_bullet.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "NO_OPENGL3"
   "USE_GRAPHICAL_BENCHMARK"
-  "_CRT_SECURE_NO_DEPRECATE"
-  "_CRT_SECURE_NO_WARNINGS"
-  "_SCL_SECURE_NO_WARNINGS"
   "_VARIADIC_MAX=10"
   )
 
@@ -51,13 +47,13 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/InverseDynamics/CMakeFiles/BulletInverseDynamicsUtils.dir/DependInfo.cmake"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/BulletInverseDynamics/CMakeFiles/BulletInverseDynamics.dir/DependInfo.cmake"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Common/CMakeFiles/Bullet3Common.dir/DependInfo.cmake"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/LinearMath/CMakeFiles/LinearMath.dir/DependInfo.cmake"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/gtest-1.7.0/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/DependInfo.cmake"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/BulletCollision/CMakeFiles/BulletCollision.dir/DependInfo.cmake"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/InverseDynamics/CMakeFiles/BulletInverseDynamicsUtils.dir/DependInfo.cmake"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/BulletInverseDynamics/CMakeFiles/BulletInverseDynamics.dir/DependInfo.cmake"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Common/CMakeFiles/Bullet3Common.dir/DependInfo.cmake"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/LinearMath/CMakeFiles/LinearMath.dir/DependInfo.cmake"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/gtest-1.7.0/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/DependInfo.cmake"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/BulletCollision/CMakeFiles/BulletCollision.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

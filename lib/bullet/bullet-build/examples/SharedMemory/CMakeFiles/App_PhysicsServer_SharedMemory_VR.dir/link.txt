@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\App_PhysicsServer_SharedMemory_VR.dir/objects.a
-C:\MinGW\mingw64\bin\ar.exe cr CMakeFiles\App_PhysicsServer_SharedMemory_VR.dir/objects.a @CMakeFiles\App_PhysicsServer_SharedMemory_VR.dir\objects1.rsp
-C:\MinGW\mingw64\bin\g++.exe  -O3 -DNDEBUG   -Wl,--whole-archive CMakeFiles\App_PhysicsServer_SharedMemory_VR.dir/objects.a -Wl,--no-whole-archive  -o App_PhysicsServer_SharedMemory_VR.exe -Wl,--out-implib,libApp_PhysicsServer_SharedMemory_VR.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\App_PhysicsServer_SharedMemory_VR.dir\linklibs.rsp

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -416,15 +416,15 @@ btMinMax.h
 btAlignedAllocator.h
 ../src/LinearMath/btAlignedAllocator.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/btGImpactConvexDecompositionShape.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/btGImpactConvexDecompositionShape.cpp
 btGImpactConvexDecompositionShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/btGImpactConvexDecompositionShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/btGImpactConvexDecompositionShape.h
 BulletCollision/CollisionShapes/btConvexHullShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/BulletCollision/CollisionShapes/btConvexHullShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/BulletCollision/CollisionShapes/btConvexHullShape.h
 ConvexBuilder.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/ConvexBuilder.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/ConvexBuilder.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/btGImpactConvexDecompositionShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/btGImpactConvexDecompositionShape.h
 BulletCollision/Gimpact/btGImpactShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/BulletCollision/Gimpact/btGImpactShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/GIMPACTUtils/BulletCollision/Gimpact/btGImpactShape.h
 

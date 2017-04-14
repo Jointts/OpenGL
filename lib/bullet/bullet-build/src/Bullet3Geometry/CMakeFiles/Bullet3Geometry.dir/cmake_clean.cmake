@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Bullet3Geometry.dir/b3ConvexHullComputer.obj"
-  "CMakeFiles/Bullet3Geometry.dir/b3GeometryUtil.obj"
-  "../../lib/libBullet3Geometry.pdb"
-  "../../lib/libBullet3Geometry.a"
+  "CMakeFiles/Bullet3Geometry.dir/b3ConvexHullComputer.o"
+  "CMakeFiles/Bullet3Geometry.dir/b3GeometryUtil.o"
+  "libBullet3Geometry.pdb"
+  "libBullet3Geometry.a"
 )
 
 # Per-language clean rules from dependency scanning.

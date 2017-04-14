@@ -1,3 +1,1 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\App_obj2sdf.dir/objects.a
-C:\MinGW\mingw64\bin\ar.exe cr CMakeFiles\App_obj2sdf.dir/objects.a @CMakeFiles\App_obj2sdf.dir\objects1.rsp
-C:\MinGW\mingw64\bin\g++.exe  -O3 -DNDEBUG   -Wl,--whole-archive CMakeFiles\App_obj2sdf.dir/objects.a -Wl,--no-whole-archive  -o App_obj2sdf.exe -Wl,--out-implib,libApp_obj2sdf.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\App_obj2sdf.dir\linklibs.rsp
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -O3 -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/App_obj2sdf.dir/obj2sdf.o CMakeFiles/App_obj2sdf.dir/__/__/examples/Utils/b3ResourcePath.o CMakeFiles/App_obj2sdf.dir/__/__/examples/ThirdPartyLibs/Wavefront/tiny_obj_loader.o  -o App_obj2sdf ../../src/Bullet3Common/libBullet3Common.a 

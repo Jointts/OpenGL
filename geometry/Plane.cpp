@@ -4,10 +4,15 @@
 
 #include <vec3.hpp>
 #include <ext.hpp>
-#include <stb_image.h>
 #include "Plane.h"
+#include <noise/noise.h>
+#include <iostream>
 
-Plane::Plane(int sizeX, int sizeZ, int tileSize) {
+using namespace noise;
+
+Plane::Plane(int sizeX, int sizeZ, int tileSize, bool generateHeightMap)
+: generateHeightMap(generateHeightMap)
+{
     this->sizeX = sizeX;
     this->sizeZ = sizeZ;
     GenerateVertices();
@@ -16,48 +21,46 @@ Plane::Plane(int sizeX, int sizeZ, int tileSize) {
 }
 
 void Plane::GenerateVertices() {
+    module::Perlin myModule;
+    myModule.SetOctaveCount (10);
+    myModule.SetPersistence(0.5);
+    double y = 0.0;
     for (int z = 0; z < sizeZ + 1; z++) {
         for (int x = 0; x < sizeX + 1; x++) {
             Vertex vertex1;
-            vertex1.position = glm::vec3(x, 0.0f, z);
+            if(generateHeightMap){
+                y = myModule.GetValue((double) x / distribution, 0.5, (double) z / distribution);
+            }
+            std::cout << y << std::endl;
+            vertex1.position = glm::vec3(x, (float) y * 10, z);
             vertices.push_back(vertex1);
         }
     }
 }
-
 void Plane::GenerateIndices() {
-    for (int z = 0; z < sizeZ; z++) {
+    for (int z = 0; z < sizeZ; ++z) {
         for (int x = 0; x < sizeX; x++) {
-            int currentIndex = sizeZ * z + x;
-            int nextRowIndex = sizeZ * (z + 1) + x + 1;
-            if(z > 0){
-                nextRowIndex += 1;
-                currentIndex += 1;
-            }
-            indices.push_back((const unsigned int &) currentIndex);
-            indices.push_back((const unsigned int &) (currentIndex + 1));
-            indices.push_back((const unsigned int &) (nextRowIndex));
-            indices.push_back((const unsigned int &) (nextRowIndex));
-            indices.push_back((const unsigned int &) (currentIndex + 1));
-            indices.push_back((unsigned int &&) (nextRowIndex + 1));
+            GLuint currentIndex = (GLuint) (x + z * sizeX + z);
+            GLuint nextRow = (GLuint) (sizeX + 1);
+
+            indices.push_back(currentIndex + 1);
+            indices.push_back(currentIndex);
+            indices.push_back(nextRow + currentIndex);
+
+            indices.push_back(currentIndex + 1);
+            indices.push_back(nextRow + currentIndex);
+            indices.push_back(nextRow + currentIndex + 1);
         }
     }
 
-//    indices.push_back(2);
-//    indices.push_back((unsigned int &&) (nextRow + 2));
-//    indices.push_back(3);
-//    indices.push_back(3);
-//    indices.push_back((unsigned int &&) (nextRow + 2));
-//    indices.push_back((unsigned int &&) (nextRow + 3));
-//
-//    indices.push_back(4);
-//    indices.push_back((unsigned int &&) (nextRow + 4));
-//    indices.push_back(5);
-//    indices.push_back(5);
-//    indices.push_back((unsigned int &&) (nextRow + 4));
-//    indices.push_back((unsigned int &&) (nextRow + 5));
+}
 
-
+void Plane::GenerateRivers() {
+    for (int z = 0; z < sizeZ; ++z) {
+        for (int x = 0; x < sizeX; x++) {
+            indices[0];
+        }
+    }
 }
 
 void Plane::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices) {
@@ -73,9 +76,6 @@ void Plane::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices)
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid *) offsetof(Vertex, normal));
 
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid *) offsetof(Vertex, uv_coord));
-
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(GLuint), indices.data(), GL_STATIC_DRAW);
 
@@ -86,14 +86,13 @@ void Plane::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices)
 }
 
 void Plane::Draw() {
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBindVertexArray(VAO);
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
-    glEnableVertexAttribArray(2);
     glDrawElements(GL_TRIANGLES, (GLsizei) indices.size(), GL_UNSIGNED_INT, 0);
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
-    glDisableVertexAttribArray(2);
     glBindVertexArray(0);
 }
 

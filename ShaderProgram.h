@@ -15,8 +15,8 @@ public:
     GLuint fragmentShader;
     GLint success;
     GLchar infoLog[512];
-    char *VERTEX_SHADER_PATH = "shaders\\vertex.glsl";
-    char *FRAGMENT_SHADER_PATH = "shaders\\fragment.glsl";
+    char *VERTEX_SHADER_PATH;
+    char *FRAGMENT_SHADER_PATH;
 
     GLuint shaderProgramID;
 

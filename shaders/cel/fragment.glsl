@@ -1,9 +1,9 @@
 #version 410
 
 out vec4 color;
-uniform vec3 outline_color;
+uniform vec3 vertex_color;
 
 void main()
 {
-    color = vec4(outline_color, 1.0f);
+    color = vec4(vertex_color, 1.0f);
 }

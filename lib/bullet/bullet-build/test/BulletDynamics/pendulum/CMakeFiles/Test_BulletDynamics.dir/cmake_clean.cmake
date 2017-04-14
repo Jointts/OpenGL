@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Test_BulletDynamics.dir/__/__/__/examples/MultiBody/Pendulum.obj"
+  "CMakeFiles/Test_BulletDynamics.dir/__/__/__/examples/MultiBody/Pendulum.o"
   "Test_BulletDynamics.pdb"
-  "Test_BulletDynamics.exe"
-  "Test_BulletDynamics.exe.manifest"
-  "libTest_BulletDynamics.dll.a"
+  "Test_BulletDynamics"
 )
 
 # Per-language clean rules from dependency scanning.

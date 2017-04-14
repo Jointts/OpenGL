@@ -1,13 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/App_HelloWorld.dir/HelloWorld.obj"
-  "CMakeFiles/App_HelloWorld.dir/__/__/build3/bullet.obj"
+  "CMakeFiles/App_HelloWorld.dir/HelloWorld.o"
   "App_HelloWorld.pdb"
-  "App_HelloWorld.exe"
-  "App_HelloWorld.exe.manifest"
-  "libApp_HelloWorld.dll.a"
+  "App_HelloWorld"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX RC)
+foreach(lang CXX)
   include(CMakeFiles/App_HelloWorld.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -1074,39 +1074,39 @@ BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h
 BulletDynamics/Vehicle/btRaycastVehicle.h
 ../src/BulletDynamics/Vehicle/btRaycastVehicle.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CloneTreeCreator.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CloneTreeCreator.cpp
 CloneTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CloneTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CloneTreeCreator.hpp
 cstdio
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CloneTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CloneTreeCreator.hpp
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 MultiBodyTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CoilCreator.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CoilCreator.cpp
 cmath
 -
 CoilCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CoilCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CoilCreator.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CoilCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/CoilCreator.hpp
 MultiBodyTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/DillCreator.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/DillCreator.cpp
 DillCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/DillCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/DillCreator.hpp
 cmath
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/DillCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/DillCreator.hpp
 MultiBodyTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/IDRandomUtil.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/IDRandomUtil.cpp
 cmath
 -
 cstdlib
@@ -1114,131 +1114,131 @@ cstdlib
 ctime
 -
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 BulletInverseDynamics/IDMath.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDMath.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDMath.hpp
 IDRandomUtil.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/IDRandomUtil.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/IDRandomUtil.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/IDRandomUtil.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/IDRandomUtil.hpp
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.cpp
 MultiBodyNameMap.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.hpp
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 string
 -
 map
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.cpp
 MultiBodyTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
 string
 -
 vector
 -
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 BulletInverseDynamics/IDMath.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDMath.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDMath.hpp
 BulletInverseDynamics/MultiBodyTree.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/MultiBodyTree.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/MultiBodyTree.hpp
 MultiBodyNameMap.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeDebugGraph.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeDebugGraph.cpp
 MultiBodyTreeDebugGraph.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeDebugGraph.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeDebugGraph.hpp
 cstdio
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeDebugGraph.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeDebugGraph.hpp
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 BulletInverseDynamics/MultiBodyTree.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/MultiBodyTree.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/MultiBodyTree.hpp
 MultiBodyNameMap.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyNameMap.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/RandomTreeCreator.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/RandomTreeCreator.cpp
 RandomTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/RandomTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/RandomTreeCreator.hpp
 cstdio
 -
 IDRandomUtil.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/IDRandomUtil.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/IDRandomUtil.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/RandomTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/RandomTreeCreator.hpp
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 MultiBodyTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/SimpleTreeCreator.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/SimpleTreeCreator.cpp
 SimpleTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/SimpleTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/SimpleTreeCreator.hpp
 cstdio
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/SimpleTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/SimpleTreeCreator.hpp
 MultiBodyTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/User2InternalIndex.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/User2InternalIndex.cpp
 User2InternalIndex.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/User2InternalIndex.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/User2InternalIndex.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/User2InternalIndex.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/User2InternalIndex.hpp
 map
 -
 vector
 -
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/btMultiBodyTreeCreator.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/btMultiBodyTreeCreator.cpp
 btMultiBodyTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/btMultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/btMultiBodyTreeCreator.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/btMultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/btMultiBodyTreeCreator.hpp
 vector
 -
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 MultiBodyTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/MultiBodyTreeCreator.hpp
 BulletDynamics/Featherstone/btMultiBody.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBody.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBody.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/invdyn_bullet_comparison.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/invdyn_bullet_comparison.cpp
 invdyn_bullet_comparison.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/invdyn_bullet_comparison.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/invdyn_bullet_comparison.hpp
 cmath
 -
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 BulletInverseDynamics/MultiBodyTree.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/MultiBodyTree.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/MultiBodyTree.hpp
 btBulletDynamicsCommon.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/btBulletDynamicsCommon.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/btBulletDynamicsCommon.h
 BulletDynamics/Featherstone/btMultiBodyConstraintSolver.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBodyConstraintSolver.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBodyConstraintSolver.h
 BulletDynamics/Featherstone/btMultiBodyDynamicsWorld.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBodyDynamicsWorld.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBodyDynamicsWorld.h
 BulletDynamics/Featherstone/btMultiBodyLinkCollider.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBodyLinkCollider.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBodyLinkCollider.h
 BulletDynamics/Featherstone/btMultiBodyPoint2Point.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBodyPoint2Point.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletDynamics/Featherstone/btMultiBodyPoint2Point.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/invdyn_bullet_comparison.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/invdyn_bullet_comparison.hpp
 BulletInverseDynamics/IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/InverseDynamics/BulletInverseDynamics/IDConfig.hpp
 

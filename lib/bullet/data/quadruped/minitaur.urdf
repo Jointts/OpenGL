@@ -427,7 +427,9 @@
 
 	<link name="lower_leg_front_rightR_link">
 	<contact>
-<lateral_friction value="1"/>
+		<stiffness value="10000"/>
+		<damping value="10"/>
+		<lateral_friction value="1"/>
   </contact>
 
     <visual>
@@ -493,7 +495,9 @@
   
   <link name="lower_leg_front_rightL_link">
 	<contact>
-<lateral_friction value="1"/>
+		<stiffness value="10000"/>
+		<damping value="10"/>
+		<lateral_friction value="1"/>
   </contact>
 
     <visual>
@@ -557,7 +561,9 @@
 
 	<link name="lower_leg_front_leftR_link">
 	<contact>
-<lateral_friction value="1"/>
+		<stiffness value="10000"/>
+		<damping value="10"/>
+		<lateral_friction value="1"/>
   </contact>
 
     <visual>
@@ -622,7 +628,9 @@
 
   <link name="lower_leg_front_leftL_link">
 	<contact>
-<lateral_friction value="1"/>
+		<stiffness value="10000"/>
+		<damping value="10"/>
+		<lateral_friction value="1"/>
   </contact>
 
     <visual>
@@ -684,7 +692,9 @@
 
 	<link name="lower_leg_back_rightR_link">
 	<contact>
-<lateral_friction value="1"/>
+		<stiffness value="10000"/>
+		<damping value="10"/>
+		<lateral_friction value="1"/>
   </contact>
 
     <visual>
@@ -750,9 +760,11 @@
   
   <link name="lower_leg_back_rightL_link">
 	<contact>
-<lateral_friction value="1"/>
+		<stiffness value="10000"/>
+		<damping value="10"/>
+		<lateral_friction value="1"/>
   </contact>
-
+  
     <visual>
     	<origin rpy="0.0 0 0" xyz="0 0 .1"/>
       <geometry>
@@ -814,7 +826,9 @@
 
 <link name="lower_leg_back_leftR_link">
 	<contact>
-<lateral_friction value="1"/>
+		<stiffness value="10000"/>
+		<damping value="10"/>
+		<lateral_friction value="1"/>
   </contact>
 
     <visual>
@@ -877,7 +891,9 @@
  
   <link name="lower_leg_back_leftL_link">
 	<contact>
-<lateral_friction value="1"/>
+		<stiffness value="10000"/>
+		<damping value="10"/>
+		<lateral_friction value="1"/>
   </contact>
 
     <visual>

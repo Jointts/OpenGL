@@ -8,7 +8,7 @@
 
 #include <GLFW/glfw3.h>
 #include "DisplayManager.h"
-#include "CameraManager.h"
+#include "camera/CameraManager.h"
 
 class ControllerManager {
 public:

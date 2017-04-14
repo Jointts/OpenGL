@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet
+# Install script for directory: /Users/joonas/CLionProjects/OpenGL/lib/bullet
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/BULLET_PHYSICS")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -28,16 +28,22 @@ if(NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/bullet.pc")
+endif()
+
+if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/bullet" TYPE FILE FILES
-    "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/UseBullet.cmake"
-    "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/BulletConfig.cmake"
+    "/Users/joonas/CLionProjects/OpenGL/lib/bullet/UseBullet.cmake"
+    "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/BulletConfig.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/cmake_install.cmake")
-  include("C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/cmake_install.cmake")
+  include("/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/examples/cmake_install.cmake")
+  include("/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/cmake_install.cmake")
+  include("/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/cmake_install.cmake")
+  include("/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/cmake_install.cmake")
 
 endif()
 
@@ -49,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

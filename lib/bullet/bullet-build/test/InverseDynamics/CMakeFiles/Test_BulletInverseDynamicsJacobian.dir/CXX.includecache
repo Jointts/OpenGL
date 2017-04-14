@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -556,7 +556,7 @@ cxxabi.h
 acxx_demangle.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/InverseDynamics/test_invdyn_jacobian.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/InverseDynamics/test_invdyn_jacobian.cpp
 cmath
 -
 cstdio
@@ -568,17 +568,17 @@ iostream
 gtest/gtest.h
 -
 Bullet3Common/b3Random.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/InverseDynamics/Bullet3Common/b3Random.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/InverseDynamics/Bullet3Common/b3Random.h
 CloneTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/InverseDynamics/CloneTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/InverseDynamics/CloneTreeCreator.hpp
 CoilCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/InverseDynamics/CoilCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/InverseDynamics/CoilCreator.hpp
 DillCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/InverseDynamics/DillCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/InverseDynamics/DillCreator.hpp
 RandomTreeCreator.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/InverseDynamics/RandomTreeCreator.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/InverseDynamics/RandomTreeCreator.hpp
 BulletInverseDynamics/MultiBodyTree.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/InverseDynamics/BulletInverseDynamics/MultiBodyTree.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/InverseDynamics/BulletInverseDynamics/MultiBodyTree.hpp
 MultiBodyTreeDebugGraph.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/InverseDynamics/MultiBodyTreeDebugGraph.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/InverseDynamics/MultiBodyTreeDebugGraph.hpp
 

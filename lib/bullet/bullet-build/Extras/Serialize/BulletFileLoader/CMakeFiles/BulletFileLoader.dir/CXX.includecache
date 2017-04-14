@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -82,37 +82,37 @@ memory.h
 string.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.cpp
 bChunk.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
 bDefines.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
 bFile.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.h
 memory.h
 -
 string.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
 stdint.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bCommon.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bCommon.h
 assert.h
 -
 LinearMath/btAlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btAlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btAlignedObjectArray.h
 LinearMath/btHashMap.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btHashMap.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btHashMap.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.cpp
 assert.h
 -
 bDNA.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.h
 bChunk.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
 string.h
 -
 stdlib.h
@@ -120,21 +120,21 @@ stdlib.h
 stdio.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.h
 bCommon.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bCommon.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bCommon.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.cpp
 bFile.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.h
 bCommon.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bCommon.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bCommon.h
 bChunk.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
 bDNA.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.h
 math.h
 -
 string.h
@@ -142,41 +142,41 @@ string.h
 stdlib.h
 -
 bDefines.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
 LinearMath/btSerializer.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btSerializer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btSerializer.h
 LinearMath/btAlignedAllocator.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btAlignedAllocator.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btAlignedAllocator.h
 LinearMath/btMinMax.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btMinMax.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btMinMax.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.h
 bCommon.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bCommon.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bCommon.h
 bChunk.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bChunk.h
 stdio.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/btBulletFile.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/btBulletFile.cpp
 btBulletFile.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/btBulletFile.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/btBulletFile.h
 bDefines.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
 bDNA.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDNA.h
 memory.h
 -
 string.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/btBulletFile.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/btBulletFile.h
 bFile.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bFile.h
 LinearMath/btAlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btAlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btAlignedObjectArray.h
 bDefines.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/bDefines.h
 LinearMath/btSerializer.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btSerializer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/Serialize/BulletFileLoader/LinearMath/btSerializer.h
 

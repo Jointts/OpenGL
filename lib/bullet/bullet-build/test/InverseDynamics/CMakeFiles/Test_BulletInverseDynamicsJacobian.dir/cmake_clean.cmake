@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Test_BulletInverseDynamicsJacobian.dir/test_invdyn_jacobian.obj"
+  "CMakeFiles/Test_BulletInverseDynamicsJacobian.dir/test_invdyn_jacobian.o"
   "Test_BulletInverseDynamicsJacobian.pdb"
-  "Test_BulletInverseDynamicsJacobian.exe"
-  "Test_BulletInverseDynamicsJacobian.exe.manifest"
-  "libTest_BulletInverseDynamicsJacobian.dll.a"
+  "Test_BulletInverseDynamicsJacobian"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletCollision
+# Install script for directory: /Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletCollision
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/BULLET_PHYSICS")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -25,5 +25,21 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   else()
     set(CMAKE_INSTALL_COMPONENT)
   endif()
+endif()
+
+if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/BulletCollision/libBulletCollision.a")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libBulletCollision.a" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libBulletCollision.a")
+    execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libBulletCollision.a")
+  endif()
+endif()
+
+if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/bullet" TYPE DIRECTORY FILES "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletCollision" FILES_MATCHING REGEX "/[^/]*\\.h$" REGEX "/\\.svn$" EXCLUDE REGEX "/cmakefiles$" EXCLUDE)
+endif()
+
+if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/bullet/BulletCollision" TYPE FILE FILES "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletCollision/../btBulletCollisionCommon.h")
 endif()
 

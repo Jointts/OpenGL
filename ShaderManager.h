@@ -16,6 +16,10 @@ public:
 
     static ShaderProgram* celShader;
 
+    static ShaderProgram* guiShader;
+
+    static ShaderProgram* waterShader;
+
     static ShaderManager *getInstance();
 };
 

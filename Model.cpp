@@ -18,6 +18,7 @@
 #include "ShaderProgram.h"
 #include "ShaderManager.h"
 #include "RenderManager.h"
+#include "Utils.h"
 
 Model::Model(){
     createAssimpLog();
@@ -129,56 +130,28 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene* scene) {
     return Mesh(vertices, indices, diffuseMaps);
 }
 
-GLuint TextureFromFile(const char* path)
-{
-    int width;
-    int height;
-    int bytesPerPixel;
-    GLuint textureID;
-    Assimp::DefaultLogger::get()->info("Loading texture from: " + std::string(path));
-    unsigned char *pixelData = stbi_load(path, &width, &height, &bytesPerPixel, STBI_rgb);
-
-    if(!pixelData){
-        Assimp::DefaultLogger::get()->warn("Texture with path '" + std::string(path) + "' cannot be loaded");
-    }
-
-    glGenTextures(1, &textureID);
-    glBindTexture(GL_TEXTURE_2D, textureID);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, pixelData);
-    glGenerateMipmap(GL_TEXTURE_2D);
-
-    // Set our texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // Set texture filtering
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    glBindTexture(GL_TEXTURE_2D, 0);
-    stbi_image_free(pixelData);
-    return textureID;
-}
-
 std::vector<Texture> Model::processMaterial(aiTextureType textureType, aiMaterial *material, std::string textureTypeString){
     std::vector<Texture> textures;
     aiString path;
-    std::string directory = "res\\";
+    std::string directory = "res/";
     for(GLuint i = 0; i < material->GetTextureCount(textureType); i++){
         material->GetTexture(textureType, i, &path);
         std::string texture_path = directory + path.C_Str();
         Texture texture;
-        texture.id = TextureFromFile(texture_path.c_str());
+        texture.id = Utils::TextureFromFile(texture_path.c_str(), false);
         texture.type = textureTypeString;
         textures.push_back(texture);
     }
     return textures;
 }
 
-void Model::Draw(){
-    glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->celShader->shaderProgramID, "model"), 1, GL_FALSE, glm::value_ptr(model));
+void Model::Draw() {
+    RenderManager::getInstance()->RenderBaseShader();
+    glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "model"), 1, GL_FALSE, glm::value_ptr(model));
     for (int i = 0; i < meshes.size(); ++i) {
         meshes[i].Draw();
     }
+
 }
 
 void Model::Rotate(GLfloat angle, glm::vec3 axis) {

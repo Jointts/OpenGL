@@ -4,21 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3BulletFile.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3BulletFile.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3Chunk.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3Chunk.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3DNA.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3DNA.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3File.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3File.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3Serializer.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3Serializer.obj"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3BulletFile.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3BulletFile.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3Chunk.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3Chunk.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3DNA.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3DNA.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3File.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3File.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Serialize/Bullet2FileLoader/b3Serializer.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir/b3Serializer.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "NO_OPENGL3"
   "USE_GRAPHICAL_BENCHMARK"
-  "_CRT_SECURE_NO_DEPRECATE"
-  "_CRT_SECURE_NO_WARNINGS"
-  "_SCL_SECURE_NO_WARNINGS"
   )
 
 # The include file search paths:

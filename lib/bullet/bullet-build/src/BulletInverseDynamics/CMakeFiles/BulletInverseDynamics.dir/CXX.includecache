@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -134,65 +134,65 @@ arm_neon.h
 arm_neon.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
 cmath
 -
 IDErrorMessages.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDErrorMessages.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDErrorMessages.hpp
 IDConfigEigen.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfigEigen.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfigEigen.hpp
 IDConfigBuiltin.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfigBuiltin.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfigBuiltin.hpp
 LinearMath/btScalar.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/LinearMath/btScalar.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/LinearMath/btScalar.h
 LinearMath/btMinMax.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/LinearMath/btMinMax.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/LinearMath/btMinMax.h
 Bullet3Common/b3AlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/Bullet3Common/b3AlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/Bullet3Common/b3AlignedObjectArray.h
 details/IDLinearMathInterface.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDLinearMathInterface.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDLinearMathInterface.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfigBuiltin.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfigBuiltin.hpp
 vector
 -
 cstdlib
 -
 details/IDMatVec.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDMatVec.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDMatVec.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfigEigen.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfigEigen.hpp
 vector
 -
 cstdlib
 -
 Eigen/Eigen
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/Eigen/Eigen
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/Eigen/Eigen
 details/IDEigenInterface.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDEigenInterface.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDEigenInterface.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDErrorMessages.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDErrorMessages.hpp
 cstring
 -
 Bullet3Common/b3Logging.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/Bullet3Common/b3Logging.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/Bullet3Common/b3Logging.h
 cstdio
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.cpp
 IDMath.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
 cmath
 -
 limits
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
 IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.cpp
 MultiBodyTree.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.hpp
 cmath
 -
 limits
@@ -200,79 +200,79 @@ limits
 vector
 -
 IDMath.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
 details/MultiBodyTreeImpl.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeImpl.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeImpl.hpp
 details/MultiBodyTreeInitCache.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeInitCache.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeInitCache.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.hpp
 IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
 IDMath.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDEigenInterface.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDEigenInterface.hpp
 ../IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDLinearMathInterface.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDLinearMathInterface.hpp
 cstdlib
 -
 ../IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
 ../../LinearMath/btMatrix3x3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btMatrix3x3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btMatrix3x3.h
 ../../LinearMath/btVector3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btVector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btVector3.h
 ../../LinearMath/btMatrixX.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btMatrixX.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btMatrixX.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDMatVec.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/IDMatVec.hpp
 cstdlib
 -
 ../IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeImpl.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeImpl.cpp
 MultiBodyTreeImpl.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeImpl.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeImpl.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeImpl.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeImpl.hpp
 ../IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
 ../MultiBodyTree.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeInitCache.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeInitCache.cpp
 MultiBodyTreeInitCache.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeInitCache.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeInitCache.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeInitCache.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/details/MultiBodyTreeInitCache.hpp
 ../IDConfig.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDConfig.hpp
 ../IDMath.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/IDMath.hpp
 ../MultiBodyTree.hpp
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.hpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/BulletInverseDynamics/MultiBodyTree.hpp
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btAlignedAllocator.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btAlignedAllocator.h
 btScalar.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btScalar.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btScalar.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btMatrix3x3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btMatrix3x3.h
 btVector3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btVector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btVector3.h
 btQuaternion.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btQuaternion.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btQuaternion.h
 stdio.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btMatrixX.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btMatrixX.h
 LinearMath/btQuickprof.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/LinearMath/btQuickprof.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/LinearMath/btQuickprof.h
 LinearMath/btAlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/LinearMath/btAlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/LinearMath/btAlignedObjectArray.h
 stdio.h
 -
 iostream
@@ -280,29 +280,29 @@ iostream
 iomanip
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btMinMax.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btMinMax.h
 btScalar.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btScalar.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btScalar.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btQuadWord.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btQuadWord.h
 btScalar.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btScalar.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btScalar.h
 btMinMax.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btMinMax.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btMinMax.h
 altivec.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btQuaternion.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btQuaternion.h
 btVector3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btVector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btVector3.h
 btQuadWord.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btQuadWord.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btQuadWord.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btVector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btVector3.h
 btScalar.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btScalar.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btScalar.h
 btMinMax.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btMinMax.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btMinMax.h
 btAlignedAllocator.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/LinearMath/btAlignedAllocator.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/LinearMath/btAlignedAllocator.h
 

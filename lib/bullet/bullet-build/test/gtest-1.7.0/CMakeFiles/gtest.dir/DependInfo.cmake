@@ -4,17 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/test/gtest-1.7.0/src/gtest-all.cc" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/test/gtest-1.7.0/CMakeFiles/gtest.dir/src/gtest-all.obj"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/test/gtest-1.7.0/src/gtest-all.cc" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/test/gtest-1.7.0/CMakeFiles/gtest.dir/src/gtest-all.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "NO_OPENGL3"
   "USE_GRAPHICAL_BENCHMARK"
-  "_CRT_SECURE_NO_DEPRECATE"
-  "_CRT_SECURE_NO_WARNINGS"
-  "_SCL_SECURE_NO_WARNINGS"
   "_VARIADIC_MAX=10"
   )
 

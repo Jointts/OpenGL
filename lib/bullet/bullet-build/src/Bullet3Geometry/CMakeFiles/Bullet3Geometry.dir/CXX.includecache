@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -78,35 +78,35 @@ b3MinMax.h
 b3AlignedAllocator.h
 ../src/Bullet3Common/b3AlignedAllocator.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3ConvexHullComputer.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3ConvexHullComputer.cpp
 string.h
 -
 b3ConvexHullComputer.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3ConvexHullComputer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3ConvexHullComputer.h
 Bullet3Common/b3AlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3AlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3AlignedObjectArray.h
 Bullet3Common/b3MinMax.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3MinMax.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3MinMax.h
 Bullet3Common/b3Vector3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3Vector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3Vector3.h
 stdint.h
 -
 stdio.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3ConvexHullComputer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3ConvexHullComputer.h
 Bullet3Common/b3Vector3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3Vector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3Vector3.h
 Bullet3Common/b3AlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3AlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3AlignedObjectArray.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3GeometryUtil.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3GeometryUtil.cpp
 b3GeometryUtil.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3GeometryUtil.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3GeometryUtil.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3GeometryUtil.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/b3GeometryUtil.h
 Bullet3Common/b3Vector3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3Vector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3Vector3.h
 Bullet3Common/b3AlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3AlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Geometry/Bullet3Common/b3AlignedObjectArray.h
 

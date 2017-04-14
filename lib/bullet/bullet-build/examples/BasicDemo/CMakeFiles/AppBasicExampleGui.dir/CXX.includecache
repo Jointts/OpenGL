@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -954,215 +954,215 @@ BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h
 BulletDynamics/Vehicle/btRaycastVehicle.h
 ../src/BulletDynamics/Vehicle/btRaycastVehicle.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/BasicDemo/BasicExample.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/BasicDemo/BasicExample.cpp
 BasicExample.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/BasicDemo/BasicExample.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/BasicDemo/BasicExample.h
 btBulletDynamicsCommon.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/BasicDemo/btBulletDynamicsCommon.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/BasicDemo/btBulletDynamicsCommon.h
 LinearMath/btVector3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/BasicDemo/LinearMath/btVector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/BasicDemo/LinearMath/btVector3.h
 LinearMath/btAlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/BasicDemo/LinearMath/btAlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/BasicDemo/LinearMath/btAlignedObjectArray.h
 ../CommonInterfaces/CommonRigidBodyBase.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRigidBodyBase.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRigidBodyBase.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/BasicDemo/BasicExample.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/BasicDemo/BasicExample.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonCameraInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonCameraInterface.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonExampleInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonExampleInterface.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGUIHelperInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGUIHelperInterface.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGraphicsAppInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGraphicsAppInterface.h
 Bullet3Common/b3Vector3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/Bullet3Common/b3Vector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/Bullet3Common/b3Vector3.h
 CommonRenderInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
 CommonWindowInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonWindowInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonWindowInterface.h
 CommonCameraInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonCameraInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonCameraInterface.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRigidBodyBase.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRigidBodyBase.h
 btBulletDynamicsCommon.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/btBulletDynamicsCommon.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/btBulletDynamicsCommon.h
 CommonExampleInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonExampleInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonExampleInterface.h
 CommonGUIHelperInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGUIHelperInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGUIHelperInterface.h
 CommonRenderInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
 CommonCameraInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonCameraInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonCameraInterface.h
 CommonGraphicsAppInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGraphicsAppInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGraphicsAppInterface.h
 CommonWindowInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonWindowInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonWindowInterface.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonWindowInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonWindowInterface.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/CollisionShape2TriangleMesh.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/CollisionShape2TriangleMesh.cpp
 CollisionShape2TriangleMesh.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/CollisionShape2TriangleMesh.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/CollisionShape2TriangleMesh.h
 btBulletCollisionCommon.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/btBulletCollisionCommon.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/btBulletCollisionCommon.h
 BulletCollision/CollisionShapes/btShapeHull.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btShapeHull.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btShapeHull.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/CollisionShape2TriangleMesh.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/CollisionShape2TriangleMesh.h
 LinearMath/btAlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btAlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btAlignedObjectArray.h
 LinearMath/btTransform.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btTransform.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btTransform.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/GL_ShapeDrawer.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/GL_ShapeDrawer.cpp
 windows.h
 -
 ../OpenGLWindow/OpenGL2Include.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/OpenGL2Include.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/OpenGL2Include.h
 GL_ShapeDrawer.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/GL_ShapeDrawer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/GL_ShapeDrawer.h
 BulletCollision/CollisionShapes/btPolyhedralConvexShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h
 BulletCollision/CollisionShapes/btTriangleMeshShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btTriangleMeshShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btTriangleMeshShape.h
 BulletCollision/CollisionShapes/btBoxShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btBoxShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btBoxShape.h
 BulletCollision/CollisionShapes/btSphereShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btSphereShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btSphereShape.h
 BulletCollision/CollisionShapes/btConeShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btConeShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btConeShape.h
 BulletCollision/CollisionShapes/btCylinderShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btCylinderShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btCylinderShape.h
 BulletCollision/CollisionShapes/btTetrahedronShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btTetrahedronShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btTetrahedronShape.h
 BulletCollision/CollisionShapes/btCompoundShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btCompoundShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btCompoundShape.h
 BulletCollision/CollisionShapes/btCapsuleShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btCapsuleShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btCapsuleShape.h
 BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h
 BulletCollision/CollisionShapes/btUniformScalingShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btUniformScalingShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btUniformScalingShape.h
 BulletCollision/CollisionShapes/btStaticPlaneShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btStaticPlaneShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btStaticPlaneShape.h
 BulletCollision/CollisionShapes/btMultiSphereShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btMultiSphereShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btMultiSphereShape.h
 BulletCollision/CollisionShapes/btConvexPolyhedron.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btConvexPolyhedron.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btConvexPolyhedron.h
 BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h
 BulletDynamics/Dynamics/btRigidBody.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletDynamics/Dynamics/btRigidBody.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletDynamics/Dynamics/btRigidBody.h
 LinearMath/btDefaultMotionState.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btDefaultMotionState.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btDefaultMotionState.h
 BulletCollision/CollisionShapes/btShapeHull.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btShapeHull.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btShapeHull.h
 LinearMath/btTransformUtil.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btTransformUtil.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btTransformUtil.h
 LinearMath/btIDebugDraw.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btIDebugDraw.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btIDebugDraw.h
 stdio.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/GL_ShapeDrawer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/GL_ShapeDrawer.h
 LinearMath/btAlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btAlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btAlignedObjectArray.h
 LinearMath/btVector3.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btVector3.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btVector3.h
 BulletCollision/CollisionShapes/btShapeHull.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btShapeHull.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/BulletCollision/CollisionShapes/btShapeHull.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/OpenGLGuiHelper.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/OpenGLGuiHelper.cpp
 OpenGLGuiHelper.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/OpenGLGuiHelper.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/OpenGLGuiHelper.h
 btBulletDynamicsCommon.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/btBulletDynamicsCommon.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/btBulletDynamicsCommon.h
 ../CommonInterfaces/CommonGraphicsAppInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGraphicsAppInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGraphicsAppInterface.h
 ../CommonInterfaces/CommonRenderInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
 Bullet3Common/b3Scalar.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/Bullet3Common/b3Scalar.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/Bullet3Common/b3Scalar.h
 CollisionShape2TriangleMesh.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/CollisionShape2TriangleMesh.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/CollisionShape2TriangleMesh.h
 ../OpenGLWindow/SimpleCamera.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleCamera.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleCamera.h
 ../OpenGLWindow/GLInstanceGraphicsShape.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLInstanceGraphicsShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLInstanceGraphicsShape.h
 GL_ShapeDrawer.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/GL_ShapeDrawer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/GL_ShapeDrawer.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/OpenGLGuiHelper.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/OpenGLGuiHelper.h
 ../CommonInterfaces/CommonGUIHelperInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGUIHelperInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGUIHelperInterface.h
 LinearMath/btAlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btAlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/LinearMath/btAlignedObjectArray.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLInstanceGraphicsShape.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLInstanceGraphicsShape.h
 Bullet3Common/b3AlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/Bullet3Common/b3AlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/Bullet3Common/b3AlignedObjectArray.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLInstancingRenderer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLInstancingRenderer.h
 Bullet3Common/b3AlignedObjectArray.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/Bullet3Common/b3AlignedObjectArray.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/Bullet3Common/b3AlignedObjectArray.h
 ../CommonInterfaces/CommonRenderInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonRenderInterface.h
 SimpleCamera.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleCamera.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleCamera.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLPrimitiveRenderer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLPrimitiveRenderer.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/OpenGL2Include.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/OpenGL2Include.h
 OpenGL/OpenGL.h
 -
 OpenGL/gl.h
 -
 CustomGL/glew.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/CustomGL/glew.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/CustomGL/glew.h
 third_party/GL/gl/include/GL/gl.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/third_party/GL/gl/include/GL/gl.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/third_party/GL/gl/include/GL/gl.h
 third_party/GL/gl/include/GL/glext.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/third_party/GL/gl/include/GL/glext.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/third_party/GL/gl/include/GL/glext.h
 GL/glew.h
 -
 windows.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleCamera.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleCamera.h
 ../CommonInterfaces/CommonCameraInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonCameraInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonCameraInterface.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleOpenGL3App.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleOpenGL3App.h
 ../OpenGLWindow/GLInstancingRenderer.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLInstancingRenderer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLInstancingRenderer.h
 ../OpenGLWindow/GLPrimitiveRenderer.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLPrimitiveRenderer.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/GLPrimitiveRenderer.h
 ../CommonInterfaces/CommonWindowInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonWindowInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonWindowInterface.h
 ../CommonInterfaces/CommonGraphicsAppInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGraphicsAppInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGraphicsAppInterface.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/StandaloneMain/main_opengl_single_example.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/StandaloneMain/main_opengl_single_example.cpp
 ../CommonInterfaces/CommonExampleInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonExampleInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonExampleInterface.h
 ../CommonInterfaces/CommonGUIHelperInterface.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGUIHelperInterface.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/CommonInterfaces/CommonGUIHelperInterface.h
 ../Utils/b3Clock.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.h
 ../OpenGLWindow/SimpleOpenGL3App.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleOpenGL3App.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/OpenGLWindow/SimpleOpenGL3App.h
 stdio.h
 -
 ../ExampleBrowser/OpenGLGuiHelper.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/OpenGLGuiHelper.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/ExampleBrowser/OpenGLGuiHelper.h
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.cpp
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.cpp
 b3Clock.h
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.h
 sys/sys_time.h
 -
 sys/time_util.h
@@ -1182,5 +1182,5 @@ sys/time.h
 unistd.h
 -
 
-C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.h
+/Users/joonas/CLionProjects/OpenGL/lib/bullet/examples/Utils/b3Clock.h
 

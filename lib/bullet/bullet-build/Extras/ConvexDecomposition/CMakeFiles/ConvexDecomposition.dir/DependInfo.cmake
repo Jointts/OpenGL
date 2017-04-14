@@ -4,30 +4,26 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/ConvexBuilder.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/ConvexBuilder.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/ConvexDecomposition.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/ConvexDecomposition.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/bestfit.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/bestfit.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/bestfitobb.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/bestfitobb.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/cd_hull.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/cd_hull.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/cd_wavefront.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/cd_wavefront.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/concavity.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/concavity.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/fitsphere.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/fitsphere.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/float_math.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/float_math.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/meshvolume.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/meshvolume.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/planetri.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/planetri.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/raytri.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/raytri.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/splitplane.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/splitplane.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/vlookup.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/vlookup.obj"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/ConvexBuilder.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/ConvexBuilder.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/ConvexDecomposition.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/ConvexDecomposition.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/bestfit.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/bestfit.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/bestfitobb.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/bestfitobb.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/cd_hull.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/cd_hull.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/cd_wavefront.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/cd_wavefront.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/concavity.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/concavity.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/fitsphere.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/fitsphere.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/float_math.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/float_math.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/meshvolume.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/meshvolume.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/planetri.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/planetri.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/raytri.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/raytri.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/splitplane.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/splitplane.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/Extras/ConvexDecomposition/vlookup.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/Extras/ConvexDecomposition/CMakeFiles/ConvexDecomposition.dir/vlookup.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "NO_OPENGL3"
   "USE_GRAPHICAL_BENCHMARK"
-  "_CRT_SECURE_NO_DEPRECATE"
-  "_CRT_SECURE_NO_WARNINGS"
-  "_SCL_SECURE_NO_WARNINGS"
   )
 
 # The include file search paths:

@@ -4,22 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3FixedConstraint.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3FixedConstraint.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3Generic6DofConstraint.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3Generic6DofConstraint.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3PgsJacobiSolver.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3PgsJacobiSolver.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3Point2PointConstraint.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3Point2PointConstraint.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3TypedConstraint.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3TypedConstraint.obj"
-  "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/b3CpuRigidBodyPipeline.cpp" "C:/Users/Joonas/ClionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/b3CpuRigidBodyPipeline.obj"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3FixedConstraint.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3FixedConstraint.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3Generic6DofConstraint.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3Generic6DofConstraint.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3PgsJacobiSolver.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3PgsJacobiSolver.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3Point2PointConstraint.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3Point2PointConstraint.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/ConstraintSolver/b3TypedConstraint.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/ConstraintSolver/b3TypedConstraint.o"
+  "/Users/joonas/CLionProjects/OpenGL/lib/bullet/src/Bullet3Dynamics/b3CpuRigidBodyPipeline.cpp" "/Users/joonas/CLionProjects/OpenGL/lib/bullet/bullet-build/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir/b3CpuRigidBodyPipeline.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "NO_OPENGL3"
   "USE_GRAPHICAL_BENCHMARK"
-  "_CRT_SECURE_NO_DEPRECATE"
-  "_CRT_SECURE_NO_WARNINGS"
-  "_SCL_SECURE_NO_WARNINGS"
   )
 
 # The include file search paths:
