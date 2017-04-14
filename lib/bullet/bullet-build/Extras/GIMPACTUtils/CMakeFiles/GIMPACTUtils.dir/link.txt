@@ -1,2 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libGIMPACTUtils.a  CMakeFiles/GIMPACTUtils.dir/btGImpactConvexDecompositionShape.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libGIMPACTUtils.a
