@@ -27,7 +27,6 @@ Model::Model(){
 Model::Model(std::string meshPath){
     model_file = meshPath;
     importFile();
-    RenderManager::getInstance()->models.push_back(this);
 }
 
 void Model::importFile() {

@@ -10,7 +10,7 @@
 #include "Display.h"
 #include "ControllerManager.h"
 #include "DisplayManager.h"
-#include "CameraManager.h"
+#include "camera/CameraManager.h"
 
 class Engine {
 public:

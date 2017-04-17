@@ -10,11 +10,13 @@
 #include "../Model.h"
 
 class Plane {
+
     GLuint VAO, VBO, EBO;
     std::vector<Vertex> vertices;
     std::vector<GLuint> indices;
     int sizeX;
     int sizeZ;
+    int distribution = 100;
 
     void GenerateIndices();
 
@@ -23,11 +25,15 @@ class Plane {
 public:
     Plane();
 
-    Plane(int sizeX, int sizeY, int tileSize);
-
     virtual void Draw();
 
     void GenerateVertices();
+
+    void GenerateRivers();
+
+    bool generateHeightMap = true;
+
+    Plane(int sizeX, int sizeZ, int tileSize, bool generateHeightMap);
 };
 
 

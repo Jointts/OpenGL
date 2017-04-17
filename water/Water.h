@@ -12,8 +12,6 @@ class Water: public Plane{
 
 public:
     Water(int x, int y, int tileSize);
-
-    void Draw();
 };
 
 

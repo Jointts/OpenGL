@@ -8,13 +8,18 @@
 
 GLuint ShaderProgram::CreateShader(GLuint shaderType, GLchar *shaderPath) {
     GLuint shader = glCreateShader(shaderType);
-    char* shaderSource = (char *) Utils::readFile(shaderPath).c_str();
+    std::string shaderSourceStr = Utils::readFile(shaderPath);
+    const char* fragmentSource = shaderSourceStr.c_str();
+    const char* shaderSource = fragmentSource;
     glShaderSource(shader, 1, (const GLchar *const *) &shaderSource, NULL);
     glCompileShader(shader);
     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        glGetShaderInfoLog(shader, 512, NULL, infoLog);
+    glGetShaderInfoLog(shader, 512, NULL, infoLog);
+
+    //  We have found a critical error in shader setup, display error and exit program
+    if (!success || (unsigned int) strlen(infoLog) != 0) {
         std::cout << "ERROR::SHADER::" << shaderPath << "::COMPILATION_FAILED\n" << infoLog << std::endl;
+        exit(-1);
     }
     return shader;
 }

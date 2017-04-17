@@ -9,19 +9,37 @@
 #include <array>
 #include <vector>
 #include "Model.h"
+#include "ShaderProgram.h"
+#include "Entity.h"
 
 class RenderManager{
 public:
 
-    void Render();
-
     static int cameraPosition;
+
+    std::vector<Entity*> entities;
 
     static RenderManager *getInstance();
 
     static RenderManager *renderManager;
 
-    std::vector<Model*> models;
+    void RenderModels();
+
+    void RenderCelShader(bool drawModels);
+
+    void RenderBaseShader(bool drawModels);
+
+    void RenderCelShader();
+
+    void RenderBaseShader();
+
+    void DrawModels();
+
+    void RenderWaterShader();
+
+    void RenderGuiShader();
+
+    void RenderDebugShader();
 };
 
 

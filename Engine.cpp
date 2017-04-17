@@ -17,6 +17,9 @@
 #include "ShaderManager.h"
 #include "geometry/Plane.h"
 #include "geometry/Quad.h"
+#include "FreeType.h"
+#include "DebugDrawer.h"
+#include "Entity.h"
 
 #include <sys/time.h>
 
@@ -31,7 +34,7 @@ double calculateFrameTime(){
     lastExecTime = currentExecTime;
     fps = 1 / deltaTime;
     //printf("Time: %lf\n", deltaTime);
-    printf("FPS: %lf\n", fps);
+    //printf("FPS: %lf\n", fps);
 
     return deltaTime;
 }
@@ -46,11 +49,15 @@ int Engine::Start() {
     }
 
     ControllerManager::getInstance();
-    PhysicsManager::getInstance()->physicsManager->InitPhysics();
+    PhysicsManager* physicsManager = PhysicsManager::getInstance()->physicsManager;
+    physicsManager->InitPhysics();
 
     //Model* rock = new Model("res/rock_1.FBX");
-    Model* tree = new Model("res/tree_1.FBX");
-    Quad* quad = new Quad();
+    Entity* tree = new Entity("res/tree_1.FBX", true);
+
+    Quad* quad = new Quad(100, 100);
+    FreeType* freeType = new FreeType();
+    freeType->Initalize();
     //plane->generateHeightMap = true;
     //Plane *water = new Plane(200, 200, 0, false);
     //Plane *terrain = new Plane(200, 200, 0, true);
@@ -63,6 +70,18 @@ int Engine::Start() {
         glEnable(GL_MULTISAMPLE);
 
         //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        RenderManager::getInstance()->RenderDebugShader();
+        btDynamicsWorld* dynamicsWorld = physicsManager->getInstance()->dynamicsWorld;
+        DebugDrawer* debugDrawer = (DebugDrawer*) dynamicsWorld->getDebugDrawer();
+
+        dynamicsWorld->stepSimulation(1 / 60.f, 10);
+
+        //tree->Translate(glm::vec3(0.1f, 0.0f, 0.0f));
+        tree->Scale(glm::vec3((0.999f, 0.999f, 0.999f)));
+        tree->Rotate(0.005f, glm::vec3(0.0f, 1.0f, 0.0f));
+
+        dynamicsWorld->debugDrawWorld();
+        debugDrawer->Draw();
         RenderManager::getInstance()->RenderBaseShader();
         RenderManager::getInstance()->DrawModels();
         //RenderManager::getInstance()->RenderCelShader();

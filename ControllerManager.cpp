@@ -5,6 +5,9 @@
 #include <iostream>
 #include <gtc/matrix_transform.hpp>
 #include <stdlib.h>
+#include <stb_image.h>
+#define STB_IMAGE_RESIZE_IMPLEMENTATION
+#include <stb_image_resize.h>
 #include "ControllerManager.h"
 
 ControllerManager *ControllerManager::controllerManager = 0;
@@ -28,8 +31,19 @@ ControllerManager *ControllerManager::getInstance() {
 ControllerManager::ControllerManager() {
     cameraManager = CameraManager::getInstance();
     glfwSetKeyCallback(displayManager->window, this->key_callback);
-//    glfwSetCursorPosCallback(displayManager->window, this->mouse_callback);
-    glfwSetInputMode(displayManager->window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    int height = 0;
+    int width = 0;
+    int bytesPerPixel = 0;
+    char *path = (char *) "/Users/joonas/CLionProjects/OpenGL/cmake-build-debug/res/cursor.png";
+    unsigned char *pixelData = stbi_load(path, &width, &height, &bytesPerPixel, STBI_rgb_alpha);
+    GLFWimage glfWimage;
+    glfWimage.height = height;
+    glfWimage.width = width;
+    glfWimage.pixels = pixelData;
+
+    GLFWcursor *glfWcursor = glfwCreateCursor(&glfWimage, 0, 0);
+    glfwSetCursor(displayManager->window, glfWcursor);
+    glfwSetCursorPosCallback(displayManager->window, this->mouse_callback);
 }
 
 void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, int action, int mods) {
@@ -39,47 +53,25 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
         exit(EXIT_SUCCESS);
     }
     if (key == GLFW_KEY_A) {
-        cameraManager->MoveLeft();
+        cameraManager->mainCamera->MoveLeft();
     }
     if (key == GLFW_KEY_D) {
-        cameraManager->MoveRight();
+        cameraManager->mainCamera->MoveRight();
     }
     if (key == GLFW_KEY_W) {
-        cameraManager->MoveForward();
+        cameraManager->mainCamera->MoveForward();
     }
     if (key == GLFW_KEY_S) {
-        cameraManager->MoveBack();
+        cameraManager->mainCamera->MoveBack();
     }
     if (key == GLFW_KEY_Q) {
-        cameraManager->MoveUp();
+        cameraManager->mainCamera->MoveUp();
     }
     if (key == GLFW_KEY_E) {
-        cameraManager->MoveDown();
+        cameraManager->mainCamera->MoveDown();
     }
 }
 
 void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
-    if (firstMouse) {
-        lastXpos = (float) xpos;
-        lastYpos = (float) ypos;
-        firstMouse = false;
-    }
-    yaw += sin(xpos - lastXpos);
-    pitch += sin(lastYpos - ypos);
-    lastXpos = (float) xpos;
-    lastYpos = (float) ypos;
 
-    if(pitch > 89.0f)
-        pitch = 89.0f;
-    if(pitch < -89.0f)
-        pitch = -89.0f;
-
-    cameraManager->eyePos.x = cos(glm::radians(pitch)) * cos(glm::radians(yaw));
-    cameraManager->eyePos.y = sin(glm::radians(pitch));
-    cameraManager->eyePos.z = sin(glm::radians(pitch)) * cos(glm::radians(yaw));
-    cameraManager->eyePos = glm::normalize(cameraManager->eyePos);
-
-    cameraManager->UpdateCamera();
-
-//    std::cout << yaw << " " << pitch;
 }

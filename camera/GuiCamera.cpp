@@ -10,5 +10,5 @@ GuiCamera::GuiCamera() {
     cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
     cameraPos = glm::vec3(0.0f, 0.0f, 0.0f);
     eyePos = glm::vec3(0.0f, 0.0f, 0.0f);
-    perspective = glm::ortho(glm::radians(90.0f), 1440.0f / 900.0f, 0.1f, 100.0f);
+    perspective = glm::ortho(0.0f, 1440.0f, 0.0f, 900.0f);
 }

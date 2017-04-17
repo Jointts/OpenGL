@@ -5,10 +5,15 @@
 #ifndef OPENGL_DISPLAYMANAGER_H
 #define OPENGL_DISPLAYMANAGER_H
 
+class GLFWwindow;
 
 class DisplayManager {
 public:
-    DisplayManager(int width, int height, const char *title);
+    int width = 0;
+
+    int height = 0;
+
+    DisplayManager(const char *title);
 
     GLFWwindow* window;
     static DisplayManager *getInstance();

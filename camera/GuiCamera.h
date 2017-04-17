@@ -6,8 +6,11 @@
 #define OPENGL_GUICAMERA_H
 
 
-class GuiCamera {
+#include "Camera.h"
 
+class GuiCamera : public Camera{
+public:
+    GuiCamera();
 };
 
 

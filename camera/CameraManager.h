@@ -9,6 +9,7 @@
 #include <detail/type_mat.hpp>
 #include <detail/type_mat4x4.hpp>
 #include "MainCamera.h"
+#include "GuiCamera.h"
 
 class CameraManager {
 public:
@@ -17,6 +18,8 @@ public:
     static CameraManager *getInstance();
 
     static MainCamera* mainCamera;
+
+    static GuiCamera* guiCamera;
 
 private:
     static CameraManager *cameraManager;

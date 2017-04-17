@@ -12,6 +12,7 @@
 #include <glad/glad.h>
 #include <vector>
 #include <detail/type_mat4x4.hpp>
+#include "ShaderProgram.h"
 
 struct Texture {
     GLuint id;
@@ -28,6 +29,8 @@ class Mesh;
 
 class Model {
 public:
+    bool drawOutline = false;
+
     Model(std::string meshPath);
 
     glm::mat4 model = glm::mat4();
@@ -44,8 +47,6 @@ public:
 
     std::vector<Mesh> meshes;
 
-    void Draw();
-
     Mesh processMesh(aiMesh *mesh, const aiScene *scene);
 
     std::vector<Texture>
@@ -56,6 +57,8 @@ public:
     void Translate(glm::vec3 axis);
 
     void Scale(glm::vec3 axis);
+
+    void Draw();
 };
 
 

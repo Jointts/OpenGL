@@ -8,9 +8,6 @@ uniform mat4 view;
 uniform mat4 perspective;
 uniform mat4 model;
 
-uniform float cel_offset;
-
 void main() {
-    vec4 calculated_offset = vec4(position + normal * cel_offset, 1.0);
-    gl_Position = perspective * view * model * calculated_offset;
+    gl_Position = perspective * view * model * vec4(position, 1.0);
 }

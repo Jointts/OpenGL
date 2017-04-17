@@ -16,12 +16,17 @@ class PhysicsManager {
 
 
 public:
+    btRigidBody *rigidBody;
+
+    btDiscreteDynamicsWorld *dynamicsWorld;
 
     void InitPhysics();
 
     static PhysicsManager *physicsManager;
 
     static PhysicsManager *getInstance();
+
+    void UpdatePositions();
 };
 
 

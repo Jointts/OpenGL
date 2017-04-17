@@ -2,7 +2,10 @@
 // Created by Joonas on 3/16/2017.
 //
 
+#include <BulletCollision/CollisionShapes/btBoxShape.h>
+#include <LinearMath/btIDebugDraw.h>
 #include "PhysicsManager.h"
+#include "DebugDrawer.h"
 
 PhysicsManager *PhysicsManager::physicsManager = 0;
 
@@ -21,8 +24,14 @@ void PhysicsManager::InitPhysics() {
     btSequentialImpulseConstraintSolver *solver = new btSequentialImpulseConstraintSolver;
 
     // The world.
-    btDiscreteDynamicsWorld *dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
+    dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
     dynamicsWorld->setGravity(btVector3(0, -9.81f, 0));
+
+    DebugDrawer* debugDrawer = new DebugDrawer();
+    debugDrawer->setup();
+
+    debugDrawer->setDebugMode(btIDebugDraw::DBG_DrawWireframe);
+    dynamicsWorld->setDebugDrawer(debugDrawer);
 }
 
 PhysicsManager *PhysicsManager::getInstance() {

@@ -9,15 +9,21 @@
 
 DisplayManager *DisplayManager::displayManager = 0;
 
-DisplayManager::DisplayManager(int width, int height, const char *title) {
+DisplayManager::DisplayManager(const char *title) {
     if(!glfwInit()){
         std::cout << "Initialization failed!";
     }
+
+    const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+
+    height= mode->height;
+    width = mode->width;
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_SAMPLES, 8);
 
     window = glfwCreateWindow(width, height, title, NULL, NULL);
 
@@ -30,7 +36,7 @@ DisplayManager::DisplayManager(int width, int height, const char *title) {
 
 DisplayManager *DisplayManager::getInstance() {
     if(!displayManager){
-        displayManager = new DisplayManager(1400, 900, "OpenGL");
+        displayManager = new DisplayManager("OpenGL");
     }
     return displayManager;
 }

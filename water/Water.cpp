@@ -7,9 +7,6 @@
 Plane plane;
 
 Water::Water(int x, int y, int tileSize){
-    plane = Water::Plane(x, y, tileSize);
+    plane = Water::Plane(x, y, tileSize, false);
 }
 
-void Water::Draw(){
-    plane.Draw();
-}

@@ -20,6 +20,8 @@ public:
 
     static ShaderProgram* waterShader;
 
+    static ShaderProgram* debugShader;
+
     static ShaderManager *getInstance();
 };
 

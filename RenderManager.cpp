@@ -75,8 +75,7 @@ void RenderManager::RenderBaseShader(){
     GLint modelLoc = glGetUniformLocation(baseShader->shaderProgramID, "model");
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(glm::mat4()));
 
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_CCW);
+    glDisable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
 
     glm::vec3 lightColor = Utils::color_RGB(255.0f, 255.0f, 255.0f);
@@ -89,14 +88,35 @@ void RenderManager::RenderBaseShader(){
 
 void RenderManager::RenderGuiShader(){
     ShaderProgram *guiShader = ShaderManager::getInstance()->guiShader;
+    GuiCamera *guiCamera = CameraManager::getInstance()->guiCamera;
 
     guiShader->Start();
+    int projectionLoc = glGetUniformLocation(guiShader->shaderProgramID, "projection");
+    glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(guiCamera->perspective));
     glDisable(GL_CULL_FACE);
 }
 
+void RenderManager::RenderDebugShader(){
+    ShaderProgram *debugShader = ShaderManager::getInstance()->debugShader;
+    MainCamera* mainCamera = CameraManager::getInstance()->mainCamera;
+
+    debugShader->Start();
+
+    GLint perspectiveLoc = glGetUniformLocation(debugShader->shaderProgramID, "perspective");
+    glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, glm::value_ptr(mainCamera->perspective));
+
+    GLint viewLoc = glGetUniformLocation(debugShader->shaderProgramID, "view");
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE,  glm::value_ptr(mainCamera->view));
+}
+
 void RenderManager::DrawModels(){
-    for (Model* model : models) {
-        model->Draw();
+    for (Entity* entity : entities) {
+        entity->model->Draw();
+        if(entity->hasCollision){
+            btScalar physicsMatrix[16];
+            entity->rigidBody->getWorldTransform().getOpenGLMatrix(physicsMatrix);
+            entity->model->model = Utils::BulletToGlm(physicsMatrix);
+        }
     }
 }
 
