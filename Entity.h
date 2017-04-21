@@ -9,6 +9,11 @@
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 #include "Model.h"
 
+enum EntityType {
+    BASIC,
+    TREE
+};
+
 class Entity {
 
     void GenerateCollision();
@@ -18,7 +23,10 @@ public:
 
     btRigidBody* rigidBody;
 
+    EntityType entityType = BASIC;
+
     Model* model;
+
     bool hasCollision;
 
     void Rotate(float angle, glm::vec3 axis);

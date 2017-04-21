@@ -11,6 +11,7 @@
 #include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
 #include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>
 #include <BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
+#include "../Entity.h"
 
 class PhysicsManager {
 
@@ -26,7 +27,11 @@ public:
 
     static PhysicsManager *getInstance();
 
-    void UpdatePositions();
+    void RayCast(double mouseX, double mouseY);
+
+    static Entity *lastHitEntity;
+
+    void getHitEntityType(Entity *hitEntity);
 };
 
 

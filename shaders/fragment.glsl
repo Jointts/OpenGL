@@ -12,16 +12,21 @@ uniform vec3 lightColor;
 uniform vec3 lightDirection;
 uniform float lightStrength;
 uniform sampler2D diffuse1;
+uniform bool hit;
 
 void applyAmbient(inout vec4 color, float ambientStrength, vec3 ambientColor);
 void applyDirectionalLight(inout vec4 color, vec3 normalCoord, vec3 lightColor, vec3 lightDirection, float lightStrength);
 
 void main()
 {
-    vec4 object_color = vec4(texture(diffuse1, TexCoords));
-    applyAmbient(color, ambientStrength, ambientColor);
-    applyDirectionalLight(color, NormalCoords, lightColor, lightDirection, lightStrength);
-    color *= object_color;
+    if(hit){
+        color = vec4(0.5, 0.5, 0.5, 1.0);
+    }else{
+        vec4 object_color = vec4(texture(diffuse1, TexCoords));
+        applyAmbient(color, ambientStrength, ambientColor);
+        applyDirectionalLight(color, NormalCoords, lightColor, lightDirection, lightStrength);
+        color *= object_color;
+    }
 }
 
 void applyAmbient(inout vec4 color, float ambientStrength, vec3 ambientColor){

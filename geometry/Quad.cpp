@@ -11,7 +11,7 @@
 #include "../Utils.h"
 #include "../ShaderManager.h"
 #include "../Entity.h"
-#include "../PhysicsManager.h"
+#include "../physics/PhysicsManager.h"
 
 Quad::Quad(int width, int height) {
     this->width = width;

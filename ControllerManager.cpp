@@ -8,7 +8,10 @@
 #include <stb_image.h>
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
 #include <stb_image_resize.h>
+#include <btBulletCollisionCommon.h>
 #include "ControllerManager.h"
+#include "physics/PhysicsManager.h"
+
 
 ControllerManager *ControllerManager::controllerManager = 0;
 
@@ -73,5 +76,5 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
 }
 
 void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
-
+    PhysicsManager::getInstance()->RayCast(xpos, ypos);
 }

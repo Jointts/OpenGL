@@ -4,16 +4,16 @@
 
 #include <LinearMath/btDefaultMotionState.h>
 #include <BulletCollision/CollisionShapes/btBoxShape.h>
-#include <BulletCollision/CollisionShapes/btConvexHullShape.h>
 #include <BulletCollision/CollisionShapes/btTriangleMesh.h>
 #include <BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h>
 #include <gtc/matrix_transform.hpp>
 #include <gtc/type_ptr.hpp>
 #include "Entity.h"
-#include "PhysicsManager.h"
+#include "physics/PhysicsManager.h"
 #include "Mesh.h"
 #include "RenderManager.h"
 #include "Utils.h"
+#include "Tree.h"
 
 Entity::Entity(GLchar* modelPath, bool generateCollision = false) {
     model = new Model(modelPath);
@@ -60,6 +60,7 @@ void Entity::GenerateCollision(){
     );
 
     rigidBody = new btRigidBody(rigidBodyCI);
+    rigidBody->setUserPointer(this);
 
     PhysicsManager::getInstance()->dynamicsWorld->addRigidBody(rigidBody);
 }

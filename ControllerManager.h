@@ -9,6 +9,7 @@
 #include <GLFW/glfw3.h>
 #include "DisplayManager.h"
 #include "camera/CameraManager.h"
+#include "Entity.h"
 
 class ControllerManager {
 public:
@@ -16,9 +17,10 @@ public:
 
     static int EXIT_KEY;
 
-    void startUp();
     static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
+
     static void mouse_callback(GLFWwindow *window, double xpos, double ypos);
+
     static ControllerManager *getInstance();
 
 private:

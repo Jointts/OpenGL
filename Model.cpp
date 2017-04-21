@@ -147,6 +147,11 @@ std::vector<Texture> Model::processMaterial(aiTextureType textureType, aiMateria
 void Model::Draw() {
     RenderManager::getInstance()->RenderBaseShader();
     glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "model"), 1, GL_FALSE, glm::value_ptr(model));
+    if(drawOutline){
+        glUniform1i(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "hit"), 1);
+    }else{
+        glUniform1i(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "hit"), 0);
+    }
     for (int i = 0; i < meshes.size(); ++i) {
         meshes[i].Draw();
     }

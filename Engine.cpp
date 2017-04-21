@@ -13,13 +13,14 @@
 #include "Engine.h"
 #include "Model.h"
 #include "RenderManager.h"
-#include "PhysicsManager.h"
+#include "physics/PhysicsManager.h"
 #include "ShaderManager.h"
 #include "geometry/Plane.h"
 #include "geometry/Quad.h"
 #include "FreeType.h"
 #include "DebugDrawer.h"
 #include "Entity.h"
+#include "Tree.h"
 
 #include <sys/time.h>
 
@@ -53,14 +54,16 @@ int Engine::Start() {
     physicsManager->InitPhysics();
 
     //Model* rock = new Model("res/rock_1.FBX");
-    Entity* tree = new Entity("res/tree_1.FBX", true);
+
+    //  Utter crap class, just for testing subclass pointers
+    Tree* tree = new Tree("res/tree_1.FBX", true);
 
     Quad* quad = new Quad(100, 100);
     FreeType* freeType = new FreeType();
     freeType->Initalize();
     //plane->generateHeightMap = true;
     //Plane *water = new Plane(200, 200, 0, false);
-    //Plane *terrain = new Plane(200, 200, 0, true);
+    Plane *terrain = new Plane(200, 200, 0, true);
 
     while (!glfwWindowShouldClose(DisplayManager::getInstance()->window)) {
         glfwPollEvents();
@@ -69,16 +72,12 @@ int Engine::Start() {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glEnable(GL_MULTISAMPLE);
 
-        //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
         RenderManager::getInstance()->RenderDebugShader();
         btDynamicsWorld* dynamicsWorld = physicsManager->getInstance()->dynamicsWorld;
         DebugDrawer* debugDrawer = (DebugDrawer*) dynamicsWorld->getDebugDrawer();
 
         dynamicsWorld->stepSimulation(1 / 60.f, 10);
-
-        //tree->Translate(glm::vec3(0.1f, 0.0f, 0.0f));
-        tree->Scale(glm::vec3((0.999f, 0.999f, 0.999f)));
-        tree->Rotate(0.005f, glm::vec3(0.0f, 1.0f, 0.0f));
 
         dynamicsWorld->debugDrawWorld();
         debugDrawer->Draw();
@@ -88,7 +87,7 @@ int Engine::Start() {
         //tree->Rotate(0.003f, glm::vec3(0.0f, 1.0f, 0.0f));
         //plane->Draw();
         //RenderManager::getInstance()->RenderCelShader();
-        //terrain->Draw();
+        terrain->Draw();
         RenderManager::getInstance()->RenderGuiShader();
         quad->Draw();
         glfwSwapBuffers(DisplayManager::getInstance()->window);

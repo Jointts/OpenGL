@@ -9,7 +9,9 @@
 #include <vec3.hpp>
 #include <vec2.hpp>
 #include <assimp/scene.h>
+#if not defined(__gl_h_)
 #include <glad/glad.h>
+#endif
 #include <vector>
 #include <detail/type_mat4x4.hpp>
 #include "ShaderProgram.h"
