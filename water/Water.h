@@ -8,10 +8,21 @@
 
 #include "../geometry/Plane.h"
 
+
 class Water: public Plane{
 
 public:
-    Water(int x, int y, int tileSize);
+
+    float oscillatingSpeed = 1.0f;
+
+    float oscillatingMagnitude = 0.2f;
+
+    Water(int sizeX, int sizeZ, int tileSize, bool generateHeightMap);
+
+    void UpdateShader();
+
+    void Draw() override;
+
 };
 
 

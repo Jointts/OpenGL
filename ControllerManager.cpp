@@ -76,5 +76,6 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
 }
 
 void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
-    PhysicsManager::getInstance()->RayCast(xpos, ypos);
+    PhysicsManager::getInstance()->worldPhysics->RayCast(xpos, ypos);
+    PhysicsManager::getInstance()->guiPhysics->RayCast(xpos, ypos);
 }

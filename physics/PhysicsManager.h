@@ -12,26 +12,25 @@
 #include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>
 #include <BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
 #include "../Entity.h"
+#include "GuiPhysics.h"
+#include "WorldPhysics.h"
 
 class PhysicsManager {
 
 
 public:
-    btRigidBody *rigidBody;
-
-    btDiscreteDynamicsWorld *dynamicsWorld;
-
-    void InitPhysics();
 
     static PhysicsManager *physicsManager;
 
+    PhysicsManager();
+
     static PhysicsManager *getInstance();
 
-    void RayCast(double mouseX, double mouseY);
+    static GuiPhysics *guiPhysics;
 
-    static Entity *lastHitEntity;
+    static WorldPhysics *worldPhysics;
 
-    void getHitEntityType(Entity *hitEntity);
+    void Tick();
 };
 
 

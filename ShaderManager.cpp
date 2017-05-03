@@ -14,12 +14,16 @@ ShaderProgram *ShaderManager::debugShader = 0;
 
 char* BASE_SHADER_VERTEX_PATH = (char *) "shaders/vertex.glsl";
 char* BASE_SHADER_FRAGMENT_PATH = (char *) "shaders/fragment.glsl";
+
+char* WATER_SHADER_VERTEX_PATH = (char *) "shaders/water/vertex.glsl";
+char* WATER_SHADER_FRAGMENT_PATH = (char *) "shaders/water/fragment.glsl";
+
 char* CEL_SHADER_VERTEX_PATH = (char *) "shaders/cel/vertex.glsl";
 char* CEL_SHADER_FRAGMENT_PATH = (char *) "shaders/cel/fragment.glsl";
-char* WATER_SHADER_FRAGMENT_PATH = (char *) "shaders/water/fragment.glsl";
-char* WATER_SHADER_VERTEX_PATH = (char *) "shaders/water/vertex.glsl";
+
 char* GUI_SHADER_VERTEX_PATH = (char *) "shaders/gui/vertex.glsl";
 char* GUI_SHADER_FRAGMENT_PATH = (char *) "shaders/gui/fragment.glsl";
+
 char* DEBUG_SHADER_VERTEX_PATH = (char *) "shaders/debug/vertex.glsl";
 char* DEBUG_SHADER_FRAGMENT_PATH = (char *) "shaders/debug/fragment.glsl";
 

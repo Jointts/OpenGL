@@ -10,6 +10,7 @@
 #include <glad/glad.h>
 #include <vec3.hpp>
 #include <vector>
+#include "RenderManager.h"
 
 struct DebugVertex{
     glm::vec3 position;
@@ -72,6 +73,7 @@ public:
     }
 
     void Draw(){
+        RenderManager::getInstance()->RenderDebugShader();
         if(vertices.size() != 0){
             glBindVertexArray(VAO);
             glBindBuffer(GL_ARRAY_BUFFER, VBO);

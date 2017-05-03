@@ -21,24 +21,13 @@
 #include "DebugDrawer.h"
 #include "Entity.h"
 #include "Tree.h"
+#include "Terrain.h"
+#include "water/Water.h"
+#include "Time.h"
+#include "gui/GuiWidget.h"
 
 #include <sys/time.h>
 
-double currentExecTime = 0;
-double lastExecTime = 0;
-double deltaTime = 0;
-double fps = 0;
-
-double calculateFrameTime(){
-    currentExecTime = glfwGetTime();
-    deltaTime = currentExecTime - lastExecTime;
-    lastExecTime = currentExecTime;
-    fps = 1 / deltaTime;
-    //printf("Time: %lf\n", deltaTime);
-    //printf("FPS: %lf\n", fps);
-
-    return deltaTime;
-}
 
 int Engine::Start() {
 
@@ -51,45 +40,45 @@ int Engine::Start() {
 
     ControllerManager::getInstance();
     PhysicsManager* physicsManager = PhysicsManager::getInstance()->physicsManager;
-    physicsManager->InitPhysics();
+    physicsManager->worldPhysics->InitPhysics();
+    physicsManager->guiPhysics->InitPhysics();
 
     //Model* rock = new Model("res/rock_1.FBX");
 
     //  Utter crap class, just for testing subclass pointers
     Tree* tree = new Tree("res/tree_1.FBX", true);
 
-    Quad* quad = new Quad(100, 100);
+    GuiWidget* guiWidget = new GuiWidget(100, 100);
+    guiWidget->setMarginLeft(50.0f);
+    guiWidget->setMarginBottom(50.0f);
+    guiWidget->setTexture((GLchar *) "res/nice_circle.png");
+    guiWidget->GenerateCollision();
+
     FreeType* freeType = new FreeType();
     freeType->Initalize();
+    Water *water = new Water(200, 200, 0, false);
     //plane->generateHeightMap = true;
     //Plane *water = new Plane(200, 200, 0, false);
-    Plane *terrain = new Plane(200, 200, 0, true);
+    Terrain *terrain = new Terrain(200, 200, 0, true);
+    //terrain->GenerateRivers();
+    //terrain->generateCollision();
 
     while (!glfwWindowShouldClose(DisplayManager::getInstance()->window)) {
         glfwPollEvents();
-        calculateFrameTime();
+        Time::calculateFrameTime();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glEnable(GL_MULTISAMPLE);
 
-        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-        RenderManager::getInstance()->RenderDebugShader();
-        btDynamicsWorld* dynamicsWorld = physicsManager->getInstance()->dynamicsWorld;
-        DebugDrawer* debugDrawer = (DebugDrawer*) dynamicsWorld->getDebugDrawer();
-
-        dynamicsWorld->stepSimulation(1 / 60.f, 10);
-
-        dynamicsWorld->debugDrawWorld();
-        debugDrawer->Draw();
-        RenderManager::getInstance()->RenderBaseShader();
+        PhysicsManager::getInstance()->Tick();
         RenderManager::getInstance()->DrawModels();
         //RenderManager::getInstance()->RenderCelShader();
         //tree->Rotate(0.003f, glm::vec3(0.0f, 1.0f, 0.0f));
         //plane->Draw();
         //RenderManager::getInstance()->RenderCelShader();
-        terrain->Draw();
-        RenderManager::getInstance()->RenderGuiShader();
-        quad->Draw();
+        //terrain->Draw();
+        //water->Draw();
+        guiWidget->Draw();
         glfwSwapBuffers(DisplayManager::getInstance()->window);
     }
 

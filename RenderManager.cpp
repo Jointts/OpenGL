@@ -37,26 +37,19 @@ void RenderManager::RenderCelShader() {
 
 void RenderManager::RenderWaterShader() {
     CameraManager *cameraManager = CameraManager::getInstance();
-    ShaderProgram *baseShader = ShaderManager::getInstance()->baseShader;
+    ShaderProgram *waterShader = ShaderManager::getInstance()->waterShader;
 
-    baseShader->Start();
+    waterShader->Start();
 
-    GLint perspectiveLoc = glGetUniformLocation(baseShader->shaderProgramID, "perspective");
+    GLint perspectiveLoc = glGetUniformLocation(waterShader->shaderProgramID, "perspective");
     glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, glm::value_ptr(cameraManager->mainCamera->perspective));
 
-    GLint viewLoc = glGetUniformLocation(baseShader->shaderProgramID, "view");
+    GLint viewLoc = glGetUniformLocation(waterShader->shaderProgramID, "view");
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE,  glm::value_ptr(cameraManager->mainCamera->view));
 
     glEnable(GL_CULL_FACE);
     glCullFace(GL_CCW);
     glEnable(GL_DEPTH_TEST);
-
-    glm::vec3 lightColor = Utils::color_RGB(255.0f, 255.0f, 255.0f);
-    GLfloat lightStrength = 0.1f;
-    glm::vec3 lightPos = {1.0f, 1.0f, 1.0f};
-
-    DirectionalLight *directionalLight = new DirectionalLight(lightColor, lightStrength, lightPos);
-    directionalLight->Enable();
 }
 
 
@@ -110,6 +103,7 @@ void RenderManager::RenderDebugShader(){
 }
 
 void RenderManager::DrawModels(){
+    RenderManager::getInstance()->RenderBaseShader();
     for (Entity* entity : entities) {
         entity->model->Draw();
         if(entity->hasCollision){

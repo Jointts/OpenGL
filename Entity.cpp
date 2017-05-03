@@ -50,10 +50,10 @@ void Entity::GenerateCollision(){
             btQuaternion(0, 0, 0, 1), btVector3(0, 0, 0)
     ));
 
-    btScalar mass = 1;
+    btScalar mass = 0;
 
     btRigidBody::btRigidBodyConstructionInfo rigidBodyCI(
-            0,               // mass, in kg. 0 -> Static object, will never move.
+            mass,               // mass, in kg. 0 -> Static object, will never move.
             motionstate,
             convexShape,        // collision shape of body
             btVector3(0,0,0)    // local inertia
@@ -62,7 +62,7 @@ void Entity::GenerateCollision(){
     rigidBody = new btRigidBody(rigidBodyCI);
     rigidBody->setUserPointer(this);
 
-    PhysicsManager::getInstance()->dynamicsWorld->addRigidBody(rigidBody);
+    PhysicsManager::getInstance()->worldPhysics->dynamicsWorld->addRigidBody(rigidBody);
 }
 
 void Entity::Rotate(float angle, glm::vec3 axis){
