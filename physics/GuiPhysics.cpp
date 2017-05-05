@@ -6,8 +6,11 @@
 #include <BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
 #include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>
 #include <BulletCollision/CollisionDispatch/btCollisionDispatcher.h>
+#include <BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.h>
+#include <BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.h>
 #include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
 #include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
+#include <BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.h>
 #include <ext.hpp>
 #include "GuiPhysics.h"
 #include "../DebugDrawer.h"
@@ -26,12 +29,22 @@ void GuiPhysics::InitPhysics() {
     btDefaultCollisionConfiguration *collisionConfiguration = new btDefaultCollisionConfiguration();
     btCollisionDispatcher *dispatcher = new btCollisionDispatcher(collisionConfiguration);
 
+    btVoronoiSimplexSolver *m_simplexSolver = new btVoronoiSimplexSolver();
+    btMinkowskiPenetrationDepthSolver *m_pdSolver = new btMinkowskiPenetrationDepthSolver();
+
+    btConvex2dConvex2dAlgorithm::CreateFunc *m_convexAlgo2d = new btConvex2dConvex2dAlgorithm::CreateFunc(m_simplexSolver, m_pdSolver);
+    btBox2dBox2dCollisionAlgorithm::CreateFunc *m_box2dbox2dAlgo = new btBox2dBox2dCollisionAlgorithm::CreateFunc();
+
+    dispatcher->registerCollisionCreateFunc(CONVEX_2D_SHAPE_PROXYTYPE,CONVEX_2D_SHAPE_PROXYTYPE, m_convexAlgo2d);
+    dispatcher->registerCollisionCreateFunc(BOX_2D_SHAPE_PROXYTYPE,CONVEX_2D_SHAPE_PROXYTYPE, m_convexAlgo2d);
+    dispatcher->registerCollisionCreateFunc(CONVEX_2D_SHAPE_PROXYTYPE,BOX_2D_SHAPE_PROXYTYPE, m_convexAlgo2d);
+    dispatcher->registerCollisionCreateFunc(BOX_2D_SHAPE_PROXYTYPE,BOX_2D_SHAPE_PROXYTYPE, m_box2dbox2dAlgo);
+
     // The actual physics solver
     btSequentialImpulseConstraintSolver *solver = new btSequentialImpulseConstraintSolver;
 
     // The world.
     dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
-    dynamicsWorld->setGravity(btVector3(0, -9.81f, 0));
 
     DebugDrawer* debugDrawer = new DebugDrawer();
     debugDrawer->setup();

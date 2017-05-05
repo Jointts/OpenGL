@@ -12,6 +12,8 @@ class Tree : public Entity{
 public:
     Tree(GLchar *modelPath, bool generateCollision);
     void printShit();
+
+    void ClickEvent() override;
 };
 
 

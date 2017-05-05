@@ -11,6 +11,8 @@
 
 class Terrain : public Plane{
 public:
+    btRigidBody *rigidBody;
+
     Terrain(int sizeX, int sizeZ, int tileSize, bool generateHeightMap);
 
     void generateCollision();

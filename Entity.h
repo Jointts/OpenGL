@@ -8,10 +8,12 @@
 
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 #include "Model.h"
+#include "Terrain.h"
 
 enum EntityType {
     BASIC,
-    TREE
+    TREE,
+    TERRAIN
 };
 
 class Entity {
@@ -21,11 +23,15 @@ class Entity {
 public:
     Entity(GLchar* modelPath, bool generateCollision);
 
+    Entity();
+
     btRigidBody* rigidBody;
 
     EntityType entityType = BASIC;
 
     Model* model;
+
+    Terrain* terrain;
 
     bool hasCollision;
 
@@ -34,6 +40,8 @@ public:
     void Scale(glm::vec3 axis);
 
     void Translate(glm::vec3 axis);
+
+    virtual void ClickEvent();
 };
 
 

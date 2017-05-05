@@ -25,6 +25,8 @@
 #include "water/Water.h"
 #include "Time.h"
 #include "gui/GuiWidget.h"
+#include "EntityController.h"
+#include "EntityManager.h"
 
 #include <sys/time.h>
 
@@ -47,6 +49,9 @@ int Engine::Start() {
 
     //  Utter crap class, just for testing subclass pointers
     Tree* tree = new Tree("res/tree_1.FBX", true);
+    tree->Translate(glm::vec3(25, 5, 25));
+    tree->Rotate(90.0f, glm::vec3(1.0, 0.0, 0.0));
+    Entity* entity = new Entity("res/rock_1.FBX", true);
 
     GuiWidget* guiWidget = new GuiWidget(100, 100);
     guiWidget->setMarginLeft(50.0f);
@@ -56,12 +61,14 @@ int Engine::Start() {
 
     FreeType* freeType = new FreeType();
     freeType->Initalize();
-    Water *water = new Water(200, 200, 0, false);
+    //Water *water = new Water(200, 200, 0, false);
     //plane->generateHeightMap = true;
     //Plane *water = new Plane(200, 200, 0, false);
-    Terrain *terrain = new Terrain(200, 200, 0, true);
+    Entity *terrain = new Entity();
     //terrain->GenerateRivers();
-    //terrain->generateCollision();
+    terrain->terrain->generateCollision();
+    EntityManager *entityManager = EntityManager::getInstance();
+    entityManager->playerController->setMovementSpeed(0.5f);
 
     while (!glfwWindowShouldClose(DisplayManager::getInstance()->window)) {
         glfwPollEvents();
@@ -71,14 +78,14 @@ int Engine::Start() {
         glEnable(GL_MULTISAMPLE);
 
         PhysicsManager::getInstance()->Tick();
-        RenderManager::getInstance()->DrawModels();
+        //RenderManager::getInstance()->DrawModels();
         //RenderManager::getInstance()->RenderCelShader();
         //tree->Rotate(0.003f, glm::vec3(0.0f, 1.0f, 0.0f));
         //plane->Draw();
         //RenderManager::getInstance()->RenderCelShader();
         //terrain->Draw();
         //water->Draw();
-        guiWidget->Draw();
+        //guiWidget->Draw();
         glfwSwapBuffers(DisplayManager::getInstance()->window);
     }
 

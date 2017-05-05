@@ -19,18 +19,21 @@ void Terrain::generateCollision() {
     int width = sizeX + 1;
     int height = sizeZ + 1;
 
-    float minHeight = 0.0f;
-    float maxHeight = 0.2f;
+    float minHeight = 0.1f;
+    float maxHeight = 0.1f;
 
-    btHeightfieldTerrainShape *heightfieldShape =
-            new btHeightfieldTerrainShape(width, height, heightCoords.data(), 1,
-                                          minHeight, maxHeight, 1, PHY_FLOAT, true);
+    btCollisionShape *heightfieldShape =
+            new btHeightfieldTerrainShape (width, height, heightCoords.data(), btScalar(1),
+                                          btScalar(-1.5f), btScalar(1.5f), 1, PHY_FLOAT, false);
     btAssert(heightfieldShape && "null heightfield");
 
     //  Correct the offset from bullet (originally centers the entire collision object to 0 coord)
     btTransform startTransform;
     startTransform.setIdentity();
     startTransform.setOrigin(btVector3(width / 2 - 0.5f, 0, height / 2 - 0.5f));
+
+    heightfieldShape->setLocalScaling(btVector4(1.0f,4.0f,1.0f, 1.0f));
+
 
     btDefaultMotionState *motionstate = new btDefaultMotionState(startTransform);
 
@@ -44,8 +47,7 @@ void Terrain::generateCollision() {
     );
 
 
-    btRigidBody *rigidBody = new btRigidBody(rigidBodyCI);
-    PhysicsManager::getInstance()->worldPhysics->dynamicsWorld->addRigidBody(rigidBody);
+    rigidBody = new btRigidBody(rigidBodyCI);
 }
 
 void Terrain::GenerateRivers() {

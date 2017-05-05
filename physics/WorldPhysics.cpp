@@ -10,11 +10,15 @@
 #include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
 #include <detail/type_mat.hpp>
 #include <ext.hpp>
+#include <BulletCollision/BroadphaseCollision/btAxisSweep3.h>
+#include <BulletCollision/CollisionDispatch/btGhostObject.h>
 #include "WorldPhysics.h"
 #include "../DebugDrawer.h"
 #include "../camera/CameraManager.h"
 #include "../Entity.h"
 #include "../Tree.h"
+#include "../Terrain.h"
+#include "../EntityManager.h"
 
 Entity *WorldPhysics::lastHitEntity = 0;
 
@@ -32,9 +36,16 @@ void WorldPhysics::InitPhysics() {
     // The actual physics solver
     btSequentialImpulseConstraintSolver *solver = new btSequentialImpulseConstraintSolver;
 
+    btVector3 worldMin(-1000,-1000,-1000);
+    btVector3 worldMax(1000,1000,1000);
+    btAxisSweep3* sweepBP = new btAxisSweep3(worldMin,worldMax);
+    btAxisSweep3 *m_overlappingPairCache = sweepBP;
+
     // The world.
-    dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
+    dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, m_overlappingPairCache, solver, collisionConfiguration);
     dynamicsWorld->setGravity(btVector3(0, -9.81f, 0));
+    dynamicsWorld->getDispatchInfo().m_allowedCcdPenetration=0.0001f;
+    sweepBP->getOverlappingPairCache()->setInternalGhostPairCallback(new btGhostPairCallback());
 
     DebugDrawer* debugDrawer = new DebugDrawer();
     debugDrawer->setup();
@@ -70,33 +81,41 @@ void WorldPhysics::RayCast(double mouseX, double mouseY) {
     btCollisionWorld::ClosestRayResultCallback rayCallBack(bulletStartPos, bulletEndPos);
     dynamicsWorld->rayTest(bulletStartPos, bulletEndPos, rayCallBack);
 
-    //  Check if the ray hit something
-//    if(rayCallBack.hasHit()) {
-//        Entity* hitEntity = (Entity*) rayCallBack.m_collisionObject->getUserPointer();
-//        getHitEntityType(hitEntity);
-//        hitEntity->model->drawOutline = true;
-//        lastHitEntity = hitEntity;
-//    }else{
-//        if(!lastHitEntity) return;
-//        lastHitEntity->model->drawOutline = false;
-//    }
+
+    if(rayCallBack.hasHit()) {
+        Entity* hitEntity = static_cast<Entity*>(rayCallBack.m_collisionObject->getUserPointer());
+
+        //  If hitEntity is NULL then it isnt a type or subtype of Entity, ignore interaction
+        if(hitEntity && hitEntity->entityType == EntityType::BASIC){
+            getHitEntityType(hitEntity);
+            hitEntity->model->drawOutline = true;
+            lastHitEntity = hitEntity;
+        }
+        if(hitEntity && hitEntity->entityType == EntityType::TERRAIN && mouseOneClicked){
+            EntityManager::getInstance()->playerController->MoveToCoord(glm::vec3(rayCallBack.m_hitPointWorld.getX(), rayCallBack.m_hitPointWorld.getY(), rayCallBack.m_hitPointWorld.getZ()));
+        }
+    }else{
+        if(!lastHitEntity) return;
+        lastHitEntity->model->drawOutline = false;
+    }
 }
 
 void WorldPhysics::getHitEntityType(Entity *hitEntity) {
-    Tree* tree = NULL;
+    //  Dynamic cast sends NULL if its actually not type of Tree, static_cast doesnt give a fuck and casts it always
+    Tree* tree = dynamic_cast<Tree*> (hitEntity);
 
-    switch(hitEntity->entityType){
-        case TREE:
-            tree = (Tree*) hitEntity;
-            tree->printShit();
-            break;
-        default:
-            return;
+    if(tree){
+        printf("Its a tree");
+        tree->printShit();
+    }else{
+        printf("Its something else");
     }
 }
 
 void WorldPhysics::Tick(){
     DebugDrawer* debugDrawer = (DebugDrawer*) dynamicsWorld->getDebugDrawer();
+
+    EntityManager::playerController->CheckPosition();
 
     dynamicsWorld->stepSimulation(1 / 60.f, 10);
 

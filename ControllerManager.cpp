@@ -47,6 +47,7 @@ ControllerManager::ControllerManager() {
     GLFWcursor *glfWcursor = glfwCreateCursor(&glfWimage, 0, 0);
     glfwSetCursor(displayManager->window, glfWcursor);
     glfwSetCursorPosCallback(displayManager->window, this->mouse_callback);
+    glfwSetMouseButtonCallback(displayManager->window, this->mouse_button_callback);
 }
 
 void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, int action, int mods) {
@@ -73,9 +74,20 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
     if (key == GLFW_KEY_E) {
         cameraManager->mainCamera->MoveDown();
     }
+    if(key == GLFW_MOUSE_BUTTON_2){
+        PhysicsManager::getInstance()->worldPhysics->mouseOneClicked = true;
+    }else{
+        PhysicsManager::getInstance()->worldPhysics->mouseOneClicked = false;
+    }
 }
 
 void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
     PhysicsManager::getInstance()->worldPhysics->RayCast(xpos, ypos);
     PhysicsManager::getInstance()->guiPhysics->RayCast(xpos, ypos);
+}
+
+void ControllerManager::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+{
+    PhysicsManager::getInstance()->worldPhysics->mouseOneClicked =
+            button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS;
 }

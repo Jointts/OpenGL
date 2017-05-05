@@ -50,7 +50,7 @@ void Entity::GenerateCollision(){
             btQuaternion(0, 0, 0, 1), btVector3(0, 0, 0)
     ));
 
-    btScalar mass = 0;
+    btScalar mass = 1;
 
     btRigidBody::btRigidBodyConstructionInfo rigidBodyCI(
             mass,               // mass, in kg. 0 -> Static object, will never move.
@@ -61,6 +61,10 @@ void Entity::GenerateCollision(){
 
     rigidBody = new btRigidBody(rigidBodyCI);
     rigidBody->setUserPointer(this);
+
+    btVector3 inertia;
+    rigidBody->getCollisionShape()->calculateLocalInertia( mass, inertia );
+    rigidBody->setMassProps(mass, inertia);
 
     PhysicsManager::getInstance()->worldPhysics->dynamicsWorld->addRigidBody(rigidBody);
 }
@@ -84,4 +88,17 @@ void Entity::Translate(glm::vec3 axis){
     rigidBody->getWorldTransform().getOpenGLMatrix(physicsMatrix);
     glm::mat4 translatedMatrix = glm::translate(Utils::BulletToGlm(physicsMatrix), axis);
     rigidBody->setWorldTransform(Utils::glmToBullet(translatedMatrix));
+}
+
+void Entity::ClickEvent() {
+
+}
+
+//  No model supplied, generate terrain instead
+Entity::Entity() {
+    entityType = EntityType::TERRAIN;
+    terrain = new Terrain(200, 200, 0, true);
+    terrain->generateCollision();
+    terrain->rigidBody->setUserPointer(this);
+    PhysicsManager::getInstance()->worldPhysics->dynamicsWorld->addRigidBody(terrain->rigidBody);
 }

@@ -3,6 +3,7 @@
 //
 
 #include <BulletCollision/CollisionShapes/btSphereShape.h>
+#include <BulletCollision/CollisionShapes/btConvex2dShape.h>
 #include <LinearMath/btDefaultMotionState.h>
 #include "GuiWidget.h"
 #include "../Utils.h"
@@ -81,6 +82,7 @@ void GuiWidget::setTexture(GLchar *path){
 void GuiWidget::GenerateCollision(){
 
     btSphereShape* btSphereShape_ =  new btSphereShape(3);
+    btConvex2dShape* collisionShape = new btConvex2dShape(btSphereShape_);
 
     btDefaultMotionState* motionstate = new btDefaultMotionState(btTransform(
             btQuaternion(0, 0, 0, 1), btVector3(0, 0, 0)
@@ -91,7 +93,7 @@ void GuiWidget::GenerateCollision(){
     btRigidBody::btRigidBodyConstructionInfo rigidBodyCI(
             0,               // mass, in kg. 0 -> Static object, will never move.
             motionstate,
-            btSphereShape_,        // collision shape of body
+            collisionShape,        // collision shape of body
             btVector3(0,0,0)    // local inertia
     );
 

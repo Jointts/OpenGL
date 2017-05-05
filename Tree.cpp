@@ -11,3 +11,7 @@ Tree::Tree(GLchar *modelPath, bool generateCollision) : Entity(modelPath, genera
 void Tree::printShit() {
     printf("Its a subclass of tree");
 }
+
+void Tree::ClickEvent() {
+    printf("Eat shit");
+}
