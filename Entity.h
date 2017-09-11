@@ -23,15 +23,11 @@ class Entity {
 public:
     Entity(GLchar* modelPath, bool generateCollision);
 
-    Entity();
-
     btRigidBody* rigidBody;
 
     EntityType entityType = BASIC;
 
     Model* model;
-
-    Terrain* terrain;
 
     bool hasCollision;
 

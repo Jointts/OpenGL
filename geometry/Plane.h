@@ -32,6 +32,8 @@ public:
 
     int sizeZ;
 
+    std::vector<Texture> textures;
+
     std::vector<float> heightCoords;
 
     virtual void Draw();
@@ -45,6 +47,10 @@ public:
     void UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices);
 
     void GenerateNormals();
+
+    void GenerateUVCoords(int currentIndex, int nextRow);
+
+    void AddTexture(const char *texturePath);
 };
 
 

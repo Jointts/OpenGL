@@ -5,6 +5,9 @@
 #include <vec3.hpp>
 #include <ext.hpp>
 #include "Plane.h"
+#include "../ShaderManager.h"
+#include "../Utils.h"
+#include "../RenderManager.h"
 #include <noise/noise.h>
 #include <iostream>
 
@@ -20,6 +23,13 @@ Plane::Plane(int sizeX, int sizeZ, int tileSize, bool generateHeightMap)
     setupMesh(vertices, indices);
 }
 
+void Plane::AddTexture(const char *texturePath) {
+    Texture texture;
+    texture.id = Utils::TextureFromFile(texturePath, false);
+    texture.type = "diffuse";
+    textures.push_back(texture);
+}
+
 void Plane::GenerateVertices() {
     module::Perlin myModule;
     myModule.SetOctaveCount (10);
@@ -28,12 +38,28 @@ void Plane::GenerateVertices() {
     for (int z = 0; z < sizeZ + 1; z++) {
         for (int x = 0; x < sizeX + 1; x++) {
             Vertex vertex1;
+            y = 0;
             if(generateHeightMap){
                 y = myModule.GetValue((double) x / distribution, 0.5, (double) z / distribution);
-                heightCoords.push_back((float &&) (float)y);
             }
+            heightCoords.push_back((float &&) (float)y);
             std::cout << y << std::endl;
             vertex1.position = glm::vec3(x, (float) y * 10, z);
+            vertex1.normal = glm::vec3(0.0f, 1.0f, 0.0f);
+
+            if(z % 2 == 0){
+                if(x % 2 == 0){
+                    vertex1.uv_coord = glm::vec2(0.0f, 1.0f);
+                }else{
+                    vertex1.uv_coord = glm::vec2(1.0f, 1.0f);
+                }
+            }else{
+                if(x % 2 == 0){
+                    vertex1.uv_coord = glm::vec2(0.0f, 0.0f);
+                }else{
+                    vertex1.uv_coord = glm::vec2(1.0f, 0.0f);
+                }
+            }
             vertices.push_back(vertex1);
         }
     }
@@ -53,6 +79,13 @@ void Plane::GenerateIndices() {
             indices.push_back(nextRow + currentIndex + 1);
         }
     }
+}
+
+void Plane::GenerateUVCoords(int currentIndex, int nextRow) {
+    vertices[currentIndex].uv_coord = glm::vec2(0.0f, 1.0f);
+    vertices[currentIndex + 1].uv_coord = glm::vec2(1.0f, 1.0f);
+    vertices[nextRow + currentIndex].uv_coord = glm::vec2(0.0f, 0.0f);
+    vertices[nextRow + currentIndex + 1].uv_coord = glm::vec2(1.0f, 0.0f);
 }
 
 void Plane::GenerateNormals() {
@@ -90,6 +123,11 @@ void Plane::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices)
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                           (GLvoid *) 0);
+
+    // Vertex UV coordinates
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
+                          (GLvoid*)offsetof(Vertex, uv_coord));
 }
 
 void Plane::UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices){
@@ -108,6 +146,19 @@ void Plane::UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices
 }
 
 void Plane::Draw() {
+    int diffuseNr = 0;
+    for(GLuint i = 0; i < this->textures.size(); i++)
+    {
+        glActiveTexture(GL_TEXTURE0 + i); // Activate proper texture unit before binding
+        // Retrieve texture number (the N in diffuse_textureN)
+        std::string name = this->textures[i].type;
+        if(name == "diffuse")
+            diffuseNr++;
+        const char* shader_attribute =  std::string("diffuse1").c_str();
+        int uniformLocation = (int) glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, shader_attribute);
+        glUniform1f(uniformLocation, i);
+        glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
+    }
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBindVertexArray(VAO);
     glEnableVertexAttribArray(0);

@@ -91,8 +91,15 @@ void WorldPhysics::RayCast(double mouseX, double mouseY) {
             hitEntity->model->drawOutline = true;
             lastHitEntity = hitEntity;
         }
-        if(hitEntity && hitEntity->entityType == EntityType::TERRAIN && mouseOneClicked){
-            EntityManager::getInstance()->playerController->MoveToCoord(glm::vec3(rayCallBack.m_hitPointWorld.getX(), rayCallBack.m_hitPointWorld.getY(), rayCallBack.m_hitPointWorld.getZ()));
+        // If hitEntity is NULL, it means it isnt a subtype of entity, it must be Terrain
+        if(hitEntity == NULL && mouseOneClicked){
+            if(EntityManager::getInstance()->player){
+                EntityManager::getInstance()->player->entityController->MoveToCoord(glm::vec3(
+                        rayCallBack.m_hitPointWorld.getX(),
+                        rayCallBack.m_hitPointWorld.getY(),
+                        rayCallBack.m_hitPointWorld.getZ()
+                ));
+            }
         }
     }else{
         if(!lastHitEntity) return;
@@ -115,10 +122,14 @@ void WorldPhysics::getHitEntityType(Entity *hitEntity) {
 void WorldPhysics::Tick(){
     DebugDrawer* debugDrawer = (DebugDrawer*) dynamicsWorld->getDebugDrawer();
 
-    EntityManager::playerController->CheckPosition();
+    if(EntityManager::player) EntityManager::player->entityController->CheckPosition();
 
     dynamicsWorld->stepSimulation(1 / 60.f, 10);
 
     dynamicsWorld->debugDrawWorld();
     debugDrawer->Draw();
+}
+
+void WorldPhysics::AddPlayer(){
+
 }

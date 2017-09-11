@@ -2,15 +2,18 @@
 // Created by Joonas on 06/10/2016.
 //
 
+#define STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_RESIZE_IMPLEMENTATION
+
 #include <iostream>
 #include <gtc/matrix_transform.hpp>
 #include <stdlib.h>
 #include <stb_image.h>
-#define STB_IMAGE_RESIZE_IMPLEMENTATION
 #include <stb_image_resize.h>
 #include <btBulletCollisionCommon.h>
 #include "ControllerManager.h"
 #include "physics/PhysicsManager.h"
+#include "EntityManager.h"
 
 
 ControllerManager *ControllerManager::controllerManager = 0;
@@ -56,24 +59,49 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
         glfwTerminate();
         exit(EXIT_SUCCESS);
     }
-    if (key == GLFW_KEY_A) {
-        cameraManager->mainCamera->MoveLeft();
+//    if (key == GLFW_KEY_A) {
+//        cameraManager->mainCamera->MoveLeft();
+//    }
+//    if (key == GLFW_KEY_D) {
+//        cameraManager->mainCamera->MoveRight();
+//    }
+//    if (key == GLFW_KEY_W) {
+//        cameraManager->mainCamera->MoveForward();
+//    }
+//    if (key == GLFW_KEY_S) {
+//        cameraManager->mainCamera->MoveBack();
+//    }
+//    if (key == GLFW_KEY_Q) {
+//        cameraManager->mainCamera->MoveUp();
+//    }
+//    if (key == GLFW_KEY_E) {
+//        cameraManager->mainCamera->MoveDown();
+//    }
+
+    EntityController* entityController = EntityManager::getInstance()->player->entityController;
+
+    if(entityController){
+        if (key == GLFW_KEY_A) {
+            entityController->SetMoveDirection(glm::vec3(-1.0, 0.0, 0.0));
+        }
+        if (key == GLFW_KEY_D) {
+            entityController->SetMoveDirection(glm::vec3(1.0, 0.0, 0.0));
+        }
+        if (key == GLFW_KEY_W) {
+            entityController->SetMoveDirection(glm::vec3(0.0, 0.0, -1.0));
+        }
+        if (key == GLFW_KEY_S) {
+            entityController->SetMoveDirection(glm::vec3(0.0, 0.0, 1.0));
+        }
+        if (key == GLFW_KEY_Q) {
+            cameraManager->mainCamera->MoveUp();
+        }
+        if (key == GLFW_KEY_E) {
+            cameraManager->mainCamera->MoveDown();
+        }
     }
-    if (key == GLFW_KEY_D) {
-        cameraManager->mainCamera->MoveRight();
-    }
-    if (key == GLFW_KEY_W) {
-        cameraManager->mainCamera->MoveForward();
-    }
-    if (key == GLFW_KEY_S) {
-        cameraManager->mainCamera->MoveBack();
-    }
-    if (key == GLFW_KEY_Q) {
-        cameraManager->mainCamera->MoveUp();
-    }
-    if (key == GLFW_KEY_E) {
-        cameraManager->mainCamera->MoveDown();
-    }
+
+
     if(key == GLFW_MOUSE_BUTTON_2){
         PhysicsManager::getInstance()->worldPhysics->mouseOneClicked = true;
     }else{

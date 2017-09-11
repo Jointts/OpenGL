@@ -5,16 +5,22 @@
 #ifndef OPENGL_ENTITYMANAGER_H
 #define OPENGL_ENTITYMANAGER_H
 
+#include <vector>
 #include "EntityController.h"
+#include "Player.h"
 
 class EntityManager {
 public:
-    EntityManager();
 
-    static EntityController *playerController;
+    static Player* player;
+
     static EntityManager *entityManager;
 
     static EntityManager * getInstance();
+
+    std::vector<Entity *> entities;
+
+    Terrain* terrain;
 };
 
 

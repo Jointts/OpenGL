@@ -25,6 +25,8 @@ public:
     static Entity *lastHitEntity;
 
     void Tick();
+
+    void AddPlayer();
 };
 
 

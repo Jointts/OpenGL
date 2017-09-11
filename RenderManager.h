@@ -11,36 +11,29 @@
 #include "Model.h"
 #include "ShaderProgram.h"
 #include "Entity.h"
+    class RenderManager {
+    public:
 
-class RenderManager{
-public:
+        static int cameraPosition;
 
-    static int cameraPosition;
+        static RenderManager *getInstance();
 
-    std::vector<Entity*> entities;
+        static RenderManager *renderManager;
 
-    static RenderManager *getInstance();
+        void RenderCelShader();
 
-    static RenderManager *renderManager;
+        void RenderBaseShader();
 
-    void RenderModels();
+        void DrawModels();
 
-    void RenderCelShader(bool drawModels);
+        void DrawTerrain();
 
-    void RenderBaseShader(bool drawModels);
+        void RenderWaterShader();
 
-    void RenderCelShader();
+        void RenderGuiShader();
 
-    void RenderBaseShader();
-
-    void DrawModels();
-
-    void RenderWaterShader();
-
-    void RenderGuiShader();
-
-    void RenderDebugShader();
-};
+        void RenderDebugShader();
+    };
 
 
 #endif //OPENGL_RENDERMANAGER_H

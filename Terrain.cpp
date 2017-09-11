@@ -9,6 +9,7 @@
 #include <zconf.h>
 #include "Terrain.h"
 #include "physics/PhysicsManager.h"
+#include "EntityManager.h"
 #include <algorithm>
 
 int lastVertex = NULL;
@@ -24,7 +25,7 @@ void Terrain::generateCollision() {
 
     btCollisionShape *heightfieldShape =
             new btHeightfieldTerrainShape (width, height, heightCoords.data(), btScalar(1),
-                                          btScalar(-1.5f), btScalar(1.5f), 1, PHY_FLOAT, false);
+                                          btScalar(0.f), btScalar(0.f), 1, PHY_FLOAT, false);
     btAssert(heightfieldShape && "null heightfield");
 
     //  Correct the offset from bullet (originally centers the entire collision object to 0 coord)
@@ -32,7 +33,6 @@ void Terrain::generateCollision() {
     startTransform.setIdentity();
     startTransform.setOrigin(btVector3(width / 2 - 0.5f, 0, height / 2 - 0.5f));
 
-    heightfieldShape->setLocalScaling(btVector4(1.0f,4.0f,1.0f, 1.0f));
 
 
     btDefaultMotionState *motionstate = new btDefaultMotionState(startTransform);
@@ -48,6 +48,7 @@ void Terrain::generateCollision() {
 
 
     rigidBody = new btRigidBody(rigidBodyCI);
+    PhysicsManager::getInstance()->worldPhysics->dynamicsWorld->addRigidBody(rigidBody);
 }
 
 void Terrain::GenerateRivers() {
@@ -147,5 +148,9 @@ void Terrain::CarvePath(int index){
     CarvePath(vertexToDigIndex);
 }
 
+
+
 Terrain::Terrain(int sizeX, int sizeZ, int tileSize, bool generateHeightMap) : Plane(sizeX, sizeZ, tileSize,
-                                                                                     generateHeightMap) {}
+                                                                                     generateHeightMap) {
+    EntityManager::getInstance()->terrain = this;
+}

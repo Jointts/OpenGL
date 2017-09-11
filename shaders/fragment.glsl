@@ -3,6 +3,7 @@
 in vec2 TexCoords;
 in vec3 NormalCoords;
 in vec3 FragPos;
+in vec3 VertexPos;
 
 out vec4 color;
 
@@ -20,7 +21,15 @@ void applyDirectionalLight(inout vec4 color, vec3 normalCoord, vec3 lightColor, 
 void main()
 {
     if(hit){
-        color = vec4(0.5, 0.5, 0.5, 1.0);
+        vec3 viewDirection =
+                       normalize(FragPos - vec3(VertexPos));
+
+        if (dot(viewDirection, NormalCoords)
+                       < mix(2.0, 3.0,
+                       max(0.0, dot(NormalCoords, lightDirection))))
+                    {
+                       color = vec4(vec3(lightColor) * vec3(0.5, 0.5, 0.5), 1.0);
+                    }
     }else{
         vec4 object_color = vec4(texture(diffuse1, TexCoords));
         applyAmbient(color, ambientStrength, ambientColor);
