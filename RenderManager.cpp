@@ -12,6 +12,8 @@
 #include "gui/GuiWidget.h"
 #include "EntityManager.h"
 
+DirectionalLight *directionalLight = 0;
+
 RenderManager *RenderManager::renderManager = 0;
 
     void RenderManager::RenderCelShader() {
@@ -77,9 +79,11 @@ RenderManager *RenderManager::renderManager = 0;
         GLfloat lightStrength = 0.2f;
         glm::vec3 lightPos = {1.0f, 1.0f, 1.0f};
 
-        DirectionalLight *directionalLight = new DirectionalLight(lightColor, lightStrength, lightPos);
-        directionalLight->Enable();
+        if(directionalLight == 0){
+            directionalLight = new DirectionalLight(lightColor, lightStrength, lightPos);
+        }
 
+        directionalLight->Enable();
     }
 
     void RenderManager::RenderGuiShader() {

@@ -2,7 +2,9 @@
 // Created by Joonas on 06/10/2016.
 //
 
+#ifndef __gl_h_
 #include <glad/glad.h>
+#endif
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include "DisplayManager.h"

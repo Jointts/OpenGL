@@ -14,6 +14,7 @@ public:
     void Rotate(float angle, glm::vec3 axis);
     void Scale(glm::vec3 axis);
     void Translate(glm::vec3 axis);
+    void setMovementSpeed(float speed);
 };
 
 

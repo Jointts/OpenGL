@@ -40,7 +40,7 @@ ControllerManager::ControllerManager() {
     int height = 0;
     int width = 0;
     int bytesPerPixel = 0;
-    char *path = (char *) "/Users/joonas/CLionProjects/OpenGL/cmake-build-debug/res/cursor.png";
+    char *path = (char *) "C:\\Users\\Joonas\\ClionProjects\\OpenGL\\res\\cursor.png";
     unsigned char *pixelData = stbi_load(path, &width, &height, &bytesPerPixel, STBI_rgb_alpha);
     GLFWimage glfWimage;
     glfWimage.height = height;
@@ -111,7 +111,7 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
 
 void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
     PhysicsManager::getInstance()->worldPhysics->RayCast(xpos, ypos);
-    PhysicsManager::getInstance()->guiPhysics->RayCast(xpos, ypos);
+    //PhysicsManager::getInstance()->guiPhysics->RayCast(xpos, ypos);
 }
 
 void ControllerManager::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)

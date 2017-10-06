@@ -51,12 +51,9 @@ void EntityController::SetupCollision(){
 
 void EntityController::FaceCoord(glm::vec3 coordToFace){
     btTransform currentTransform = m_ghostObject->getWorldTransform();
+    btVector3 &origin = m_ghostObject->getWorldTransform().getOrigin();
 
-    glm::vec3 sourceCoord = glm::vec3(
-            m_ghostObject->getWorldTransform().getOrigin().getX(),
-            m_ghostObject->getWorldTransform().getOrigin().getY(),
-            m_ghostObject->getWorldTransform().getOrigin().getZ()
-    );
+    glm::vec3 sourceCoord = glm::vec3(origin.getX(), origin.getY(), origin.getZ());
 
     glm::vec3 finalVector = glm::normalize(coordToFace - sourceCoord);
 
@@ -70,7 +67,7 @@ void EntityController::FaceCoord(glm::vec3 coordToFace){
 
     btQuaternion newRotation;
 
-    newRotation.setEuler(currentAngle + angle, 0, 0);
+    newRotation.setRotation(btVector3(0.f, 1.f, 0.f), currentAngle + angle);
 
     currentTransform.setRotation(newRotation);
 
@@ -82,11 +79,9 @@ void EntityController::MoveToCoord(glm::vec3 worldCoord){
     // Code for moving the collision object
     targetCoord = worldCoord;
 
-    glm::vec3 sourceCoord = glm::vec3(
-            m_ghostObject->getWorldTransform().getOrigin().getX(),
-            m_ghostObject->getWorldTransform().getOrigin().getY(),
-            m_ghostObject->getWorldTransform().getOrigin().getZ()
-    );
+    btVector3 origin =  m_ghostObject->getWorldTransform().getOrigin();
+
+    glm::vec3 sourceCoord = glm::vec3(origin.getX(), origin.getY(), origin.getZ());
 
     glm::vec3 finalVector = glm::normalize(worldCoord - sourceCoord);
 
@@ -121,7 +116,6 @@ void EntityController::CheckPosition(){
             m_character->setWalkDirection(btVector3(0, 0, 0));
         }
     }
-
 
     btScalar physicsMatrix[16];
     m_ghostObject->getWorldTransform().getOpenGLMatrix(physicsMatrix);

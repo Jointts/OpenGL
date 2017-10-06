@@ -6,7 +6,9 @@
 #define OPENGL_CHARACTER_H
 
 #include <ft2build.h>
-#include <OpenGL/OpenGL.h>
+#ifndef __gl_h_
+#include <glad/glad.h>
+#endif
 #include <detail/type_vec.hpp>
 #include <vec2.hpp>
 #include <map>

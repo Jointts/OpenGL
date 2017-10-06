@@ -15,6 +15,7 @@
 #include "GuiPhysics.h"
 #include "../DebugDrawer.h"
 #include "../camera/CameraManager.h"
+#include "../DisplayManager.h"
 
 Entity *GuiPhysics::lastHitEntity = 0;
 
@@ -54,8 +55,10 @@ void GuiPhysics::InitPhysics() {
 }
 
 void GuiPhysics::RayCast(double mouseX, double mouseY) {
-    GLint viewportWidth = 1440;
-    GLint viewportHeight = 900;
+    DisplayManager *displayManager = DisplayManager::getInstance();
+
+    GLint viewportWidth = displayManager->width;
+    GLint viewportHeight = displayManager->height;
 
     //  Since OpenGL coordinates start from the lower left corner, we need to correct the Y coordinate
     mouseY = viewportHeight - mouseY;

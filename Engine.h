@@ -5,7 +5,9 @@
 #ifndef OPENGL_ENGINE_H
 #define OPENGL_ENGINE_H
 
-
+#ifndef __gl_h_
+#include <glad/glad.h>
+#endif
 #include "ShaderProgram.h"
 #include "Display.h"
 #include "ControllerManager.h"

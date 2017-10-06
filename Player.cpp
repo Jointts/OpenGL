@@ -38,3 +38,7 @@ void Player::Translate(glm::vec3 axis) {
     glm::mat4 translatedMatrix = glm::translate(Utils::BulletToGlm(physicsMatrix), axis);
     entityController->m_ghostObject->setWorldTransform(Utils::glmToBullet(translatedMatrix));
 }
+
+void Player::setMovementSpeed(float speed) {
+    entityController->setMovementSpeed(speed);
+}

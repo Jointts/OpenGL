@@ -6,7 +6,9 @@
 #define OPENGL_MAINCAMERA_H
 
 
-#include <OpenGL/OpenGL.h>
+#ifndef __gl_h_
+#include <glad/glad.h>
+#endif
 #include "Camera.h"
 
 

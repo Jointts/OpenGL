@@ -6,7 +6,6 @@
 #define OPENGL_DUPLICATEDVERTEXPLANE_H
 
 
-#include <jmorecfg.h>
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 #include "Model.h"
 

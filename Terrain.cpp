@@ -12,7 +12,6 @@
 #include "EntityManager.h"
 #include <algorithm>
 
-int lastVertex = NULL;
 int iterations = 0;
 
 void Terrain::generateCollision() {

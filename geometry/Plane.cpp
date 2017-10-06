@@ -10,6 +10,7 @@
 #include "../RenderManager.h"
 #include <noise/noise.h>
 #include <iostream>
+#include <random>
 
 using namespace noise;
 
@@ -20,6 +21,7 @@ Plane::Plane(int sizeX, int sizeZ, int tileSize, bool generateHeightMap)
     this->sizeZ = sizeZ;
     GenerateVertices();
     GenerateIndices();
+    GenerateNormals();
     setupMesh(vertices, indices);
 }
 
@@ -31,6 +33,8 @@ void Plane::AddTexture(const char *texturePath) {
 }
 
 void Plane::GenerateVertices() {
+    std::default_random_engine eng((std::random_device())());
+
     module::Perlin myModule;
     myModule.SetOctaveCount (10);
     myModule.SetPersistence(0.5);
@@ -42,24 +46,16 @@ void Plane::GenerateVertices() {
             if(generateHeightMap){
                 y = myModule.GetValue((double) x / distribution, 0.5, (double) z / distribution);
             }
+
+            std::uniform_real_distribution<float> red_random_factor(0, 100.0);
+
+            float red = 150 + red_random_factor(eng);
+
             heightCoords.push_back((float &&) (float)y);
             std::cout << y << std::endl;
             vertex1.position = glm::vec3(x, (float) y * 10, z);
-            vertex1.normal = glm::vec3(0.0f, 1.0f, 0.0f);
+            vertex1.color = Utils::color_RGB(red, 255, 0);
 
-            if(z % 2 == 0){
-                if(x % 2 == 0){
-                    vertex1.uv_coord = glm::vec2(0.0f, 1.0f);
-                }else{
-                    vertex1.uv_coord = glm::vec2(1.0f, 1.0f);
-                }
-            }else{
-                if(x % 2 == 0){
-                    vertex1.uv_coord = glm::vec2(0.0f, 0.0f);
-                }else{
-                    vertex1.uv_coord = glm::vec2(1.0f, 0.0f);
-                }
-            }
             vertices.push_back(vertex1);
         }
     }
@@ -90,18 +86,26 @@ void Plane::GenerateUVCoords(int currentIndex, int nextRow) {
 
 void Plane::GenerateNormals() {
     for (int z = 0; z < sizeZ; ++z) {
-        for (int x = 0; x < sizeX; x += 2) {
+        for (int x = 0; x < sizeX; x++) {
             GLuint currentIndex = (GLuint) (x + z * sizeX + z);
             GLuint nextRow = (GLuint) (sizeX + 1);
 
             glm::vec3 v1 = vertices[currentIndex + 1].position;
             glm::vec3 v2 = vertices[currentIndex].position;
             glm::vec3 v3 = vertices[nextRow + currentIndex].position;
+            glm::vec3 v4 = vertices[nextRow + currentIndex + 1].position;
+
+            glm::vec3 edge1 = v2 - v1;
+            glm::vec3 edge2 = v3 - v1;
+            glm::vec3 edge3 = v3 - v2;
+            glm::vec3 edge4 = v4 - v2;
+
+            vertices[currentIndex + 1].normal = glm::cross(edge3, edge4);;
+            vertices[nextRow + currentIndex].normal = glm::cross(edge3, edge4);;
+            vertices[nextRow + currentIndex + 1].normal = glm::cross(edge3, edge4);;
 
 
-            vertices[currentIndex + 1].normal;
-            vertices[nextRow + currentIndex].normal;
-            vertices[nextRow + currentIndex + 1].normal;
+            vertices[currentIndex].normal = glm::cross(edge1, edge2);
         }
     }
 }
@@ -124,10 +128,15 @@ void Plane::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices)
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                           (GLvoid *) 0);
 
-    // Vertex UV coordinates
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, uv_coord));
+    // Vertex Normals
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
+                          (GLvoid*)offsetof(Vertex, normal));
+
+    // Vertex Color
+    glEnableVertexAttribArray(3);
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
+                          (GLvoid*)offsetof(Vertex, color));
 }
 
 void Plane::UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices){
@@ -143,9 +152,16 @@ void Plane::UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                           (GLvoid *) 0);
+
+    // Vertex Color
+    glEnableVertexAttribArray(3);
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
+                          (GLvoid*)offsetof(Vertex, color));
 }
 
 void Plane::Draw() {
+    RenderManager::getInstance()->RenderBaseShader();
+
     int diffuseNr = 0;
     for(GLuint i = 0; i < this->textures.size(); i++)
     {
@@ -162,8 +178,11 @@ void Plane::Draw() {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBindVertexArray(VAO);
     glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glEnableVertexAttribArray(3);
     glDrawElements(GL_TRIANGLES, (GLsizei) indices.size(), GL_UNSIGNED_INT, 0);
     glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(3);
     glBindVertexArray(0);
 }
 

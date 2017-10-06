@@ -9,7 +9,7 @@
 #include <vec3.hpp>
 #include <vec2.hpp>
 #include <assimp/scene.h>
-#if not defined(__gl_h_)
+#ifndef __gl_h_
 #include <glad/glad.h>
 #endif
 #include <vector>
@@ -25,6 +25,7 @@ struct Vertex {
     glm::vec3 position;
     glm::vec3 normal;
     glm::vec2 uv_coord;
+    glm::vec3 color;
 };
 
 class Mesh;

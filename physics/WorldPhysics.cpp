@@ -19,6 +19,7 @@
 #include "../Tree.h"
 #include "../Terrain.h"
 #include "../EntityManager.h"
+#include "../DisplayManager.h"
 
 Entity *WorldPhysics::lastHitEntity = 0;
 
@@ -36,18 +37,18 @@ void WorldPhysics::InitPhysics() {
     // The actual physics solver
     btSequentialImpulseConstraintSolver *solver = new btSequentialImpulseConstraintSolver;
 
-    btVector3 worldMin(-1000,-1000,-1000);
-    btVector3 worldMax(1000,1000,1000);
-    btAxisSweep3* sweepBP = new btAxisSweep3(worldMin,worldMax);
+    btVector3 worldMin(-1000, -1000, -1000);
+    btVector3 worldMax(1000, 1000, 1000);
+    btAxisSweep3 *sweepBP = new btAxisSweep3(worldMin, worldMax);
     btAxisSweep3 *m_overlappingPairCache = sweepBP;
 
     // The world.
     dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, m_overlappingPairCache, solver, collisionConfiguration);
     dynamicsWorld->setGravity(btVector3(0, -9.81f, 0));
-    dynamicsWorld->getDispatchInfo().m_allowedCcdPenetration=0.0001f;
+    dynamicsWorld->getDispatchInfo().m_allowedCcdPenetration = 0.0001f;
     sweepBP->getOverlappingPairCache()->setInternalGhostPairCallback(new btGhostPairCallback());
 
-    DebugDrawer* debugDrawer = new DebugDrawer();
+    DebugDrawer *debugDrawer = new DebugDrawer();
     debugDrawer->setup();
 
     debugDrawer->setDebugMode(btIDebugDraw::DBG_DrawWireframe);
@@ -55,8 +56,10 @@ void WorldPhysics::InitPhysics() {
 }
 
 void WorldPhysics::RayCast(double mouseX, double mouseY) {
-    GLint viewportWidth = 1440;
-    GLint viewportHeight = 900;
+    DisplayManager *displayManager = DisplayManager::getInstance();
+
+    GLint viewportWidth = displayManager->width;
+    GLint viewportHeight = displayManager->height;
 
     //  Since OpenGL coordinates start from the lower left corner, we need to correct the Y coordinate
     mouseY = viewportHeight - mouseY;
@@ -82,18 +85,18 @@ void WorldPhysics::RayCast(double mouseX, double mouseY) {
     dynamicsWorld->rayTest(bulletStartPos, bulletEndPos, rayCallBack);
 
 
-    if(rayCallBack.hasHit()) {
-        Entity* hitEntity = static_cast<Entity*>(rayCallBack.m_collisionObject->getUserPointer());
+    if (rayCallBack.hasHit()) {
+        Entity *hitEntity = static_cast<Entity *>(rayCallBack.m_collisionObject->getUserPointer());
 
         //  If hitEntity is NULL then it isnt a type or subtype of Entity, ignore interaction
-        if(hitEntity && hitEntity->entityType == EntityType::BASIC){
+        if (hitEntity && hitEntity->entityType == EntityType::BASIC) {
             getHitEntityType(hitEntity);
             hitEntity->model->drawOutline = true;
             lastHitEntity = hitEntity;
         }
         // If hitEntity is NULL, it means it isnt a subtype of entity, it must be Terrain
-        if(hitEntity == NULL && mouseOneClicked){
-            if(EntityManager::getInstance()->player){
+        if (hitEntity == NULL && mouseOneClicked) {
+            if (EntityManager::getInstance()->player) {
                 EntityManager::getInstance()->player->entityController->MoveToCoord(glm::vec3(
                         rayCallBack.m_hitPointWorld.getX(),
                         rayCallBack.m_hitPointWorld.getY(),
@@ -101,28 +104,28 @@ void WorldPhysics::RayCast(double mouseX, double mouseY) {
                 ));
             }
         }
-    }else{
-        if(!lastHitEntity) return;
+    } else {
+        if (!lastHitEntity) return;
         lastHitEntity->model->drawOutline = false;
     }
 }
 
 void WorldPhysics::getHitEntityType(Entity *hitEntity) {
     //  Dynamic cast sends NULL if its actually not type of Tree, static_cast doesnt give a fuck and casts it always
-    Tree* tree = dynamic_cast<Tree*> (hitEntity);
+    Tree *tree = dynamic_cast<Tree *> (hitEntity);
 
-    if(tree){
+    if (tree) {
         printf("Its a tree");
         tree->printShit();
-    }else{
+    } else {
         printf("Its something else");
     }
 }
 
-void WorldPhysics::Tick(){
-    DebugDrawer* debugDrawer = (DebugDrawer*) dynamicsWorld->getDebugDrawer();
+void WorldPhysics::Tick() {
+    DebugDrawer *debugDrawer = (DebugDrawer *) dynamicsWorld->getDebugDrawer();
 
-    if(EntityManager::player) EntityManager::player->entityController->CheckPosition();
+    if (EntityManager::player) EntityManager::player->entityController->CheckPosition();
 
     dynamicsWorld->stepSimulation(1 / 60.f, 10);
 
@@ -130,6 +133,6 @@ void WorldPhysics::Tick(){
     debugDrawer->Draw();
 }
 
-void WorldPhysics::AddPlayer(){
+void WorldPhysics::AddPlayer() {
 
 }

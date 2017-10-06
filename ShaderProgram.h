@@ -9,6 +9,8 @@
 #include <glad/glad.h>
 #endif
 
+typedef char GLchar;
+
 class ShaderProgram {
 public:
     ShaderProgram(char *vertexShader, char *fragmentShader);

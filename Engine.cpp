@@ -9,17 +9,11 @@
 #include <detail/type_mat4x4.hpp>
 #include <gtc/type_ptr.hpp>
 #include <iostream>
-#include <glad/glad.h>
 #include "Engine.h"
 #include "RenderManager.h"
 #include "physics/PhysicsManager.h"
-#include "geometry/Quad.h"
-#include "FreeType.h"
-#include "Tree.h"
 #include "Time.h"
-#include "gui/GuiWidget.h"
 #include "EntityManager.h"
-#include "CEGUI/CEGUI.h"
 #include "DuplicatedVertexPlane.h"
 
 int Engine::Start() {
@@ -41,11 +35,13 @@ int Engine::Start() {
     PhysicsManager::getInstance()->Tick();
     //  Utter crap class, just for testing subclass pointers
     //Tree* tree = new Tree("res/tree_1.FBX", true);
-    Player* player = new Player("res/tree_1.FBX", false);
+    Player* player = new Player("res/tree_1.FBX", true);
     player->Translate(glm::vec3(-10.0f, 10.0f, 10.0f));
+    //player->Scale(glm::vec3(0.5f, 0.5f, 0.5f));
+    player->setMovementSpeed(0.1f);
     //tree->Translate(glm::vec3(25, 5, 25));
     //tree->Rotate(90.0f, glm::vec3(1.0, 0.0, 0.0));
-    //Entity* entity = new Entity("res/rock_1.FBX", true);
+    Entity* entity = new Entity("res/rock_1.FBX", true);
     //Entity* entity2 = new Entity("res/bunny/RRabbit.FBX", true);
 
 /*    GuiWidget* guiWidget = new GuiWidget(100, 100);
@@ -59,12 +55,12 @@ int Engine::Start() {
     //Water *water = new Water(200, 200, 0, false);
     //plane->generateHeightMap = true;
     //Plane *water = new Plane(200, 200, 0, false);
-    //Terrain *terrain = new Terrain(100, 100, 0, false);
+    Terrain *terrain = new Terrain(100, 100, 0, true);
     //terrain->terrain->GenerateRivers();
     //terrain->generateCollision();
     //terrain->AddTexture("res/van_gogh.jpg");
     DuplicatedVertexPlane *duplicatedVertexPlane = new DuplicatedVertexPlane(100, 100, true);
-    duplicatedVertexPlane->setImage("res/van_gogh.jpg");
+//    duplicatedVertexPlane->setImage("res/van_gogh.jpg");
 
     while (!glfwWindowShouldClose(DisplayManager::getInstance()->window)) {
         glfwPollEvents();
@@ -75,13 +71,13 @@ int Engine::Start() {
 
         PhysicsManager::getInstance()->Tick();
         RenderManager::getInstance()->DrawModels();
-        duplicatedVertexPlane->Draw();
+        terrain->Draw();
+        //duplicatedVertexPlane->Draw();
         //tree->Rotate(0.003f, glm::vec3(0.0f, 1.0f, 0.0f));
         //plane->Draw();
         //RenderManager::getInstance()->RenderCelShader();
         //water->Draw();
         //guiWidget->Draw();
-        CEGUI::System::getSingleton().renderGUI() ;
         glfwSwapBuffers(DisplayManager::getInstance()->window);
     }
 

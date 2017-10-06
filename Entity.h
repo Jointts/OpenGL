@@ -5,7 +5,9 @@
 #ifndef OPENGL_ENTITY_H
 #define OPENGL_ENTITY_H
 
-
+#ifndef __gl_h_
+#include <glad/glad.h>
+#endif
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 #include "Model.h"
 #include "Terrain.h"
@@ -31,11 +33,11 @@ public:
 
     bool hasCollision;
 
-    void Rotate(float angle, glm::vec3 axis);
+    virtual void Rotate(float angle, glm::vec3 axis);
 
-    void Scale(glm::vec3 axis);
+    virtual void Scale(glm::vec3 axis);
 
-    void Translate(glm::vec3 axis);
+    virtual void Translate(glm::vec3 axis);
 
     virtual void ClickEvent();
 };

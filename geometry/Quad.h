@@ -6,7 +6,9 @@
 #define OPENGL_QUAD_H
 
 
-#include <OpenGL/OpenGL.h>
+#ifndef __gl_h_
+#include <glad/glad.h>
+#endif
 #include <vector>
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 #include "../Model.h"
