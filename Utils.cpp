@@ -95,7 +95,7 @@ glm::vec3 Utils::GetNormal(glm::vec3 v1, glm::vec3 v2, glm::vec3 v3) {
     temp1 = v1 - v2;
     temp2 = v2 - v3;
 
-    normal = glm::cross(temp1, temp2);
+    normal = glm::cross(temp2, temp1);
     glm::normalize(normal);
 
     return normal;

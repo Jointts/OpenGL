@@ -67,8 +67,6 @@ void Entity::GenerateCollision() {
             btVector3(0, 0, 0)    // local inertia
     );
 
-    btRigidBody *RigidBody = new btRigidBody(mass, motionstate, convexShape, localInertia);
-
     rigidBody = new btRigidBody(rigidBodyCI);
     rigidBody->setUserPointer(this);
 

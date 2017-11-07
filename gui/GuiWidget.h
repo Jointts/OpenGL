@@ -7,6 +7,8 @@
 
 
 #include "../geometry/Quad.h"
+#include "GuiFrameBuffer.h"
+#include <functional>
 
 class GuiWidget : public Quad{
 public:
@@ -32,20 +34,25 @@ public:
 
     void UpdatePosition();
 
-    void Draw() override;
+    void Draw();
 
-    void GenerateCollision();
+    void DrawCollision();
 
+    virtual void Click();
+
+    glm::vec3 collisionColor = glm::vec3();
+//
+//    void BindClickEvent(std::function clickEvent);
 private:
+//    std::function clickEvent;
     float marginLeft = 0;
     float marginRight = 0;
+
     float marginTop = 0;
+
     float marginBottom = 0;
 
-    bool bFloatLeft = false;
-
-    bool bFloatRight = false;
-
+    GuiFrameBuffer *guiFrameBuffer;
 };
 
 

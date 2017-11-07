@@ -68,13 +68,14 @@ void Quad::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices) 
 
 }
 
-void Quad::Draw() {
+void Quad::Draw(int textureId, GLenum textureUnit) {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBindVertexArray(VAO);
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(2);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     if(textureId){
-        glActiveTexture(GL_TEXTURE0);
+        glActiveTexture(textureUnit);
         glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->guiShader->shaderProgramID, "diffuse"), textureId);
         glBindTexture(GL_TEXTURE_2D, textureId);
     }

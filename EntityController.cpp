@@ -71,7 +71,13 @@ void EntityController::FaceCoord(glm::vec3 coordToFace){
 
     currentTransform.setRotation(newRotation);
 
-    m_ghostObject->setWorldTransform(currentTransform);
+    ATTRIBUTE_ALIGNED16(btScalar openGlMatrix[16]);
+
+    currentTransform.getOpenGLMatrix(openGlMatrix);
+
+    glm::mat4 mat = glm::scale(Utils::BulletToGlm(openGlMatrix), entity->scale);
+
+    m_ghostObject->setWorldTransform(Utils::glmToBullet(mat));
 }
 
 void EntityController::MoveToCoord(glm::vec3 worldCoord){

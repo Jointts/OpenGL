@@ -13,17 +13,24 @@
 
 class ControllerManager {
 public:
+
     ControllerManager();
+
+    static bool mouseOneClicked;
+
+    static bool mouseOneReleased;
 
     static int EXIT_KEY;
 
     static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
 
     static void mouse_callback(GLFWwindow *window, double xpos, double ypos);
+    static bool mouseOneClickEventPropagate;
 
     static ControllerManager *getInstance();
 
 private:
+
     static ControllerManager *controllerManager;
 
     static void mouse_button_callback(GLFWwindow *window, int button, int action, int mods);

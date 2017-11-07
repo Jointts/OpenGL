@@ -10,6 +10,8 @@
 
 class WorldPhysics {
 public:
+    bool debugDrawing = false;
+
     bool mouseOneClicked = false;
 
     btRigidBody *rigidBody;

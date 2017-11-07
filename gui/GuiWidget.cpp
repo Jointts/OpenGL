@@ -3,19 +3,20 @@
 //
 
 #include <BulletCollision/CollisionShapes/btSphereShape.h>
-#include <BulletCollision/CollisionShapes/btConvex2dShape.h>
-#include <LinearMath/btDefaultMotionState.h>
+#include <iostream>
+#include <functional>
 #include "GuiWidget.h"
 #include "../Utils.h"
 #include "../RenderManager.h"
-#include "../physics/PhysicsManager.h"
-#include <BulletCollision/CollisionShapes/btBox2dShape.h>
+#include "../ShaderManager.h"
+#include "GuiManager.h"
 
 GuiWidget::GuiWidget(int width, int height) : Quad(width, height) {
-
+    guiFrameBuffer = GuiManager::getInstance()->guiFrameBuffer;
+    GuiManager::getInstance()->guiWidgets.push_back(this);
 }
 
-void GuiWidget::UpdatePosition(){
+void GuiWidget::UpdatePosition() {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
 }
@@ -74,36 +75,23 @@ void GuiWidget::setMarginBottom(float marginBottom) {
     UpdatePosition();
 }
 
-void GuiWidget::setTexture(GLchar *path){
-
+void GuiWidget::setTexture(GLchar *path) {
     textureId = Utils::TextureFromFile(path, true);
+    collisionTextureId = Utils::TextureFromFile("res/nice_circle_collision_round.png", true);
 }
 
-void GuiWidget::GenerateCollision(){
-
-    btSphereShape* btSphereShape_ =  new btSphereShape(3);
-    btConvex2dShape* collisionShape = new btConvex2dShape(btSphereShape_);
-
-    btDefaultMotionState* motionstate = new btDefaultMotionState(btTransform(
-            btQuaternion(0, 0, 0, 1), btVector3(0, 0, 0)
-    ));
-
-    btScalar mass = 1;
-
-    btRigidBody::btRigidBodyConstructionInfo rigidBodyCI(
-            0,               // mass, in kg. 0 -> Static object, will never move.
-            motionstate,
-            collisionShape,        // collision shape of body
-            btVector3(0,0,0)    // local inertia
-    );
-
-    rigidBody = new btRigidBody(rigidBodyCI);
-    rigidBody->setUserPointer(this);
-
-    PhysicsManager::getInstance()->guiPhysics->dynamicsWorld->addRigidBody(rigidBody);
+void GuiWidget::DrawCollision() {
+    guiFrameBuffer->RenderToCollisionFrameBuffer();
+    RenderManager::getInstance()->RenderGuiShader();
+    Quad::Draw(collisionTextureId, GL_TEXTURE0);
+    guiFrameBuffer->DrawCollisionBuffer();
 }
 
 void GuiWidget::Draw() {
     RenderManager::getInstance()->RenderGuiShader();
-    Quad::Draw();
+    Quad::Draw(textureId, GL_TEXTURE0);
+}
+
+void GuiWidget::Click() {
+
 }

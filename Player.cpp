@@ -24,6 +24,7 @@ void Player::Rotate(float angle, glm::vec3 axis) {
 }
 
 void Player::Scale(glm::vec3 axis) {
+    scale = axis;
     ATTRIBUTE_ALIGNED16(btScalar physicsMatrix[16]);
     btTransform transform = entityController->m_ghostObject->getWorldTransform();
     transform.getOpenGLMatrix(physicsMatrix);

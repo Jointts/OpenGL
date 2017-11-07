@@ -15,6 +15,11 @@
 #include "Time.h"
 #include "EntityManager.h"
 #include "DuplicatedVertexPlane.h"
+#include "Tree.h"
+#include "gui/GuiWidget.h"
+#include "gui/GuiManager.h"
+#include "gui/Button.h"
+#include "gui/GuiEvents.h"
 
 int Engine::Start() {
 
@@ -34,28 +39,29 @@ int Engine::Start() {
 
     PhysicsManager::getInstance()->Tick();
     //  Utter crap class, just for testing subclass pointers
-    //Tree* tree = new Tree("res/tree_1.FBX", true);
+    Tree* tree = new Tree("res/tree_1.FBX", true);
     Player* player = new Player("res/tree_1.FBX", true);
-    player->Translate(glm::vec3(-10.0f, 10.0f, 10.0f));
-    //player->Scale(glm::vec3(0.5f, 0.5f, 0.5f));
+    player->Translate(glm::vec3(-10.0f, 5.0f, 10.0f));
+    player->Scale(glm::vec3(0.3f, 0.3f, 0.3f));
     player->setMovementSpeed(0.1f);
-    //tree->Translate(glm::vec3(25, 5, 25));
-    //tree->Rotate(90.0f, glm::vec3(1.0, 0.0, 0.0));
+    tree->Translate(glm::vec3(5, 5, 5));
     Entity* entity = new Entity("res/rock_1.FBX", true);
+    entity->Translate(glm::vec3(10, 5, 10));
     //Entity* entity2 = new Entity("res/bunny/RRabbit.FBX", true);
 
-/*    GuiWidget* guiWidget = new GuiWidget(100, 100);
-    guiWidget->setMarginLeft(50.0f);
-    guiWidget->setMarginBottom(50.0f);
-    guiWidget->setTexture((GLchar *) "res/nice_circle.png");
-    guiWidget->GenerateCollision();*/
+    Button* button = new Button(100, 100);
+    button->setMarginLeft(50.0f);
+    button->setMarginBottom(50.0f);
+    button->collisionColor = glm::vec3(226, 65, 65);
+    button->clickEvent = std::bind(&GuiEvents::DEBUG_PHYSICS);
+    button->setTexture((GLchar *) "res/nice_circle.png");
 
 /*    FreeType* freeType = new FreeType();
     freeType->Initalize();*/
     //Water *water = new Water(200, 200, 0, false);
     //plane->generateHeightMap = true;
     //Plane *water = new Plane(200, 200, 0, false);
-    Terrain *terrain = new Terrain(100, 100, 0, true);
+//    Terrain *terrain = new Terrain(100, 100, 0, true);
     //terrain->terrain->GenerateRivers();
     //terrain->generateCollision();
     //terrain->AddTexture("res/van_gogh.jpg");
@@ -63,21 +69,28 @@ int Engine::Start() {
 //    duplicatedVertexPlane->setImage("res/van_gogh.jpg");
 
     while (!glfwWindowShouldClose(DisplayManager::getInstance()->window)) {
+//        ControllerManager::mouseOneClickEventPropagate = false;
         glfwPollEvents();
         Time::calculateFrameTime();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glEnable(GL_MULTISAMPLE);
 
         PhysicsManager::getInstance()->Tick();
+
+        GuiManager::getInstance()->guiRenderer->debugMode = true;
+        RenderManager::getInstance()->DrawGui();
         RenderManager::getInstance()->DrawModels();
-        terrain->Draw();
-        //duplicatedVertexPlane->Draw();
+
+//        GuiManager::getInstance()->guiEventListener->CheckEvents();
+
+        duplicatedVertexPlane->Draw();
+//        terrain->Draw();
         //tree->Rotate(0.003f, glm::vec3(0.0f, 1.0f, 0.0f));
         //plane->Draw();
         //RenderManager::getInstance()->RenderCelShader();
         //water->Draw();
-        //guiWidget->Draw();
+//        guiWidget->Draw();
+//        glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
         glfwSwapBuffers(DisplayManager::getInstance()->window);
     }
 

@@ -33,6 +33,8 @@
         void RenderGuiShader();
 
         void RenderDebugShader();
+
+        void DrawGui();
     };
 
 

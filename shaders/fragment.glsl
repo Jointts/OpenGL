@@ -8,15 +8,26 @@ in vec3 outColor;
 
 out vec4 color;
 
+struct PointLight{
+    vec3 position;
+    vec3 diffuse;
+
+    float constant;
+    float linear;
+    float quadratic;
+};
+
 uniform float ambientStrength;
 uniform vec3 ambientColor;
 uniform vec3 lightColor;
 uniform vec3 lightDirection;
 uniform float lightStrength;
 uniform sampler2D diffuse1;
+uniform PointLight pointLight;
 
 void applyAmbient(inout vec4 color, float ambientStrength, vec3 ambientColor);
 void applyDirectionalLight(inout vec4 color, vec3 normalCoord, vec3 lightColor, vec3 lightDirection, float lightStrength);
+void applyPointLight(inout vec4 color);
 
 void main()
 {
@@ -26,11 +37,12 @@ void main()
     }
     applyAmbient(object_color, ambientStrength, ambientColor);
     applyDirectionalLight(object_color, NormalCoords, lightColor, lightDirection, lightStrength);
-    color = object_color;
+    applyPointLight(object_color);
+    color = object_color * vec4(pointLight.diffuse, 1.0);
 }
 
 void applyAmbient(inout vec4 color, float ambientStrength, vec3 ambientColor){
-    color += vec4(0.4, 0.4, 0.4, 1.0);
+    color *= vec4(ambientColor * ambientStrength, 1.0);
 }
 
 void applyDirectionalLight(inout vec4 color, vec3 normalCoord, vec3 lightColor, vec3 lightDirection, float lightStrength){
@@ -38,4 +50,11 @@ void applyDirectionalLight(inout vec4 color, vec3 normalCoord, vec3 lightColor, 
     vec3 lightDir = normalize(lightDirection);
     float diff = max(dot(norm, lightDir), 0.0);
     color *= vec4((diff * lightColor) * lightStrength, 1.0);
+}
+
+void applyPointLight(inout vec4 color){
+    float distance = length(pointLight.position - FragPos);
+    float attenuation = 1.0 / (pointLight.constant + pointLight.linear * distance +
+        		    pointLight.quadratic * (distance * distance));
+    color += attenuation;
 }

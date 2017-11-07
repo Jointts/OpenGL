@@ -3,12 +3,18 @@
 //
 
 #include "GuiManager.h"
+#include "GuiRenderer.h"
+#include "GuiEventListener.h"
 
 GuiManager *GuiManager::guiManager = 0;
-
+GuiFrameBuffer *GuiManager::guiFrameBuffer = 0;
+GuiRenderer *GuiManager::guiRenderer = 0;
+GuiEventListener *GuiManager::guiEventListener = 0;
 
 GuiManager::GuiManager() {
-
+    guiFrameBuffer = new GuiFrameBuffer();
+    guiRenderer = new GuiRenderer();
+    guiEventListener = new GuiEventListener();
 }
 
 GuiManager* GuiManager::getInstance() {

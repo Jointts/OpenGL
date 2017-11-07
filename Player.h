@@ -10,10 +10,11 @@
 
 class Player : public Pawn{
 public:
+
     Player(GLchar *modelPath, bool generateCollision);
-    void Rotate(float angle, glm::vec3 axis);
-    void Scale(glm::vec3 axis);
-    void Translate(glm::vec3 axis);
+    void Rotate(float angle, glm::vec3 axis) override;
+    void Scale(glm::vec3 axis) override;
+    void Translate(glm::vec3 axis) override;
     void setMovementSpeed(float speed);
 };
 

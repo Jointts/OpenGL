@@ -12,7 +12,7 @@ Display::Display(int width, int height, const char *title) {
         std::cout << "Initialization failed!";
     }
 
-    window = glfwCreateWindow(width, height, title, NULL, NULL);
+    window = glfwCreateWindow(width, height, title, glfwGetPrimaryMonitor(), NULL);
     if(!window){
         std::cout << "Failed to create a window!";
     }

@@ -11,8 +11,11 @@
 #include "camera/CameraManager.h"
 #include "gui/GuiWidget.h"
 #include "EntityManager.h"
+#include "lights/PointLight.h"
+#include "gui/GuiManager.h"
 
 DirectionalLight *directionalLight = 0;
+PointLight *pointLight = 0;
 
 RenderManager *RenderManager::renderManager = 0;
 
@@ -58,6 +61,7 @@ RenderManager *RenderManager::renderManager = 0;
 
 
     void RenderManager::RenderBaseShader() {
+        glBindFramebuffer(0, GL_FRAMEBUFFER);
         CameraManager *cameraManager = CameraManager::getInstance();
         ShaderProgram *baseShader = ShaderManager::getInstance()->baseShader;
 
@@ -76,13 +80,34 @@ RenderManager *RenderManager::renderManager = 0;
         glEnable(GL_DEPTH_TEST);
 
         glm::vec3 lightColor = Utils::color_RGB(255.0f, 255.0f, 255.0f);
-        GLfloat lightStrength = 0.2f;
+        GLfloat lightStrength = 0.05f;
         glm::vec3 lightPos = {1.0f, 1.0f, 1.0f};
 
         if(directionalLight == 0){
             directionalLight = new DirectionalLight(lightColor, lightStrength, lightPos);
         }
 
+        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "ambientStrength"), 1.0f);
+        glUniform3f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "ambientColor"), 1.0f, 1.0f, 1.0f);
+
+        if(pointLight == 0){
+            glm::vec3 position = glm::vec3(10.f, 2.f, 10.f);
+            glm::vec3 diffuse = Utils::color_RGB(255.f,127.f,80.f);
+
+            float constant = 1.0f;
+            float linear = 0.35f;
+            float quadratic = 0.44f;
+
+            pointLight = new PointLight(
+                    position,
+                    diffuse,
+                    constant,
+                    linear,
+                    quadratic
+            );
+        }
+
+        pointLight->Enable();
         directionalLight->Enable();
     }
 
@@ -110,7 +135,7 @@ RenderManager *RenderManager::renderManager = 0;
     }
 
     void RenderManager::DrawModels() {
-        RenderManager::getInstance()->RenderBaseShader();
+        RenderBaseShader();
         for (Entity *entity : EntityManager::getInstance()->entities) {
                 entity->model->Draw();
                 if (entity->hasCollision) {
@@ -121,15 +146,15 @@ RenderManager *RenderManager::renderManager = 0;
         }
     }
 
+    void RenderManager::DrawGui() {
+        RenderGuiShader();
+        GuiManager::getInstance()->guiRenderer->RenderGui();
+    }
+
     RenderManager *RenderManager::getInstance() {
         if (!renderManager) {
             renderManager = new RenderManager();
         }
         return renderManager;
     }
-
-void RenderManager::DrawTerrain() {
-    RenderManager::getInstance()->RenderBaseShader();
-    //EntityManager::getInstance()->terrain->Draw();
-}
 

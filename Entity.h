@@ -40,6 +40,8 @@ public:
     virtual void Translate(glm::vec3 axis);
 
     virtual void ClickEvent();
+
+    glm::vec3 scale = glm::vec3(1.f, 1.f, 1.f);
 };
 
 

@@ -18,6 +18,7 @@ public:
     Quad(int width, int height);
 
     GLuint textureId;
+    GLuint collisionTextureId;
     GLuint VAO, VBO, EBO;
     std::vector<Vertex> vertices;
 
@@ -27,14 +28,11 @@ public:
 
     void setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices);
 
-    virtual void Draw();
-
-    void GenerateCollision();
-
     float width = 100;
 
     float height = 100;
 
+    void Draw(int textureId, GLenum textureUnit);
 };
 
 

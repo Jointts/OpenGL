@@ -14,9 +14,13 @@
 #include "ControllerManager.h"
 #include "physics/PhysicsManager.h"
 #include "EntityManager.h"
+#include "gui/GuiManager.h"
 
 
 ControllerManager *ControllerManager::controllerManager = 0;
+bool ControllerManager::mouseOneClicked = false;
+bool ControllerManager::mouseOneReleased = false;
+bool ControllerManager::mouseOneClickEventPropagate = false;
 
 DisplayManager *displayManager = DisplayManager::getInstance();
 CameraManager *cameraManager = 0;
@@ -59,48 +63,6 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
         glfwTerminate();
         exit(EXIT_SUCCESS);
     }
-//    if (key == GLFW_KEY_A) {
-//        cameraManager->mainCamera->MoveLeft();
-//    }
-//    if (key == GLFW_KEY_D) {
-//        cameraManager->mainCamera->MoveRight();
-//    }
-//    if (key == GLFW_KEY_W) {
-//        cameraManager->mainCamera->MoveForward();
-//    }
-//    if (key == GLFW_KEY_S) {
-//        cameraManager->mainCamera->MoveBack();
-//    }
-//    if (key == GLFW_KEY_Q) {
-//        cameraManager->mainCamera->MoveUp();
-//    }
-//    if (key == GLFW_KEY_E) {
-//        cameraManager->mainCamera->MoveDown();
-//    }
-
-    EntityController* entityController = EntityManager::getInstance()->player->entityController;
-
-    if(entityController){
-        if (key == GLFW_KEY_A) {
-            entityController->SetMoveDirection(glm::vec3(-1.0, 0.0, 0.0));
-        }
-        if (key == GLFW_KEY_D) {
-            entityController->SetMoveDirection(glm::vec3(1.0, 0.0, 0.0));
-        }
-        if (key == GLFW_KEY_W) {
-            entityController->SetMoveDirection(glm::vec3(0.0, 0.0, -1.0));
-        }
-        if (key == GLFW_KEY_S) {
-            entityController->SetMoveDirection(glm::vec3(0.0, 0.0, 1.0));
-        }
-        if (key == GLFW_KEY_Q) {
-            cameraManager->mainCamera->MoveUp();
-        }
-        if (key == GLFW_KEY_E) {
-            cameraManager->mainCamera->MoveDown();
-        }
-    }
-
 
     if(key == GLFW_MOUSE_BUTTON_2){
         PhysicsManager::getInstance()->worldPhysics->mouseOneClicked = true;
@@ -111,11 +73,17 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
 
 void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
     PhysicsManager::getInstance()->worldPhysics->RayCast(xpos, ypos);
-    //PhysicsManager::getInstance()->guiPhysics->RayCast(xpos, ypos);
+    GuiManager::getInstance()->guiFrameBuffer->ReadColor(xpos, ypos);
 }
 
 void ControllerManager::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-    PhysicsManager::getInstance()->worldPhysics->mouseOneClicked =
-            button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS;
+    mouseOneReleased = button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE;
+
+    if(mouseOneClicked && mouseOneReleased){
+        mouseOneClickEventPropagate = true;
+    }
+
+    mouseOneClicked = button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS;
+    PhysicsManager::getInstance()->worldPhysics->mouseOneClicked = mouseOneClicked;
 }

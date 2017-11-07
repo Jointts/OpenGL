@@ -7,6 +7,7 @@
 
 
 #include <BulletDynamics/Dynamics/btRigidBody.h>
+#include <BulletCollision/CollisionShapes/btTriangleMesh.h>
 #include "Model.h"
 
 class DuplicatedVertexPlane {
@@ -19,6 +20,7 @@ public:
     GLuint VBO;
 
     btRigidBody *rigidBody;
+    btTriangleMesh *tMesh;
 
     std::vector<Vertex> vertices;
     std::vector<GLuint> indices;
@@ -37,6 +39,10 @@ private:
     std::vector<float> heightCoords;
 
     void populateHeightCoords();
+
+    void GenerateNormals();
+
+    void generateNormals();
 };
 
 
