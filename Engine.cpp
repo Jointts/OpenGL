@@ -20,6 +20,8 @@
 #include "gui/GuiManager.h"
 #include "gui/Button.h"
 #include "gui/GuiEvents.h"
+#include "gamestate/GameStateManager.h"
+//#include "audio/AudioManager.h"
 
 int Engine::Start() {
 
@@ -53,8 +55,10 @@ int Engine::Start() {
     button->setMarginLeft(50.0f);
     button->setMarginBottom(50.0f);
     button->collisionColor = glm::vec3(226, 65, 65);
-    button->clickEvent = std::bind(&GuiEvents::DEBUG_PHYSICS);
+    button->clickEvent = std::bind(&GuiEvents::DEBUG_GUI);
     button->setTexture((GLchar *) "res/nice_circle.png");
+
+    GameStateManager::getInstance();
 
 /*    FreeType* freeType = new FreeType();
     freeType->Initalize();*/
@@ -69,19 +73,22 @@ int Engine::Start() {
 //    duplicatedVertexPlane->setImage("res/van_gogh.jpg");
 
     while (!glfwWindowShouldClose(DisplayManager::getInstance()->window)) {
-//        ControllerManager::mouseOneClickEventPropagate = false;
+        ControllerManager::mouseOneClickEventPropagate = false;
         glfwPollEvents();
         Time::calculateFrameTime();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClearColor(0.5, 0.5, 0.5, 1.0);
         glEnable(GL_MULTISAMPLE);
+
+        PhysicsManager::getInstance()->worldPhysics->debugDrawing = true;
 
         PhysicsManager::getInstance()->Tick();
 
-        GuiManager::getInstance()->guiRenderer->debugMode = true;
         RenderManager::getInstance()->DrawGui();
         RenderManager::getInstance()->DrawModels();
+//        AudioManager::getInstance()->getInstance();
 
-//        GuiManager::getInstance()->guiEventListener->CheckEvents();
+        GuiManager::getInstance()->guiEventListener->CheckEvents();
 
         duplicatedVertexPlane->Draw();
 //        terrain->Draw();

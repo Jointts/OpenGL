@@ -27,7 +27,7 @@ DisplayManager::DisplayManager(const char *title) {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_SAMPLES, 8);
 
-    window = glfwCreateWindow(width, height, title, NULL, NULL);
+    window = glfwCreateWindow(width, height, title, glfwGetPrimaryMonitor(), NULL);
 
     if(!window){
         std::cout << "Failed to create a window!";

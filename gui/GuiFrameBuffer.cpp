@@ -129,8 +129,14 @@ void GuiFrameBuffer::ReadColor(double x, double y) {
     std::vector<unsigned char> pixelData(1 * 4);
     glBindFramebuffer(GL_FRAMEBUFFER, collisionFrameBuffer);
     glReadPixels((int) x, 1440 - (int) y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &pixelData[0]);
-
     cursorColor = glm::vec3((int)pixelData[0], (int)pixelData[1], (int)pixelData[2]);
+
+    std::cout << "r: " << (int)pixelData[0] << std::endl;
+    std::cout << "g: " << (int)pixelData[1] << std::endl;
+    std::cout << "b: " << (int)pixelData[2] << std::endl;
+    std::cout << "a: " << (int)pixelData[3] << std::endl;
+
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
 void GuiFrameBuffer::UnbindFramebuffer() {

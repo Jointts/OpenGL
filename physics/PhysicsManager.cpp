@@ -28,6 +28,6 @@ PhysicsManager *PhysicsManager::getInstance() {
 }
 
 void PhysicsManager::Tick(){
-    guiPhysics->Tick();
+//    guiPhysics->Tick();
     worldPhysics->Tick();
 }

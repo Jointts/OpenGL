@@ -52,7 +52,7 @@ ControllerManager::ControllerManager() {
     glfWimage.pixels = pixelData;
 
     GLFWcursor *glfWcursor = glfwCreateCursor(&glfWimage, 0, 0);
-    glfwSetCursor(displayManager->window, glfWcursor);
+//    glfwSetCursor(displayManager->window, glfWcursor);
     glfwSetCursorPosCallback(displayManager->window, this->mouse_callback);
     glfwSetMouseButtonCallback(displayManager->window, this->mouse_button_callback);
 }

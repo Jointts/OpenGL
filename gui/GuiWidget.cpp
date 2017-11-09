@@ -84,7 +84,10 @@ void GuiWidget::DrawCollision() {
     guiFrameBuffer->RenderToCollisionFrameBuffer();
     RenderManager::getInstance()->RenderGuiShader();
     Quad::Draw(collisionTextureId, GL_TEXTURE0);
-    guiFrameBuffer->DrawCollisionBuffer();
+    if(GuiManager::getInstance()->guiRenderer->debugMode){
+        guiFrameBuffer->DrawCollisionBuffer();
+    }
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
 void GuiWidget::Draw() {

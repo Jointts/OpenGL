@@ -8,8 +8,6 @@
 void GuiRenderer::RenderGui() {
     for(GuiWidget* widget : GuiManager::getInstance()->guiWidgets){
         widget->Draw();
-        if(debugMode){
-            widget->DrawCollision();
-        }
+        widget->DrawCollision();
     }
 }

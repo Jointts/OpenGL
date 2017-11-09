@@ -12,5 +12,5 @@ void GuiEvents::DEBUG_PHYSICS(){
 }
 
 void GuiEvents::DEBUG_GUI(){
-    GuiManager::getInstance()->guiRenderer->debugMode = true;
+    GuiManager::getInstance()->guiRenderer->debugMode = !GuiManager::getInstance()->guiRenderer->debugMode;
 }
