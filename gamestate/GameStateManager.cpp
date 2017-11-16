@@ -3,27 +3,26 @@
 //
 
 #include "GameStateManager.h"
-#include "GameState.h"
 
-GameStateManager* GameStateManager::gameStateManager = 0;
+GameStateManager *GameStateManager::gameStateManager = 0;
 
-GameStateManager* GameStateManager::getInstance() {
-    if(gameStateManager == nullptr){
+GameStateManager *GameStateManager::getInstance() {
+    if (gameStateManager == nullptr) {
         gameStateManager = new GameStateManager();
     }
     return gameStateManager;
 }
 
 void GameStateManager::renderActiveGameState() {
-    if(getActiveGameState() != nullptr){
-        getActiveGameState()->RenderGameState();
+    if (getActiveGameState() != nullptr) {
+        getActiveGameState()->Draw();
     }
 }
 
-GameState* GameStateManager::getActiveGameState() {
+GameState *GameStateManager::getActiveGameState() {
     return activeGameState;
 }
 
-GameState GameStateManager::setActiveGameState(GameState* gameState){
+void GameStateManager::setActiveGameState(GameState *gameState) {
     activeGameState = gameState;
 }

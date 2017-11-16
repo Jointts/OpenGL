@@ -4,8 +4,8 @@
 
 #include <gtc/type_ptr.hpp>
 #include "Mesh.h"
-#include "ShaderProgram.h"
-#include "ShaderManager.h"
+#include "shaders/ShaderProgram.h"
+#include "shaders/ShaderManager.h"
 
 Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures) {
     this->vertices = vertices;

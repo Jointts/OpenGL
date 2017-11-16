@@ -4,8 +4,9 @@
 
 #include <iostream>
 #include "GuiWidget.h"
-#include "GuiFrameBuffer.h"
-#include "../ShaderManager.h"
+#include "../shaders/ShaderManager.h"
+
+// TODO: This framebuffer should only be rendered again when there are changes in the GUI
 
 GuiFrameBuffer::GuiFrameBuffer() {
     GenerateQuad();
@@ -30,7 +31,7 @@ void GuiFrameBuffer::GenerateCollisionTexture() {
     glBindTexture(GL_TEXTURE_2D, renderedTexture);
 
     // Give an empty image to OpenGL ( the last "0" )
-    glTexImage2D(GL_TEXTURE_2D, 0,GL_RGBA, 3440, 1440, 0,GL_RGBA, GL_UNSIGNED_BYTE, 0);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 3440, 1440, 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
 
     // Poor filtering. Needed !
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -46,7 +47,7 @@ void GuiFrameBuffer::ConfigureCollisionFrameBuffer() {
     glDrawBuffers(1, DrawBuffers); // "1" is the size of DrawBuffers
 
     // Always check that our framebuffer is ok
-    if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) exit(-999);
+    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) exit(-999);
 }
 
 void GuiFrameBuffer::RenderToCollisionFrameBuffer() {
@@ -122,19 +123,19 @@ void GuiFrameBuffer::SetupMesh() {
     // Vertex UV coordinates
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, uv_coord));
+                          (GLvoid *) offsetof(Vertex, uv_coord));
 }
 
 void GuiFrameBuffer::ReadColor(double x, double y) {
     std::vector<unsigned char> pixelData(1 * 4);
     glBindFramebuffer(GL_FRAMEBUFFER, collisionFrameBuffer);
     glReadPixels((int) x, 1440 - (int) y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &pixelData[0]);
-    cursorColor = glm::vec3((int)pixelData[0], (int)pixelData[1], (int)pixelData[2]);
+    cursorColor = glm::vec3((int) pixelData[0], (int) pixelData[1], (int) pixelData[2]);
 
-    std::cout << "r: " << (int)pixelData[0] << std::endl;
-    std::cout << "g: " << (int)pixelData[1] << std::endl;
-    std::cout << "b: " << (int)pixelData[2] << std::endl;
-    std::cout << "a: " << (int)pixelData[3] << std::endl;
+//    std::cout << "r: " << (int)pixelData[0] << std::endl;
+//    std::cout << "g: " << (int)pixelData[1] << std::endl;
+//    std::cout << "b: " << (int)pixelData[2] << std::endl;
+//    std::cout << "a: " << (int)pixelData[3] << std::endl;
 
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }

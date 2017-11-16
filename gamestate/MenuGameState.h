@@ -9,12 +9,12 @@
 #include "GameState.h"
 #include "../gui/GuiWidget.h"
 
-class MenuGameState : public GameState{
+class MenuGameState : public GameState {
 public:
     void RenderGameState();
 
 private:
-    std::vector<GuiWidget*> guiWidgets;
+    std::vector<GuiWidget *> guiWidgets;
 
 };
 

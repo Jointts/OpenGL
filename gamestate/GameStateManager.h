@@ -10,15 +10,16 @@
 
 class GameStateManager {
 public:
-    static GameStateManager* gameStateManager;
+    static GameStateManager *gameStateManager;
+
     static GameStateManager *getInstance();
 
     GameState *getActiveGameState();
 
 private:
-    GameState* activeGameState;
+    GameState *activeGameState;
 
-    GameState setActiveGameState(GameState *gameState);
+    void setActiveGameState(GameState *gameState);
 
     void renderActiveGameState();
 };

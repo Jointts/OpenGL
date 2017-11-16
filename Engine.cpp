@@ -10,17 +10,20 @@
 #include <gtc/type_ptr.hpp>
 #include <iostream>
 #include "Engine.h"
-#include "RenderManager.h"
+#include "renderer/RenderManager.h"
 #include "physics/PhysicsManager.h"
 #include "Time.h"
 #include "EntityManager.h"
-#include "DuplicatedVertexPlane.h"
 #include "Tree.h"
 #include "gui/GuiWidget.h"
 #include "gui/GuiManager.h"
 #include "gui/Button.h"
 #include "gui/GuiEvents.h"
 #include "gamestate/GameStateManager.h"
+#include "Utils.h"
+#include "lights/DirectionalLight.h"
+#include "lights/PointLight.h"
+#include "geometry/DuplicatedVertexPlane.h"
 //#include "audio/AudioManager.h"
 
 int Engine::Start() {
@@ -35,16 +38,15 @@ int Engine::Start() {
     ControllerManager::getInstance();
     PhysicsManager* physicsManager = PhysicsManager::getInstance()->physicsManager;
     physicsManager->worldPhysics->InitPhysics();
-    physicsManager->guiPhysics->InitPhysics();
 
     //Model* rock = new Model("res/rock_1.FBX");
 
     PhysicsManager::getInstance()->Tick();
     //  Utter crap class, just for testing subclass pointers
     Tree* tree = new Tree("res/tree_1.FBX", true);
-    Player* player = new Player("res/tree_1.FBX", true);
+    Player* player = new Player("res/models/fox.FBX", false);
     player->Translate(glm::vec3(-10.0f, 5.0f, 10.0f));
-    player->Scale(glm::vec3(0.3f, 0.3f, 0.3f));
+    player->Scale(glm::vec3(0.01f, 0.01f, 0.01f));
     player->setMovementSpeed(0.1f);
     tree->Translate(glm::vec3(5, 5, 5));
     Entity* entity = new Entity("res/rock_1.FBX", true);
@@ -55,8 +57,26 @@ int Engine::Start() {
     button->setMarginLeft(50.0f);
     button->setMarginBottom(50.0f);
     button->collisionColor = glm::vec3(226, 65, 65);
-    button->clickEvent = std::bind(&GuiEvents::DEBUG_GUI);
+    button->clickEvent = std::bind(&GuiEvents::DEBUG_PHYSICS);
     button->setTexture((GLchar *) "res/nice_circle.png");
+
+    glm::vec3 lightColor = Utils::color_RGB(255.0f, 255.0f, 255.0f);
+    GLfloat lightStrength = 0.5f;
+    glm::vec3 lightPos = {1.0f, 1.0f, 1.0f};
+    new DirectionalLight(lightColor, lightStrength, lightPos);
+
+    glm::vec3 position = glm::vec3(10.f, 2.f, 10.f);
+    glm::vec3 diffuse = Utils::color_RGB(255.f,127.f,80.f);
+    float constant = 1.0f;
+    float linear = 0.35f;
+    float quadratic = 0.44f;
+    new PointLight(
+            position,
+            diffuse,
+            constant,
+            linear,
+            quadratic
+    );
 
     GameStateManager::getInstance();
 
@@ -69,23 +89,20 @@ int Engine::Start() {
     //terrain->terrain->GenerateRivers();
     //terrain->generateCollision();
     //terrain->AddTexture("res/van_gogh.jpg");
-    DuplicatedVertexPlane *duplicatedVertexPlane = new DuplicatedVertexPlane(100, 100, true);
+    DuplicatedVertexPlane *duplicatedVertexPlane = new DuplicatedVertexPlane(64, 64, true);
 //    duplicatedVertexPlane->setImage("res/van_gogh.jpg");
 
-    while (!glfwWindowShouldClose(DisplayManager::getInstance()->window)) {
+    while (!glfwWindowShouldClose(DisplayManager::getInstance()->display->window)) {
         ControllerManager::mouseOneClickEventPropagate = false;
         glfwPollEvents();
         Time::calculateFrameTime();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glClearColor(0.5, 0.5, 0.5, 1.0);
+        glClearColor(0.0,0.0,0.0, 1.0);
         glEnable(GL_MULTISAMPLE);
-
-        PhysicsManager::getInstance()->worldPhysics->debugDrawing = true;
-
-        PhysicsManager::getInstance()->Tick();
 
         RenderManager::getInstance()->DrawGui();
         RenderManager::getInstance()->DrawModels();
+        PhysicsManager::getInstance()->Tick();
 //        AudioManager::getInstance()->getInstance();
 
         GuiManager::getInstance()->guiEventListener->CheckEvents();
@@ -98,7 +115,7 @@ int Engine::Start() {
         //water->Draw();
 //        guiWidget->Draw();
 //        glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
-        glfwSwapBuffers(DisplayManager::getInstance()->window);
+        glfwSwapBuffers(DisplayManager::getInstance()->display->window);
     }
 
     return -1;

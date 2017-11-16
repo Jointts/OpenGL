@@ -8,10 +8,10 @@
 #ifndef __gl_h_
 #include <glad/glad.h>
 #endif
-#include "ShaderProgram.h"
-#include "Display.h"
+#include "shaders/ShaderProgram.h"
+#include "display/Display.h"
 #include "ControllerManager.h"
-#include "DisplayManager.h"
+#include "display/DisplayManager.h"
 #include "camera/CameraManager.h"
 
 class Engine {

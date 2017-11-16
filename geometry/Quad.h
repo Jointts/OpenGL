@@ -7,8 +7,11 @@
 
 
 #ifndef __gl_h_
+
 #include <glad/glad.h>
+
 #endif
+
 #include <vector>
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 #include "../Model.h"
@@ -24,7 +27,7 @@ public:
 
     std::vector<GLuint> indices;
 
-    btRigidBody* rigidBody;
+    btRigidBody *rigidBody;
 
     void setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices);
 

@@ -5,14 +5,15 @@
 #include <glad/glad.h>
 #include <gtc/type_ptr.hpp>
 #include "RenderManager.h"
-#include "Utils.h"
-#include "lights/DirectionalLight.h"
-#include "ShaderManager.h"
-#include "camera/CameraManager.h"
-#include "gui/GuiWidget.h"
-#include "EntityManager.h"
-#include "lights/PointLight.h"
-#include "gui/GuiManager.h"
+#include "../Utils.h"
+#include "../lights/DirectionalLight.h"
+#include "../shaders/ShaderManager.h"
+#include "../camera/CameraManager.h"
+#include "../gui/GuiWidget.h"
+#include "../EntityManager.h"
+#include "../lights/PointLight.h"
+#include "../gui/GuiManager.h"
+#include "../lights/LightManager.h"
 
 DirectionalLight *directionalLight = 0;
 PointLight *pointLight = 0;
@@ -78,37 +79,13 @@ RenderManager *RenderManager::renderManager = 0;
 
         glDisable(GL_CULL_FACE);
         glEnable(GL_DEPTH_TEST);
+//
+//        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "ambientStrength"), 1.0f);
+//        glUniform3f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "ambientColor"), 1.0f, 1.0f, 1.0f);
 
-        glm::vec3 lightColor = Utils::color_RGB(255.0f, 255.0f, 255.0f);
-        GLfloat lightStrength = 0.05f;
-        glm::vec3 lightPos = {1.0f, 1.0f, 1.0f};
 
-        if(directionalLight == 0){
-            directionalLight = new DirectionalLight(lightColor, lightStrength, lightPos);
-        }
-
-        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "ambientStrength"), 1.0f);
-        glUniform3f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "ambientColor"), 1.0f, 1.0f, 1.0f);
-
-        if(pointLight == 0){
-            glm::vec3 position = glm::vec3(10.f, 2.f, 10.f);
-            glm::vec3 diffuse = Utils::color_RGB(255.f,127.f,80.f);
-
-            float constant = 1.0f;
-            float linear = 0.35f;
-            float quadratic = 0.44f;
-
-            pointLight = new PointLight(
-                    position,
-                    diffuse,
-                    constant,
-                    linear,
-                    quadratic
-            );
-        }
-
-        pointLight->Enable();
-        directionalLight->Enable();
+        DrawPointLights();
+        DrawDirectionalLight();
     }
 
     void RenderManager::RenderGuiShader() {
@@ -143,6 +120,20 @@ RenderManager *RenderManager::renderManager = 0;
                     entity->rigidBody->getWorldTransform().getOpenGLMatrix(physicsMatrix);
                     entity->model->model = Utils::BulletToGlm(physicsMatrix);
                 }
+        }
+    }
+
+    void RenderManager::DrawPointLights() {
+        LightManager* lightManager = LightManager::getInstance();
+        for(PointLight* pointLight : lightManager->pointLights){
+            pointLight->Enable();
+        }
+    }
+
+    void RenderManager::DrawDirectionalLight() {
+        LightManager* lightManager = LightManager::getInstance();
+        if(lightManager->directionalLight){
+            lightManager->directionalLight->Enable();
         }
     }
 

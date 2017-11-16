@@ -4,11 +4,9 @@
 
 #include <BulletCollision/CollisionShapes/btSphereShape.h>
 #include <iostream>
-#include <functional>
 #include "GuiWidget.h"
 #include "../Utils.h"
-#include "../RenderManager.h"
-#include "../ShaderManager.h"
+#include "../renderer/RenderManager.h"
 #include "GuiManager.h"
 
 GuiWidget::GuiWidget(int width, int height) : Quad(width, height) {
@@ -84,7 +82,7 @@ void GuiWidget::DrawCollision() {
     guiFrameBuffer->RenderToCollisionFrameBuffer();
     RenderManager::getInstance()->RenderGuiShader();
     Quad::Draw(collisionTextureId, GL_TEXTURE0);
-    if(GuiManager::getInstance()->guiRenderer->debugMode){
+    if (GuiManager::getInstance()->guiRenderer->debugMode) {
         guiFrameBuffer->DrawCollisionBuffer();
     }
     glBindFramebuffer(GL_FRAMEBUFFER, 0);

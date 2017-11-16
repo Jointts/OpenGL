@@ -12,6 +12,7 @@ class GuiRenderer {
 private:
 public:
     bool debugMode = false;
+
     void RenderGui();
 };
 

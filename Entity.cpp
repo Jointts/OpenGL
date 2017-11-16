@@ -12,7 +12,7 @@
 #include "Entity.h"
 #include "physics/PhysicsManager.h"
 #include "Mesh.h"
-#include "RenderManager.h"
+#include "renderer/RenderManager.h"
 #include "Utils.h"
 #include "Tree.h"
 #include "EntityManager.h"

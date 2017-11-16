@@ -10,7 +10,7 @@ Button::Button(int width, int height) : GuiWidget(width, height) {
 }
 
 void Button::Click() {
-    if(clickEvent == nullptr){
+    if (clickEvent == nullptr) {
         GuiWidget::Click();
     } else {
         clickEvent();

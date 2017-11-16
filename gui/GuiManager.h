@@ -15,11 +15,11 @@ class GuiManager {
 public:
     static GuiManager *guiManager;
     static GuiFrameBuffer *guiFrameBuffer;
-    std::vector<GuiWidget*> guiWidgets;
+    std::vector<GuiWidget *> guiWidgets;
 
     GuiManager();
 
-    static GuiManager* getInstance();
+    static GuiManager *getInstance();
 
     static GuiRenderer *guiRenderer;
 

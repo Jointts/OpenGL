@@ -12,20 +12,20 @@ ShaderProgram *ShaderManager::waterShader = 0;
 ShaderProgram *ShaderManager::guiShader = 0;
 ShaderProgram *ShaderManager::debugShader = 0;
 
-char* BASE_SHADER_VERTEX_PATH = (char *) "shaders/vertex.glsl";
-char* BASE_SHADER_FRAGMENT_PATH = (char *) "shaders/fragment.glsl";
+char *BASE_SHADER_VERTEX_PATH = (char *) "shaders/glsl/vertex.glsl";
+char *BASE_SHADER_FRAGMENT_PATH = (char *) "shaders/glsl/fragment.glsl";
 
-char* WATER_SHADER_VERTEX_PATH = (char *) "shaders/water/vertex.glsl";
-char* WATER_SHADER_FRAGMENT_PATH = (char *) "shaders/water/fragment.glsl";
+char *WATER_SHADER_VERTEX_PATH = (char *) "shaders/glsl/water/vertex.glsl";
+char *WATER_SHADER_FRAGMENT_PATH = (char *) "shaders/glsl/water/fragment.glsl";
 
-char* CEL_SHADER_VERTEX_PATH = (char *) "shaders/cel/vertex.glsl";
-char* CEL_SHADER_FRAGMENT_PATH = (char *) "shaders/cel/fragment.glsl";
+char *CEL_SHADER_VERTEX_PATH = (char *) "shaders/glsl/cel/vertex.glsl";
+char *CEL_SHADER_FRAGMENT_PATH = (char *) "shaders/glsl/cel/fragment.glsl";
 
-char* GUI_SHADER_VERTEX_PATH = (char *) "shaders/gui/vertex.glsl";
-char* GUI_SHADER_FRAGMENT_PATH = (char *) "shaders/gui/fragment.glsl";
+char *GUI_SHADER_VERTEX_PATH = (char *) "shaders/glsl/gui/vertex.glsl";
+char *GUI_SHADER_FRAGMENT_PATH = (char *) "shaders/glsl/gui/fragment.glsl";
 
-char* DEBUG_SHADER_VERTEX_PATH = (char *) "shaders/debug/vertex.glsl";
-char* DEBUG_SHADER_FRAGMENT_PATH = (char *) "shaders/debug/fragment.glsl";
+char *DEBUG_SHADER_VERTEX_PATH = (char *) "shaders/glsl/debug/vertex.glsl";
+char *DEBUG_SHADER_FRAGMENT_PATH = (char *) "shaders/glsl/debug/fragment.glsl";
 
 ShaderManager::ShaderManager() {
     this->baseShader = new ShaderProgram(BASE_SHADER_VERTEX_PATH, BASE_SHADER_FRAGMENT_PATH);
@@ -36,7 +36,7 @@ ShaderManager::ShaderManager() {
 }
 
 ShaderManager *ShaderManager::getInstance() {
-    if(!shaderManager){
+    if (!shaderManager) {
         shaderManager = new ShaderManager;
     }
     return shaderManager;

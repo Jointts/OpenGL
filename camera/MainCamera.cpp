@@ -4,7 +4,7 @@
 
 #include <gtc/matrix_transform.hpp>
 #include "MainCamera.h"
-#include "../DisplayManager.h"
+#include "../display/DisplayManager.h"
 
 MainCamera::MainCamera() {
     cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
@@ -13,7 +13,8 @@ MainCamera::MainCamera() {
 
     DisplayManager *displayManager = DisplayManager::getInstance();
 
-    perspective = glm::perspective(glm::radians(90.0f),(float) displayManager->width / (float) displayManager->height, 0.1f, 100.0f);
+    perspective = glm::perspective(glm::radians(90.0f), (float) displayManager->display->width / (float) displayManager->display->height,
+                                   0.1f, 100.0f);
     UpdateCamera();
 }
 

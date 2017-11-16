@@ -3,8 +3,6 @@
 //
 
 #include "GuiManager.h"
-#include "GuiRenderer.h"
-#include "GuiEventListener.h"
 
 GuiManager *GuiManager::guiManager = 0;
 GuiFrameBuffer *GuiManager::guiFrameBuffer = 0;
@@ -17,8 +15,8 @@ GuiManager::GuiManager() {
     guiEventListener = new GuiEventListener();
 }
 
-GuiManager* GuiManager::getInstance() {
-    if(!guiManager){
+GuiManager *GuiManager::getInstance() {
+    if (!guiManager) {
         guiManager = new GuiManager();
     }
     return guiManager;

@@ -19,8 +19,6 @@ public:
     static EntityManager * getInstance();
 
     std::vector<Entity *> entities;
-
-    Terrain* terrain;
 };
 
 

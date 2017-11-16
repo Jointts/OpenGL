@@ -4,15 +4,8 @@
 
 #include <stb_image.h>
 #include <BulletCollision/CollisionShapes/btTriangleMesh.h>
-#include <BulletCollision/CollisionShapes/btConvexShape.h>
-#include <BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h>
-#include <LinearMath/btDefaultMotionState.h>
-#include <BulletCollision/CollisionShapes/btSphereShape.h>
 #include "Quad.h"
-#include "../Utils.h"
-#include "../ShaderManager.h"
-#include "../Entity.h"
-#include "../physics/PhysicsManager.h"
+#include "../shaders/ShaderManager.h"
 
 Quad::Quad(int width, int height) {
     this->width = width;
@@ -64,7 +57,7 @@ void Quad::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices) 
     // Vertex UV coordinates
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, uv_coord));
+                          (GLvoid *) offsetof(Vertex, uv_coord));
 
 }
 
@@ -74,9 +67,10 @@ void Quad::Draw(int textureId, GLenum textureUnit) {
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(2);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    if(textureId){
+    if (textureId) {
         glActiveTexture(textureUnit);
-        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->guiShader->shaderProgramID, "diffuse"), textureId);
+        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->guiShader->shaderProgramID, "diffuse"),
+                    textureId);
         glBindTexture(GL_TEXTURE_2D, textureId);
     }
     glDrawElements(GL_TRIANGLES, (GLsizei) indices.size(), GL_UNSIGNED_INT, 0);

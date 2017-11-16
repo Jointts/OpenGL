@@ -7,7 +7,7 @@
 #include "AudioSystem.h"
 
 FMOD_RESULT result;
-FMOD::Studio::System* audioSystem = nullptr;
+FMOD::Studio::System* audioSystem = 0;
 
 AudioSystem::AudioSystem() {
     CreateSystem();

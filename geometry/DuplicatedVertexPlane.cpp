@@ -6,13 +6,11 @@
 #include <BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h>
 #include <random>
 #include "DuplicatedVertexPlane.h"
-#include "RenderManager.h"
-#include "Utils.h"
-#include "ShaderManager.h"
-#include "physics/PhysicsManager.h"
+#include "../renderer/RenderManager.h"
+#include "../Utils.h"
+#include "../physics/PhysicsManager.h"
 #include <noise/noise.h>
 #include <BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h>
-#include <BulletCollision/CollisionShapes/btTriangleMesh.h>
 
 using namespace noise;
 
@@ -41,13 +39,13 @@ void DuplicatedVertexPlane::setImage(const char *imagePath) {
 //  01 11
 
 void DuplicatedVertexPlane::generateVertices() {
-    std::default_random_engine eng((std::random_device())());
+    std::default_random_engine eng((std::random_device()) ());
     tMesh = new btTriangleMesh();
 
     for (int x = 0; x < sizeX; ++x) {
         for (int z = 0; z < sizeZ; ++z) {
-            std::uniform_real_distribution<float> red_random_factor(0, 100.0);
-            std::uniform_real_distribution<float> red_random_factor2(0, 100.0);
+            std::uniform_real_distribution<float> red_random_factor(0, 10.0);
+            std::uniform_real_distribution<float> red_random_factor2(0, 10.0);
             int vertex_previous;
 
             int row = x * z;
@@ -55,7 +53,7 @@ void DuplicatedVertexPlane::generateVertices() {
             int previousVerticesStartIndex = row + index - 6;
 
             module::Perlin myModule;
-            myModule.SetOctaveCount (10);
+            myModule.SetOctaveCount(10);
             myModule.SetPersistence(0.5);
             int distribution = 50;
 
@@ -69,6 +67,8 @@ void DuplicatedVertexPlane::generateVertices() {
             double y2 = myModule.GetValue((double) (x + 1) / distribution, 1, (double) z / distribution);
             double y3 = myModule.GetValue((double) x / distribution, 1, (double) (z + 1) / distribution);
             double y4 = myModule.GetValue((double) (x + 1) / distribution, 1, (double) (z + 1) / distribution);
+
+            heightCoords.push_back((float) y1);
 
             Vertex vertex1;
             vertex1.position.x = x;
@@ -185,7 +185,7 @@ void DuplicatedVertexPlane::setupMesh(std::vector<Vertex> vertices) {
     // Vertex Normals
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, normal));
+                          (GLvoid *) offsetof(Vertex, normal));
 
     // Vertex UV coordinates
     glEnableVertexAttribArray(2);
@@ -195,7 +195,7 @@ void DuplicatedVertexPlane::setupMesh(std::vector<Vertex> vertices) {
     // Vertex Color
     glEnableVertexAttribArray(3);
     glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, color));
+                          (GLvoid *) offsetof(Vertex, color));
 }
 
 void DuplicatedVertexPlane::Draw() {
@@ -228,10 +228,21 @@ void DuplicatedVertexPlane::Draw() {
 void DuplicatedVertexPlane::generateCollision() {
     if (hasCollision) {
 
+        btVector3 origin = btVector3(sizeX / 2, 0.0f, sizeZ / 2);
+
         btTransform startTransform;
         startTransform.setIdentity();
+        startTransform.setOrigin(origin);
 
-        btBvhTriangleMeshShape* shape = new btBvhTriangleMeshShape(tMesh, true);
+        float heightScale = 1.0f;
+        float minHeight = -10.0f;
+        float maxHeight = 10.0f;
+        int upAxis = 1;
+        btHeightfieldTerrainShape *terrainShape = new btHeightfieldTerrainShape(sizeX, sizeZ, heightCoords.data(),
+                                                                                heightScale, minHeight, maxHeight,
+                                                                                upAxis, PHY_FLOAT, false);
+
+        btBvhTriangleMeshShape *shape = new btBvhTriangleMeshShape(tMesh, true);
         btDefaultMotionState *motionstate = new btDefaultMotionState(startTransform);
 
         btScalar mass = 0;
@@ -239,7 +250,7 @@ void DuplicatedVertexPlane::generateCollision() {
         btRigidBody::btRigidBodyConstructionInfo rigidBodyCI(
                 mass,               // mass, in kg. 0 -> Static object, will never move.
                 motionstate,
-                shape,        // collision shape of body
+                terrainShape,        // collision shape of body
                 btVector3(0, 0, 0)    // local inertia
         );
 

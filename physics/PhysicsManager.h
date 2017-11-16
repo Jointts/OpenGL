@@ -12,7 +12,6 @@
 #include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>
 #include <BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
 #include "../Entity.h"
-#include "GuiPhysics.h"
 #include "WorldPhysics.h"
 
 class PhysicsManager {
@@ -25,8 +24,6 @@ public:
     PhysicsManager();
 
     static PhysicsManager *getInstance();
-
-    static GuiPhysics *guiPhysics;
 
     static WorldPhysics *worldPhysics;
 

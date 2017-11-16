@@ -5,9 +5,9 @@
 #include <vec3.hpp>
 #include <ext.hpp>
 #include "Plane.h"
-#include "../ShaderManager.h"
+#include "../shaders/ShaderManager.h"
 #include "../Utils.h"
-#include "../RenderManager.h"
+#include "../renderer/RenderManager.h"
 #include <noise/noise.h>
 #include <iostream>
 #include <random>
@@ -15,8 +15,7 @@
 using namespace noise;
 
 Plane::Plane(int sizeX, int sizeZ, int tileSize, bool generateHeightMap)
-: generateHeightMap(generateHeightMap)
-{
+        : generateHeightMap(generateHeightMap) {
     this->sizeX = sizeX;
     this->sizeZ = sizeZ;
     GenerateVertices();
@@ -33,17 +32,17 @@ void Plane::AddTexture(const char *texturePath) {
 }
 
 void Plane::GenerateVertices() {
-    std::default_random_engine eng((std::random_device())());
+    std::default_random_engine eng((std::random_device()) ());
 
     module::Perlin myModule;
-    myModule.SetOctaveCount (10);
+    myModule.SetOctaveCount(10);
     myModule.SetPersistence(0.5);
     double y = 0.0;
     for (int z = 0; z < sizeZ + 1; z++) {
         for (int x = 0; x < sizeX + 1; x++) {
             Vertex vertex1;
             y = 0;
-            if(generateHeightMap){
+            if (generateHeightMap) {
                 y = myModule.GetValue((double) x / distribution, 0.5, (double) z / distribution);
             }
 
@@ -51,7 +50,7 @@ void Plane::GenerateVertices() {
 
             float red = 150 + red_random_factor(eng);
 
-            heightCoords.push_back((float &&) (float)y);
+            heightCoords.push_back((float &&) (float) y);
             std::cout << y << std::endl;
             vertex1.position = glm::vec3(x, (float) y * 10, z);
             vertex1.color = Utils::color_RGB(red, 255, 0);
@@ -60,6 +59,7 @@ void Plane::GenerateVertices() {
         }
     }
 }
+
 void Plane::GenerateIndices() {
     for (int z = 0; z < sizeZ; ++z) {
         for (int x = 0; x < sizeX; x++) {
@@ -131,15 +131,15 @@ void Plane::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices)
     // Vertex Normals
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, normal));
+                          (GLvoid *) offsetof(Vertex, normal));
 
     // Vertex Color
     glEnableVertexAttribArray(3);
     glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, color));
+                          (GLvoid *) offsetof(Vertex, color));
 }
 
-void Plane::UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices){
+void Plane::UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices) {
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -156,22 +156,22 @@ void Plane::UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices
     // Vertex Color
     glEnableVertexAttribArray(3);
     glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, color));
+                          (GLvoid *) offsetof(Vertex, color));
 }
 
 void Plane::Draw() {
     RenderManager::getInstance()->RenderBaseShader();
 
     int diffuseNr = 0;
-    for(GLuint i = 0; i < this->textures.size(); i++)
-    {
+    for (GLuint i = 0; i < this->textures.size(); i++) {
         glActiveTexture(GL_TEXTURE0 + i); // Activate proper texture unit before binding
         // Retrieve texture number (the N in diffuse_textureN)
         std::string name = this->textures[i].type;
-        if(name == "diffuse")
+        if (name == "diffuse")
             diffuseNr++;
-        const char* shader_attribute =  std::string("diffuse1").c_str();
-        int uniformLocation = (int) glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, shader_attribute);
+        const char *shader_attribute = std::string("diffuse1").c_str();
+        int uniformLocation = (int) glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID,
+                                                         shader_attribute);
         glUniform1f(uniformLocation, i);
         glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
     }

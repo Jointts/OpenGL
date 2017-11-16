@@ -10,7 +10,7 @@
 #endif
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 #include "Model.h"
-#include "Terrain.h"
+#include "Serializable.h"
 
 enum EntityType {
     BASIC,
@@ -18,7 +18,7 @@ enum EntityType {
     TERRAIN
 };
 
-class Entity {
+class Entity : public Serializable{
 
     void GenerateCollision();
 

@@ -3,20 +3,19 @@
 //
 
 #include "CameraManager.h"
-#include "GuiCamera.h"
 
 
 CameraManager *CameraManager::cameraManager = 0;
 MainCamera *CameraManager::mainCamera = 0;
 GuiCamera *CameraManager::guiCamera = 0;
 
-CameraManager::CameraManager(){
+CameraManager::CameraManager() {
     mainCamera = new MainCamera;
     guiCamera = new GuiCamera;
 }
 
 CameraManager *CameraManager::getInstance() {
-    if(!cameraManager){
+    if (!cameraManager) {
         cameraManager = new CameraManager;
     }
     return cameraManager;

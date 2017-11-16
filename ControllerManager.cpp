@@ -40,7 +40,7 @@ ControllerManager *ControllerManager::getInstance() {
 
 ControllerManager::ControllerManager() {
     cameraManager = CameraManager::getInstance();
-    glfwSetKeyCallback(displayManager->window, this->key_callback);
+    glfwSetKeyCallback(displayManager->display->window, this->key_callback);
     int height = 0;
     int width = 0;
     int bytesPerPixel = 0;
@@ -53,8 +53,8 @@ ControllerManager::ControllerManager() {
 
     GLFWcursor *glfWcursor = glfwCreateCursor(&glfWimage, 0, 0);
 //    glfwSetCursor(displayManager->window, glfWcursor);
-    glfwSetCursorPosCallback(displayManager->window, this->mouse_callback);
-    glfwSetMouseButtonCallback(displayManager->window, this->mouse_button_callback);
+    glfwSetCursorPosCallback(displayManager->display->window, this->mouse_callback);
+    glfwSetMouseButtonCallback(displayManager->display->window, this->mouse_button_callback);
 }
 
 void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, int action, int mods) {

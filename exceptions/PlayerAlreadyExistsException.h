@@ -9,12 +9,12 @@
 #include <exception>
 #include <stdexcept>
 
-class PlayerAlreadyExistsException : public std::runtime_error{
+class PlayerAlreadyExistsException : public std::runtime_error {
 public:
 
-    PlayerAlreadyExistsException() : runtime_error("Player constructor has been called more than once") { }
+    PlayerAlreadyExistsException() : runtime_error("Player constructor has been called more than once") {}
 
-    PlayerAlreadyExistsException( std::string const& error ) : runtime_error(error) { }
+    PlayerAlreadyExistsException(std::string const &error) : runtime_error(error) {}
 };
 
 

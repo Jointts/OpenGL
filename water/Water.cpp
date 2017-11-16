@@ -3,16 +3,16 @@
 //
 
 #include "Water.h"
-#include "../ShaderManager.h"
+#include "../shaders/ShaderManager.h"
 #include "../Time.h"
-#include "../RenderManager.h"
+#include "../renderer/RenderManager.h"
 
 Water::Water(int sizeX, int sizeZ, int tileSize, bool generateHeightMap) : Plane(sizeX, sizeZ, tileSize,
                                                                                  generateHeightMap) {
 
 }
 
-void Water::UpdateShader(){
+void Water::UpdateShader() {
     ShaderProgram *waterShader = ShaderManager::getInstance()->waterShader;
     double currentCycle = Time::currentCycle * oscillatingSpeed;
 
@@ -23,14 +23,14 @@ void Water::UpdateShader(){
 
     for (int i = 0; i < vertices.size(); ++i) {
         odd ^= true;
-        if(odd){
-            if(i < vertices.size()) {
+        if (odd) {
+            if (i < vertices.size()) {
                 vertices[i].position.y = (float) sin(i) * oscillatingMagnitude * (float) sin(currentCycle);
             }
-            if(i + 2 < vertices.size()) {
+            if (i + 2 < vertices.size()) {
                 vertices[i + 1].position.y = oscillatingMagnitude * (float) cos(currentCycle + tan(i));
             }
-            if(i * sizeX + 1 < vertices.size()){
+            if (i * sizeX + 1 < vertices.size()) {
                 vertices[i * sizeX + 1].position.y = oscillatingMagnitude * (float) cos(currentCycle + tan(i));
             }
         }

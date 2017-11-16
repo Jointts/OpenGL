@@ -7,7 +7,7 @@
 
 
 #include <GLFW/glfw3.h>
-#include "DisplayManager.h"
+#include "display/DisplayManager.h"
 #include "camera/CameraManager.h"
 #include "Entity.h"
 

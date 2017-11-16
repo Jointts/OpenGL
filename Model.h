@@ -14,7 +14,7 @@
 #endif
 #include <vector>
 #include <detail/type_mat4x4.hpp>
-#include "ShaderProgram.h"
+#include "shaders/ShaderProgram.h"
 
 struct Texture {
     GLuint id;
@@ -62,6 +62,8 @@ public:
     void Scale(glm::vec3 axis);
 
     void Draw();
+
+    aiNode * FixRotation(aiNode *rootNode);
 };
 
 

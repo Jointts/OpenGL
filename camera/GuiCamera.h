@@ -8,7 +8,7 @@
 
 #include "Camera.h"
 
-class GuiCamera : public Camera{
+class GuiCamera : public Camera {
 public:
     GuiCamera();
 };

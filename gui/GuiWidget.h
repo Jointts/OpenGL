@@ -10,7 +10,7 @@
 #include "GuiFrameBuffer.h"
 #include <functional>
 
-class GuiWidget : public Quad{
+class GuiWidget : public Quad {
 public:
     GuiWidget(int width, int height);
 

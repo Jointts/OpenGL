@@ -6,7 +6,7 @@
 #include "GuiManager.h"
 
 void GuiRenderer::RenderGui() {
-    for(GuiWidget* widget : GuiManager::getInstance()->guiWidgets){
+    for (GuiWidget *widget : GuiManager::getInstance()->guiWidgets) {
         widget->Draw();
         widget->DrawCollision();
     }

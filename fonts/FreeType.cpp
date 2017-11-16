@@ -52,7 +52,7 @@ void FreeType::LoadCharacters(GLchar *fontPath) {
 
 }
 
-void FreeType::SetupRendering(){
+void FreeType::SetupRendering() {
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glBindVertexArray(VAO);

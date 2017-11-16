@@ -10,8 +10,14 @@
 
 class Display {
 public:
-    GLFWwindow* window;
+    int width = 0;
+
+    int height = 0;
+
+    GLFWwindow *window;
+
     Display(int width, int height, const char *title);
+
     ~Display();
 };
 

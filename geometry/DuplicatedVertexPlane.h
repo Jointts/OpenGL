@@ -8,7 +8,7 @@
 
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 #include <BulletCollision/CollisionShapes/btTriangleMesh.h>
-#include "Model.h"
+#include "../Model.h"
 
 class DuplicatedVertexPlane {
 public:
@@ -27,12 +27,17 @@ public:
     std::vector<Texture> textures;
 
     DuplicatedVertexPlane(int sizeX, int sizeY, bool hasCollision);
+
     DuplicatedVertexPlane(int sizeX, int sizeY, const char *imagePath, bool hasCollision);
 
     void setImage(const char *imagePath);
+
     void generateVertices();
+
     void setupMesh(std::vector<Vertex> vertices);
+
     void generateCollision();
+
     void Draw();
 
 private:

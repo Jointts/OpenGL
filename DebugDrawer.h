@@ -10,7 +10,7 @@
 #include <glad/glad.h>
 #include <vec3.hpp>
 #include <vector>
-#include "RenderManager.h"
+#include "renderer/RenderManager.h"
 
 struct DebugVertex{
     glm::vec3 position;

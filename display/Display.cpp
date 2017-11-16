@@ -1,25 +1,21 @@
 //
-// Created by Joonas on 06/10/2016.
+// Created by joonas on 16.09.16.
 //
 
-#ifndef __gl_h_
-#include <glad/glad.h>
-#endif
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include "DisplayManager.h"
+#include <stdlib.h>
+#include "Display.h"
 
-DisplayManager *DisplayManager::displayManager = 0;
-
-DisplayManager::DisplayManager(const char *title) {
+Display::Display(int width, int height, const char *title) {
     if(!glfwInit()){
         std::cout << "Initialization failed!";
     }
 
     const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
-    height= mode->height;
-    width = mode->width;
+    this->height= mode->height;
+    this->width = mode->width;
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
@@ -27,7 +23,7 @@ DisplayManager::DisplayManager(const char *title) {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_SAMPLES, 8);
 
-    window = glfwCreateWindow(width, height, title, glfwGetPrimaryMonitor(), NULL);
+    window = glfwCreateWindow(width, height, title, NULL, NULL);
 
     if(!window){
         std::cout << "Failed to create a window!";
@@ -36,14 +32,7 @@ DisplayManager::DisplayManager(const char *title) {
     glfwGetFramebufferSize(window, &width, &height);
 }
 
-DisplayManager *DisplayManager::getInstance() {
-    if(!displayManager){
-        displayManager = new DisplayManager("OpenGL");
-    }
-    return displayManager;
-}
-
-DisplayManager::~DisplayManager() {
+Display::~Display() {
     glfwDestroyWindow(window);
     glfwTerminate();
     exit(EXIT_SUCCESS);

@@ -15,11 +15,9 @@
 #include "WorldPhysics.h"
 #include "../DebugDrawer.h"
 #include "../camera/CameraManager.h"
-#include "../Entity.h"
 #include "../Tree.h"
-#include "../Terrain.h"
 #include "../EntityManager.h"
-#include "../DisplayManager.h"
+#include "../display/DisplayManager.h"
 
 Entity *WorldPhysics::lastHitEntity = 0;
 
@@ -45,7 +43,7 @@ void WorldPhysics::InitPhysics() {
     // The world.
     dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, m_overlappingPairCache, solver, collisionConfiguration);
     dynamicsWorld->setGravity(btVector3(0, -9.81f, 0));
-    dynamicsWorld->getDispatchInfo().m_allowedCcdPenetration = 0.0001f;
+    dynamicsWorld->getDispatchInfo().m_allowedCcdPenetration = 1.0f;
     sweepBP->getOverlappingPairCache()->setInternalGhostPairCallback(new btGhostPairCallback());
 
     DebugDrawer *debugDrawer = new DebugDrawer();
@@ -58,8 +56,8 @@ void WorldPhysics::InitPhysics() {
 void WorldPhysics::RayCast(double mouseX, double mouseY) {
     DisplayManager *displayManager = DisplayManager::getInstance();
 
-    GLint viewportWidth = displayManager->width;
-    GLint viewportHeight = displayManager->height;
+    GLint viewportWidth = displayManager->display->width;
+    GLint viewportHeight = displayManager->display->height;
 
     //  Since OpenGL coordinates start from the lower left corner, we need to correct the Y coordinate
     mouseY = viewportHeight - mouseY;
@@ -129,7 +127,7 @@ void WorldPhysics::Tick() {
 
     dynamicsWorld->stepSimulation(1 / 60.f, 10);
 
-    if(debugDrawing){
+    if (debugDrawing) {
         dynamicsWorld->debugDrawWorld();
         debugDrawer->Draw();
     }

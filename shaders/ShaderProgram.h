@@ -6,7 +6,9 @@
 #define OPENGL_SHADERPROGRAM_H
 
 #ifndef __gl_h_
+
 #include <glad/glad.h>
+
 #endif
 
 typedef char GLchar;

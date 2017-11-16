@@ -9,7 +9,7 @@
 #include "../geometry/Plane.h"
 
 
-class Water: public Plane{
+class Water : public Plane {
 
 public:
 

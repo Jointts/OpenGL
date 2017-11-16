@@ -9,18 +9,19 @@
 
 class ShaderManager {
     ShaderManager();
+
 public:
-    static ShaderManager* shaderManager;
+    static ShaderManager *shaderManager;
 
-    static ShaderProgram* baseShader;
+    static ShaderProgram *baseShader;
 
-    static ShaderProgram* celShader;
+    static ShaderProgram *celShader;
 
-    static ShaderProgram* guiShader;
+    static ShaderProgram *guiShader;
 
-    static ShaderProgram* waterShader;
+    static ShaderProgram *waterShader;
 
-    static ShaderProgram* debugShader;
+    static ShaderProgram *debugShader;
 
     static ShaderManager *getInstance();
 };
