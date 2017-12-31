@@ -11,6 +11,7 @@
 #include "camera/CameraManager.h"
 #include "gui/GuiWidget.h"
 #include "EntityManager.h"
+#include "gui/GuiManager.h"
 
 RenderManager *RenderManager::renderManager = 0;
 
@@ -56,6 +57,7 @@ RenderManager *RenderManager::renderManager = 0;
 
 
     void RenderManager::RenderBaseShader() {
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         CameraManager *cameraManager = CameraManager::getInstance();
         ShaderProgram *baseShader = ShaderManager::getInstance()->baseShader;
 
@@ -105,16 +107,37 @@ RenderManager *RenderManager::renderManager = 0;
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(mainCamera->view));
     }
 
+    void RenderManager::DrawGui() {
+        RenderManager::getInstance()->RenderGuiShader();
+        for (GuiWidget *guiWidget :GuiManager::getInstance()->guiWidgets) {
+            guiWidget->Draw();
+        }
+    }
+
+    void RenderManager::DrawGuiCollision() {
+        RenderManager::getInstance()->RenderGuiShader();
+        for (GuiWidget *guiWidget : GuiManager::getInstance()->guiWidgets) {
+            guiWidget->DrawCollision();
+        }
+    }
+
     void RenderManager::DrawModels() {
         RenderManager::getInstance()->RenderBaseShader();
         for (Entity *entity : EntityManager::getInstance()->entities) {
-                entity->model->Draw();
+            glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "model"), 1, GL_FALSE, glm::value_ptr(entity->model->model));
+            entity->model->Draw();
                 if (entity->hasCollision) {
                     btScalar physicsMatrix[16];
                     entity->rigidBody->getWorldTransform().getOpenGLMatrix(physicsMatrix);
                     entity->model->model = Utils::BulletToGlm(physicsMatrix);
                 }
         }
+    }
+
+    void RenderManager::DrawOutline(Entity *entity) {
+        RenderManager::getInstance()->RenderCelShader();
+        glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->celShader->shaderProgramID, "model"), 1, GL_FALSE, glm::value_ptr(entity->model->model));
+        entity->model->Draw();
     }
 
     RenderManager *RenderManager::getInstance() {

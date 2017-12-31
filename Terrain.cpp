@@ -10,6 +10,7 @@
 #include "Terrain.h"
 #include "physics/PhysicsManager.h"
 #include "EntityManager.h"
+#include "RenderManager.h"
 #include <algorithm>
 
 int lastVertex = NULL;
@@ -153,4 +154,10 @@ void Terrain::CarvePath(int index){
 Terrain::Terrain(int sizeX, int sizeZ, int tileSize, bool generateHeightMap) : Plane(sizeX, sizeZ, tileSize,
                                                                                      generateHeightMap) {
     EntityManager::getInstance()->terrain = this;
+}
+
+void Terrain::Draw() {
+    RenderManager::getInstance()->RenderBaseShader();
+    glShadeModel(GL_FLAT);
+    Plane::Draw();
 }

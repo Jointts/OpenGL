@@ -6,17 +6,23 @@
 #define OPENGL_GUIMANAGER_H
 
 
-#include "Gui.h"
+#include "GuiWidget.h"
+#include "GuiCollision.h"
 
 class GuiManager {
 
 public:
     static GuiManager *guiManager;
-    static Gui *gui;
 
-    GuiManager::GuiManager();
+    GuiManager();
 
-    static GuiManager* GuiManager::getInstance();
+    static GuiManager* getInstance();
+
+    static GuiCollision* guiCollision;
+
+    void addWidgetToRenderQueue(GuiWidget* guiWidget);
+
+    std::vector<GuiWidget*> guiWidgets;
 };
 
 

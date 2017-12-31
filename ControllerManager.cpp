@@ -14,6 +14,7 @@
 #include "ControllerManager.h"
 #include "physics/PhysicsManager.h"
 #include "EntityManager.h"
+#include "gui/GuiManager.h"
 
 
 ControllerManager *ControllerManager::controllerManager = 0;
@@ -112,6 +113,8 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
 void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
     PhysicsManager::getInstance()->worldPhysics->RayCast(xpos, ypos);
     PhysicsManager::getInstance()->guiPhysics->RayCast(xpos, ypos);
+    GuiManager::getInstance()->guiCollision->mouseX = (int) xpos;
+    GuiManager::getInstance()->guiCollision->mouseY = (int) ypos;
 }
 
 void ControllerManager::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)

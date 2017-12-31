@@ -9,10 +9,12 @@
 #include "../Utils.h"
 #include "../RenderManager.h"
 #include "../physics/PhysicsManager.h"
+#include "GuiManager.h"
+#include "../ShaderManager.h"
 #include <BulletCollision/CollisionShapes/btBox2dShape.h>
 
 GuiWidget::GuiWidget(int width, int height) : Quad(width, height) {
-
+    GuiManager::getInstance()->addWidgetToRenderQueue(this);
 }
 
 void GuiWidget::UpdatePosition(){
@@ -75,8 +77,11 @@ void GuiWidget::setMarginBottom(float marginBottom) {
 }
 
 void GuiWidget::setTexture(GLchar *path){
-
     textureId = Utils::TextureFromFile(path, true);
+}
+
+void GuiWidget::setCollisionTexture(GLchar *path){
+    collisionTextureId = Utils::TextureFromFile(path, true);
 }
 
 void GuiWidget::GenerateCollision(){
@@ -104,6 +109,29 @@ void GuiWidget::GenerateCollision(){
 }
 
 void GuiWidget::Draw() {
-    RenderManager::getInstance()->RenderGuiShader();
     Quad::Draw();
+}
+
+void GuiWidget::Click() {
+    eventCallback();
+}
+
+void GuiWidget::setClickEvent(std::function<void(void)> functionToCall) {
+    eventCallback = std::bind(functionToCall);
+}
+
+void GuiWidget::DrawCollision() {
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBindVertexArray(VAO);
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(2);
+    if(collisionTextureId){
+        glActiveTexture(GL_TEXTURE0);
+        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->guiShader->shaderProgramID, "diffuse"), collisionTextureId);
+        glBindTexture(GL_TEXTURE_2D, collisionTextureId);
+    }
+    glDrawElements(GL_TRIANGLES, (GLsizei) indices.size(), GL_UNSIGNED_INT, 0);
+    glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(2);
+    glBindVertexArray(0);
 }

@@ -145,7 +145,7 @@ void Plane::UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices
                           (GLvoid *) 0);
 }
 
-void Plane::Draw() {
+void Plane::Draw() {{}
     int diffuseNr = 0;
     for(GLuint i = 0; i < this->textures.size(); i++)
     {

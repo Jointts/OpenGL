@@ -25,6 +25,8 @@ public:
 
     std::map<int,int> traversedVertices;
 
+    void Draw();
+
     void CarvePath(int index);
 };
 

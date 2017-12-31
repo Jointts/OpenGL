@@ -127,7 +127,7 @@ void WorldPhysics::Tick(){
     dynamicsWorld->stepSimulation(1 / 60.f, 10);
 
     dynamicsWorld->debugDrawWorld();
-    debugDrawer->Draw();
+    //debugDrawer->Draw();
 }
 
 void WorldPhysics::AddPlayer(){

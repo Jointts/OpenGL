@@ -6,15 +6,21 @@
 #define OPENGL_GUIWIDGET_H
 
 
+#include <functional>
 #include "../geometry/Quad.h"
 
 class GuiWidget : public Quad{
 public:
+    std::function<void(void)> eventCallback;
+
+    GuiWidget* parentWidget;
+
     GuiWidget(int width, int height);
 
     void setMarginBottom(float marginBottom);
 
     void setTexture(GLchar *path);
+    void setCollisionTexture(GLchar *path);
 
     float getMarginBottom() const;
 
@@ -30,9 +36,15 @@ public:
 
     float getMarginLeft() const;
 
+    void setClickEvent(std::function<void(void)> functionToCall);
+
     void UpdatePosition();
 
     void Draw() override;
+
+    void DrawCollision();
+
+    void Click();
 
     void GenerateCollision();
 

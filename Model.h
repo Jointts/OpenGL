@@ -35,7 +35,7 @@ public:
 
     Model(std::string meshPath);
 
-    glm::mat4 model = glm::mat4();
+    glm::mat4 model = glm::mat4(1.0);
 
     Model();
 

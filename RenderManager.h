@@ -24,6 +24,8 @@
 
         void RenderBaseShader();
 
+        void DrawGui();
+
         void DrawModels();
 
         void DrawTerrain();
@@ -31,6 +33,10 @@
         void RenderWaterShader();
 
         void RenderGuiShader();
+
+        void DrawGuiCollision();
+
+        void DrawOutline(Entity *entity);
 
         void RenderDebugShader();
     };

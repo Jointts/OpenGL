@@ -16,6 +16,7 @@ public:
     Quad(int width, int height);
 
     GLuint textureId;
+    GLuint collisionTextureId;
     GLuint VAO, VBO, EBO;
     std::vector<Vertex> vertices;
 
