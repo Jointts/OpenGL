@@ -40,6 +40,9 @@ public:
 
     void Draw();
 
+	void calculatePointHeight(glm::vec2 pointPosition);
+	void calculateHeightFromTriangle(glm::vec3 pointA, glm::vec3 pointB, glm::vec3 pointC, glm::vec2 pointToFind);
+
 private:
     std::vector<float> heightCoords;
 
@@ -48,6 +51,7 @@ private:
     void GenerateNormals();
 
     void generateNormals();
+
 };
 
 

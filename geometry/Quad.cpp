@@ -4,36 +4,38 @@
 
 #include <stb_image.h>
 #include <BulletCollision/CollisionShapes/btTriangleMesh.h>
-#include "Quad.h"
 #include "../shaders/ShaderManager.h"
+#include "Quad.h"
 
-Quad::Quad(int width, int height) {
-    this->width = width;
-    this->height = height;
-
-    Vertex vertex1;
-    vertex1.position = glm::vec3(0.0, 0.0, 0.0);
-    vertex1.uv_coord = glm::vec2(0.0, 0.0);
-    vertices.push_back(vertex1);
-
-    Vertex vertex2;
-    vertex2.position = glm::vec3(0.0, this->height, 0.0);
-    vertex2.uv_coord = glm::vec2(0.0, 1.0);
-    vertices.push_back(vertex2);
-
-    Vertex vertex3;
-    vertex3.position = glm::vec3(this->width, this->height, 0.0);
-    vertex3.uv_coord = glm::vec2(1.0, 1.0);
-    vertices.push_back(vertex3);
-
-    Vertex vertex4;
-    vertex4.position = glm::vec3(this->width, 0.0, 0.0);
-    vertex4.uv_coord = glm::vec2(1.0, 0.0);
-    vertices.push_back(vertex4);
-
-    indices = {0, 1, 2, 2, 3, 0};
-
+Quad::Quad(int width, int height, int xPos, int yPos) : width(width), height(height){
+	GenerateMesh();
+	SetPosition(xPos, yPos);
     setupMesh(vertices, indices);
+}
+
+void Quad::GenerateMesh()
+{
+	Vertex vertex1;
+	vertex1.position = glm::vec3(0.0, 0.0, 0.0);
+	vertex1.uv_coord = glm::vec2(0.0, 1.0);
+	vertices.push_back(vertex1);
+
+	Vertex vertex2;
+	vertex2.position = glm::vec3(0.0, this->height, 0.0);
+	vertex2.uv_coord = glm::vec2(0.0, 0.0);
+	vertices.push_back(vertex2);
+
+	Vertex vertex3;
+	vertex3.position = glm::vec3(this->width, this->height, 0.0);
+	vertex3.uv_coord = glm::vec2(1.0, 0.0);
+	vertices.push_back(vertex3);
+
+	Vertex vertex4;
+	vertex4.position = glm::vec3(this->width, 0.0, 0.0);
+	vertex4.uv_coord = glm::vec2(1.0, 1.0);
+	vertices.push_back(vertex4);
+
+	indices = { 0, 1, 2, 2, 3, 0 };
 }
 
 void Quad::setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices) {
@@ -77,4 +79,13 @@ void Quad::Draw(int textureId, GLenum textureUnit) {
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(2);
     glBindVertexArray(0);
+}
+
+void Quad::SetPosition(int xPos, int yPos)
+{
+	for (auto &vertex : vertices)
+	{
+		vertex.position.x += xPos;
+		vertex.position.y += yPos;
+	}
 }

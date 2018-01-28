@@ -26,14 +26,19 @@ public:
 
     static void mouse_callback(GLFWwindow *window, double xpos, double ypos);
     static bool mouseOneClickEventPropagate;
+	static bool mouseOneClickHoldEventPropagate;
 
-    static ControllerManager *getInstance();
+	static ControllerManager *getInstance();
 
 private:
+
+	static int lastMouseXPos;
+	static int lastMouseYPos;
 
     static ControllerManager *controllerManager;
 
     static void mouse_button_callback(GLFWwindow *window, int button, int action, int mods);
+	static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 };
 
 

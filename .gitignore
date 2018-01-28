@@ -2,3 +2,26 @@
 .idea
 
 /lib/
+/.vs
+/Debug
+/x64/Release2
+/x64/Release
+/x64/Debug
+/out/CMakeFiles
+/profiling_12_5_21_4_14.csv
+/profiling_12_5_20_55_4.csv
+/profiling_12_5_20_51_43.csv
+/profiling_12_5_14_18_31.csv
+/profiling_11_29_16_42_48.csv
+/profiling_11_29_16_36_10.csv
+/profiling_11_28_12_48_15.csv
+/profiling_11_28_12_0_38.csv
+/nsight_profiler.cfg
+/NervousEngine.vcxproj.user
+/NervousEngine.vcxproj.filters
+/NervousEngine.vcxproj
+/NervousEngine.sln
+/json.hpp
+/freetype271.dll
+/fmodstudioL64.dll
+/fmodL64.dll

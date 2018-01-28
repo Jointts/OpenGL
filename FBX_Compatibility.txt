@@ -1,7 +1,0 @@
-How to make model compliant with the engine:
-
-1) Make sure when exporting as .FBX you have a bitmap as your material texture not a combined node.
-2) Go to the settings(wrench) tab and press Reset Xform (will fix pivot)
-3) Go to Scripting -> Run Script... and run the YUP_tool (last time it was in your res folder) or else it will export with the wrong UP coordinate(Z)
-
-Youre good to go :)

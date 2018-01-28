@@ -16,10 +16,6 @@ DirectionalLight::DirectionalLight(glm::vec3 lightColor, GLfloat lightStrength, 
 }
 
 void DirectionalLight::Enable() {
-    glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "ambientStrength"),
-                1.0f);
-    glUniform3f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "ambientColor"), 1.0f,
-                1.0f, 1.0f);
     glUniform3f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID,
                                      "directionalLight.lightColor"), lightColor.x, lightColor.y, lightColor.z);
     glUniform3f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID,

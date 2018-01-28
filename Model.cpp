@@ -33,8 +33,7 @@ void Model::importFile() {
     }
 
     // Temprorary fix to the Y Up problem is to include the flag aiProcess_PreTransformVertices, however this will remove all animations
-    const aiScene *scene = importer.ReadFile(model_file, aiProcess_Triangulate | aiProcess_FlipUVs |
-                                                         aiProcess_PreTransformVertices);
+    const aiScene *scene = importer.ReadFile(model_file, aiProcess_Triangulate | aiProcess_FlipUVs);
 
     if (!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
         Assimp::DefaultLogger::get()->error("Import of file " + model_file + " failed.");
@@ -44,6 +43,11 @@ void Model::importFile() {
 //    aiNode* RootNode = FixRotation(scene->mRootNode);
 
     processNode(scene->mRootNode, scene);
+
+	if (scene->HasAnimations())
+	{
+		ProcessAnimations(scene->mAnimations, scene->mNumAnimations);
+	}
 
     Assimp::DefaultLogger::get()->info("Import of file " + model_file + " successful.");
 }
@@ -117,12 +121,27 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
         vertices.push_back(vertex);
     }
 
+	/* Read the indices */
     for (int i = 0; i < mesh->mNumFaces; ++i) {
         aiFace face = mesh->mFaces[i];
         for (int j = 0; j < face.mNumIndices; ++j) {
             indices.push_back(face.mIndices[j]);
         }
     }
+
+	/* Read the bones */
+	if(mesh->HasBones())
+	{
+		int meshVertexStartIndex;
+		if(meshes.size() == 0)
+		{
+			meshVertexStartIndex = 0;
+		}else
+		{
+			meshVertexStartIndex = scene->mMeshes[meshes.size()]->mNumVertices - 1;
+		}
+		ProcessBones(mesh->mBones, mesh->mNumBones, vertices, meshVertexStartIndex);
+	}
 
     /* Read the textures */
     if (scene->HasMaterials()) {
@@ -133,8 +152,44 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
     return Mesh(vertices, indices, diffuseMaps);
 }
 
-std::vector<Texture>
-Model::processMaterial(aiTextureType textureType, aiMaterial *material, std::string textureTypeString) {
+void Model::ProcessBones(aiBone** bones, int numOfBones, std::vector<Vertex> vertices, int vertexStartIndex)
+{
+	for(int boneIndex = 0; boneIndex < numOfBones; boneIndex++)
+	{
+		aiBone* bone = bones[boneIndex];
+		boneOffsetMatrices.insert(std::pair<unsigned int, aiMatrix4x4*>(boneIndex, &bone->mOffsetMatrix));
+		for(int weightIndex = 0; weightIndex < bone->mNumWeights; weightIndex++)
+		{
+			aiVertexWeight vertexWeight = bone->mWeights[weightIndex];
+			Vertex* vertexToUpdate = &vertices[vertexWeight.mVertexId];
+			for(int boneId = 0; boneId < MAX_BONES_PER_VERTEX; boneId++)
+			{
+				if(vertexToUpdate->boneWeights[boneId] == 0.0)
+				{
+					vertexToUpdate->boneIDs[boneId] = boneIndex;
+					vertexToUpdate->boneWeights[boneId] = vertexWeight.mWeight;
+				}else
+				{
+					std::cout << "WARNING::ASSIMP::VERTEX_HAS_MORE_BONES_THAN_SUPPORTED count > " << MAX_BONES_PER_VERTEX << std::endl;
+					assert(0);
+				}
+			}
+		}
+	}
+}
+
+// TODO: Load in animations, create Animation class as a container for them
+void Model::ProcessAnimations(aiAnimation** animations, int animationCount)
+{
+	for (int index = 0; index < animationCount; index++) {
+		aiAnimation* animation = animations[index];
+		Animation* animToAdd = new Animation(animation->mTicksPerSecond, animation->mDuration, animation->mChannels, animation->mNumChannels, animation->mName);
+		this->animations.push_back(animToAdd);
+	}
+	std::cout << "TEST";
+}
+
+std::vector<Texture> Model::processMaterial(aiTextureType textureType, aiMaterial *material, std::string textureTypeString) {
     std::vector<Texture> textures;
     aiString path;
     std::string directory = "res/";
@@ -152,14 +207,10 @@ Model::processMaterial(aiTextureType textureType, aiMaterial *material, std::str
 }
 
 void Model::Draw() {
+	Model::PlayAnimation();
     RenderManager::getInstance()->RenderBaseShader();
     glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "model"), 1,
                        GL_FALSE, glm::value_ptr(model));
-    if (drawOutline) {
-        glUniform1i(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "hit"), 1);
-    } else {
-        glUniform1i(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "hit"), 0);
-    }
     for (int i = 0; i < meshes.size(); ++i) {
         meshes[i].Draw();
     }
@@ -178,3 +229,21 @@ void Model::Scale(glm::vec3 axis) {
     model = glm::scale(model, axis);
 }
 
+void Model::SetAnimation(int animationToPlay)
+{
+	activeAnimation = animations[animationToPlay];
+}
+
+void Model::PlayAnimation()
+{
+	if(activeAnimation)
+	{
+		if(!activeAnimation->animationEnded)
+		{
+			activeAnimation->Play();
+		}else
+		{
+			activeAnimation = nullptr;
+		}
+	}
+}

@@ -26,8 +26,11 @@ public:
     float currentSpeed = 0.0f;
 
     MainCamera();
+	void MoveByX(int x);
+	void MoveByZ(int y);
+	void MoveByY(int y);
 
-    void MoveLeft();
+	void MoveLeft();
 
     void MoveRight();
 

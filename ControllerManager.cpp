@@ -21,6 +21,9 @@ ControllerManager *ControllerManager::controllerManager = 0;
 bool ControllerManager::mouseOneClicked = false;
 bool ControllerManager::mouseOneReleased = false;
 bool ControllerManager::mouseOneClickEventPropagate = false;
+bool ControllerManager::mouseOneClickHoldEventPropagate = false;
+int ControllerManager::lastMouseXPos = 0;
+int ControllerManager::lastMouseYPos = 0;
 
 DisplayManager *displayManager = DisplayManager::getInstance();
 CameraManager *cameraManager = 0;
@@ -55,6 +58,7 @@ ControllerManager::ControllerManager() {
 //    glfwSetCursor(displayManager->window, glfWcursor);
     glfwSetCursorPosCallback(displayManager->display->window, this->mouse_callback);
     glfwSetMouseButtonCallback(displayManager->display->window, this->mouse_button_callback);
+    glfwSetScrollCallback(displayManager->display->window, this->scroll_callback);
 }
 
 void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, int action, int mods) {
@@ -72,8 +76,23 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
 }
 
 void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
-    PhysicsManager::getInstance()->worldPhysics->RayCast(xpos, ypos);
+    //PhysicsManager::getInstance()->worldPhysics->RayCast(xpos, ypos);
     GuiManager::getInstance()->guiFrameBuffer->ReadColor(xpos, ypos);
+	if(mouseOneClickEventPropagate && lastMouseXPos != 0 && lastMouseXPos != 0 && !mouseOneReleased)
+	{
+		int cameraMovementX = xpos - lastMouseXPos;
+		int cameraMovementY = ypos - lastMouseYPos;
+
+		CameraManager::getInstance()->mainCamera->MoveByX(cameraMovementX);
+		CameraManager::getInstance()->mainCamera->MoveByZ(cameraMovementY);
+	}
+
+	if(mouseOneClickEventPropagate)
+	{
+		lastMouseXPos = xpos;
+		lastMouseYPos = ypos;
+	}
+
 }
 
 void ControllerManager::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
@@ -84,6 +103,14 @@ void ControllerManager::mouse_button_callback(GLFWwindow* window, int button, in
         mouseOneClickEventPropagate = true;
     }
 
-    mouseOneClicked = button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS;
-    PhysicsManager::getInstance()->worldPhysics->mouseOneClicked = mouseOneClicked;
+	if (mouseOneClicked && !mouseOneReleased) {
+		mouseOneClickHoldEventPropagate = true;
+	}
+
+	mouseOneClicked = button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS;
+}
+
+void ControllerManager::scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+	CameraManager::getInstance()->mainCamera->MoveByY(yoffset);
 }

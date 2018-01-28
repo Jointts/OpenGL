@@ -58,7 +58,7 @@ void Entity::GenerateCollision() {
 
     btDefaultMotionState *motionstate = new btDefaultMotionState(Transform);
 
-    btScalar mass = 1;
+    btScalar mass = 0;
 
     btRigidBody::btRigidBodyConstructionInfo rigidBodyCI(
             mass,               // mass, in kg. 0 -> Static object, will never move.

@@ -5,14 +5,18 @@
 #include <iostream>
 #include "Button.h"
 
-Button::Button(int width, int height) : GuiWidget(width, height) {
-
+Button::Button(int width, int height) : GuiWidget(width, height)
+{
 }
 
-void Button::Click() {
-    if (clickEvent == nullptr) {
-        GuiWidget::Click();
-    } else {
-        clickEvent();
-    }
+void Button::Click()
+{
+	if (clickEvent == nullptr)
+	{
+		GuiWidget::Click();
+	}
+	else
+	{
+		clickEvent();
+	}
 }

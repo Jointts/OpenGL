@@ -13,7 +13,7 @@
 DisplayManager *DisplayManager::displayManager = 0;
 
 DisplayManager::DisplayManager() {
-    display = new Display(3440, 1440, "Game");
+    display = new Display(3440, 1440, "NervousEngine");
 }
 
 DisplayManager *DisplayManager::getInstance() {

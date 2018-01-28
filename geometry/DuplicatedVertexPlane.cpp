@@ -11,13 +11,18 @@
 #include "../physics/PhysicsManager.h"
 #include <noise/noise.h>
 #include <BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h>
+#include "../camera/CameraManager.h"
+#include <gtc/type_ptr.inl>
+#include "../shaders/ShaderManager.h"
+#include <iostream>
+#include <detail/_vectorize.hpp>
+#include <detail/_vectorize.hpp>
+#include <detail/_vectorize.hpp>
+#include <detail/_vectorize.hpp>
 
 using namespace noise;
 
-DuplicatedVertexPlane::DuplicatedVertexPlane(int sizeX, int sizeY, bool hasCollision) {
-    this->sizeX = sizeX;
-    this->sizeZ = sizeY;
-    this->hasCollision = hasCollision;
+DuplicatedVertexPlane::DuplicatedVertexPlane(int sizeX, int sizeY, bool hasCollision) : sizeX(sizeX), sizeZ(sizeY), hasCollision(hasCollision) {
     generateVertices();
     setupMesh(vertices);
     generateCollision();
@@ -108,11 +113,11 @@ void DuplicatedVertexPlane::generateVertices() {
             vertex2.normal = normal;
             vertex3.normal = normal;
 
-            btVector3 vector1 = btVector3(vertex1.position.x, vertex1.position.y, vertex1.position.z);
-            btVector3 vector2 = btVector3(vertex2.position.x, vertex2.position.y, vertex2.position.z);
-            btVector3 vector3 = btVector3(vertex3.position.x, vertex3.position.y, vertex3.position.z);
-
-            tMesh->addTriangle(vector1, vector2, vector3);
+//            btVector3 vector1 = btVector3(vertex1.position.x, vertex1.position.y, vertex1.position.z);
+//            btVector3 vector2 = btVector3(vertex2.position.x, vertex2.position.y, vertex2.position.z);
+//            btVector3 vector3 = btVector3(vertex3.position.x, vertex3.position.y, vertex3.position.z);
+//
+//            tMesh->addTriangle(vector1, vector2, vector3);
 
             vertices.push_back(vertex1);
             vertices.push_back(vertex2);
@@ -155,11 +160,11 @@ void DuplicatedVertexPlane::generateVertices() {
             vertex5.normal = normal2;
             vertex6.normal = normal2;
 
-            btVector3 vector4 = btVector3(vertex4.position.x, vertex4.position.y, vertex4.position.z);
-            btVector3 vector5 = btVector3(vertex5.position.x, vertex5.position.y, vertex5.position.z);
-            btVector3 vector6 = btVector3(vertex6.position.x, vertex6.position.y, vertex6.position.z);
-
-            tMesh->addTriangle(vector4, vector5, vector6);
+//            btVector3 vector4 = btVector3(vertex4.position.x, vertex4.position.y, vertex4.position.z);
+//            btVector3 vector5 = btVector3(vertex5.position.x, vertex5.position.y, vertex5.position.z);
+//            btVector3 vector6 = btVector3(vertex6.position.x, vertex6.position.y, vertex6.position.z);
+//
+//            tMesh->addTriangle(vector4, vector5, vector6);
 
             vertices.push_back(vertex4);
             vertices.push_back(vertex5);
@@ -213,6 +218,8 @@ void DuplicatedVertexPlane::Draw() {
 //        glUniform1f(uniformLocation, i);
 //        glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
 //    }
+
+	glDisable(GL_CULL_FACE);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBindVertexArray(VAO);
     glEnableVertexAttribArray(0);
@@ -223,6 +230,42 @@ void DuplicatedVertexPlane::Draw() {
     glEnableVertexAttribArray(1);
     glDisableVertexAttribArray(3);
     glBindVertexArray(0);
+}
+
+void DuplicatedVertexPlane::calculatePointHeight(glm::vec2 pointPosition)
+{
+	double xDecimal = pointPosition.x - floor(pointPosition.x);
+	double yDecimal = pointPosition.y - floor(pointPosition.y);
+	int colIndex = (int) pointPosition.x % sizeX;
+	int rowIndex = (int) pointPosition.y * sizeZ;
+
+	// Multiply by 6 as each cell has 6 vertices
+	int vertexStartIndex = (colIndex + rowIndex) * 6;
+	Vertex vertexA = vertices[vertexStartIndex];
+	Vertex vertexB = vertices[vertexStartIndex + 1];
+	Vertex vertexC = vertices[vertexStartIndex + 2];
+	Vertex vertexD = vertices[vertexStartIndex + 3];
+	Vertex vertexE = vertices[vertexStartIndex + 4];
+	Vertex vertexF = vertices[vertexStartIndex + 5];
+
+	// Determine whether the point is in the first or second triangle of the quad 
+	if(xDecimal <= 0.5f && yDecimal >= 0.5f)
+	{
+		calculateHeightFromTriangle(vertexA.position, vertexB.position, vertexC.position, pointPosition);
+	}else
+	{
+		calculateHeightFromTriangle(vertexD.position, vertexE.position, vertexF.position, pointPosition);
+	}
+
+	std::cout << "Do shit";
+}
+
+void DuplicatedVertexPlane::calculateHeightFromTriangle(glm::vec3 pointA, glm::vec3 pointB, glm::vec3 pointC, glm::vec2 pointToFind)
+{
+	// Move one vertex to coordinate system origin, shift others by that coord
+	glm::vec3 shiftedA = glm::vec3();
+	glm::vec3 shiftedB = pointB - pointA;
+	glm::vec3 shiftedC = pointC - pointA;
 }
 
 void DuplicatedVertexPlane::generateCollision() {

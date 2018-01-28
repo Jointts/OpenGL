@@ -9,50 +9,58 @@
 #include "../geometry/Quad.h"
 #include "GuiFrameBuffer.h"
 #include <functional>
+#include <fstream>
+#include <cereal/archives/json.hpp>
 
-class GuiWidget : public Quad {
+
+class GuiWidget : public Quad
+{
 public:
-    GuiWidget(int width, int height);
+	friend class cereal::access;
 
-    void setMarginBottom(float marginBottom);
+	GuiWidget(int width, int height);
 
-    void setTexture(GLchar *path);
+	void setMarginBottom(float marginBottom);
 
-    float getMarginBottom() const;
+	void setTexture(GLchar* path);
 
-    void setMarginTop(float marginTop);
+	float getMarginBottom() const;
 
-    float getMarginTop() const;
+	void setMarginTop(float marginTop);
 
-    void setMarginRight(float marginRight);
+	float getMarginTop() const;
 
-    float getMarginRight() const;
+	void setMarginRight(float marginRight);
 
-    void setMarginLeft(float marginLeft);
+	float getMarginRight() const;
 
-    float getMarginLeft() const;
+	void setMarginLeft(float marginLeft);
 
-    void UpdatePosition();
+	float getMarginLeft() const;
 
-    void Draw();
+	void UpdatePosition();
 
-    void DrawCollision();
+	void Draw();
 
-    virtual void Click();
+	void DrawCollision();
 
-    glm::vec3 collisionColor = glm::vec3();
-//
-//    void BindClickEvent(std::function clickEvent);
+	virtual void Click();
+
+	glm::vec3 collisionColor = glm::vec3();
+	//
+	//    void BindClickEvent(std::function clickEvent);
 private:
-//    std::function clickEvent;
-    float marginLeft = 0;
-    float marginRight = 0;
+	//    std::function clickEvent;
+	GuiWidget* parent;
 
-    float marginTop = 0;
+	float marginLeft = 0;
+	float marginRight = 0;
 
-    float marginBottom = 0;
+	float marginTop = 0;
 
-    GuiFrameBuffer *guiFrameBuffer;
+	float marginBottom = 0;
+
+	GuiFrameBuffer* guiFrameBuffer;
 };
 
 
