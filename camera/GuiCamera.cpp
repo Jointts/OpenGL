@@ -2,8 +2,8 @@
 // Created by Joonas on 12/04/2017.
 //
 
-#include <glm.hpp>
-#include <gtc/matrix_transform.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include "GuiCamera.h"
 #include "../display/DisplayManager.h"
 

@@ -1,7 +1,6 @@
 # IntelliJ project files
 .idea
 
-/lib/
 /.vs
 /Debug
 /x64/Release2

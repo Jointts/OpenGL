@@ -2,7 +2,7 @@
 // Created by Joonas on 12/04/2017.
 //
 
-#include <gtc/matrix_transform.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include "MainCamera.h"
 #include "../display/DisplayManager.h"
 #include <iostream>

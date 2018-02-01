@@ -8,7 +8,7 @@
 #include <BulletCollision/CollisionDispatch/btGhostObject.h>
 #include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
 #include <BulletCollision/CollisionShapes/btCapsuleShape.h>
-#include <ext.hpp>
+#include <glm/ext.hpp>
 #include "EntityController.h"
 #include "physics/PhysicsManager.h"
 #include "camera/CameraManager.h"

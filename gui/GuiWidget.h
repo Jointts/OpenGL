@@ -10,13 +10,13 @@
 #include "GuiFrameBuffer.h"
 #include <functional>
 #include <fstream>
-#include <cereal/archives/json.hpp>
+//#include <cereal/archives/json.hpp>
 
 
 class GuiWidget : public Quad
 {
 public:
-	friend class cereal::access;
+//	friend class cereal::access;
 
 	GuiWidget(int width, int height);
 

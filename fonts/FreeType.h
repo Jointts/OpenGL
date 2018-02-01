@@ -11,8 +11,8 @@
 #include <glad/glad.h>
 #endif
 
-#include <detail/type_vec.hpp>
-#include <vec2.hpp>
+#include <glm/detail/type_vec.hpp>
+#include <glm/vec2.hpp>
 #include <map>
 #include FT_FREETYPE_H
 

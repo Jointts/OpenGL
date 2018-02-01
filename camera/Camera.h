@@ -6,8 +6,8 @@
 #define OPENGL_CAMERA_H
 
 
-#include <vec3.hpp>
-#include <detail/type_mat4x4.hpp>
+#include <glm/vec3.hpp>
+#include <glm/detail/type_mat4x4.hpp>
 
 class Camera {
 public:

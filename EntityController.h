@@ -6,7 +6,7 @@
 #define OPENGL_PLAYERCONTROLLER_H
 
 #include <BulletCollision/CollisionDispatch/btGhostObject.h>
-#include <vec3.hpp>
+#include <glm/vec3.hpp>
 #include <BulletDynamics/Character/btKinematicCharacterController.h>
 #include "Model.h"
 #include "Entity.h"

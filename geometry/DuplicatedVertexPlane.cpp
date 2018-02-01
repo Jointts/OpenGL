@@ -12,13 +12,13 @@
 #include <noise/noise.h>
 #include <BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h>
 #include "../camera/CameraManager.h"
-#include <gtc/type_ptr.inl>
+#include <glm/gtc/type_ptr.inl>
 #include "../shaders/ShaderManager.h"
 #include <iostream>
-#include <detail/_vectorize.hpp>
-#include <detail/_vectorize.hpp>
-#include <detail/_vectorize.hpp>
-#include <detail/_vectorize.hpp>
+#include <glm/detail/_vectorize.hpp>
+#include <glm/detail/_vectorize.hpp>
+#include <glm/detail/_vectorize.hpp>
+#include <glm/detail/_vectorize.hpp>
 
 using namespace noise;
 

@@ -2,7 +2,7 @@
 // Created by Joonas on 10/20/2016.
 //
 
-#include <gtc/type_ptr.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include "Mesh.h"
 #include "shaders/ShaderProgram.h"
 #include "shaders/ShaderManager.h"

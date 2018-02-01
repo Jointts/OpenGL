@@ -5,12 +5,13 @@
 #include <ios>
 #include <fstream>
 #include <iostream>
-#include <direct.h>  
+//#include <direct.h>
 #include <glad/glad.h>
-#include <ext.hpp>
+#include <glm/ext.hpp>
 #include <assimp/DefaultLogger.hpp>
 #include <stb_image.h>
 #include <LinearMath/btTransform.h>
+#include <zconf.h>
 #include "Utils.h"
 
 std::string Utils::readFile(const char *filePath) {

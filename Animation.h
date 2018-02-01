@@ -1,6 +1,6 @@
 #pragma once
 #include <assimp/anim.h>
-#include <mat4x2.hpp>
+#include <glm/mat4x2.hpp>
 #include <vector>
 
 struct BoneTransform
@@ -24,7 +24,7 @@ class Animation
 	int lastRotationKey = 0;
 	int lastScalingKey = 0;
 
-	glm::quat* Animation::InterpolatePosition(aiVector3D positionMat1, aiVector3D positionMat2, float factor);
+	glm::quat* InterpolatePosition(aiVector3D positionMat1, aiVector3D positionMat2, float factor);
 public:
 	Animation(double ticks_per_second, double duration, aiNodeAnim** channels, unsigned int channelCount, const aiString name);
 	int GetTimePassed();

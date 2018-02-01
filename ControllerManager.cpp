@@ -6,7 +6,7 @@
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
 
 #include <iostream>
-#include <gtc/matrix_transform.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include <stdlib.h>
 #include <stb_image.h>
 #include <stb_image_resize.h>

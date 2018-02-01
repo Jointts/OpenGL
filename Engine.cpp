@@ -5,9 +5,9 @@
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
 
-#include <detail/type_mat.hpp>
-#include <detail/type_mat4x4.hpp>
-#include <gtc/type_ptr.hpp>
+#include <glm/detail/type_mat.hpp>
+#include <glm/detail/type_mat4x4.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include "Engine.h"
 #include "renderer/RenderManager.h"
@@ -25,7 +25,7 @@
 #include "lights/PointLight.h"
 #include "geometry/DuplicatedVertexPlane.h"
 #include "maths/PoissonDiscSampler.h"
-#include <gtc/matrix_transform.inl>
+#include <glm/gtc/matrix_transform.inl>
 #include "geometry/Hexagon.h"
 #include "game/Tile.h"
 #include "maths/PoissonGenerator.h"

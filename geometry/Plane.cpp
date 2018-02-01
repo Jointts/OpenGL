@@ -2,8 +2,8 @@
 // Created by Joonas on 12/14/2016.
 //
 
-#include <vec3.hpp>
-#include <ext.hpp>
+#include <glm/vec3.hpp>
+#include <glm/ext.hpp>
 #include "Plane.h"
 #include "../shaders/ShaderManager.h"
 #include "../Utils.h"

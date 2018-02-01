@@ -6,8 +6,8 @@
 #define OPENGL_UTILS_H
 
 #include "string"
-#include <vec3.hpp>
-#include <mat4x4.hpp>
+#include <glm/vec3.hpp>
+#include <glm/mat4x4.hpp>
 #include <LinearMath/btScalar.h>
 #include <LinearMath/btTransform.h>
 

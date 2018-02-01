@@ -96,18 +96,3 @@ void GuiWidget::Draw() {
 void GuiWidget::Click() {
 
 }
-
-	template<class Archive>
-	void serialize(Archive & archive)
-	{
-		archive(width, height);
-	}
-
-	void DumpJson()
-	{
-		std::ofstream os("button.ui", std::ios::binary);
-		cereal::BinaryOutputArchive archive(os);
-
-		int x = 5;
-		archive(x);
-	}

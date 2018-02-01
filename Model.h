@@ -6,14 +6,14 @@
 #define OPENGL_MODEL_H
 
 
-#include <vec3.hpp>
-#include <vec2.hpp>
+#include <glm/vec3.hpp>
+#include <glm/vec2.hpp>
 #include <assimp/scene.h>
 #ifndef __gl_h_
 #include <glad/glad.h>
 #endif
 #include <vector>
-#include <detail/type_mat4x4.hpp>
+#include <glm/detail/type_mat4x4.hpp>
 #include "shaders/ShaderProgram.h"
 #include <map>
 #include "Animation.h"

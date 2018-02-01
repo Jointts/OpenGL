@@ -8,7 +8,7 @@
 
 #include <LinearMath/btIDebugDraw.h>
 #include <glad/glad.h>
-#include <vec3.hpp>
+#include <glm/vec3.hpp>
 #include <vector>
 #include "renderer/RenderManager.h"
 

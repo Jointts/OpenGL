@@ -2,7 +2,7 @@
 // Created by Joonas on 23/06/2017.
 //
 
-#include <ext.hpp>
+#include <glm/ext.hpp>
 #include "Player.h"
 #include "EntityManager.h"
 #include "exceptions/PlayerAlreadyExistsException.h"

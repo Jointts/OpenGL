@@ -6,8 +6,8 @@
 #include <BulletCollision/CollisionShapes/btBoxShape.h>
 #include <BulletCollision/CollisionShapes/btTriangleMesh.h>
 #include <BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h>
-#include <gtc/matrix_transform.hpp>
-#include <gtc/type_ptr.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h>
 #include "Entity.h"
 #include "physics/PhysicsManager.h"

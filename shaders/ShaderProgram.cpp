@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <cstring>
 #include "ShaderProgram.h"
 #include "../Utils.h"
 

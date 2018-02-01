@@ -8,8 +8,8 @@
 #include <BulletCollision/CollisionDispatch/btCollisionDispatcher.h>
 #include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
 #include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
-#include <detail/type_mat.hpp>
-#include <ext.hpp>
+#include <glm/detail/type_mat.hpp>
+#include <glm/ext.hpp>
 #include <BulletCollision/BroadphaseCollision/btAxisSweep3.h>
 #include <BulletCollision/CollisionDispatch/btGhostObject.h>
 #include "WorldPhysics.h"

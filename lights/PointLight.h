@@ -6,7 +6,7 @@
 #define GAME_POINTLIGHT_H
 
 
-#include <vec3.hpp>
+#include <glm/vec3.hpp>
 
 class PointLight {
 public:

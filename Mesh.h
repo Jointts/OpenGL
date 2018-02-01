@@ -6,8 +6,8 @@
 #define OPENGL_MESH_H
 
 
-#include <vec3.hpp>
-#include <vec2.hpp>
+#include <glm/vec3.hpp>
+#include <glm/vec2.hpp>
 #include <vector>
 #include <glad/glad.h>
 #include <assimp/types.h>

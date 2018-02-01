@@ -6,7 +6,7 @@
 #include <assimp/postprocess.h>
 #include <assimp/DefaultLogger.hpp>
 #include <iostream>
-#include <ext.hpp>
+#include <glm/ext.hpp>
 #include <LinearMath/btVector3.h>
 #include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
 #include "Model.h"

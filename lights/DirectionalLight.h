@@ -2,7 +2,7 @@
 #define OPENGL_DIRECTIONALLIGHT_H
 
 
-#include <vec3.hpp>
+#include <glm/vec3.hpp>
 #include <glad/glad.h>
 
 class DirectionalLight {
