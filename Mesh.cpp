@@ -49,16 +49,18 @@ void Mesh::setupMesh() {
 
 void Mesh::Draw() {
     int diffuseNr = 0;
+    const char* shader_attribute;
     for(GLuint i = 0; i < this->textures.size(); i++)
     {
         glActiveTexture(GL_TEXTURE0 + i); // Activate proper texture unit before binding
         // Retrieve texture number (the N in diffuse_textureN)
         std::string name = this->textures[i].type;
-        if(name == "diffuse")
+        if(name == "diffuse"){
             diffuseNr++;
-            const char* shader_attribute =  std::string("diffuse" + diffuseNr).c_str();
-        glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, shader_attribute), i);
-        glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
+            shader_attribute =  std::string("diffuse" + diffuseNr).c_str();
+            glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, shader_attribute), i);
+            glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
+        }
     }
     glBindVertexArray(this->VAO);
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);

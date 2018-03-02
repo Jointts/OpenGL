@@ -22,6 +22,6 @@ set(SOURCE_FILES main.cpp display/Display.cpp display/Display.h Utils.cpp Utils.
         gui/GuiEvents.h gamestate/GameStateManager.cpp gamestate/GameStateManager.h gamestate/GameState.cpp
         gamestate/GameState.h gamestate/MenuGameState.cpp gamestate/MenuGameState.h Serializable.cpp Serializable.h
         lights/LightManager.cpp lights/LightManager.h Animation.h Animation.cpp)
-add_executable(NervousEngine ${SOURCE_FILES})
+add_executable(NervousEngine ${SOURCE_FILES} lib/glad/src/glad.c)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}")
 include(${CMAKE_CURRENT_SOURCE_DIR}/lib/CMakeLists.txt)

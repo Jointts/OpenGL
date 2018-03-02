@@ -20,7 +20,7 @@ Model::Model() {
 }
 
 Model::Model(std::string meshPath) {
-    model_file = meshPath;
+    model_file = std::move(meshPath);
     importFile();
 }
 
@@ -87,7 +87,7 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
     std::vector<Texture> diffuseMaps;
 
     for (int i = 0; i < mesh->mNumVertices; i++) {
-        Vertex vertex;
+        Vertex vertex = Vertex();
 
         /* Read the vertex positions */
         if (mesh->HasPositions()) {
@@ -133,7 +133,7 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
 	if(mesh->HasBones())
 	{
 		int meshVertexStartIndex;
-		if(meshes.size() == 0)
+		if(meshes.empty())
 		{
 			meshVertexStartIndex = 0;
 		}else
@@ -183,7 +183,7 @@ void Model::ProcessAnimations(aiAnimation** animations, int animationCount)
 {
 	for (int index = 0; index < animationCount; index++) {
 		aiAnimation* animation = animations[index];
-		Animation* animToAdd = new Animation(animation->mTicksPerSecond, animation->mDuration, animation->mChannels, animation->mNumChannels, animation->mName);
+        auto* animToAdd = new Animation(animation->mTicksPerSecond, animation->mDuration, animation->mChannels, animation->mNumChannels, animation->mName);
 		this->animations.push_back(animToAdd);
 	}
 	std::cout << "TEST";
