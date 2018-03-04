@@ -4,7 +4,7 @@ project(NervousEngine)
 # To debug linker paths, turn off for development
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++14")
 set(SOURCE_FILES main.cpp display/Display.cpp display/Display.h Utils.cpp Utils.h shaders opengl.rc opengl.ico
         shaders/ShaderProgram.cpp shaders/ShaderProgram.h Engine.cpp Engine.h renderer/RenderManager.cpp
         renderer/RenderManager.h ControllerManager.cpp ControllerManager.h camera/CameraManager.cpp

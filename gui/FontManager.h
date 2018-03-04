@@ -9,8 +9,8 @@
 #include "Font.h"
 
 class FontManager {
-    std::map <std::string, char*> fontsToLoad{
-            {"LATO_LIGHT", "/home/jointts/CLionProjects/OpenGL/gui/fonts/lato/Lato-Light.ttf"}
+    std::map <const std::string, char*> fontsToLoad{
+            {"LATO_LIGHT", "/home/jointts/CLionProjects/NE/gui/fonts/lato/Lato-Light.ttf"}
     };
 
     std::map<std::string, Font*> fonts = {};

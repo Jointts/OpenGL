@@ -44,18 +44,18 @@ ControllerManager *ControllerManager::getInstance() {
 ControllerManager::ControllerManager() {
     cameraManager = CameraManager::getInstance();
     glfwSetKeyCallback(displayManager->display->window, this->key_callback);
-    int height = 0;
-    int width = 0;
-    int bytesPerPixel = 0;
-    char *path = (char *) "C:\\Users\\Joonas\\ClionProjects\\OpenGL\\res\\cursor.png";
-    unsigned char *pixelData = stbi_load(path, &width, &height, &bytesPerPixel, STBI_rgb_alpha);
-    GLFWimage glfWimage;
-    glfWimage.height = height;
-    glfWimage.width = width;
-    glfWimage.pixels = pixelData;
-
-    GLFWcursor *glfWcursor = glfwCreateCursor(&glfWimage, 0, 0);
-//    glfwSetCursor(displayManager->window, glfWcursor);
+//    int height = 0;
+//    int width = 0;
+//    int bytesPerPixel = 0;
+//    char *path = (char *) "C:\\Users\\Joonas\\ClionProjects\\OpenGL\\res\\cursor.png";
+//    unsigned char *pixelData = stbi_load(path, &width, &height, &bytesPerPixel, STBI_rgb_alpha);
+//    GLFWimage glfWimage;
+//    glfWimage.height = height;
+//    glfWimage.width = width;
+//    glfWimage.pixels = pixelData;
+//
+//    GLFWcursor *glfWcursor = glfwCreateCursor(&glfWimage, 0, 0);
+////    glfwSetCursor(displayManager->window, glfWcursor);
     glfwSetCursorPosCallback(displayManager->display->window, this->mouse_callback);
     glfwSetMouseButtonCallback(displayManager->display->window, this->mouse_button_callback);
     glfwSetScrollCallback(displayManager->display->window, this->scroll_callback);
