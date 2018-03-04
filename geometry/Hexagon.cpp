@@ -1,7 +1,7 @@
 #include "Hexagon.h"
 #include "../renderer/RenderManager.h"
 #include "../shaders/ShaderManager.h"
-#include <gtc/type_ptr.inl>
+#include <glm/gtc/type_ptr.inl>
 #include "../camera/CameraManager.h"
 #include "../Utils.h"
 

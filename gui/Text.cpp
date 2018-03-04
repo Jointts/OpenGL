@@ -17,7 +17,7 @@ Text::Text(std::string str, std::string fontName, glm::vec3 color) {
 		font = FontManager::getInstance()->getFont(fontName);
 	}catch(std::out_of_range)
 	{
-		throw std::exception("Font is not mapped");
+
 	}
     
 	for (auto &ch : str)
