@@ -10,7 +10,7 @@
 
 class FontManager {
     std::map <std::string, char*> fontsToLoad{
-            {"LATO_LIGHT", "/Users/joonas/CLionProjects/OpenGL/gui/fonts/lato/Lato-Light.ttf"}
+            {"LATO_LIGHT", "/home/jointts/CLionProjects/OpenGL/gui/fonts/lato/Lato-Light.ttf"}
     };
 
     std::map<std::string, Font*> fonts = {};
