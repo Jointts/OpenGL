@@ -16,3 +16,4 @@ Game engine written in OpenGL and C++
   * Glad
   * Glm
   * Assimp
+  * Google test
