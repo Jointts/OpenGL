@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
-project(NervousEngine)
+project(SummitEngine)
 
 # To debug linker paths, turn off for development
 set(CMAKE_VERBOSE_MAKEFILE ON)
@@ -7,7 +7,7 @@ option(BUILD_TESTS "Build all tests" ON)
 set(WARNING_FLAGS "-Wall -Wextra -Wformat=2 -Wno-format-nonliteral -Wshadow -Wpointer-arith -Wcast-qual -Wno-missing-braces")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++14 ${WARNING_FLAGS}")
-set(SOURCE_FILES src/main.cpp src/display/Display.cpp src/display/Display.h src/Utils.cpp src/Utils.h src/shaders opengl.rc opengl.ico
+set(SOURCE_FILES src/main.cpp src/display/Display.cpp src/display/Display.h src/Utils.cpp src/Utils.h src/shaders opengl.rc summit_engine.ico
         src/shaders/ShaderProgram.cpp src/shaders/ShaderProgram.h src/Engine.cpp src/Engine.h src/renderer/RenderManager.cpp
         src/renderer/RenderManager.h src/ControllerManager.cpp src/ControllerManager.h src/camera/CameraManager.cpp
         src/camera/CameraManager.h src/display/DisplayManager.cpp src/display/DisplayManager.h src/Model.cpp src/Model.h src/Mesh.cpp src/Mesh.h
@@ -26,7 +26,7 @@ set(SOURCE_FILES src/main.cpp src/display/Display.cpp src/display/Display.h src/
         src/lights/LightManager.cpp src/lights/LightManager.h src/Animation.h src/Animation.cpp src/game/Tile.cpp src/game/Tile.h src/geometry/Hexagon.cpp
         src/geometry/Hexagon.h src/gui/Text.cpp src/gui/Text.h src/gui/FontManager.cpp src/gui/FontManager.hsrc/ src/gui/CharacterInstance.cpp src/gui/CharacterInstance.h
         src/gui/Font.cpp src/gui/Font.h)
-add_executable(NervousEngine ${SOURCE_FILES} lib/glad/src/glad.c)
+add_executable(SummitEngine ${SOURCE_FILES} lib/glad/src/glad.c)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}")
 include(${CMAKE_CURRENT_SOURCE_DIR}/lib/CMakeLists.txt)
 
