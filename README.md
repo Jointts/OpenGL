@@ -1,7 +1,7 @@
-# NervousEngine
+# Summit Engine
 Game engine written in OpenGL and C++
 
-## Prerequisites (supplied through NE-LIBS)
+## Prerequisites (supplied through SE-LIBS)
   * CMake 3.6>=
   * GNU GCC compiler
   * Linux
