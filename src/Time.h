@@ -2,8 +2,8 @@
 // Created by Joonas on 30/04/2017.
 //
 
-#ifndef OPENGL_TIME_H
-#define OPENGL_TIME_H
+#ifndef SUMMIT_ENGINE_TIME_H
+#define SUMMIT_ENGINE_TIME_H
 
 
 class Time {
@@ -20,4 +20,4 @@ public:
 };
 
 
-#endif //OPENGL_TIME_H
+#endif //SUMMIT_ENGINE_TIME_H

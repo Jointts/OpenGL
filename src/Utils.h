@@ -2,8 +2,8 @@
 // Created by joonas on 19.09.16.
 //
 
-#ifndef OPENGL_UTILS_H
-#define OPENGL_UTILS_H
+#ifndef SUMMIT_ENGINE_UTILS_H
+#define SUMMIT_ENGINE_UTILS_H
 
 #include "string"
 #include <glm/vec3.hpp>
@@ -28,4 +28,4 @@ public:
 };
 
 
-#endif //OPENGL_UTILS_H
+#endif //SUMMIT_ENGINE_UTILS_H

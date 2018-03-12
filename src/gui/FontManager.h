@@ -2,8 +2,8 @@
 // Created by Joonas on 26/12/2017.
 //
 
-#ifndef OPENGL_FONTMANAGER_H
-#define OPENGL_FONTMANAGER_H
+#ifndef SUMMIT_ENGINE_FONTMANAGER_H
+#define SUMMIT_ENGINE_FONTMANAGER_H
 
 
 #include "Font.h"
@@ -29,4 +29,4 @@ public:
 };
 
 
-#endif //OPENGL_FONTMANAGER_H
+#endif //SUMMIT_ENGINE_FONTMANAGER_H

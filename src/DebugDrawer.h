@@ -2,8 +2,8 @@
 // Created by Joonas on 16/04/2017.
 //
 
-#ifndef OPENGL_DEBUGDRAWER_H
-#define OPENGL_DEBUGDRAWER_H
+#ifndef SUMMIT_ENGINE_DEBUGDRAWER_H
+#define SUMMIT_ENGINE_DEBUGDRAWER_H
 
 
 #include <LinearMath/btIDebugDraw.h>
@@ -92,4 +92,4 @@ private:
 };
 
 
-#endif //OPENGL_DEBUGDRAWER_H
+#endif //SUMMIT_ENGINE_DEBUGDRAWER_H

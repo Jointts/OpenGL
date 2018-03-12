@@ -2,8 +2,8 @@
 // Created by Joonas on 10/11/2016.
 //
 
-#ifndef OPENGL_MODEL_H
-#define OPENGL_MODEL_H
+#ifndef SUMMIT_ENGINE_MODEL_H
+#define SUMMIT_ENGINE_MODEL_H
 
 
 #include <glm/vec3.hpp>
@@ -90,4 +90,4 @@ public:
 };
 
 
-#endif //OPENGL_MODEL_H
+#endif //SUMMIT_ENGINE_MODEL_H

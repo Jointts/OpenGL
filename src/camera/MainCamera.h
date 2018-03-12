@@ -2,8 +2,8 @@
 // Created by Joonas on 12/04/2017.
 //
 
-#ifndef OPENGL_MAINCAMERA_H
-#define OPENGL_MAINCAMERA_H
+#ifndef SUMMIT_ENGINE_MAINCAMERA_H
+#define SUMMIT_ENGINE_MAINCAMERA_H
 
 
 #ifndef __gl_h_
@@ -46,4 +46,4 @@ public:
 };
 
 
-#endif //OPENGL_MAINCAMERA_H
+#endif //SUMMIT_ENGINE_MAINCAMERA_H

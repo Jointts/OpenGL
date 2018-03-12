@@ -2,8 +2,8 @@
 // Created by Joonas on 12/04/2017.
 //
 
-#ifndef OPENGL_GUICAMERA_H
-#define OPENGL_GUICAMERA_H
+#ifndef SUMMIT_ENGINE_GUICAMERA_H
+#define SUMMIT_ENGINE_GUICAMERA_H
 
 
 #include "Camera.h"
@@ -14,4 +14,4 @@ public:
 };
 
 
-#endif //OPENGL_GUICAMERA_H
+#endif //SUMMIT_ENGINE_GUICAMERA_H

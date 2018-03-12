@@ -2,8 +2,8 @@
 // Created by Joonas on 01/05/2017.
 //
 
-#ifndef OPENGL_GUIWIDGET_H
-#define OPENGL_GUIWIDGET_H
+#ifndef SUMMIT_ENGINE_GUIWIDGET_H
+#define SUMMIT_ENGINE_GUIWIDGET_H
 
 
 #include "../geometry/Quad.h"
@@ -64,4 +64,4 @@ private:
 };
 
 
-#endif //OPENGL_GUIWIDGET_H
+#endif //SUMMIT_ENGINE_GUIWIDGET_H

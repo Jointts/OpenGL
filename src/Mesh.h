@@ -2,8 +2,8 @@
 // Created by Joonas on 10/20/2016.
 //
 
-#ifndef OPENGL_MESH_H
-#define OPENGL_MESH_H
+#ifndef SUMMIT_ENGINE_MESH_H
+#define SUMMIT_ENGINE_MESH_H
 
 
 #include <glm/vec3.hpp>
@@ -27,4 +27,4 @@ public:
 };
 
 
-#endif //OPENGL_MESH_H
+#endif //SUMMIT_ENGINE_MESH_H

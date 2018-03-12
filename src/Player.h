@@ -2,8 +2,8 @@
 // Created by Joonas on 23/06/2017.
 //
 
-#ifndef OPENGL_PLAYER_H
-#define OPENGL_PLAYER_H
+#ifndef SUMMIT_ENGINE_PLAYER_H
+#define SUMMIT_ENGINE_PLAYER_H
 
 
 #include "Pawn.h"
@@ -19,4 +19,4 @@ public:
 };
 
 
-#endif //OPENGL_PLAYER_H
+#endif //SUMMIT_ENGINE_PLAYER_H

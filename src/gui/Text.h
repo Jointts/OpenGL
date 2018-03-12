@@ -2,8 +2,8 @@
 // Created by Joonas on 26/12/2017.
 //
 
-#ifndef OPENGL_TEXT_H
-#define OPENGL_TEXT_H
+#ifndef SUMMIT_ENGINE_TEXT_H
+#define SUMMIT_ENGINE_TEXT_H
 
 
 #include "Font.h"
@@ -23,4 +23,4 @@ public:
 };
 
 
-#endif //OPENGL_TEXT_H
+#endif //SUMMIT_ENGINE_TEXT_H

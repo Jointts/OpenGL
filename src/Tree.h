@@ -2,8 +2,8 @@
 // Created by Joonas on 21/04/2017.
 //
 
-#ifndef OPENGL_TREE_H
-#define OPENGL_TREE_H
+#ifndef SUMMIT_ENGINE_TREE_H
+#define SUMMIT_ENGINE_TREE_H
 
 
 #include "Entity.h"
@@ -17,4 +17,4 @@ public:
 };
 
 
-#endif //OPENGL_TREE_H
+#endif //SUMMIT_ENGINE_TREE_H

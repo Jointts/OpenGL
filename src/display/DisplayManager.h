@@ -2,8 +2,8 @@
 // Created by Joonas on 06/10/2016.
 //
 
-#ifndef OPENGL_DISPLAYMANAGER_H
-#define OPENGL_DISPLAYMANAGER_H
+#ifndef SUMMIT_ENGINE_DISPLAYMANAGER_H
+#define SUMMIT_ENGINE_DISPLAYMANAGER_H
 
 #include "Display.h"
 
@@ -21,4 +21,4 @@ private:
 };
 
 
-#endif //OPENGL_DISPLAYMANAGER_H
+#endif //SUMMIT_ENGINE_DISPLAYMANAGER_H

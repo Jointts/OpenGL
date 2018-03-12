@@ -2,8 +2,8 @@
 // Created by Joonas on 15/04/2017.
 //
 
-#ifndef OPENGL_CHARACTER_H
-#define OPENGL_CHARACTER_H
+#ifndef SUMMIT_ENGINE_CHARACTER_H
+#define SUMMIT_ENGINE_CHARACTER_H
 
 #include <ft2build.h>
 
@@ -39,4 +39,4 @@ public:
 };
 
 
-#endif //OPENGL_CHARACTER_H
+#endif //SUMMIT_ENGINE_CHARACTER_H

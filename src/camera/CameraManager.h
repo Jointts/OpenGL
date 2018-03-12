@@ -2,8 +2,8 @@
 // Created by Joonas on 06/10/2016.
 //
 
-#ifndef OPENGL_CAMERAMANAGER_H
-#define OPENGL_CAMERAMANAGER_H
+#ifndef SUMMIT_ENGINE_CAMERAMANAGER_H
+#define SUMMIT_ENGINE_CAMERAMANAGER_H
 
 
 #include <glm/detail/type_mat.hpp>
@@ -27,4 +27,4 @@ private:
 };
 
 
-#endif //OPENGL_CAMERAMANAGER_H
+#endif //SUMMIT_ENGINE_CAMERAMANAGER_H

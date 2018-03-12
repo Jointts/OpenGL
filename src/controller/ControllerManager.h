@@ -2,14 +2,15 @@
 // Created by Joonas on 06/10/2016.
 //
 
-#ifndef OPENGL_CONTROLLERMANAGER_H
-#define OPENGL_CONTROLLERMANAGER_H
+#ifndef SUMMIT_ENGINE_CONTROLLERMANAGER_H
+#define SUMMIT_ENGINE_CONTROLLERMANAGER_H
 
 
 #include <GLFW/glfw3.h>
-#include "display/DisplayManager.h"
-#include "camera/CameraManager.h"
-#include "Entity.h"
+#include "../display/DisplayManager.h"
+#include "../camera/CameraManager.h"
+#include "../Entity.h"
+#include "MouseController.h"
 
 class ControllerManager {
 public:
@@ -37,9 +38,9 @@ private:
 
     static ControllerManager *controllerManager;
 
-    static void mouse_button_callback(GLFWwindow *window, int button, int action, int mods);
+	static void mouse_button_callback(GLFWwindow *window, int button, int action, int mods);
 	static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 };
 
 
-#endif //OPENGL_CONTROLLERMANAGER_H
+#endif //SUMMIT_ENGINE_CONTROLLERMANAGER_H

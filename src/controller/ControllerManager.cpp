@@ -12,9 +12,10 @@
 #include <stb_image_resize.h>
 #include <btBulletCollisionCommon.h>
 #include "ControllerManager.h"
-#include "physics/PhysicsManager.h"
-#include "EntityManager.h"
-#include "gui/GuiManager.h"
+#include "../physics/PhysicsManager.h"
+#include "../EntityManager.h"
+#include "../gui/GuiManager.h"
+#include "MouseController.h"
 
 
 ControllerManager *ControllerManager::controllerManager = 0;
@@ -26,6 +27,7 @@ int ControllerManager::lastMouseXPos = 0;
 int ControllerManager::lastMouseYPos = 0;
 
 DisplayManager *displayManager = DisplayManager::getInstance();
+static MouseController *mouseController = 0;
 CameraManager *cameraManager = 0;
 int ControllerManager::EXIT_KEY = GLFW_KEY_ESCAPE;
 GLfloat lastXpos = 0;
@@ -43,22 +45,13 @@ ControllerManager *ControllerManager::getInstance() {
 
 ControllerManager::ControllerManager() {
     cameraManager = CameraManager::getInstance();
+    mouseController = MouseController::getInstance();
+
     glfwSetKeyCallback(displayManager->display->window, this->key_callback);
-//    int height = 0;
-//    int width = 0;
-//    int bytesPerPixel = 0;
-//    char *path = (char *) "C:\\Users\\Joonas\\ClionProjects\\OpenGL\\res\\cursor.png";
-//    unsigned char *pixelData = stbi_load(path, &width, &height, &bytesPerPixel, STBI_rgb_alpha);
-//    GLFWimage glfWimage;
-//    glfWimage.height = height;
-//    glfWimage.width = width;
-//    glfWimage.pixels = pixelData;
-//
-//    GLFWcursor *glfWcursor = glfwCreateCursor(&glfWimage, 0, 0);
-////    glfwSetCursor(displayManager->window, glfWcursor);
     glfwSetCursorPosCallback(displayManager->display->window, this->mouse_callback);
     glfwSetMouseButtonCallback(displayManager->display->window, this->mouse_button_callback);
     glfwSetScrollCallback(displayManager->display->window, this->scroll_callback);
+    glfwSetInputMode(displayManager->display->window, GLFW_STICKY_MOUSE_BUTTONS, 1);
 }
 
 void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, int action, int mods) {
@@ -78,7 +71,7 @@ void ControllerManager::key_callback(GLFWwindow *window, int key, int scancode, 
 void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double ypos) {
     //PhysicsManager::getInstance()->worldPhysics->RayCast(xpos, ypos);
     GuiManager::getInstance()->guiFrameBuffer->ReadColor(xpos, ypos);
-	if(mouseOneClickEventPropagate && lastMouseXPos != 0 && lastMouseXPos != 0 && !mouseOneReleased)
+	if(MouseController::getInstance()->checkButtonInput(GLFW_MOUSE_BUTTON_LEFT, MouseEvent::HOLD) && lastMouseXPos != 0 && lastMouseXPos != 0)
 	{
 		int cameraMovementX = xpos - lastMouseXPos;
 		int cameraMovementY = ypos - lastMouseYPos;
@@ -87,27 +80,13 @@ void ControllerManager::mouse_callback(GLFWwindow *window, double xpos, double y
 		CameraManager::getInstance()->mainCamera->MoveByZ(cameraMovementY);
 	}
 
-	if(mouseOneClickEventPropagate)
-	{
-		lastMouseXPos = xpos;
-		lastMouseYPos = ypos;
-	}
-
+    lastMouseXPos = xpos;
+    lastMouseYPos = ypos;
 }
 
 void ControllerManager::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-    mouseOneReleased = button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE;
-
-    if(mouseOneClicked && mouseOneReleased){
-        mouseOneClickEventPropagate = true;
-    }
-
-	if (mouseOneClicked && !mouseOneReleased) {
-		mouseOneClickHoldEventPropagate = true;
-	}
-
-	mouseOneClicked = button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS;
+    mouseController->insertKey(button);
 }
 
 void ControllerManager::scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
