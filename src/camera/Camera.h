@@ -2,8 +2,8 @@
 // Created by Joonas on 12/04/2017.
 //
 
-#ifndef OPENGL_CAMERA_H
-#define OPENGL_CAMERA_H
+#ifndef SUMMIT_ENGINE_CAMERA_H
+#define SUMMIT_ENGINE_CAMERA_H
 
 
 #include <glm/vec3.hpp>
@@ -19,4 +19,4 @@ public:
 };
 
 
-#endif //OPENGL_CAMERA_H
+#endif //SUMMIT_ENGINE_CAMERA_H

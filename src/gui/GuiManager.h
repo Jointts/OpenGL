@@ -2,8 +2,8 @@
 // Created by Joonas on 05/09/2017.
 //
 
-#ifndef OPENGL_GUIMANAGER_H
-#define OPENGL_GUIMANAGER_H
+#ifndef SUMMIT_ENGINE_GUIMANAGER_H
+#define SUMMIT_ENGINE_GUIMANAGER_H
 
 
 #include "GuiFrameBuffer.h"
@@ -27,4 +27,4 @@ public:
 };
 
 
-#endif //OPENGL_GUIMANAGER_H
+#endif //SUMMIT_ENGINE_GUIMANAGER_H

@@ -2,8 +2,8 @@
 // Created by Joonas on 16/04/2017.
 //
 
-#ifndef OPENGL_ENTITY_H
-#define OPENGL_ENTITY_H
+#ifndef SUMMIT_ENGINE_ENTITY_H
+#define SUMMIT_ENGINE_ENTITY_H
 
 #ifndef __gl_h_
 #include <glad/glad.h>
@@ -45,4 +45,4 @@ public:
 };
 
 
-#endif //OPENGL_ENTITY_H
+#endif //SUMMIT_ENGINE_ENTITY_H

@@ -2,8 +2,8 @@
 // Created by Joonas on 12/23/2016.
 //
 
-#ifndef OPENGL_WATER_H
-#define OPENGL_WATER_H
+#ifndef SUMMIT_ENGINE_WATER_H
+#define SUMMIT_ENGINE_WATER_H
 
 
 #include "../geometry/Plane.h"
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //OPENGL_WATER_H
+#endif //SUMMIT_ENGINE_WATER_H

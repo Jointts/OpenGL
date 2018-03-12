@@ -2,8 +2,8 @@
 // Created by Joonas on 26/12/2017.
 //
 
-#ifndef OPENGL_FONT_H
-#define OPENGL_FONT_H
+#ifndef SUMMIT_ENGINE_FONT_H
+#define SUMMIT_ENGINE_FONT_H
 
 
 #include "GuiWidget.h"
@@ -42,4 +42,4 @@ public:
 
 
 
-#endif //OPENGL_FONT_H
+#endif //SUMMIT_ENGINE_FONT_H

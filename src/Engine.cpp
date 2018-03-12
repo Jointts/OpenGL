@@ -122,6 +122,7 @@ int Engine::Start()
 
 	while (!glfwWindowShouldClose(DisplayManager::getInstance()->display->window))
 	{
+		MouseController::getInstance()->resetClickedStates();
 //		ControllerManager::mouseOneClickEventPropagate = false;
 		glfwPollEvents();
 		Time::calculateFrameTime();
@@ -132,7 +133,7 @@ int Engine::Start()
 //		glBindFramebuffer(0, GL_FRAMEBUFFER);
 //		glDisable(GL_CULL_FACE);
 		RenderManager::getInstance()->DrawGui();
-		text->Draw();
+//		text->Draw();
 		RenderManager::getInstance()->RenderBaseShader();
 		duplicatedVertexPlane->Draw();
 		character->Draw();

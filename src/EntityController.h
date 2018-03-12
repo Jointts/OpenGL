@@ -2,8 +2,8 @@
 // Created by Joonas on 05/05/2017.
 //
 
-#ifndef OPENGL_PLAYERCONTROLLER_H
-#define OPENGL_PLAYERCONTROLLER_H
+#ifndef SUMMIT_ENGINE_PLAYERCONTROLLER_H
+#define SUMMIT_ENGINE_PLAYERCONTROLLER_H
 
 #include <BulletCollision/CollisionDispatch/btGhostObject.h>
 #include <glm/vec3.hpp>
@@ -49,4 +49,4 @@ private:
 };
 
 
-#endif //OPENGL_PLAYERCONTROLLER_H
+#endif //SUMMIT_ENGINE_PLAYERCONTROLLER_H

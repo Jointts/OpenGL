@@ -9,7 +9,7 @@ set(WARNING_FLAGS "-Wall -Wextra -Wformat=2 -Wno-format-nonliteral -Wshadow -Wpo
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++14 ${WARNING_FLAGS}")
 set(SOURCE_FILES src/main.cpp src/display/Display.cpp src/display/Display.h src/Utils.cpp src/Utils.h src/shaders opengl.rc summit_engine.ico
         src/shaders/ShaderProgram.cpp src/shaders/ShaderProgram.h src/Engine.cpp src/Engine.h src/renderer/RenderManager.cpp
-        src/renderer/RenderManager.h src/ControllerManager.cpp src/ControllerManager.h src/camera/CameraManager.cpp
+        src/renderer/RenderManager.h src/controller/ControllerManager.cpp src/controller/ControllerManager.h src/camera/CameraManager.cpp
         src/camera/CameraManager.h src/display/DisplayManager.cpp src/display/DisplayManager.h src/Model.cpp src/Model.h src/Mesh.cpp src/Mesh.h
         src/Mesh.cpp src/Mesh.h src/lights/DirectionalLight.cpp src/lights/DirectionalLight.h src/geometry/Plane.cpp src/geometry/Plane.h
         src/water/Water.cpp src/water/Water.h src/shaders/ShaderManager.cpp src/shaders/ShaderManager.h src/physics/PhysicsManager.cpp
@@ -25,7 +25,7 @@ set(SOURCE_FILES src/main.cpp src/display/Display.cpp src/display/Display.h src/
         src/gamestate/GameState.h src/gamestate/MenuGameState.cpp src/gamestate/MenuGameState.h src/Serializable.cpp src/Serializable.h
         src/lights/LightManager.cpp src/lights/LightManager.h src/Animation.h src/Animation.cpp src/game/Tile.cpp src/game/Tile.h src/geometry/Hexagon.cpp
         src/geometry/Hexagon.h src/gui/Text.cpp src/gui/Text.h src/gui/FontManager.cpp src/gui/FontManager.hsrc/ src/gui/CharacterInstance.cpp src/gui/CharacterInstance.h
-        src/gui/Font.cpp src/gui/Font.h)
+        src/gui/Font.cpp src/gui/Font.h src/controller/MouseController.cpp src/controller/MouseController.h src/controller/KeyboardController.cpp src/controller/KeyboardController.h)
 add_executable(SummitEngine ${SOURCE_FILES} lib/glad/src/glad.c)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}")
 include(${CMAKE_CURRENT_SOURCE_DIR}/lib/CMakeLists.txt)

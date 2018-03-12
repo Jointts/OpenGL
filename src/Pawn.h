@@ -2,8 +2,8 @@
 // Created by Joonas on 23/06/2017.
 //
 
-#ifndef OPENGL_PAWN_H
-#define OPENGL_PAWN_H
+#ifndef SUMMIT_ENGINE_PAWN_H
+#define SUMMIT_ENGINE_PAWN_H
 
 
 #include "Entity.h"
@@ -18,4 +18,4 @@ public:
 };
 
 
-#endif //OPENGL_PAWN_H
+#endif //SUMMIT_ENGINE_PAWN_H
