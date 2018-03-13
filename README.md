@@ -1,5 +1,5 @@
 
-![](https://github.com/Jointts/SE/blob/master/res/Summit_Engine.png){:height="200px"}
+<img src="https://github.com/Jointts/SE/blob/master/res/Summit_Engine.png" width="200">
 Game engine written in OpenGL and C++
 
 ## Prerequisites (supplied through SE-LIBS)
