@@ -1,4 +1,5 @@
-# Summit Engine
+
+![](https://github.com/Jointts/SE/blob/master/res/Summit_Engine.png){:height="200px"}
 Game engine written in OpenGL and C++
 
 ## Prerequisites (supplied through SE-LIBS)
