@@ -5,14 +5,11 @@
 #ifndef GAME_GUIEVENTS_H
 #define GAME_GUIEVENTS_H
 
-
 class GuiEvents {
 
-public:
-    static void DEBUG_PHYSICS();
-
-    static void DEBUG_GUI();
+ public:
+  static void DEBUG_PHYSICS();
+  static void DEBUG_GUI();
 };
-
 
 #endif //GAME_GUIEVENTS_H

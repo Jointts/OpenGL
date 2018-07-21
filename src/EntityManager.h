@@ -12,13 +12,11 @@
 class EntityManager {
 public:
 
-    static Player* player;
-
-    static EntityManager *entityManager;
-
-    static EntityManager * getInstance();
-
     std::vector<Entity *> entities;
+    static Player         *player;
+    static EntityManager  *entityManager;
+
+    static EntityManager *getInstance();
 };
 
 

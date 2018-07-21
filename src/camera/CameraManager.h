@@ -16,10 +16,8 @@ public:
     CameraManager();
 
     static CameraManager *getInstance();
-
     static MainCamera *mainCamera;
-
-    static GuiCamera *guiCamera;
+    static GuiCamera  *guiCamera;
 
 private:
     static CameraManager *cameraManager;

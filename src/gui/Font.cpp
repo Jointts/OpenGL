@@ -5,13 +5,13 @@
 #include <iostream>
 #include "Font.h"
 
-Font::Font(char* fontPath){
+Font::Font(char *fontPath) {
     InitializeFont(fontPath);
     LoadAllCharacters();
     Cleanup();
 }
 
-void Font::InitializeFont(char* fontPath){
+void Font::InitializeFont(char *fontPath) {
     if (FT_Init_FreeType(&ft))
         std::cout << "ERROR::FREETYPE: Could not init FreeType Library" << std::endl;
 
@@ -19,19 +19,19 @@ void Font::InitializeFont(char* fontPath){
         std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;
 }
 
-void Font::LoadAllCharacters(){
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-    for(int x = 0; x < 128; x++){
-        char characterID = (char) x;
-        Character character = LoadCharacter(x);
+void Font::LoadAllCharacters() {
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    for (int x = 0; x < 128; x++) {
+        char      characterID = (char) x;
+        Character character   = LoadCharacter(x);
         characters.insert(std::pair<char, Character>(characterID, character));
     }
 }
 
-Character Font::LoadCharacter(int charIn){
+Character Font::LoadCharacter(int charIn) {
     FT_Set_Pixel_Sizes(face, 0, (unsigned int) 128);
 
-    if (FT_Load_Char(face,  charIn, FT_LOAD_RENDER))
+    if (FT_Load_Char(face, charIn, FT_LOAD_RENDER))
         std::cout << "ERROR::FREETYTPE: Failed to load Glyph" << std::endl;
 
     Character character = Character{
@@ -46,7 +46,7 @@ Character Font::LoadCharacter(int charIn){
     return character;
 }
 
-unsigned short Font::LoadCharacterTexture(){
+GLuint Font::LoadCharacterTexture() {
     GLuint texture;
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -61,7 +61,7 @@ unsigned short Font::LoadCharacterTexture(){
             GL_UNSIGNED_BYTE,
             face->glyph->bitmap.buffer
     );
-	glGenerateMipmap(GL_TEXTURE_2D);
+    glGenerateMipmap(GL_TEXTURE_2D);
     // Set texture options
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
@@ -71,7 +71,7 @@ unsigned short Font::LoadCharacterTexture(){
     return texture;
 }
 
-void Font::Cleanup(){
+void Font::Cleanup() {
     FT_Done_Face(face);
     FT_Done_FreeType(ft);
 }

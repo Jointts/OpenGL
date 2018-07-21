@@ -11,19 +11,19 @@
 #include "GuiEventListener.h"
 
 class GuiManager {
-
+    int GetNextUid();
 public:
-    static GuiManager *guiManager;
-    static GuiFrameBuffer *guiFrameBuffer;
-    std::vector<GuiWidget *> guiWidgets;
+    static GuiManager      * guiManager;
+    static GuiFrameBuffer  * guiFrameBuffer;
+    static GuiRenderer     * guiRenderer;
+    static GuiEventListener* guiEventListener;
+    std::vector<GuiWidget*> guiWidgets;
 
     GuiManager();
 
-    static GuiManager *getInstance();
+    static GuiManager* getInstance();
 
-    static GuiRenderer *guiRenderer;
-
-    static GuiEventListener *guiEventListener;
+    glm::vec3 CalculateNextCollisionColor();
 };
 
 

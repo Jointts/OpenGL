@@ -4,17 +4,16 @@
 
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <stdlib.h>
 #include "Display.h"
 
 Display::Display(int width, int height, const char *title) {
-    if(!glfwInit()){
+    if (!glfwInit()) {
         std::cout << "Initialization failed!";
     }
 
-    const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+    const GLFWvidmode *mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
-    this->height= mode->height;
+    this->height = mode->height;
     this->width = mode->width;
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -25,7 +24,7 @@ Display::Display(int width, int height, const char *title) {
 
     window = glfwCreateWindow(width, height, title, NULL, NULL);
 
-    if(!window){
+    if (!window) {
         std::cout << "Failed to create a window!";
     }
     glfwMakeContextCurrent(window);

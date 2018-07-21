@@ -10,11 +10,11 @@
 
 class Button : public GuiWidget {
 public:
-    std::function<void()> clickEvent;
 
     Button(int width, int height);
 
     void Click() override;
+    std::function<void()> clickEvent;
 };
 
 

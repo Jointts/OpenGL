@@ -12,14 +12,13 @@
 #include <vector>
 #include "renderer/RenderManager.h"
 
-struct DebugVertex{
+struct DebugVertex {
     glm::vec3 position;
     glm::vec3 color;
 };
 
 
-class DebugDrawer : public btIDebugDraw
-{
+class DebugDrawer : public btIDebugDraw {
 
 public:
 
@@ -27,7 +26,7 @@ public:
 
     std::vector<DebugVertex> vertices;
 
-    void setup(){
+    void setup() {
         glGenVertexArrays(1, &VAO);
         glGenBuffers(1, &VBO);
 
@@ -35,33 +34,33 @@ public:
         glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
         glEnableVertexAttribArray(0);
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(DebugVertex), (GLvoid*)0);
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(DebugVertex), (GLvoid *) 0);
 
         glEnableVertexAttribArray(1);
-        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(DebugVertex), (GLvoid*)offsetof(DebugVertex, position));
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(DebugVertex),
+                              (GLvoid *) offsetof(DebugVertex, position));
 
         glBindVertexArray(0);
     };
 
-    void drawLine(const btVector3& from, const btVector3& to, const btVector3& color) override
-    {
-        glm::vec3 vertexColor = glm::vec3((GLfloat) color.getX(), (GLfloat) color.getY(), (GLfloat) color.getZ());
+    void drawLine(const btVector3 &from, const btVector3 &to, const btVector3 &color) override {
+        glm::vec3   vertexColor = glm::vec3((GLfloat) color.getX(), (GLfloat) color.getY(), (GLfloat) color.getZ());
         DebugVertex debugVertex;
 
         debugVertex.position = glm::vec3((GLfloat) from.getX(), (GLfloat) from.getY(), (GLfloat) from.getZ());
-        debugVertex.color = vertexColor;
+        debugVertex.color    = vertexColor;
         vertices.push_back(debugVertex);
 
         debugVertex.position = glm::vec3((GLfloat) to.getX(), (GLfloat) to.getY(), (GLfloat) to.getZ());
-        debugVertex.color = vertexColor;
+        debugVertex.color    = vertexColor;
         vertices.push_back(debugVertex);
     }
 
-    void draw3dText(const btVector3& location, const char* text) override { }
+    void draw3dText(const btVector3 &location, const char *text) override {}
 
     void setDebugMode(int mode) override { this->mode = mode; }
 
-    int getDebugMode() const override{ return this->mode; }
+    int getDebugMode() const override { return this->mode; }
 
     void drawContactPoint(const btVector3 &PointOnB, const btVector3 &normalOnB, btScalar distance, int lifeTime,
                           const btVector3 &color) override {
@@ -72,9 +71,9 @@ public:
         printf("ERROR::BULLET %s", warningString);
     }
 
-    void Draw(){
+    void Draw() {
         RenderManager::getInstance()->RenderDebugShader();
-        if(vertices.size() != 0){
+        if (vertices.size() != 0) {
             glBindVertexArray(VAO);
             glBindBuffer(GL_ARRAY_BUFFER, VBO);
             glBufferData(GL_ARRAY_BUFFER, sizeof(DebugVertex) * vertices.size(), vertices.data(), GL_DYNAMIC_DRAW);

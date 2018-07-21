@@ -15,30 +15,29 @@
 #include "WorldPhysics.h"
 #include "../DebugDrawer.h"
 #include "../camera/CameraManager.h"
-#include "../Tree.h"
 #include "../EntityManager.h"
 #include "../display/DisplayManager.h"
 
-Entity *WorldPhysics::lastHitEntity = 0;
+Entity* WorldPhysics::lastHitEntity = 0;
 
 void WorldPhysics::InitPhysics() {
     // Initialize Bullet. This strictly follows http://bulletphysics.org/mediawiki-1.5.8/index.php/Hello_World,
     // even though we won't use most of this stuff.
 
     // Build the broadphase
-    btBroadphaseInterface *broadphase = new btDbvtBroadphase();
+    btBroadphaseInterface* broadphase = new btDbvtBroadphase();
 
     // Set up the collision configuration and dispatcher
-    btDefaultCollisionConfiguration *collisionConfiguration = new btDefaultCollisionConfiguration();
-    btCollisionDispatcher *dispatcher = new btCollisionDispatcher(collisionConfiguration);
+    btDefaultCollisionConfiguration* collisionConfiguration = new btDefaultCollisionConfiguration();
+    btCollisionDispatcher          * dispatcher             = new btCollisionDispatcher(collisionConfiguration);
 
     // The actual physics solver
-    btSequentialImpulseConstraintSolver *solver = new btSequentialImpulseConstraintSolver;
+    btSequentialImpulseConstraintSolver* solver = new btSequentialImpulseConstraintSolver;
 
-    btVector3 worldMin(-1000, -1000, -1000);
-    btVector3 worldMax(1000, 1000, 1000);
-    btAxisSweep3 *sweepBP = new btAxisSweep3(worldMin, worldMax);
-    btAxisSweep3 *m_overlappingPairCache = sweepBP;
+    btVector3   worldMin(-1000, -1000, -1000);
+    btVector3   worldMax(1000, 1000, 1000);
+    btAxisSweep3* sweepBP                       = new btAxisSweep3(worldMin, worldMax);
+    btAxisSweep3* m_overlappingPairCache        = sweepBP;
 
     // The world.
     dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, m_overlappingPairCache, solver, collisionConfiguration);
@@ -46,17 +45,18 @@ void WorldPhysics::InitPhysics() {
     dynamicsWorld->getDispatchInfo().m_allowedCcdPenetration = 1.0f;
     sweepBP->getOverlappingPairCache()->setInternalGhostPairCallback(new btGhostPairCallback());
 
-    DebugDrawer *debugDrawer = new DebugDrawer();
+    DebugDrawer* debugDrawer = new DebugDrawer();
     debugDrawer->setup();
 
     debugDrawer->setDebugMode(btIDebugDraw::DBG_DrawWireframe);
     dynamicsWorld->setDebugDrawer(debugDrawer);
 }
 
+// TODO: This is garbage, move the ray to worldspace calculation etc to private functions, Player should observe this class
 void WorldPhysics::RayCast(double mouseX, double mouseY) {
-    DisplayManager *displayManager = DisplayManager::getInstance();
+    DisplayManager* displayManager = DisplayManager::getInstance();
 
-    GLint viewportWidth = displayManager->display->width;
+    GLint viewportWidth  = displayManager->display->width;
     GLint viewportHeight = displayManager->display->height;
 
     //  Since OpenGL coordinates start from the lower left corner, we need to correct the Y coordinate
@@ -66,13 +66,13 @@ void WorldPhysics::RayCast(double mouseX, double mouseY) {
     glm::vec3 mouseScreenEndPos(mouseX, mouseY, 1.0f);
 
     glm::mat4 projection = CameraManager::getInstance()->mainCamera->perspective;
-    glm::mat4 view = CameraManager::getInstance()->mainCamera->view;
-    glm::mat4 model = glm::mat4();
+    glm::mat4 view       = CameraManager::getInstance()->mainCamera->view;
+    glm::mat4 model      = glm::mat4();
     glm::vec4 viewport(0.0f, 0.0f, viewportWidth, viewportHeight);
 
     // Transform screen-space coordinates to world-space (Start and End Ray)
     glm::vec3 projectedMouseStartPos = glm::unProject(mouseScreenStartPos, view * model, projection, viewport);
-    glm::vec3 projectedMouseEndPos = glm::unProject(mouseScreenEndPos, view * model, projection, viewport);
+    glm::vec3 projectedMouseEndPos   = glm::unProject(mouseScreenEndPos, view * model, projection, viewport);
 
     //  Convert vectors to bullet vectors
     btVector3 bulletStartPos(projectedMouseStartPos.x, projectedMouseStartPos.y, projectedMouseStartPos.z);
@@ -84,7 +84,7 @@ void WorldPhysics::RayCast(double mouseX, double mouseY) {
 
 
     if (rayCallBack.hasHit()) {
-        Entity *hitEntity = static_cast<Entity *>(rayCallBack.m_collisionObject->getUserPointer());
+        Entity* hitEntity = static_cast<Entity*>(rayCallBack.m_collisionObject->getUserPointer());
 
         //  If hitEntity is NULL then it isnt a type or subtype of Entity, ignore interaction
         if (hitEntity && hitEntity->entityType == EntityType::BASIC) {
@@ -108,20 +108,13 @@ void WorldPhysics::RayCast(double mouseX, double mouseY) {
     }
 }
 
-void WorldPhysics::getHitEntityType(Entity *hitEntity) {
+void WorldPhysics::getHitEntityType(Entity* hitEntity) {
     //  Dynamic cast sends NULL if its actually not type of Tree, static_cast doesnt give a fuck and casts it always
-    Tree *tree = dynamic_cast<Tree *> (hitEntity);
-
-    if (tree) {
-        printf("Its a tree");
-        tree->printShit();
-    } else {
         printf("Its something else");
-    }
 }
 
 void WorldPhysics::Tick() {
-    DebugDrawer *debugDrawer = (DebugDrawer *) dynamicsWorld->getDebugDrawer();
+    DebugDrawer* debugDrawer = (DebugDrawer*) dynamicsWorld->getDebugDrawer();
 
     if (EntityManager::player) EntityManager::player->entityController->CheckPosition();
 

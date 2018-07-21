@@ -15,15 +15,10 @@
 class Utils {
 public:
     static std::string readFile(const char *filePath);
-
     static glm::vec3 color_RGB(float r, float g, float b);
-
     static glm::vec3 GetNormal(glm::vec3 v1, glm::vec3 v2, glm::vec3 v3);
-
     static GLuint TextureFromFile(const char *path, bool alpha);
-
     static glm::mat4 BulletToGlm(const btScalar *mat4);
-
     static btTransform glmToBullet(const glm::mat4 &mat4);
 };
 

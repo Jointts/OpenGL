@@ -10,7 +10,6 @@
 #include "../renderer/RenderManager.h"
 #include <noise/noise.h>
 #include <iostream>
-#include <random>
 
 using namespace noise;
 
@@ -26,7 +25,7 @@ Plane::Plane(int sizeX, int sizeZ, int tileSize, bool generateHeightMap)
 
 void Plane::AddTexture(const char *texturePath) {
     Texture texture;
-    texture.id = Utils::TextureFromFile(texturePath, false);
+    texture.id   = Utils::TextureFromFile(texturePath, false);
     texture.type = "diffuse";
     textures.push_back(texture);
 }
@@ -37,7 +36,7 @@ void Plane::GenerateVertices() {
     module::Perlin myModule;
     myModule.SetOctaveCount(10);
     myModule.SetPersistence(0.5);
-    double y = 0.0;
+    double   y = 0.0;
     for (int z = 0; z < sizeZ + 1; z++) {
         for (int x = 0; x < sizeX + 1; x++) {
             Vertex vertex1;
@@ -53,7 +52,7 @@ void Plane::GenerateVertices() {
             heightCoords.push_back((float &&) (float) y);
             std::cout << y << std::endl;
             vertex1.position = glm::vec3(x, (float) y * 10, z);
-            vertex1.color = Utils::color_RGB(red, 255, 0);
+            vertex1.color    = Utils::color_RGB(red, 255, 0);
 
             vertices.push_back(vertex1);
         }
@@ -64,7 +63,7 @@ void Plane::GenerateIndices() {
     for (int z = 0; z < sizeZ; ++z) {
         for (int x = 0; x < sizeX; x++) {
             GLuint currentIndex = (GLuint) (x + z * sizeX + z);
-            GLuint nextRow = (GLuint) (sizeX + 1);
+            GLuint nextRow      = (GLuint) (sizeX + 1);
 
             indices.push_back(currentIndex + 1);
             indices.push_back(currentIndex);
@@ -78,9 +77,9 @@ void Plane::GenerateIndices() {
 }
 
 void Plane::GenerateUVCoords(int currentIndex, int nextRow) {
-    vertices[currentIndex].uv_coord = glm::vec2(0.0f, 1.0f);
-    vertices[currentIndex + 1].uv_coord = glm::vec2(1.0f, 1.0f);
-    vertices[nextRow + currentIndex].uv_coord = glm::vec2(0.0f, 0.0f);
+    vertices[currentIndex].uv_coord               = glm::vec2(0.0f, 1.0f);
+    vertices[currentIndex + 1].uv_coord           = glm::vec2(1.0f, 1.0f);
+    vertices[nextRow + currentIndex].uv_coord     = glm::vec2(0.0f, 0.0f);
     vertices[nextRow + currentIndex + 1].uv_coord = glm::vec2(1.0f, 0.0f);
 }
 
@@ -88,7 +87,7 @@ void Plane::GenerateNormals() {
     for (int z = 0; z < sizeZ; ++z) {
         for (int x = 0; x < sizeX; x++) {
             GLuint currentIndex = (GLuint) (x + z * sizeX + z);
-            GLuint nextRow = (GLuint) (sizeX + 1);
+            GLuint nextRow      = (GLuint) (sizeX + 1);
 
             glm::vec3 v1 = vertices[currentIndex + 1].position;
             glm::vec3 v2 = vertices[currentIndex].position;
@@ -162,16 +161,17 @@ void Plane::UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices
 void Plane::Draw() {
     RenderManager::getInstance()->RenderBaseShader();
 
-    int diffuseNr = 0;
-    for (GLuint i = 0; i < this->textures.size(); i++) {
+    int         diffuseNr = 0;
+    for (GLuint i         = 0; i < this->textures.size(); i++) {
         glActiveTexture(GL_TEXTURE0 + i); // Activate proper texture unit before binding
         // Retrieve texture number (the N in diffuse_textureN)
         std::string name = this->textures[i].type;
         if (name == "diffuse")
             diffuseNr++;
         const char *shader_attribute = std::string("diffuse1").c_str();
-        int uniformLocation = (int) glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID,
-                                                         shader_attribute);
+        int        uniformLocation   = (int) glGetUniformLocation(
+                ShaderManager::getInstance()->baseShader->shaderProgramID,
+                shader_attribute);
         glUniform1f(uniformLocation, i);
         glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
     }

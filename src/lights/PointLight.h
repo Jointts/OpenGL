@@ -10,7 +10,7 @@
 
 class PointLight {
 public:
-    PointLight(const glm::vec3 &position, const glm::vec3 &diffuse, float constant, float linear, float quadratic);
+    PointLight(const glm::vec3& position, const glm::vec3& diffuse, float constant, float linear, float quadratic);
 
     void Enable();
 

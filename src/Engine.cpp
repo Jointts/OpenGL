@@ -14,20 +14,15 @@
 #include "physics/PhysicsManager.h"
 #include "Time.h"
 #include "EntityManager.h"
-#include "Tree.h"
 #include "gui/GuiWidget.h"
 #include "gui/GuiManager.h"
 #include "gui/Button.h"
 #include "gui/GuiEvents.h"
-#include "gamestate/GameStateManager.h"
 #include "Utils.h"
 #include "lights/DirectionalLight.h"
 #include "lights/PointLight.h"
 #include "geometry/DuplicatedVertexPlane.h"
-#include "maths/PoissonDiscSampler.h"
 #include <glm/gtc/matrix_transform.inl>
-#include "geometry/Hexagon.h"
-#include "game/Tile.h"
 #include "maths/PoissonGenerator.h"
 #include "gui/Text.h"
 //#include "audio/AudioManager.h"
@@ -48,8 +43,6 @@ int Engine::Start()
 	//    physicsManager->worldPhysics->InitPhysics();
 //
 	Model* forest = new Model("res/forest.FBX");
-	Tile* tile = new Tile(0, glm::vec2(1, 0), TILE_FOREST);
-	Tile* tile2 = new Tile(0, glm::vec2(1, 1), TILE_FOREST);
 
 	//    PhysicsManager::getInstance()->Tick();
 	//  Utter crap class, just for testing subclass pointers
@@ -82,10 +75,7 @@ int Engine::Start()
 	float quadratic = 0.44f;
 	auto point_light = new PointLight(position, diffuse, constant, linear, quadratic);
 
-	Hexagon *hexagon = new Hexagon(0, glm::vec2(0, 0));
-	hexagon->SetTexture("res/tile.png");
 
-	std::vector<Point*> poissonSamples = PoissonDiscSampler::GetSamples(250, 25, 30);
 	std::vector<Model*> models = {};
 
 	PoissonGenerator::DefaultPRNG PRNG;
@@ -101,7 +91,6 @@ int Engine::Start()
 //		model->Scale(glm::vec3(0.2, 0.2, 0.2));
 //	}
 
-	GameStateManager::getInstance();
 	Text* text = new Text("Nigger (from Alabama)", "LATO_LIGHT");
 
 	/*    FreeType* freeType = new FreeType();
@@ -137,6 +126,7 @@ int Engine::Start()
 		RenderManager::getInstance()->RenderBaseShader();
 		duplicatedVertexPlane->Draw();
 		character->Draw();
+		text->Draw();
 
 		//		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		//		quad->Draw(NULL, NULL);

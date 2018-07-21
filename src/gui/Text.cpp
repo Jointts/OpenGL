@@ -3,43 +3,35 @@
 //
 
 #include "Text.h"
-#include "Font.h"
 #include "FontManager.h"
 #include "../renderer/RenderManager.h"
 
 Text::Text(std::string str, std::string fontName, glm::vec3 color) {
-	this->color = color;
-	Font *font;
-	int characterOffset = 0;
+    this->color = color;
+    Font* font;
+    int characterOffset = 0;
 
-	try
-	{
-		font = FontManager::getInstance()->getFont(fontName);
-	}catch(std::out_of_range)
-	{
-
-	}
-    
-	for (auto &ch : str)
-	{
-		Character character = font->characters.at(ch);
-		CharacterInstance *characterInstance = new CharacterInstance(character.width, character.height, 50, 0);
-			
-		characterInstance->SetPosition(characterOffset, -(character.height - character.bearingY) );
-		characterInstance->setupMesh(characterInstance->vertices, characterInstance->indices);
+    font = FontManager::getInstance()->getFont(fontName);
 
 
-		characterInstance->SetTexture(character.textureID);
-		characters.push_back(characterInstance);
-		characterOffset += character.advance >> 6;
-	}
+    for (auto& ch : str) {
+        Character character = font->characters.at(ch);
+        CharacterInstance* characterInstance = new CharacterInstance(character.width, character.height, 50, 0);
+
+        characterInstance->SetPosition(characterOffset, -(character.height - character.bearingY));
+        characterInstance->setupMesh(characterInstance->vertices, characterInstance->indices);
+
+
+        characterInstance->SetTexture(character.textureID);
+        characters.push_back(characterInstance);
+        characterOffset += character.advance >> 6;
+    }
 }
 
-void Text::Draw(){
-	RenderManager::getInstance()->RenderGuiShader();
-	
-	for(auto &characterInstance : characters)
-	{
-		characterInstance->Draw(color);
-	}
+void Text::Draw() {
+    RenderManager::getInstance()->RenderGuiShader();
+
+    for (auto& characterInstance : characters) {
+        characterInstance->Draw(color);
+    }
 }

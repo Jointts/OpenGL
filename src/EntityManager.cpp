@@ -4,11 +4,11 @@
 
 #include "EntityManager.h"
 
-EntityManager* EntityManager::entityManager = 0;
-Player* EntityManager::player = 0;
+EntityManager *EntityManager::entityManager = nullptr;
+Player        *EntityManager::player        = nullptr;
 
-EntityManager* EntityManager::getInstance(){
-    if(!entityManager){
+EntityManager *EntityManager::getInstance() {
+    if (!entityManager) {
         entityManager = new EntityManager();
     }
     return entityManager;

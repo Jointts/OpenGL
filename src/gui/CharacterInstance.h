@@ -8,14 +8,13 @@
 
 #include "../geometry/Quad.h"
 
-class CharacterInstance : public Quad{
+class CharacterInstance : public Quad {
 public:
 
+    CharacterInstance(int width, int height, int xMargin = 0, int yMargin = 0);
+
     void SetTexture(unsigned int textureId);
-
-	CharacterInstance(int width, int height, int xMargin = 0, int yMargin = 0);
-
-	void Draw(glm::vec3 color);
+    void Draw(glm::vec3 color);
 };
 
 

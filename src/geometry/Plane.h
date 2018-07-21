@@ -12,7 +12,7 @@
 class Plane {
 
     glm::mat4 model;
-    int distribution = 100;
+    int       distribution                 = 100;
 
     void GenerateIndices();
 
@@ -28,28 +28,20 @@ protected:
 public:
     Plane();
 
-    int sizeX;
-
-    int sizeZ;
-
+    int                  sizeX;
+    int                  sizeZ;
+    bool                 generateHeightMap = true;
     std::vector<Texture> textures;
+    std::vector<float>   heightCoords;
 
-    std::vector<float> heightCoords;
-
-    virtual void Draw();
-
-    void GenerateVertices();
-
-    bool generateHeightMap = true;
 
     Plane(int sizeX, int sizeZ, int tileSize, bool generateHeightMap);
 
+    virtual void Draw();
+    void GenerateVertices();
     void UpdateMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices);
-
     void GenerateNormals();
-
     void GenerateUVCoords(int currentIndex, int nextRow);
-
     void AddTexture(const char *texturePath);
 };
 

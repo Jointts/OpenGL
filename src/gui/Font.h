@@ -11,35 +11,35 @@
 #include <map>
 #include FT_FREETYPE_H
 
-struct Character{
+struct Character {
     unsigned int textureID;
 
     unsigned short width;
-	unsigned short height;
+    unsigned short height;
 
-	unsigned short advance;
+    unsigned short advance;
 
-	unsigned short bearingX;
-	unsigned short bearingY;
+    unsigned short bearingX;
+    unsigned short bearingY;
 
 };
 
-class Font{
+class Font {
     FT_Library ft;
-    FT_Face face;
+    FT_Face    face;
 
     void Cleanup();
-    void InitializeFont(char* fontPath);
+    void InitializeFont(char *fontPath);
     Character LoadCharacter(int character);
-	unsigned short LoadCharacterTexture();
+    GLuint LoadCharacterTexture();
     void LoadAllCharacters();
 public:
-    Font(char* fontPath);
 
     std::map<char, Character> characters;
+
+    Font() = delete;
+    explicit Font(char *fontPath);
 };
-
-
 
 
 #endif //SUMMIT_ENGINE_FONT_H

@@ -11,13 +11,12 @@
 
 class Text {
 public:
-	std::vector<CharacterInstance*> characters;
-
-	glm::vec3 color;
-
-    Text(std::string str, std::string fontName, glm::vec3 color = glm::vec3(255));
-
+    std::vector<CharacterInstance*> characters;
+    glm::vec3                       color;
     CharacterInstance* characterInstance;
+
+    Text() = delete;
+    Text(std::string str, std::string fontName, glm::vec3 color = glm::vec3(255));
 
     void Draw();
 };

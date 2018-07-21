@@ -7,17 +7,11 @@
 #include <assimp/DefaultLogger.hpp>
 #include <iostream>
 #include <glm/ext.hpp>
-#include <LinearMath/btVector3.h>
-#include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
 #include "Model.h"
 #include "Mesh.h"
 #include "shaders/ShaderManager.h"
 #include "renderer/RenderManager.h"
 #include "Utils.h"
-
-Model::Model() {
-    createAssimpLog();
-}
 
 Model::Model(std::string meshPath) {
     model_file = std::move(meshPath);
@@ -44,10 +38,9 @@ void Model::importFile() {
 
     processNode(scene->mRootNode, scene);
 
-	if (scene->HasAnimations())
-	{
-		ProcessAnimations(scene->mAnimations, scene->mNumAnimations);
-	}
+    if (scene->HasAnimations()) {
+        ProcessAnimations(scene->mAnimations, scene->mNumAnimations);
+    }
 
     Assimp::DefaultLogger::get()->info("Import of file " + model_file + " successful.");
 }
@@ -82,8 +75,8 @@ void Model::processNode(aiNode *node, const aiScene *scene) {
 }
 
 Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
-    std::vector<Vertex> vertices;
-    std::vector<GLuint> indices;
+    std::vector<Vertex>  vertices;
+    std::vector<GLuint>  indices;
     std::vector<Texture> diffuseMaps;
 
     for (int i = 0; i < mesh->mNumVertices; i++) {
@@ -121,27 +114,24 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
         vertices.push_back(vertex);
     }
 
-	/* Read the indices */
+    /* Read the indices */
     for (int i = 0; i < mesh->mNumFaces; ++i) {
-        aiFace face = mesh->mFaces[i];
-        for (int j = 0; j < face.mNumIndices; ++j) {
+        aiFace   face = mesh->mFaces[i];
+        for (int j    = 0; j < face.mNumIndices; ++j) {
             indices.push_back(face.mIndices[j]);
         }
     }
 
-	/* Read the bones */
-	if(mesh->HasBones())
-	{
-		int meshVertexStartIndex;
-		if(meshes.empty())
-		{
-			meshVertexStartIndex = 0;
-		}else
-		{
-			meshVertexStartIndex = scene->mMeshes[meshes.size()]->mNumVertices - 1;
-		}
-		ProcessBones(mesh->mBones, mesh->mNumBones, vertices, meshVertexStartIndex);
-	}
+    /* Read the bones */
+    if (mesh->HasBones()) {
+        int meshVertexStartIndex;
+        if (meshes.empty()) {
+            meshVertexStartIndex = 0;
+        } else {
+            meshVertexStartIndex = scene->mMeshes[meshes.size()]->mNumVertices - 1;
+        }
+        ProcessBones(mesh->mBones, mesh->mNumBones, vertices, meshVertexStartIndex);
+    }
 
     /* Read the textures */
     if (scene->HasMaterials()) {
@@ -152,54 +142,50 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene) {
     return Mesh(vertices, indices, diffuseMaps);
 }
 
-void Model::ProcessBones(aiBone** bones, int numOfBones, std::vector<Vertex> vertices, int vertexStartIndex)
-{
-	for(int boneIndex = 0; boneIndex < numOfBones; boneIndex++)
-	{
-		aiBone* bone = bones[boneIndex];
-		boneOffsetMatrices.insert(std::pair<unsigned int, aiMatrix4x4*>(boneIndex, &bone->mOffsetMatrix));
-		for(int weightIndex = 0; weightIndex < bone->mNumWeights; weightIndex++)
-		{
-			aiVertexWeight vertexWeight = bone->mWeights[weightIndex];
-			Vertex* vertexToUpdate = &vertices[vertexWeight.mVertexId];
-			for(int boneId = 0; boneId < MAX_BONES_PER_VERTEX; boneId++)
-			{
-				if(vertexToUpdate->boneWeights[boneId] == 0.0)
-				{
-					vertexToUpdate->boneIDs[boneId] = boneIndex;
-					vertexToUpdate->boneWeights[boneId] = vertexWeight.mWeight;
-				}else
-				{
-					std::cout << "WARNING::ASSIMP::VERTEX_HAS_MORE_BONES_THAN_SUPPORTED count > " << MAX_BONES_PER_VERTEX << std::endl;
-					assert(0);
-				}
-			}
-		}
-	}
+void Model::ProcessBones(aiBone **bones, int numOfBones, std::vector<Vertex> vertices, int vertexStartIndex) {
+    for (int boneIndex = 0; boneIndex < numOfBones; boneIndex++) {
+        aiBone *bone = bones[boneIndex];
+        boneOffsetMatrices.insert(std::pair<unsigned int, aiMatrix4x4 *>(boneIndex, &bone->mOffsetMatrix));
+        for (int weightIndex = 0; weightIndex < bone->mNumWeights; weightIndex++) {
+            aiVertexWeight vertexWeight    = bone->mWeights[weightIndex];
+            Vertex         *vertexToUpdate = &vertices[vertexWeight.mVertexId];
+            for (int       boneId          = 0; boneId < MAX_BONES_PER_VERTEX; boneId++) {
+                if (vertexToUpdate->boneWeights[boneId] == 0.0) {
+                    vertexToUpdate->boneIDs[boneId]     = boneIndex;
+                    vertexToUpdate->boneWeights[boneId] = vertexWeight.mWeight;
+                } else {
+                    std::cout << "WARNING::ASSIMP::VERTEX_HAS_MORE_BONES_THAN_SUPPORTED count > "
+                              << MAX_BONES_PER_VERTEX << std::endl;
+                    assert(0);
+                }
+            }
+        }
+    }
 }
 
 // TODO: Load in animations, create Animation class as a container for them
-void Model::ProcessAnimations(aiAnimation** animations, int animationCount)
-{
-	for (int index = 0; index < animationCount; index++) {
-		aiAnimation* animation = animations[index];
-        auto* animToAdd = new Animation(animation->mTicksPerSecond, animation->mDuration, animation->mChannels, animation->mNumChannels, animation->mName);
-		this->animations.push_back(animToAdd);
-	}
-	std::cout << "TEST";
+void Model::ProcessAnimations(aiAnimation **animations, int animationCount) {
+    for (int index = 0; index < animationCount; index++) {
+        aiAnimation *animation = animations[index];
+        auto        *animToAdd = new Animation(animation->mTicksPerSecond, animation->mDuration, animation->mChannels,
+                                               animation->mNumChannels, animation->mName);
+        this->animations.push_back(animToAdd);
+    }
+    std::cout << "TEST";
 }
 
-std::vector<Texture> Model::processMaterial(aiTextureType textureType, aiMaterial *material, std::string textureTypeString) {
+std::vector<Texture>
+Model::processMaterial(aiTextureType textureType, aiMaterial *material, std::string textureTypeString) {
     std::vector<Texture> textures;
-    aiString path;
-    std::string directory = "res/";
-    for (GLuint i = 0; i < material->GetTextureCount(textureType); i++) {
+    aiString             path;
+    std::string          directory = "res/";
+    for (GLuint          i         = 0; i < material->GetTextureCount(textureType); i++) {
         material->GetTexture(textureType, i, &path);
         std::string formattedPath = std::string(path.data);
         std::replace(formattedPath.begin(), formattedPath.end(), '\\', '/');
         std::string texture_path = directory + formattedPath;
-        Texture texture;
-        texture.id = Utils::TextureFromFile(texture_path.c_str(), false);
+        Texture     texture;
+        texture.id   = Utils::TextureFromFile(texture_path.c_str(), false);
         texture.type = textureTypeString;
         textures.push_back(texture);
     }
@@ -207,7 +193,7 @@ std::vector<Texture> Model::processMaterial(aiTextureType textureType, aiMateria
 }
 
 void Model::Draw() {
-	Model::PlayAnimation();
+    Model::PlayAnimation();
     RenderManager::getInstance()->RenderBaseShader();
     glUniformMatrix4fv(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, "model"), 1,
                        GL_FALSE, glm::value_ptr(model));
@@ -229,21 +215,16 @@ void Model::Scale(glm::vec3 axis) {
     model = glm::scale(model, axis);
 }
 
-void Model::SetAnimation(int animationToPlay)
-{
-	activeAnimation = animations[animationToPlay];
+void Model::SetAnimation(int animationToPlay) {
+    activeAnimation = animations[animationToPlay];
 }
 
-void Model::PlayAnimation()
-{
-	if(activeAnimation)
-	{
-		if(!activeAnimation->animationEnded)
-		{
-			activeAnimation->Play();
-		}else
-		{
-			activeAnimation = nullptr;
-		}
-	}
+void Model::PlayAnimation() {
+    if (activeAnimation) {
+        if (!activeAnimation->animationEnded) {
+            activeAnimation->Play();
+        } else {
+            activeAnimation = nullptr;
+        }
+    }
 }
