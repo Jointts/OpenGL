@@ -6,7 +6,7 @@
 #define GAME_GUIEVENTLISTENER_H
 
 
-class GuiEventListener {
+class GuiEventHandler {
 
 public:
     void CheckEvents();

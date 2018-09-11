@@ -26,13 +26,13 @@ void MainCamera::MoveByX(int x) {
     UpdateCamera();
 }
 
-void MainCamera::MoveByZ(int z) {
-    cameraPos.z -= z * 0.02;
+void MainCamera::MoveByY(int y) {
+    cameraPos.y -= y * 0.5;
     UpdateCamera();
 }
 
-void MainCamera::MoveByY(int y) {
-    cameraPos.y -= y * 0.5;
+void MainCamera::MoveByZ(int z) {
+    cameraPos.z -= z * 0.02;
     UpdateCamera();
 }
 

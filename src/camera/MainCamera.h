@@ -19,8 +19,8 @@ class MainCamera : public Camera {
 public:
     MainCamera();
     void MoveByX(int x);
-    void MoveByZ(int y);
     void MoveByY(int y);
+    void MoveByZ(int z);
     void UpdateCamera();
 };
 

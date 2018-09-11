@@ -12,10 +12,10 @@ Slider::Slider(int width, int height) : GuiWidget(width, height) {
 }
 
 void Slider::Hold() {
-    double mouseX = MouseController::getInstance()->mouseX;
-
-    if (mouseX < barBoundaryMaxX && mouseX > barBoundaryMinX) {
-        barValue = (mouseX - barBoundaryMinX) / (barBoundaryMaxX - barBoundaryMinX);
-        bar->setMarginLeft(static_cast<float>(mouseX));
-    }
+//    double mouseX = MouseController::getInstance()->lastMouseXPos;
+//
+//    if (mouseX < barBoundaryMaxX && mouseX > barBoundaryMinX) {
+//        barValue = (mouseX - barBoundaryMinX) / (barBoundaryMaxX - barBoundaryMinX);
+//        bar->setMarginLeft(static_cast<float>(mouseX));
+//    }
 }

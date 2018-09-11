@@ -8,7 +8,7 @@
 
 #include "GuiFrameBuffer.h"
 #include "GuiRenderer.h"
-#include "GuiEventListener.h"
+#include "GuiEventHandler.h"
 
 class GuiManager {
     int GetNextUid();
@@ -16,7 +16,7 @@ public:
     static GuiManager      * guiManager;
     static GuiFrameBuffer  * guiFrameBuffer;
     static GuiRenderer     * guiRenderer;
-    static GuiEventListener* guiEventListener;
+    static GuiEventHandler* guiEventListener;
     std::vector<GuiWidget*> guiWidgets;
 
     GuiManager();

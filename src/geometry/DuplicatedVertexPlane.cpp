@@ -250,8 +250,6 @@ void DuplicatedVertexPlane::calculatePointHeight(glm::vec2 pointPosition) {
     } else {
         calculateHeightFromTriangle(vertexD.position, vertexE.position, vertexF.position, pointPosition);
     }
-
-    std::cout << "Do shit";
 }
 
 void DuplicatedVertexPlane::calculateHeightFromTriangle(glm::vec3 pointA, glm::vec3 pointB, glm::vec3 pointC,

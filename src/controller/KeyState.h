@@ -6,7 +6,7 @@
 #define SUMMITENGINE_MOUSEEVENT_H
 
 
-enum MouseEvent {
+enum KeyState {
     CLICK,
     CLICKED,
     HOLD,

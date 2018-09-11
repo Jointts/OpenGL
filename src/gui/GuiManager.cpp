@@ -7,14 +7,14 @@
 GuiManager       *GuiManager::guiManager       = nullptr;
 GuiFrameBuffer   *GuiManager::guiFrameBuffer   = nullptr;
 GuiRenderer      *GuiManager::guiRenderer      = nullptr;
-GuiEventListener *GuiManager::guiEventListener = nullptr;
+GuiEventHandler *GuiManager::guiEventListener = nullptr;
 
 // Currently supports 255 objects at max
 
 GuiManager::GuiManager() {
     guiFrameBuffer   = new GuiFrameBuffer();
     guiRenderer      = new GuiRenderer();
-    guiEventListener = new GuiEventListener();
+    guiEventListener = new GuiEventHandler();
 }
 
 GuiManager *GuiManager::getInstance() {

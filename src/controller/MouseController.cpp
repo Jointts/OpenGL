@@ -2,13 +2,12 @@
 // Created by jointts on 9.03.18.
 //
 
-#include <GLFW/glfw3.h>
-#include <algorithm>
-#include <iostream>
 #include "MouseController.h"
 #include "../display/DisplayManager.h"
+#include "../gui/GuiManager.h"
+#include "../camera/CameraManager.h"
 
-MouseController *MouseController::mouseController = 0;
+MouseController   *MouseController::mouseController = nullptr;
 
 MouseController *MouseController::getInstance() {
     if (!mouseController) {
@@ -17,46 +16,28 @@ MouseController *MouseController::getInstance() {
     return mouseController;
 }
 
-void MouseController::insertKey(int button){
-    if(!(buttonStates.find(button) != buttonStates.end())) {
-        buttonStates.insert(std::pair<const int, MouseEvent>(button, MouseEvent::CLICK));
-    }
+void MouseController::ReceivePosEvent(GLFWwindow *pWwindow, double xpos, double ypos) {
+
+//    GuiManager::getInstance()->guiFrameBuffer->ReadColor(xpos, ypos);
+//    if (MouseController::getInstance()->checkButtonInput(GLFW_MOUSE_BUTTON_LEFT, KeyState::HOLD) &&
+//        lastMouseXPos != 0) {
+//        int cameraMovementX = xpos - lastMouseXPos;
+//        int cameraMovementY = ypos - lastMouseYPos;
+//
+//        CameraManager::getInstance()->mainCamera->MoveByX(cameraMovementX);
+//        CameraManager::getInstance()->mainCamera->MoveByZ(cameraMovementY);
+//    }
+//
+//    lastMouseXPos = xpos;
+//    lastMouseYPos = ypos;
 }
 
-void MouseController::updateButtonState(int button, int action) {
-    MouseEvent *currentState = &buttonStates.at(button);
-    int stateValue = static_cast<int>(*currentState);
-
-    if(stateValue == MouseEvent::RELEASED && action == GLFW_PRESS){
-        *currentState = MouseEvent::CLICK;
-    }
-    if(stateValue == MouseEvent::HOLD && action == GLFW_RELEASE){
-        *currentState = MouseEvent::CLICKED;
-    }
-    if(stateValue == MouseEvent::CLICK && action == GLFW_PRESS){
-        *currentState = MouseEvent::HOLD;
-    }
+void MouseController::ReceiveKeyEvent(GLFWwindow *window, int button, int action, int mods) {
+    MouseController::getInstance()->insertKey(button);
 }
 
-void MouseController::resetClickedStates() {
-    std::for_each(buttonStates.begin(), buttonStates.end(), [](std::pair<const int, MouseEvent> &button){
-        if(button.second == MouseEvent::CLICKED){
-            button.second = MouseEvent::RELEASED;
-        }
-    });
+
+void MouseController::ReceiveScrollEvent(GLFWwindow *window, double xoffset, double yoffset) {
+    CameraManager::getInstance()->mainCamera->MoveByY(yoffset);
 }
-
-bool MouseController::checkButtonInput(int key, MouseEvent event) {
-    bool inputMatches = false;
-    std::for_each(buttonStates.begin(), buttonStates.end(), [key, event, &inputMatches, this](std::pair<const int, MouseEvent> &button){
-        int action = glfwGetMouseButton(DisplayManager::getInstance()->display->window, key);
-        updateButtonState(button.first, action);
-        if(button.first == key && button.second == event){
-            inputMatches = true;
-        }
-    });
-
-    return inputMatches;
-}
-
 
