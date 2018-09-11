@@ -5,16 +5,13 @@
 #include <LinearMath/btDefaultMotionState.h>
 #include <BulletCollision/CollisionShapes/btBoxShape.h>
 #include <BulletCollision/CollisionShapes/btTriangleMesh.h>
-#include <BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h>
 #include "Entity.h"
 #include "physics/PhysicsManager.h"
 #include "Mesh.h"
-#include "renderer/RenderManager.h"
 #include "Utils.h"
-#include "Tree.h"
 #include "EntityManager.h"
 
 Entity::Entity(GLchar *modelPath, bool generateCollision = false) {
@@ -79,7 +76,7 @@ void Entity::GenerateCollision() {
 
 void Entity::Rotate(float angle, glm::vec3 axis) {
     ATTRIBUTE_ALIGNED16(btScalar physicsMatrix[16]);
-    btTransform transform = rigidBody->getWorldTransform();
+    btTransform                  transform = rigidBody->getWorldTransform();
     transform.getOpenGLMatrix(physicsMatrix);
     glm::mat4 rotatedMatrix = glm::rotate(Utils::BulletToGlm(physicsMatrix), angle, axis);
     rigidBody->setWorldTransform(Utils::glmToBullet(rotatedMatrix));
@@ -87,7 +84,7 @@ void Entity::Rotate(float angle, glm::vec3 axis) {
 
 void Entity::Scale(glm::vec3 axis) {
     ATTRIBUTE_ALIGNED16(btScalar physicsMatrix[16]);
-    btTransform transform = rigidBody->getWorldTransform();
+    btTransform                  transform = rigidBody->getWorldTransform();
     transform.getOpenGLMatrix(physicsMatrix);
     glm::mat4 scaledMatrix = glm::scale(Utils::BulletToGlm(physicsMatrix), axis);
     rigidBody->setWorldTransform(Utils::glmToBullet(scaledMatrix));
@@ -95,7 +92,7 @@ void Entity::Scale(glm::vec3 axis) {
 
 void Entity::Translate(glm::vec3 axis) {
     ATTRIBUTE_ALIGNED16(btScalar physicsMatrix[16]);
-    btTransform transform;
+    btTransform                  transform;
     rigidBody->getMotionState()->getWorldTransform(transform);
     transform.getOpenGLMatrix(physicsMatrix);
     glm::mat4 translatedMatrix = glm::translate(Utils::BulletToGlm(physicsMatrix), axis);

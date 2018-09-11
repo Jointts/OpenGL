@@ -9,12 +9,12 @@
 #include "Entity.h"
 #include "EntityController.h"
 
-class Pawn : public Entity{
+class Pawn : public Entity {
 public:
     Pawn(GLchar *modelPath, bool generateCollision);
 
 public:
-    EntityController* entityController;
+    EntityController *entityController;
 };
 
 

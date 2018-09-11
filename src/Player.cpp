@@ -8,6 +8,7 @@
 #include "exceptions/PlayerAlreadyExistsException.h"
 #include "Utils.h"
 
+// TODO: So what happens when we implement AI movement, we duplicate all of this again?
 Player::Player(GLchar *modelPath, bool generateCollision) : Pawn(modelPath, generateCollision) {
     if(EntityManager::getInstance()->player != 0){
         throw PlayerAlreadyExistsException();

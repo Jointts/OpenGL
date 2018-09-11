@@ -6,34 +6,19 @@
 #define SUMMIT_ENGINE_MOUSECONTROLLER_H
 
 #include <vector>
-#include <map>
+#include "BaseController.h"
+#include "ControllerManager.h"
+#include <GLFW/glfw3.h>
 
-enum MouseEvent{
-    CLICK,
-    CLICKED,
-    HOLD,
-    RELEASED
-};
-
-class MouseController {
+class MouseController : public BaseController {
 public:
-    static MouseController* getInstance();
-
-    bool checkButtonInput(int key, MouseEvent event);
-
-    void resetClickedStates();
-
-    void updateButtonState(int button, int action);
-
-    void insertKey(int button);
-
+    static MouseController *getInstance();
 private:
-
-    std::map<int, MouseEvent> buttonStates = {};
-
+    friend class ControllerManager;
     static MouseController *mouseController;
-
+    static void ReceivePosEvent(GLFWwindow *pWwindow, double xpos, double ypos);
+    static void ReceiveKeyEvent(GLFWwindow *window, int button, int action, int mods);
+    static void ReceiveScrollEvent(GLFWwindow *window, double xoffset, double yoffset);
 };
-
 
 #endif //SUMMIT_ENGINE_MOUSECONTROLLER_H

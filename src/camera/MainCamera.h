@@ -17,32 +17,11 @@
 
 class MainCamera : public Camera {
 public:
-    float startingSpeed = 0.1f;
-
-    float accelerationSpeed = 0.2f;
-
-    float maxSpeed = 2.0f;
-
-    float currentSpeed = 0.0f;
-
     MainCamera();
-	void MoveByX(int x);
-	void MoveByZ(int y);
-	void MoveByY(int y);
-
-	void MoveLeft();
-
-    void MoveRight();
-
-    void MoveForward();
-
-    void MoveBack();
-
+    void MoveByX(int x);
+    void MoveByY(int y);
+    void MoveByZ(int z);
     void UpdateCamera();
-
-    void MoveUp();
-
-    void MoveDown();
 };
 
 

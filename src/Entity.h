@@ -6,11 +6,13 @@
 #define SUMMIT_ENGINE_ENTITY_H
 
 #ifndef __gl_h_
+
 #include <glad/glad.h>
+
 #endif
+
 #include <BulletDynamics/Dynamics/btRigidBody.h>
 #include "Model.h"
-#include "Serializable.h"
 
 enum EntityType {
     BASIC,
@@ -18,30 +20,25 @@ enum EntityType {
     TERRAIN
 };
 
-class Entity : public Serializable{
+class Entity {
 
     void GenerateCollision();
 
 public:
-    Entity(GLchar* modelPath, bool generateCollision);
+    EntityType  entityType = BASIC;
+    glm::vec3   scale      = glm::vec3(1.f, 1.f, 1.f);
+    bool        hasCollision;
+    btRigidBody *rigidBody;
+    Model       *model;
 
-    btRigidBody* rigidBody;
+    Entity() = delete;
 
-    EntityType entityType = BASIC;
-
-    Model* model;
-
-    bool hasCollision;
-
+    Entity(GLchar *modelPath, bool generateCollision);
     virtual void Rotate(float angle, glm::vec3 axis);
-
     virtual void Scale(glm::vec3 axis);
-
     virtual void Translate(glm::vec3 axis);
 
     virtual void ClickEvent();
-
-    glm::vec3 scale = glm::vec3(1.f, 1.f, 1.f);
 };
 
 

@@ -5,13 +5,13 @@
 #include "CameraManager.h"
 
 
-CameraManager *CameraManager::cameraManager = 0;
-MainCamera *CameraManager::mainCamera = 0;
-GuiCamera *CameraManager::guiCamera = 0;
+CameraManager *CameraManager::cameraManager = nullptr;
+MainCamera    *CameraManager::mainCamera    = nullptr;
+GuiCamera     *CameraManager::guiCamera     = nullptr;
 
 CameraManager::CameraManager() {
     mainCamera = new MainCamera;
-    guiCamera = new GuiCamera;
+    guiCamera  = new GuiCamera;
 }
 
 CameraManager *CameraManager::getInstance() {

@@ -14,38 +14,28 @@
 class EntityController {
 
 public:
-    EntityController(Model *attachedModel);
+    float getMovementSpeed() const;
+    btPairCachingGhostObject *m_ghostObject;
 
+    EntityController(Model *attachedModel);
     EntityController(Model *attachedModel, Entity *entity);
 
     void MoveToCoord(glm::vec3 worldCoord);
-
-    float getMovementSpeed() const;
-
     void setMovementSpeed(float movementSpeed);
-
     void CheckPosition();
-
     void SetMoveDirection(glm::vec3 moveDirection);
 
-    btPairCachingGhostObject *m_ghostObject;
 private:
-
-    Model* attachedModel;
-
-    btVector3 currentWalkDirection;
-
-    glm::vec3 targetCoord;
-
-    float movementSpeed = 1.0f;
-
+    float                          movementSpeed = 1.0f;
+    Entity                         *entity;
+    Model                          *attachedModel;
+    btVector3                      currentWalkDirection;
+    glm::vec3                      targetCoord;
     btKinematicCharacterController *m_character;
 
     void SetupCollision();
-
     void FaceCoord(glm::vec3 coordToFace);
 
-    Entity* entity;
 };
 
 

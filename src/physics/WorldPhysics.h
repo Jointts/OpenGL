@@ -10,24 +10,16 @@
 
 class WorldPhysics {
 public:
-    bool debugDrawing = false;
-
-    bool mouseOneClicked = false;
-
-    btRigidBody *rigidBody;
-
+    static Entity           *lastHitEntity;
+    bool                    debugDrawing    = false;
+    bool                    mouseOneClicked = false;
+    btRigidBody             *rigidBody;
     btDiscreteDynamicsWorld *dynamicsWorld;
 
     void InitPhysics();
-
     void RayCast(double mouseX, double mouseY);
-
     void getHitEntityType(Entity *hitEntity);
-
-    static Entity *lastHitEntity;
-
     void Tick();
-
     void AddPlayer();
 };
 

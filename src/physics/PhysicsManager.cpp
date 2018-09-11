@@ -4,14 +4,14 @@
 
 #include "PhysicsManager.h"
 
-PhysicsManager *PhysicsManager::physicsManager = 0;
-WorldPhysics *PhysicsManager::worldPhysics = 0;
+PhysicsManager* PhysicsManager::physicsManager = 0;
+WorldPhysics  * PhysicsManager::worldPhysics   = 0;
 
 PhysicsManager::PhysicsManager() {
     worldPhysics = new WorldPhysics();
 }
 
-PhysicsManager *PhysicsManager::getInstance() {
+PhysicsManager* PhysicsManager::getInstance() {
     if (!physicsManager) {
         physicsManager = new PhysicsManager;
     }
@@ -19,6 +19,5 @@ PhysicsManager *PhysicsManager::getInstance() {
 }
 
 void PhysicsManager::Tick() {
-//    guiPhysics->Tick();
     worldPhysics->Tick();
 }

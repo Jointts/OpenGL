@@ -16,6 +16,8 @@
 
 RenderManager *RenderManager::renderManager = 0;	
 
+// TODO: Dear god, every one of these is a Renderer class with its overridable Render fn -.-
+
 void RenderManager::RenderCelShader() {
     CameraManager *cameraManager = CameraManager::getInstance();
     ShaderProgram *celShader = ShaderManager::getInstance()->celShader;

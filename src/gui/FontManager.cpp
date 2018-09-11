@@ -23,16 +23,9 @@ Font* FontManager::getFont(std::string fontName){
 }
 
 void FontManager::addFonts(){
-//    std::map<std::string, char*>::iterator it;
-
     std::for_each(fontsToLoad.begin(), fontsToLoad.end(), [&](std::pair<const std::string, char*> &font){
         addFont(font.first, font.second);
     });
-
-//    for ( it = fontsToLoad.begin(); it != fontsToLoad.end(); it++ )
-//    {
-//        addFont(it->first, it->second);
-//    }
 }
 
 void FontManager::addFont(std::string fontName, char *fontPath) {

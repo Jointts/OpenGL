@@ -13,42 +13,27 @@
 #include "../Model.h"
 
 class GuiFrameBuffer {
-
-    GLuint renderedTexture = 0;
-
-    GLuint VAO, VBO, EBO;
-
+    GLuint              renderedTexture = 0;
+    GLuint              VAO, VBO, EBO;
     std::vector<Vertex> vertices;
-
     std::vector<GLuint> indices;
-
 public:
     glm::vec3 cursorColor;
+    GLuint    collisionFrameBuffer      = 0;
 
     GuiFrameBuffer();
 
     void RenderToCollisionFrameBuffer();
-
     void DrawCollisionBuffer();
-
-    GLuint collisionFrameBuffer = 0;
-
     void ReadColor(double x, double y);
-
 private:
     void SetupMesh();
-
     void GenerateCollisionFramebuffer();
-
     void GenerateCollisionTexture();
-
     void ConfigureCollisionFrameBuffer();
-
     void UnbindFramebuffer();
-
     void GenerateQuad();
 
 };
-
 
 #endif //GAME_GUIFRAMEBUFFER_H

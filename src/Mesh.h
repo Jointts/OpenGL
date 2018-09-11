@@ -17,13 +17,14 @@
 class Mesh {
 
 public:
+    std::vector<Vertex>  vertices;
+    std::vector<GLuint>  indices;
+    std::vector<Texture> textures;
+    GLuint               VAO, VBO, EBO;
+
     Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures);
     void setupMesh();
     void Draw();
-    std::vector<Vertex> vertices;
-    std::vector<GLuint> indices;
-    std::vector<Texture> textures;
-    GLuint VAO, VBO, EBO;
 };
 
 

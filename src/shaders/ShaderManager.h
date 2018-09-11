@@ -12,15 +12,10 @@ class ShaderManager {
 
 public:
     static ShaderManager *shaderManager;
-
     static ShaderProgram *baseShader;
-
     static ShaderProgram *celShader;
-
     static ShaderProgram *guiShader;
-
     static ShaderProgram *waterShader;
-
     static ShaderProgram *debugShader;
 
     static ShaderManager *getInstance();

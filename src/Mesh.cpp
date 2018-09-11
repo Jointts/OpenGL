@@ -4,12 +4,11 @@
 
 #include <glm/gtc/type_ptr.hpp>
 #include "Mesh.h"
-#include "shaders/ShaderProgram.h"
 #include "shaders/ShaderManager.h"
 
 Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures) {
     this->vertices = vertices;
-    this->indices = indices;
+    this->indices  = indices;
     this->textures = textures;
 
     this->setupMesh();
@@ -32,33 +31,34 @@ void Mesh::setupMesh() {
     // Vertex Positions
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)0);
+                          (GLvoid *) 0);
 
     // Vertex normals
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, normal));
+                          (GLvoid *) offsetof(Vertex, normal));
 
     // Vertex UV coordinates
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                          (GLvoid*)offsetof(Vertex, uv_coord));
+                          (GLvoid *) offsetof(Vertex, uv_coord));
 
     glBindVertexArray(0);
 }
 
 void Mesh::Draw() {
     int diffuseNr = 0;
-    const char* shader_attribute;
-    for(GLuint i = 0; i < this->textures.size(); i++)
-    {
+    const char *shader_attribute;
+    for (GLuint i = 0; i < this->textures.size(); i++) {
         glActiveTexture(GL_TEXTURE0 + i); // Activate proper texture unit before binding
         // Retrieve texture number (the N in diffuse_textureN)
         std::string name = this->textures[i].type;
-        if(name == "diffuse"){
+        if (name == "diffuse") {
             diffuseNr++;
-            shader_attribute =  std::string("diffuse" + diffuseNr).c_str();
-            glUniform1f(glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, shader_attribute), i);
+            shader_attribute = std::string("diffuse" + diffuseNr).c_str();
+            glUniform1f(
+                    glGetUniformLocation(ShaderManager::getInstance()->baseShader->shaderProgramID, shader_attribute),
+                    i);
             glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
         }
     }

@@ -15,26 +15,22 @@ typedef char GLchar;
 
 class ShaderProgram {
 public:
-    ShaderProgram(char *vertexShader, char *fragmentShader);
-
-    GLuint vertexShader;
-    GLuint fragmentShader;
-    GLint success;
-    GLchar infoLog[512];
-    char *VERTEX_SHADER_PATH;
-    char *FRAGMENT_SHADER_PATH;
 
     GLuint shaderProgramID;
+    GLuint vertexShader;
+    GLuint fragmentShader;
+    GLint  success;
+    GLchar infoLog[512];
+    char   *VERTEX_SHADER_PATH;
+    char   *FRAGMENT_SHADER_PATH;
 
-    ShaderProgram();
-
-    GLuint CreateShader(GLuint shaderType, GLchar *shaderPath);
+    ShaderProgram() = delete;
+    ShaderProgram(char *vertexShader, char *fragmentShader);
 
     void Start();
-
     void Stop();
+    GLuint CreateShader(GLuint shaderType, GLchar *shaderPath);
 
-    ShaderProgram *shaderProgram;
 
     ~ShaderProgram();
 };

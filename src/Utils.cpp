@@ -2,10 +2,12 @@
 // Created by joonas on 19.09.16.
 //
 
+#define STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+
 #include <ios>
 #include <fstream>
 #include <iostream>
-//#include <direct.h>
 #include <glad/glad.h>
 #include <glm/ext.hpp>
 #include <assimp/DefaultLogger.hpp>
@@ -14,9 +16,10 @@
 #include <zconf.h>
 #include "Utils.h"
 
+
 std::string Utils::readFile(const char *filePath) {
     std::string content;
-    char cwd[1024];
+    char        cwd[1024];
     if (getcwd(cwd, sizeof(cwd)) != NULL) {
 //        fprintf(stdout, "Current working dir: %s\n", cwd);
     } else
@@ -42,12 +45,12 @@ std::string Utils::readFile(const char *filePath) {
 }
 
 GLuint Utils::TextureFromFile(const char *path, bool alpha) {
-    int stbi_channel = STBI_rgb;
-    GLint gl_channel = GL_RGB;
+    int   stbi_channel = STBI_rgb;
+    GLint gl_channel   = GL_RGB;
 
     if (alpha) {
         stbi_channel = STBI_rgb_alpha;
-        gl_channel = GL_RGBA;
+        gl_channel   = GL_RGBA;
     }
 
     // Change this line to normal if you not want to analyse the import process
@@ -57,9 +60,9 @@ GLuint Utils::TextureFromFile(const char *path, bool alpha) {
     // Create a logger instance for Console Output
     Assimp::DefaultLogger::create("", severity, aiDefaultLogStream_STDOUT);
 
-    int width;
-    int height;
-    int bytesPerPixel;
+    int    width;
+    int    height;
+    int    bytesPerPixel;
     GLuint textureID;
     Assimp::DefaultLogger::get()->info("Loading texture from: " + std::string(path));
     unsigned char *pixelData = stbi_load(path, &width, &height, &bytesPerPixel, stbi_channel);

@@ -9,23 +9,21 @@
 #include "Font.h"
 
 class FontManager {
-    std::map <const std::string, char*> fontsToLoad{
+    // TODO: Scan all fonts, dont hardcode it here
+    std::map<const std::string, char *> fontsToLoad{
             {"LATO_LIGHT", "/home/jointts/CLionProjects/SE/src/gui/fonts/lato/Lato-Light.ttf"}
     };
+    std::map<std::string, Font *>       fonts = {};
+    static FontManager                  *fontManager;
 
-    std::map<std::string, Font*> fonts = {};
-
-    static FontManager *fontManager;
+    void addFont(std::string fontName, char *fontPath);
+    void addFonts();
 public:
-    FontManager();
 
+    FontManager();
+    Font *getFont(std::string fontName);
     static FontManager *getInstance();
 
-    Font* getFont(std::string fontName);
-
-    void addFont(std::string fontName, char* fontPath);
-
-    void addFonts();
 };
 
 

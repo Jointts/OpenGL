@@ -12,9 +12,10 @@
 GuiWidget::GuiWidget(int width, int height) : Quad(width, height) {
     guiFrameBuffer = GuiManager::getInstance()->guiFrameBuffer;
     GuiManager::getInstance()->guiWidgets.push_back(this);
+    SetCollisionColor(GuiManager::getInstance()->CalculateNextCollisionColor());
 }
 
-void GuiWidget::UpdatePosition() {
+void GuiWidget::UpdateVertexData() {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
 }
@@ -24,12 +25,21 @@ float GuiWidget::getMarginLeft() const {
 }
 
 void GuiWidget::setMarginLeft(float marginLeft) {
-    this->marginLeft = marginLeft;
+    this->marginLeft       = marginLeft;
     vertices[0].position.x = marginLeft;
     vertices[1].position.x = marginLeft;
     vertices[2].position.x = width + marginLeft;
     vertices[3].position.x = width + marginLeft;
-    UpdatePosition();
+    UpdateVertexData();
+}
+
+void GuiWidget::SetCollisionColor(glm::vec3 collisionColor) {
+    vertices[0].color    = collisionColor;
+    vertices[1].color    = collisionColor;
+    vertices[2].color    = collisionColor;
+    vertices[3].color    = collisionColor;
+    this->collisionColor = collisionColor;
+    UpdateVertexData();
 }
 
 float GuiWidget::getMarginRight() const {
@@ -38,12 +48,12 @@ float GuiWidget::getMarginRight() const {
 
 void GuiWidget::setMarginRight(float marginRight) {
     float displayWidth = 1440.0f;
-    this->marginRight = marginRight;
+    this->marginRight      = marginRight;
     vertices[0].position.x = displayWidth - marginRight;
     vertices[1].position.x = displayWidth - marginRight;
     vertices[2].position.x = displayWidth - (width + marginRight);
     vertices[3].position.x = displayWidth - (width + marginRight);
-    UpdatePosition();
+    UpdateVertexData();
 }
 
 float GuiWidget::getMarginTop() const {
@@ -52,12 +62,12 @@ float GuiWidget::getMarginTop() const {
 
 void GuiWidget::setMarginTop(float marginTop) {
     float displayHeight = 900.0f;
-    this->marginTop = marginTop;
+    this->marginTop        = marginTop;
     vertices[0].position.y = displayHeight - marginTop;
     vertices[1].position.y = displayHeight - (height + marginTop);
     vertices[2].position.y = displayHeight - (height + marginTop);
     vertices[3].position.y = displayHeight - marginTop;
-    UpdatePosition();
+    UpdateVertexData();
 }
 
 float GuiWidget::getMarginBottom() const {
@@ -65,16 +75,16 @@ float GuiWidget::getMarginBottom() const {
 }
 
 void GuiWidget::setMarginBottom(float marginBottom) {
-    this->marginBottom = marginBottom;
+    this->marginBottom     = marginBottom;
     vertices[0].position.y = marginBottom;
     vertices[1].position.y = height + marginBottom;
     vertices[2].position.y = height + marginBottom;
     vertices[3].position.y = marginBottom;
-    UpdatePosition();
+    UpdateVertexData();
 }
 
-void GuiWidget::setTexture(GLchar *path) {
-    textureId = Utils::TextureFromFile(path, true);
+void GuiWidget::setTexture(GLchar* path) {
+    textureId          = Utils::TextureFromFile(path, true);
     collisionTextureId = Utils::TextureFromFile("res/nice_circle_collision_round.png", true);
 }
 
@@ -95,4 +105,12 @@ void GuiWidget::Draw() {
 
 void GuiWidget::Click() {
 
+}
+
+void GuiWidget::Hold() {
+
+}
+
+const int GuiWidget::Uid() const {
+    return static_cast<const int>(this->collisionColor.r + this->collisionColor.g + this->collisionColor.b);
 }

@@ -18,26 +18,22 @@
 
 class Quad {
 public:
-    Quad(int width, int height, int xPos = 0, int yPos = 0);
-	virtual void GenerateMesh();
 
-	GLuint textureId;
-    GLuint collisionTextureId;
-    GLuint VAO, VBO, EBO;
+    GLuint              textureId;
+    GLuint              collisionTextureId;
+    GLuint              VAO, VBO, EBO;
     std::vector<Vertex> vertices;
-
+    float               width  = 100;
+    float               height = 100;
     std::vector<GLuint> indices;
+    btRigidBody         *rigidBody;
 
-    btRigidBody *rigidBody;
+    Quad(int width, int height, int xPos = 0, int yPos = 0);
 
+    virtual void GenerateMesh();
     virtual void setupMesh(std::vector<Vertex> vertices, std::vector<GLuint> indices);
-
-    float width = 100;
-
-    float height = 100;
-
     virtual void Draw(int textureId, GLenum textureUnit);
-	void SetPosition(int xPos, int yPos);
+    void SetPosition(int xPos, int yPos);
 };
 
 

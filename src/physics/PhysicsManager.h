@@ -19,14 +19,11 @@ class PhysicsManager {
 
 public:
 
-    static PhysicsManager *physicsManager;
+    static WorldPhysics  * worldPhysics;
+    static PhysicsManager* physicsManager;
 
     PhysicsManager();
-
-    static PhysicsManager *getInstance();
-
-    static WorldPhysics *worldPhysics;
-
+    static PhysicsManager* getInstance();
     void Tick();
 };
 

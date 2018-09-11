@@ -11,18 +11,15 @@
 #include "../physics/PhysicsManager.h"
 #include <noise/noise.h>
 #include <BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h>
-#include "../camera/CameraManager.h"
 #include <glm/gtc/type_ptr.inl>
-#include "../shaders/ShaderManager.h"
 #include <iostream>
-#include <glm/detail/_vectorize.hpp>
-#include <glm/detail/_vectorize.hpp>
-#include <glm/detail/_vectorize.hpp>
-#include <glm/detail/_vectorize.hpp>
 
 using namespace noise;
 
-DuplicatedVertexPlane::DuplicatedVertexPlane(int sizeX, int sizeY, bool hasCollision) : sizeX(sizeX), sizeZ(sizeY), hasCollision(hasCollision) {
+
+// TODO: This belongs to garbage, has too specific implementation, only draw a simple duplicated plane here
+DuplicatedVertexPlane::DuplicatedVertexPlane(int sizeX, int sizeY, bool hasCollision) : sizeX(sizeX), sizeZ(sizeY),
+                                                                                        hasCollision(hasCollision) {
     generateVertices();
     setupMesh(vertices);
     generateCollision();
@@ -35,7 +32,7 @@ DuplicatedVertexPlane::DuplicatedVertexPlane(int sizeX, int sizeY, const char *i
 
 void DuplicatedVertexPlane::setImage(const char *imagePath) {
     Texture texture;
-    texture.id = Utils::TextureFromFile(imagePath, false);
+    texture.id   = Utils::TextureFromFile(imagePath, false);
     texture.type = "diffuse";
     textures.push_back(texture);
 }
@@ -51,10 +48,10 @@ void DuplicatedVertexPlane::generateVertices() {
         for (int z = 0; z < sizeZ; ++z) {
             std::uniform_real_distribution<float> red_random_factor(0, 10.0);
             std::uniform_real_distribution<float> red_random_factor2(0, 10.0);
-            int vertex_previous;
+            int                                   vertex_previous;
 
-            int row = x * z;
-            int index = z;
+            int row                        = x * z;
+            int index                      = z;
             int previousVerticesStartIndex = row + index - 6;
 
             module::Perlin myModule;
@@ -63,7 +60,7 @@ void DuplicatedVertexPlane::generateVertices() {
             int distribution = 50;
 
             //Color for the first polygon
-            float red = 150 + red_random_factor(eng);
+            float red  = 150 + red_random_factor(eng);
             //Color for the second polygon
             float red2 = 150 + red_random_factor2(eng);
 
@@ -81,8 +78,8 @@ void DuplicatedVertexPlane::generateVertices() {
             vertex1.position.z = z;
             vertex1.uv_coord.x = 0;
             vertex1.uv_coord.y = 0;
-            vertex1.color = Utils::color_RGB(red, 255, 0);
-            vertex1.normal = glm::vec3(0.f, 1.f, 0.f);
+            vertex1.color      = Utils::color_RGB(red, 255, 0);
+            vertex1.normal     = glm::vec3(0.f, 1.f, 0.f);
 
             Vertex vertex2;
             vertex2.position.x = x + 1;
@@ -90,8 +87,8 @@ void DuplicatedVertexPlane::generateVertices() {
             vertex2.position.z = z;
             vertex2.uv_coord.x = 1;
             vertex2.uv_coord.y = 0;
-            vertex2.color = Utils::color_RGB(red, 255, 0);
-            vertex2.normal = glm::vec3(0.f, 1.f, 0.f);
+            vertex2.color      = Utils::color_RGB(red, 255, 0);
+            vertex2.normal     = glm::vec3(0.f, 1.f, 0.f);
 
 
             Vertex vertex3;
@@ -100,8 +97,8 @@ void DuplicatedVertexPlane::generateVertices() {
             vertex3.position.z = z + 1;
             vertex3.uv_coord.x = 0;
             vertex3.uv_coord.y = 1;
-            vertex3.color = Utils::color_RGB(red, 255, 0);
-            vertex3.normal = glm::vec3(0.f, 1.f, 0.f);
+            vertex3.color      = Utils::color_RGB(red, 255, 0);
+            vertex3.normal     = glm::vec3(0.f, 1.f, 0.f);
 
             glm::vec3 normal = Utils::GetNormal(
                     glm::vec3(vertex1.position.x, vertex1.position.y, vertex1.position.z),
@@ -129,8 +126,8 @@ void DuplicatedVertexPlane::generateVertices() {
             vertex4.position.z = z + 1;
             vertex4.uv_coord.x = 0;
             vertex4.uv_coord.y = 1;
-            vertex4.color = Utils::color_RGB(red2, 255, 0);
-            vertex4.normal = glm::vec3(0.f, 1.f, 0.f);
+            vertex4.color      = Utils::color_RGB(red2, 255, 0);
+            vertex4.normal     = glm::vec3(0.f, 1.f, 0.f);
 
             Vertex vertex5;
             vertex5.position.x = x + 1;
@@ -138,8 +135,8 @@ void DuplicatedVertexPlane::generateVertices() {
             vertex5.position.z = z;
             vertex5.uv_coord.x = 1;
             vertex5.uv_coord.y = 0;
-            vertex5.color = Utils::color_RGB(red2, 255, 0);
-            vertex5.normal = glm::vec3(0.f, 1.f, 0.f);
+            vertex5.color      = Utils::color_RGB(red2, 255, 0);
+            vertex5.normal     = glm::vec3(0.f, 1.f, 0.f);
 
             Vertex vertex6;
             vertex6.position.x = x + 1;
@@ -147,8 +144,8 @@ void DuplicatedVertexPlane::generateVertices() {
             vertex6.position.z = z + 1;
             vertex6.uv_coord.x = 1;
             vertex6.uv_coord.y = 1;
-            vertex6.color = Utils::color_RGB(red2, 255, 0);
-            vertex6.normal = glm::vec3(0.f, 1.f, 0.f);
+            vertex6.color      = Utils::color_RGB(red2, 255, 0);
+            vertex6.normal     = glm::vec3(0.f, 1.f, 0.f);
 
             glm::vec3 normal2 = Utils::GetNormal(
                     glm::vec3(vertex4.position.x, vertex4.position.y, vertex4.position.z),
@@ -219,7 +216,7 @@ void DuplicatedVertexPlane::Draw() {
 //        glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
 //    }
 
-	glDisable(GL_CULL_FACE);
+    glDisable(GL_CULL_FACE);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBindVertexArray(VAO);
     glEnableVertexAttribArray(0);
@@ -232,40 +229,35 @@ void DuplicatedVertexPlane::Draw() {
     glBindVertexArray(0);
 }
 
-void DuplicatedVertexPlane::calculatePointHeight(glm::vec2 pointPosition)
-{
-	double xDecimal = pointPosition.x - floor(pointPosition.x);
-	double yDecimal = pointPosition.y - floor(pointPosition.y);
-	int colIndex = (int) pointPosition.x % sizeX;
-	int rowIndex = (int) pointPosition.y * sizeZ;
+void DuplicatedVertexPlane::calculatePointHeight(glm::vec2 pointPosition) {
+    double xDecimal = pointPosition.x - floor(pointPosition.x);
+    double yDecimal = pointPosition.y - floor(pointPosition.y);
+    int    colIndex = (int) pointPosition.x % sizeX;
+    int    rowIndex = (int) pointPosition.y * sizeZ;
 
-	// Multiply by 6 as each cell has 6 vertices
-	int vertexStartIndex = (colIndex + rowIndex) * 6;
-	Vertex vertexA = vertices[vertexStartIndex];
-	Vertex vertexB = vertices[vertexStartIndex + 1];
-	Vertex vertexC = vertices[vertexStartIndex + 2];
-	Vertex vertexD = vertices[vertexStartIndex + 3];
-	Vertex vertexE = vertices[vertexStartIndex + 4];
-	Vertex vertexF = vertices[vertexStartIndex + 5];
+    // Multiply by 6 as each cell has 6 vertices
+    int    vertexStartIndex = (colIndex + rowIndex) * 6;
+    Vertex vertexA          = vertices[vertexStartIndex];
+    Vertex vertexB          = vertices[vertexStartIndex + 1];
+    Vertex vertexC          = vertices[vertexStartIndex + 2];
+    Vertex vertexD          = vertices[vertexStartIndex + 3];
+    Vertex vertexE          = vertices[vertexStartIndex + 4];
+    Vertex vertexF          = vertices[vertexStartIndex + 5];
 
-	// Determine whether the point is in the first or second triangle of the quad 
-	if(xDecimal <= 0.5f && yDecimal >= 0.5f)
-	{
-		calculateHeightFromTriangle(vertexA.position, vertexB.position, vertexC.position, pointPosition);
-	}else
-	{
-		calculateHeightFromTriangle(vertexD.position, vertexE.position, vertexF.position, pointPosition);
-	}
-
-	std::cout << "Do shit";
+    // Determine whether the point is in the first or second triangle of the quad
+    if (xDecimal <= 0.5f && yDecimal >= 0.5f) {
+        calculateHeightFromTriangle(vertexA.position, vertexB.position, vertexC.position, pointPosition);
+    } else {
+        calculateHeightFromTriangle(vertexD.position, vertexE.position, vertexF.position, pointPosition);
+    }
 }
 
-void DuplicatedVertexPlane::calculateHeightFromTriangle(glm::vec3 pointA, glm::vec3 pointB, glm::vec3 pointC, glm::vec2 pointToFind)
-{
-	// Move one vertex to coordinate system origin, shift others by that coord
-	glm::vec3 shiftedA = glm::vec3();
-	glm::vec3 shiftedB = pointB - pointA;
-	glm::vec3 shiftedC = pointC - pointA;
+void DuplicatedVertexPlane::calculateHeightFromTriangle(glm::vec3 pointA, glm::vec3 pointB, glm::vec3 pointC,
+                                                        glm::vec2 pointToFind) {
+    // Move one vertex to coordinate system origin, shift others by that coord
+    glm::vec3 shiftedA = glm::vec3();
+    glm::vec3 shiftedB = pointB - pointA;
+    glm::vec3 shiftedC = pointC - pointA;
 }
 
 void DuplicatedVertexPlane::generateCollision() {
@@ -277,16 +269,16 @@ void DuplicatedVertexPlane::generateCollision() {
         startTransform.setIdentity();
         startTransform.setOrigin(origin);
 
-        float heightScale = 1.0f;
-        float minHeight = -10.0f;
-        float maxHeight = 10.0f;
-        int upAxis = 1;
+        float                     heightScale   = 1.0f;
+        float                     minHeight     = -10.0f;
+        float                     maxHeight     = 10.0f;
+        int                       upAxis        = 1;
         btHeightfieldTerrainShape *terrainShape = new btHeightfieldTerrainShape(sizeX, sizeZ, heightCoords.data(),
                                                                                 heightScale, minHeight, maxHeight,
                                                                                 upAxis, PHY_FLOAT, false);
 
-        btBvhTriangleMeshShape *shape = new btBvhTriangleMeshShape(tMesh, true);
-        btDefaultMotionState *motionstate = new btDefaultMotionState(startTransform);
+        btBvhTriangleMeshShape *shape       = new btBvhTriangleMeshShape(tMesh, true);
+        btDefaultMotionState   *motionstate = new btDefaultMotionState(startTransform);
 
         btScalar mass = 0;
 
